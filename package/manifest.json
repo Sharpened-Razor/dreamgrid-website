@@ -4429,7 +4429,7 @@
     },
     {
       "path": "Apache/htdocs/Other/health-diagnostics-api.php",
-      "sha256": "FEADCCB8E5AB6AFFBC16885C6402982C1ADCB25F9D056E37405859416053B55F",
+      "sha256": "1E6F12799B3F1F178AB930A6C0A75645B79C1BCFE9553F8760BEA7B6D7BE2F44",
       "preserveExisting": false
     },
     {
@@ -4964,7 +4964,7 @@
     },
     {
       "path": "Apache/htdocs/Other/stats-api.php",
-      "sha256": "A36526E40EDE925E004B1D5AF49056ED002F0680AE165E5CFB8E9EA984FED57A",
+      "sha256": "F67D06789E943C03E112D32C78F5EBE10B60F65762E217AC92DA3D7425D7ADB8",
       "preserveExisting": false
     },
     {
@@ -6362,5 +6362,6 @@
       "sha256": "0932374B69209DC4907E21965D530A691B9A951C7B2EC08C49A8CE0B7A01BB1E",
       "preserveExisting": false
     }
-  ]
+  ],
+  "version": "1.0.1"
 }

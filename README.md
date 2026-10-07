@@ -10,8 +10,8 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 
 ## Download and install
 
-- [Download v1.0.0 portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.zip)
-- [SHA-256 checksum](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.sha256)
+- [Download v1.0.1 portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip)
+- [SHA-256 checksum](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.sha256)
 - [Full installation and rollback instructions](INSTALLATION.md)
 - [Illustrated usage guide](USAGE.md)
 - [screenshot review status](SCREENSHOTS.md)
@@ -73,9 +73,9 @@ Saved pages, uploaded images, private content, databases, regions, inventories, 
 
 ## Version and verification
 
-First portable add-on release: **1.0.0**, verified 7 October 2026. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
+Current portable add-on release: **1.0.1**, verified 7 October 2026. The two local Robust health probes are corrected; 132 targeted regression checks passed. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
 
-The documentation update adds complete illustrated guides and separate captures of all Control Center and User Dashboard menu entries. [Coverage notes](SCREENSHOT-COVERAGE.md) explicitly record older standalone route failures and demo-service limitations found during the wider screenshot sweep. The portable ZIP and checksum remain unchanged.
+The rejected screenshot set remains withdrawn. Replacement images will be captured from the current live main pages and published only after user approval.
 
 Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain destination checks. This is not a complete penetration test or a guarantee for every DreamGrid version.
 

@@ -6,7 +6,7 @@ This website is an add-on for an **existing Windows DreamGrid installation**. In
 
 **Required: ASCII Windows installation path · DIVA OFF · OTHER enabled · Folder = Other.**
 
-[Download the verified ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.zip) · [Usage guide](USAGE.md) · [screenshot review status](SCREENSHOTS.md)
+[Download the verified ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip) · [Usage guide](USAGE.md) · [screenshot review status](SCREENSHOTS.md)
 
 ## 1. Prepare the existing grid
 
@@ -51,10 +51,10 @@ $zip = Read-Host 'Full path of downloaded portable ZIP'
 Get-FileHash -LiteralPath $zip -Algorithm SHA256
 ```
 
-Expected SHA-256 for v1.0.0:
+Expected SHA-256 for v1.0.1:
 
 ```text
-0A5CD15D054DCA758EA8BDC8DCA752854C83E0124B507EE1562F5358CB670FB3
+FB60A7E8EADA3A286435CD338B66316493426AA4996DD4D98B6FC132A6DAB651
 ```
 
 Extract the complete ZIP into a separate folder. Keep manifest.json, the scripts and payload together. Do not flatten the payload or copy the whole ZIP into Apache's public web root. The installer places the files into their matching locations in the existing grid and preserves destination media.

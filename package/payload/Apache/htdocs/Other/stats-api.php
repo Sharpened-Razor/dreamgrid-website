@@ -854,7 +854,7 @@ try {
 
                     'login' =>
                         stats_tcp(
-                            $host,
+                            ag_web_local_host(),
                             ag_dg_robust_port()
                         ),
 

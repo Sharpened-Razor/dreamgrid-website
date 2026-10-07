@@ -1,19 +1,11 @@
-# DreamGrid Website v1.0.0
+# DreamGrid Website v1.0.1
 
-Portable website add-on for an existing, configured DreamGrid installation.
+Fixed the Stats dashboard Grid login service health probe so it checks the dynamically discovered local Robust service rather than the public/browser hostname. The configured Robust port remains dynamic.
+
+Only stats-api.php and health-diagnostics-api.php changed in the website payload. StatsHistoryCollector.ps1 already used the correct local target. DreamGrid networking and Robust configuration are unchanged. All 132 targeted regression checks passed, including alternate ports, public host independence, IPv4 health when IPv6 loopback fails, and relocated installs.
 
 **Required: ASCII Windows installation path · DIVA OFF · OTHER enabled · Folder = Other.**
 
-Download the portable ZIP and its SHA-256 file below. Install DreamGrid and configure your grid/regions first, stop it before installation, and follow [INSTALLATION.md](https://github.com/Sharpened-Razor/dreamgrid-website/blob/main/INSTALLATION.md).
+Install DreamGrid and configure your grid/regions first. Stop DreamGrid before installing this add-on. Follow [installation instructions](https://github.com/Sharpened-Razor/dreamgrid-website/blob/main/INSTALLATION.md). The installer preserves existing content and media, verifies hashes, and creates dated backups with rollback records.
 
-The installer verifies the payload, checks prerequisites, preserves existing content/media, creates dated Desktop backups and records rollback hashes. Native DreamGrid continues to own its configuration and region setup.
-
-Includes the completed visual Page Designer, Control Center, User Dashboard and website tools. Automated acceptance passed: 1,628 builder assertions, 182 live smoke checks and seven live search checks. Publication metadata cleanup passed 13 additional bridge/map checks.
-
-Full Unicode paths are unsupported. Real SMTP, optional TLS and final destination visual/mobile checks remain user checks. See the [verification summary](https://github.com/Sharpened-Razor/dreamgrid-website/blob/main/VERIFICATION.md).
-
-The publication copy removes optional compiler build-folder metadata and excludes installation-specific region-state and custom-branding files. No live data, credentials, certificates, backups or source-machine configuration is included.
-
-## Screenshot correction
-
-The previous screenshot set has been withdrawn after loading, identity and duplication problems were reported. Replacement images are not yet published. The text installation and usage instructions remain available. The v1.0.0 portable ZIP/checksum are unchanged.
+The rejected screenshot gallery remains withdrawn. Replacement current-live screenshots will be published only after review and user approval. No live data, credentials, certificates, backups or source-machine configuration is included.

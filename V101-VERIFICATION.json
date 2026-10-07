@@ -1,0 +1,14 @@
+{
+  "version": "1.0.1",
+  "targetedStatsChecks": 132,
+  "payloadFilesVerified": 1272,
+  "zipSha256": "FB60A7E8EADA3A286435CD338B66316493426AA4996DD4D98B6FC132A6DAB651",
+  "v101-installer-regression.json": {
+    "passed": 1292,
+    "failed": 0
+  },
+  "v101-relocation-results.json": {
+    "passed": 44,
+    "failed": 0
+  }
+}

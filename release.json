@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "date": "2026-10-07",
-  "asset": "DreamGrid-Website-Portable-20261007.zip",
-  "sha256": "0A5CD15D054DCA758EA8BDC8DCA752854C83E0124B507EE1562F5358CB670FB3",
-  "bytes": 115064729,
+  "asset": "DreamGrid-Website-Portable-v1.0.1.zip",
+  "sha256": "FB60A7E8EADA3A286435CD338B66316493426AA4996DD4D98B6FC132A6DAB651",
+  "bytes": 115059638,
   "payloadFiles": 1272,
   "requirements": [
     "ASCII Windows installation path",

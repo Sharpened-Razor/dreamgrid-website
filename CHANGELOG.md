@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 — 2026-10-07
+
+- Fixes both local Robust health probes using shared dynamic local-service discovery and configured ports.
+- Retains the already-correct Stats history collector.
+- Passes 132 targeted regression checks; retains installer safeguards, exclusions and sanitized binaries.
+- Keeps the rejected gallery withdrawn pending approval of current-live replacements.
+
 ## Screenshot set withdrawn — 2026-10-07
 
 The previous gallery and screenshot verification claim have been withdrawn. Replacement captures require explicit readiness/identity checks, a manifest and duplicate review before publication. The portable installer ZIP is unchanged.

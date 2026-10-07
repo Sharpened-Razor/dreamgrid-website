@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INSTALLATION — DreamGrid Website</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">DreamGrid Website</a><nav aria-label="Documentation"><a href="installation.html">Install</a><a href="usage.html">Use</a><a href="gallery.html">Gallery</a><a href="coverage.html">Coverage</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website">GitHub</a></nav></header><main class="guide" id="main"><aside class="requirements"><strong>Screenshot set withdrawn.</strong><p>The previous captures failed review. Images have been removed while a replacement set is checked for loading, identity, privacy and duplication.</p></aside><h1 id="illustrated-installation-guide">Illustrated installation guide</h1>
 <p>This website is an add-on for an <strong>existing Windows DreamGrid installation</strong>. Install DreamGrid, configure your grid and create your regions first. The website uses that installation&#39;s name, services, domains and ports. It does not create regions or replace your grid data.</p>
 <p><strong>Required: ASCII Windows installation path · DIVA OFF · OTHER enabled · Folder = Other.</strong></p>
-<p><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.zip">Download the verified ZIP</a> · <a href="usage.html">Usage guide</a> · <a href="gallery.html">Complete screenshot gallery</a></p>
+<p><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip">Download the verified ZIP</a> · <a href="usage.html">Usage guide</a> · <a href="gallery.html">Complete screenshot gallery</a></p>
 <h2 id="1-prepare-the-existing-grid">1. Prepare the existing grid</h2>
 <p>Use DreamGrid&#39;s normal setup to create the grid and regions and confirm they work before adding the website. Keep the native internal folder layout. The folder selected during installation must contain that installation&#39;s <strong>Settings.ini</strong>, Apache and Opensim directories. Choose your own folder; the source grid&#39;s installation path is not a requirement.</p>
 <p>Every folder in the Windows installation path must use ASCII characters. Spaces, different folders and different drive letters are supported. Full Unicode paths are unsupported: the bundled legacy Perl stack did not pass the complete Unicode regression. Do not rely on a mapped drive to claim Unicode compatibility.</p>
@@ -70,8 +70,8 @@
 <pre><code class="language-powershell">$zip = Read-Host &#39;Full path of downloaded portable ZIP&#39;
 Get-FileHash -LiteralPath $zip -Algorithm SHA256
 </code></pre>
-<p>Expected SHA-256 for v1.0.0:</p>
-<pre><code class="language-text">0A5CD15D054DCA758EA8BDC8DCA752854C83E0124B507EE1562F5358CB670FB3
+<p>Expected SHA-256 for v1.0.1:</p>
+<pre><code class="language-text">FB60A7E8EADA3A286435CD338B66316493426AA4996DD4D98B6FC132A6DAB651
 </code></pre>
 <p>Extract the complete ZIP into a separate folder. Keep manifest.json, the scripts and payload together. Do not flatten the payload or copy the whole ZIP into Apache&#39;s public web root. The installer places the files into their matching locations in the existing grid and preserves destination media.</p>
 <h2 id="6-stop-the-destination-and-run-the-installer">6. Stop the destination and run the installer</h2>
@@ -220,4 +220,4 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 <h2 id="verification-limits">Verification limits</h2>
 <p>Automated PHP 7/8 tests cover native configuration regeneration, sessions/access, routes/assets, builder editing and persistence, publishing, forms with a local inbox/mock mail transport, templates/import/export, interactions/SEO models, search, map helpers and private-file protection. Relocated ASCII paths and an alternate drive letter were tested.</p>
 <p>The final live smoke uses short-lived signed sessions for existing accounts without changing accounts or passwords. Live password login was not attempted; password login/logout was tested against an isolated synthetic database. No live test pages, form submissions, imports or publishing writes were introduced. Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain installation-specific checks. These are not a claim of a complete penetration test or support for every DreamGrid version.</p>
-</main><footer><span>Version 1.0.0 · Documentation updated 7 October 2026</span><a href="installation.html">ASCII path · DIVA OFF · OTHER enabled · Folder Other</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.0">Download & checksum</a></footer></body></html>
+</main><footer><span>Version 1.0.1 · Documentation updated 7 October 2026</span><a href="installation.html">ASCII path · DIVA OFF · OTHER enabled · Folder Other</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.1">Download & checksum</a></footer></body></html>

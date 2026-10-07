@@ -37,3 +37,7 @@ Production writes for publishing, imports, forms and recovery were avoided: thos
 - This is not a full penetration test or a guarantee for every DreamGrid release/runtime combination.
 
 **Prerequisites: ASCII Windows path; DIVA OFF; OTHER enabled; Folder = Other.**
+
+## v1.0.1 Stats correction
+
+132 targeted checks passed for both authenticated health APIs: public host independence, two dynamically configured ports, IPv4 listening with unavailable IPv6 loopback, relocated paths, authentication restrictions and closed-service failure. Installer and shared discovery relocation checks are rerun for this release. Earlier whole-site results describe the unchanged baseline, not a new full-site rerun.

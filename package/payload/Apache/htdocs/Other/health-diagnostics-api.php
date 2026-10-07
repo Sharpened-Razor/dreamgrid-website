@@ -83,7 +83,7 @@ $host=preg_replace('/:\d+$/','',(string)($_SERVER['HTTP_HOST']??ag_dg_hostname()
 $resolved=@gethostbyname($host);$dnsOk=($resolved&&$resolved!==$host);
 $diskRoot=$outworldz;$diskFree=@disk_free_space($diskRoot);$diskTotal=@disk_total_space($diskRoot);
 $services=['Apache service'=>serviceState('ApacheHTTPServer'),'httpd.exe processes'=>processCount('httpd.exe'),'MySQL processes'=>processCount('mysqld.exe'),'Robust processes'=>processCount('Robust.exe'),'OpenSim processes'=>processCount('OpenSim.exe')];
-$network=['host'=>$host,'loginPort'=>ag_dg_robust_port(),'statusPort'=>ag_dg_diagnostics_port(),'resolvedIp'=>$dnsOk?$resolved:'','dnsOk'=>$dnsOk,'login8002'=>tcpCheck($host,ag_dg_robust_port()),'simstatus8013'=>tcpCheck(ag_web_local_host(),ag_dg_diagnostics_port())];
+$network=['host'=>$host,'loginPort'=>ag_dg_robust_port(),'statusPort'=>ag_dg_diagnostics_port(),'resolvedIp'=>$dnsOk?$resolved:'','dnsOk'=>$dnsOk,'login8002'=>tcpCheck(ag_web_local_host(),ag_dg_robust_port()),'simstatus8013'=>tcpCheck(ag_web_local_host(),ag_dg_diagnostics_port())];
 $storage=['diskRoot'=>$diskRoot,'diskFree'=>$diskFree===false?null:(int)$diskFree,'diskTotal'=>$diskTotal===false?null:(int)$diskTotal,'autobackup'=>null,'oar'=>null,'iar'=>null,'mysql'=>null,'fsassets'=>null];
 $errors=recentErrors($outworldz.DIRECTORY_SEPARATOR.'logs'.DIRECTORY_SEPARATOR.'ERROR.log');
 echo json_encode(['ok'=>true,'checkedAt'=>date(DATE_ATOM),'services'=>$services,'network'=>$network,'storage'=>$storage,'recentErrors'=>$errors]);
