@@ -11,6 +11,9 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 - [Download v1.0.0 portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.zip)
 - [SHA-256 checksum](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.sha256)
 - [Full installation and rollback instructions](INSTALLATION.md)
+- [Illustrated usage guide](USAGE.md)
+- [Complete captioned screenshot gallery](SCREENSHOTS.md)
+- [Screenshot coverage and known limitations](SCREENSHOT-COVERAGE.md)
 - [Required components](REQUIREMENTS.md)
 - [Verification results and limits](VERIFICATION.md)
 - [Download website](https://sharpened-razor.github.io/dreamgrid-website/)
@@ -27,6 +30,26 @@ $gridRoot = Read-Host 'Existing DreamGrid data folder containing Settings.ini'
 
 Start DreamGrid normally afterward. Use the release ZIP for installation; GitHub's automatic source archives are repository snapshots, not the verified installer ZIP.
 
+**Installing does not automatically open the webpage.** Open your browser and enter `http://YOUR-GRID-DOMAIN/Other/`, using your actual domain, scheme and web port. A nonstandard HTTP port uses `http://YOUR-GRID-DOMAIN:YOUR-WEB-PORT/Other/`.
+
+| Screen | Portable example URL |
+| --- | --- |
+| Public website | `http://YOUR-GRID-DOMAIN/Other/` |
+| Login | `http://YOUR-GRID-DOMAIN/Other/login.php` |
+| Admin Control Center | `http://YOUR-GRID-DOMAIN/Other/admin-home.php` |
+| User Dashboard | `http://YOUR-GRID-DOMAIN/Other/FreshUserDashboardExact/user-dashboard.php` |
+| Page Designer | `http://YOUR-GRID-DOMAIN/Other/admin-page-designer.php` |
+
+The illustrated guides show exactly where to check Apache, DIVA/OTHER, the folder, hostname and viewer splash URL. The [GitHub Pages documentation](https://sharpened-razor.github.io/dreamgrid-website/installation.html) also provides a searchable screenshot gallery.
+
+![Required native Apache website settings](docs/screenshots/settings/dreamgrid-apache-other.png)
+
+Required: Enable Apache, DIVA OFF, OTHER enabled, Folder = Other. Port 80 and PHP 8 in the image are example selections from the AUSTRALIA grid; read your installation's settings.
+
+![Actual browser address bar and public website example](docs/screenshots/installation/australia-example-browser-url.png)
+
+**Example from the AUSTRALIA grid:** `http://australia.outworldz.net/Other/`. Use your own configured domain and web port.
+
 ## Included
 
 - Visual page building with sections, columns, text, images, buttons and layouts.
@@ -40,7 +63,7 @@ Start DreamGrid normally afterward. Use the release ZIP for installation; GitHub
 
 ![Built-in tutorials using synthetic demo content](docs/screenshots/built-in-tutorials.png)
 
-Screenshots show the shipped builder in an isolated demo installation. No live account, user page or installation configuration is shown.
+Website screenshots use synthetic accounts/content in an isolated demo installation. Native setting screenshots and the public browser example are labelled as examples from the AUSTRALIA grid; credential and personal fields are covered in documentation copies. No live account or private user page is shown.
 
 ## Path and runtime requirements
 
@@ -57,6 +80,8 @@ Saved pages, uploaded images, private content, databases, regions, inventories, 
 ## Version and verification
 
 First portable add-on release: **1.0.0**, verified 7 October 2026. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
+
+The documentation update adds complete illustrated guides and separate captures of all Control Center and User Dashboard menu entries. [Coverage notes](SCREENSHOT-COVERAGE.md) explicitly record older standalone route failures and demo-service limitations found during the wider screenshot sweep. The portable ZIP and checksum remain unchanged.
 
 Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain destination checks. This is not a complete penetration test or a guarantee for every DreamGrid version.
 

@@ -1,0 +1,33 @@
+# Screenshot coverage and limits
+
+Documentation capture: 7 October 2026. 220 images are included in the gallery.
+
+## Normal navigation
+
+All 22 Admin Control Center menu entries and all 9 User Dashboard menu entries were clicked in the released interface and captured separately. The source sweep examined 118 rendered-document candidates and classified support files separately. The gallery includes standalone public, administrative, resident, native search/media/map screens, selected account/region contexts, help topics and the major Page Designer workspaces/dialogs.
+
+Builder coverage includes layout selection, canvas, content/style/layout inspectors, layers, Pages, site styles, header/footer, navigation, reusable sections, image upload, saved templates, HTML ZIP conversion review/imported draft, forms/field editing/private synthetic message, history preview, recovery, transfer, publish checker, link-scan results, replacement preview, SEO, animations, visibility, three device previews, explicit V10 conversion, tabs, accordions and locks.
+
+## Older routes and fixture-dependent screens
+
+The following findings remain visible instead of being described as successful tests. No production/runtime repair was made as part of this documentation task.
+
+- `/Other/avatar-profile.php`: Older standalone profile route failed with HTTP 500 in the isolated PHP 8 demo; the current menu Profile routes are captured separately.
+- `/Other/user-account-edit.php`: Older standalone account editor failed with HTTP 500 due to an incorrect relative configuration include. Current dashboard account editing uses a different route.
+- `/Other/group-profile.php`: Older standalone profile contains malformed PHP boundaries and can display source text instead of a complete page.
+- `/Other/user-account.php`: Older standalone account route uses an incorrect configuration include and may show unavailable account data.
+- `/Other/admin-region-map.php?region=Demo%20Region`: Selected-region map returned HTTP 404 in this documentation fixture despite a synthetic diagnostics listener. The 2D/3D menu map screens are captured; this does not establish live region-map acceptance.
+
+A legacy dashboard map page also exposes a malformed Back link in the standalone fixture. The current dashboard shell navigation is the documented route. Support HTML headers/error includes are fragments, not normal pages. POST actions, APIs, downloads, redirects, private stores and native CGI programs are classified separately; raw server/CGI source is not published as a page screenshot. Native CGI startup acceptance is described in VERIFICATION.md, not inferred from the PHP-only documentation server.
+
+## What the screenshots establish
+
+The documentation server runs the released website code in an isolated local fixture. Accounts, a selected region, form message and template content are synthetic. Native diagnostic/service screens can show unavailable or empty state because this fixture does not run production simulators. Capturing an empty list or a control panel does not test every button or prove successful native service operation. No production service controls, account changes, publishing writes, imports or form messages were performed for these captures.
+
+The native Apache/settings menu images and browser address-bar example are actual screen captures. DNS and Web Control Panel images are redacted/rescaled documentation copies of actual native screens; sensitive fields are opaque. They are reference images, not pixel-exact recordings of unsaved settings. The successful installer image renders an actual isolated installer result with local paths replaced.
+
+Real SMTP delivery, optional TLS, destination visual/device acceptance and authorization policy remain installation checks. A custom HTML/CSS code block is not exposed in this release’s native Add library; it is not documented as an available tool. Template import is the supported HTML conversion workflow.
+
+## Publication scope
+
+Only documentation and safe screenshots change in this update. The v1.0.0 portable ZIP and SHA-256 remain unchanged. The isolated configuration, private originals, fixture passwords, session material, logs and installation archives are excluded from the repository and release.

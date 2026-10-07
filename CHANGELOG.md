@@ -1,5 +1,14 @@
 # Changelog
 
+## Documentation update — 2026-10-07
+
+- Adds full illustrated installation and usage guides, a captioned screenshot gallery and searchable GitHub Pages gallery.
+- Shows native Apache/DIVA/OTHER/folder settings, the public hostname location, viewer splash URL and running service indicators with private fields/logs covered.
+- Explains opening the website manually, all important portable URLs, nonstandard web ports and troubleshooting.
+- Captures every Control Center and User Dashboard menu item separately and the major Page Designer tools, template conversion, V10 conversion, forms, history, device views and editing workflows.
+- Records older standalone route failures and documentation-fixture service limits explicitly in SCREENSHOT-COVERAGE.md.
+- Changes documentation only. The verified v1.0.0 installer ZIP and SHA-256 remain unchanged; no production settings or saved content were modified.
+
 ## 1.0.0 — 2026-10-07
 
 First public portable website add-on release.

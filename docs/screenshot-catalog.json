@@ -1,0 +1,1829 @@
+{
+  "captured": "2026-10-07",
+  "scope": "Synthetic documentation fixture; redacted native settings and public example",
+  "count": 220,
+  "screenshots": [
+    {
+      "category": "Native website pages",
+      "title": "Index",
+      "route": "/API/Index.php",
+      "role": "public",
+      "file": "pages/api-index.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Default.Htm",
+      "route": "/Audio/default.htm",
+      "role": "public",
+      "file": "pages/audio-default.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Index",
+      "route": "/DreamGrid/Index.php",
+      "role": "public",
+      "file": "pages/dreamgrid-index.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Error404.Htm",
+      "route": "/error404.htm",
+      "role": "public",
+      "file": "pages/error404.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Index",
+      "route": "/MetroMap/index.php",
+      "role": "public",
+      "file": "pages/metromap-index.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Indexmax",
+      "route": "/MetroMap/indexmax.php",
+      "role": "public",
+      "file": "pages/metromap-indexmax.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Map",
+      "route": "/MetroMap/map.php",
+      "role": "public",
+      "file": "pages/metromap-map.png",
+      "caption": "Explore the 2D map and destination regions.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Mapmax",
+      "route": "/MetroMap/mapmax.php",
+      "role": "public",
+      "file": "pages/metromap-mapmax.png",
+      "caption": "Explore the 2D map and destination regions.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Account Create",
+      "route": "/Other/admin-account-create.php",
+      "role": "admin",
+      "file": "pages/other-admin-account-create.png",
+      "caption": "Create a grid account using the administrative workflow.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Account Delete",
+      "route": "/Other/admin-account-delete.php",
+      "role": "admin",
+      "file": "pages/other-admin-account-delete.png",
+      "caption": "Review the selected account before a deletion action.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Accounts Clean",
+      "route": "/Other/admin-accounts-clean.php",
+      "role": "admin",
+      "file": "pages/other-admin-accounts-clean.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Accounts",
+      "route": "/Other/admin-accounts.php",
+      "role": "admin",
+      "file": "pages/other-admin-accounts.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin All Regions",
+      "route": "/Other/admin-all-regions.php",
+      "role": "admin",
+      "file": "pages/other-admin-all-regions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Console",
+      "route": "/Other/admin-console.php",
+      "role": "admin",
+      "file": "pages/other-admin-console.png",
+      "caption": "Open the administrative console workspace.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Create Region",
+      "route": "/Other/admin-create-region.php",
+      "role": "admin",
+      "file": "pages/other-admin-create-region.png",
+      "caption": "Review the region creation workspace.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Dashboard",
+      "route": "/Other/admin-dashboard.php",
+      "role": "admin",
+      "file": "pages/other-admin-dashboard.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Group Create Clean",
+      "route": "/Other/admin-group-create-clean.php",
+      "role": "admin",
+      "file": "pages/other-admin-group-create-clean.png",
+      "caption": "Create a group using the available administrative fields.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Group Create",
+      "route": "/Other/admin-group-create.php",
+      "role": "admin",
+      "file": "pages/other-admin-group-create.png",
+      "caption": "Create a group using the available administrative fields.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Group Delete Clean",
+      "route": "/Other/admin-group-delete-clean.php",
+      "role": "admin",
+      "file": "pages/other-admin-group-delete-clean.png",
+      "caption": "Review a group before a deletion action.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Group Delete",
+      "route": "/Other/admin-group-delete.php",
+      "role": "admin",
+      "file": "pages/other-admin-group-delete.png",
+      "caption": "Review a group before a deletion action.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Group Manage Clean",
+      "route": "/Other/admin-group-manage-clean.php",
+      "role": "admin",
+      "file": "pages/other-admin-group-manage-clean.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Group Manage",
+      "route": "/Other/admin-group-manage.php",
+      "role": "admin",
+      "file": "pages/other-admin-group-manage.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Groups Clean",
+      "route": "/Other/admin-groups-clean.php",
+      "role": "admin",
+      "file": "pages/other-admin-groups-clean.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Groups",
+      "route": "/Other/admin-groups.php",
+      "role": "admin",
+      "file": "pages/other-admin-groups.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Home",
+      "route": "/Other/admin-home.php",
+      "role": "admin",
+      "file": "pages/other-admin-home.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Offline Messages",
+      "route": "/Other/admin-offline-messages.php",
+      "role": "admin",
+      "file": "pages/other-admin-offline-messages.png",
+      "caption": "View queued offline messages.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Page Designer",
+      "route": "/Other/admin-page-designer.php",
+      "role": "admin",
+      "file": "pages/other-admin-page-designer.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Region Global Map",
+      "route": "/Other/admin-region-global-map.php",
+      "role": "admin",
+      "file": "pages/other-admin-region-global-map.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Region Manage",
+      "route": "/Other/admin-region-manage.php",
+      "role": "admin",
+      "file": "pages/other-admin-region-manage.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Region Manager",
+      "route": "/Other/admin-region-manager.php",
+      "role": "admin",
+      "file": "pages/other-admin-region-manager.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Region Map Textures",
+      "route": "/Other/admin-region-map-textures.php",
+      "role": "admin",
+      "file": "pages/other-admin-region-map-textures.png",
+      "caption": "Manage region map texture generation and related options.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Regions",
+      "route": "/Other/admin-regions.php",
+      "role": "admin",
+      "file": "pages/other-admin-regions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Site Design",
+      "route": "/Other/admin-site-design.php",
+      "role": "admin",
+      "file": "pages/other-admin-site-design.png",
+      "caption": "Configure website branding and design settings.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Textures",
+      "route": "/Other/admin-textures.php",
+      "role": "admin",
+      "file": "pages/other-admin-textures.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Admin Tools",
+      "route": "/Other/admin-tools.php",
+      "role": "admin",
+      "file": "pages/other-admin-tools.png",
+      "caption": "Open the available administrative tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Australia Panel",
+      "route": "/Other/australia-panel.php",
+      "role": "admin",
+      "file": "pages/other-australia-panel.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Backup Files Panel",
+      "route": "/Other/backup-files-panel.php",
+      "role": "public",
+      "file": "pages/other-backup-files-panel.png",
+      "caption": "Inspect grid backup files and related actions.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Backup Health Panel",
+      "route": "/Other/backup-health-panel.php",
+      "role": "public",
+      "file": "pages/other-backup-health-panel.png",
+      "caption": "Inspect backup status and health.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Backup History Panel",
+      "route": "/Other/backup-history-panel.php",
+      "role": "public",
+      "file": "pages/other-backup-history-panel.png",
+      "caption": "Review backup history.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Backup Scheduler",
+      "route": "/Other/backup-scheduler.php",
+      "role": "public",
+      "file": "pages/other-backup-scheduler.png",
+      "caption": "Configure available backup scheduling controls.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Backup Storage Panel",
+      "route": "/Other/backup-storage-panel.php",
+      "role": "public",
+      "file": "pages/other-backup-storage-panel.png",
+      "caption": "Inspect backup storage options.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Create Account",
+      "route": "/Other/create-account.php",
+      "role": "public",
+      "file": "pages/other-create-account.png",
+      "caption": "View account information and account-related actions.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Forgot Password",
+      "route": "/Other/forgot-password.php",
+      "role": "public",
+      "file": "pages/other-forgot-password.png",
+      "caption": "Request password recovery through destination handling.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Control Panel",
+      "route": "/Other/FreshControlPanel/control-panel.php",
+      "role": "admin",
+      "file": "pages/other-freshcontrolpanel-control-panel.png",
+      "caption": "Review grid service controls and administrative options.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Dashboard",
+      "route": "/Other/FreshUserDashboardExact/user-dashboard.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-user-dashboard.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Account Edit",
+      "route": "/Other/FreshUserDashboardExact/UserPages/account-edit.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-account-edit.png",
+      "caption": "Edit the selected account settings.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Account",
+      "route": "/Other/FreshUserDashboardExact/UserPages/account.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-account.png",
+      "caption": "View account information and account-related actions.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Clean Inventory",
+      "route": "/Other/FreshUserDashboardExact/UserPages/clean-inventory.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-clean-inventory.png",
+      "caption": "Inspect inventory maintenance options before making changes.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Help Centre",
+      "route": "/Other/FreshUserDashboardExact/UserPages/help-centre.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-help-centre.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Iar Backups",
+      "route": "/Other/FreshUserDashboardExact/UserPages/iar-backups.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-iar-backups.png",
+      "caption": "Review inventory archive backups and available actions.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Inventory Browser",
+      "route": "/Other/FreshUserDashboardExact/UserPages/inventory-browser.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-inventory-browser.png",
+      "caption": "Browse inventory folders and items.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Inventory",
+      "route": "/Other/FreshUserDashboardExact/UserPages/inventory.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-inventory.png",
+      "caption": "Review inventory and its available tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Map 3d",
+      "route": "/Other/FreshUserDashboardExact/UserPages/map-3d.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-map-3d.png",
+      "caption": "Explore the interactive 3D map. Native helper services supply destination data.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Map",
+      "route": "/Other/FreshUserDashboardExact/UserPages/map.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-map.png",
+      "caption": "Explore the 2D map and destination regions.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Offline Messages",
+      "route": "/Other/FreshUserDashboardExact/UserPages/offline-messages.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-offline-messages.png",
+      "caption": "View queued offline messages.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Profile",
+      "route": "/Other/FreshUserDashboardExact/UserPages/profile.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-profile.png",
+      "caption": "View or edit avatar profile information.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Regions",
+      "route": "/Other/FreshUserDashboardExact/UserPages/regions.php",
+      "role": "member",
+      "file": "pages/other-freshuserdashboardexact-userpages-regions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Getting Started",
+      "route": "/Other/getting-started.php",
+      "role": "public",
+      "file": "pages/other-getting-started.png",
+      "caption": "Read the introduction to accessing and using the grid.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Grid Backup",
+      "route": "/Other/grid-backup.php",
+      "role": "public",
+      "file": "pages/other-grid-backup.png",
+      "caption": "Inspect grid backup files and related actions.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Grid Control Panel",
+      "route": "/Other/grid-control-panel.php",
+      "role": "public",
+      "file": "pages/other-grid-control-panel.png",
+      "caption": "Review grid service controls and administrative options.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Grid Map 3d",
+      "route": "/Other/grid-map-3d.php",
+      "role": "admin",
+      "file": "pages/other-grid-map-3d.png",
+      "caption": "Explore the interactive 3D map. Native helper services supply destination data.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Grid Map User",
+      "route": "/Other/grid-map-user.php",
+      "role": "admin",
+      "file": "pages/other-grid-map-user.png",
+      "caption": "Explore the 2D map and destination regions.",
+      "status": 200
+    },
+    {
+      "category": "Additional admin pages",
+      "title": "Grid Map",
+      "route": "/Other/grid-map.php",
+      "role": "admin",
+      "file": "pages/other-grid-map.png",
+      "caption": "Explore the 2D map and destination regions.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Index",
+      "route": "/Other/index.php",
+      "role": "public",
+      "file": "pages/other-index.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Login Help Centre",
+      "route": "/Other/login-help-centre.php",
+      "role": "public",
+      "file": "pages/other-login-help-centre.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Login Help",
+      "route": "/Other/login-help.php",
+      "role": "public",
+      "file": "pages/other-login-help.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Account Edit",
+      "route": "/Other/panel-account-edit.php",
+      "role": "member",
+      "file": "pages/other-panel-account-edit.png",
+      "caption": "Edit the selected account settings.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Account",
+      "route": "/Other/panel-account.php",
+      "role": "member",
+      "file": "pages/other-panel-account.png",
+      "caption": "View account information and account-related actions.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Control Grid",
+      "route": "/Other/panel-control-grid.php",
+      "role": "member",
+      "file": "pages/other-panel-control-grid.png",
+      "caption": "Review grid service controls and administrative options.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Help Centre",
+      "route": "/Other/panel-help-centre.php",
+      "role": "member",
+      "file": "pages/other-panel-help-centre.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Help Teleporting",
+      "route": "/Other/panel-help-teleporting.php",
+      "role": "member",
+      "file": "pages/other-panel-help-teleporting.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Inventory Browser",
+      "route": "/Other/panel-inventory-browser.php",
+      "role": "member",
+      "file": "pages/other-panel-inventory-browser.png",
+      "caption": "Browse inventory folders and items.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Inventory",
+      "route": "/Other/panel-inventory.php",
+      "role": "member",
+      "file": "pages/other-panel-inventory.png",
+      "caption": "Review inventory and its available tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Profile",
+      "route": "/Other/panel-profile.php",
+      "role": "member",
+      "file": "pages/other-panel-profile.png",
+      "caption": "View or edit avatar profile information.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "Panel Regions",
+      "route": "/Other/panel-regions.php",
+      "role": "member",
+      "file": "pages/other-panel-regions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Restore History Panel",
+      "route": "/Other/restore-history-panel.php",
+      "role": "public",
+      "file": "pages/other-restore-history-panel.png",
+      "caption": "Review restore history.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Stats",
+      "route": "/Other/stats.php",
+      "role": "public",
+      "file": "pages/other-stats.png",
+      "caption": "View grid statistics.",
+      "status": 200
+    },
+    {
+      "category": "Public pages",
+      "title": "Terms",
+      "route": "/Other/terms.php",
+      "role": "public",
+      "file": "pages/other-terms.png",
+      "caption": "Read the website terms.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Clean Inventory",
+      "route": "/Other/user-clean-inventory.php",
+      "role": "member",
+      "file": "pages/other-user-clean-inventory.png",
+      "caption": "Inspect inventory maintenance options before making changes.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Help",
+      "route": "/Other/user-help.php",
+      "role": "member",
+      "file": "pages/other-user-help.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Iar Backups",
+      "route": "/Other/user-iar-backups.php",
+      "role": "member",
+      "file": "pages/other-user-iar-backups.png",
+      "caption": "Review inventory archive backups and available actions.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Inventory Browser",
+      "route": "/Other/user-inventory-browser.php",
+      "role": "member",
+      "file": "pages/other-user-inventory-browser.png",
+      "caption": "Browse inventory folders and items.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Inventory",
+      "route": "/Other/user-inventory.php",
+      "role": "member",
+      "file": "pages/other-user-inventory.png",
+      "caption": "Review inventory and its available tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Linked Regions",
+      "route": "/Other/user-linked-regions.php",
+      "role": "member",
+      "file": "pages/other-user-linked-regions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Offline Messages",
+      "route": "/Other/user-offline-messages.php",
+      "role": "member",
+      "file": "pages/other-user-offline-messages.png",
+      "caption": "View queued offline messages.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Profile",
+      "route": "/Other/user-profile.php",
+      "role": "member",
+      "file": "pages/other-user-profile.png",
+      "caption": "View or edit avatar profile information.",
+      "status": 200
+    },
+    {
+      "category": "Additional user pages",
+      "title": "User Regions",
+      "route": "/Other/user-regions.php",
+      "role": "member",
+      "file": "pages/other-user-regions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Default.Htm",
+      "route": "/PerlExample/default.htm",
+      "role": "public",
+      "file": "pages/perlexample-default.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Classifieds",
+      "route": "/Search/Classifieds.php",
+      "role": "public",
+      "file": "pages/search-classifieds.png",
+      "caption": "Search classifieds.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Events.Htm",
+      "route": "/Search/Events.htm",
+      "role": "public",
+      "file": "pages/search-events.png",
+      "caption": "Search events.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Hello",
+      "route": "/Search/Hello.php",
+      "role": "public",
+      "file": "pages/search-hello.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Index",
+      "route": "/Search/index.php",
+      "role": "public",
+      "file": "pages/search-index.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Search",
+      "route": "/Search/search.php",
+      "role": "public",
+      "file": "pages/search-search.png",
+      "caption": "Search using the selected native website search facility.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Search Classifieds.Htm",
+      "route": "/Search/SearchClassifieds.htm",
+      "role": "public",
+      "file": "pages/search-searchclassifieds.png",
+      "caption": "Search using the selected native website search facility.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Search Events.Htm",
+      "route": "/Search/SearchEvents.htm",
+      "role": "public",
+      "file": "pages/search-searchevents.png",
+      "caption": "Search using the selected native website search facility.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Search Objects.Htm",
+      "route": "/Search/SearchObjects.htm",
+      "role": "public",
+      "file": "pages/search-searchobjects.png",
+      "caption": "Search using the selected native website search facility.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Search Parcel.Htm",
+      "route": "/Search/SearchParcel.htm",
+      "role": "public",
+      "file": "pages/search-searchparcel.png",
+      "caption": "Search using the selected native website search facility.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Search Regions.Htm",
+      "route": "/Search/SearchRegions.htm",
+      "role": "public",
+      "file": "pages/search-searchregions.png",
+      "caption": "Browse regions and open their related tools.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Map.Htm",
+      "route": "/Stats/map.htm",
+      "role": "public",
+      "file": "pages/stats-map.png",
+      "caption": "Explore the 2D map and destination regions.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Default.Htm",
+      "route": "/Video/default.htm",
+      "role": "public",
+      "file": "pages/video-default.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Index.Htm",
+      "route": "/VR/index.htm",
+      "role": "public",
+      "file": "pages/vr-index.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Native website pages",
+      "title": "Index1.Html",
+      "route": "/VR/index1.html",
+      "role": "public",
+      "file": "pages/vr-index1.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Account",
+      "route": "/Other/panel-account.php",
+      "role": "admin",
+      "file": "menus/admin-account.png",
+      "caption": "Opened from the Admin Control Center menu. View account information and account-related actions."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Profile",
+      "route": "/Other/panel-profile.php",
+      "role": "admin",
+      "file": "menus/admin-profile.png",
+      "caption": "Opened from the Admin Control Center menu. View or edit avatar profile information."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Regions",
+      "route": "/Other/panel-regions.php?from=admin",
+      "role": "admin",
+      "file": "menus/admin-regions.png",
+      "caption": "Opened from the Admin Control Center menu. Browse regions and open their related tools."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Inventory",
+      "route": "/Other/panel-inventory.php?from=admin",
+      "role": "admin",
+      "file": "menus/admin-inventory.png",
+      "caption": "Opened from the Admin Control Center menu. Review inventory and its available tools."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "IAR Backups",
+      "route": "/Other/user-iar-backups.php?from=admin",
+      "role": "admin",
+      "file": "menus/admin-iar-backups.png",
+      "caption": "Opened from the Admin Control Center menu. Review inventory archive backups and available actions."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Offline Messages",
+      "route": "/Other/admin-offline-messages.php?v=20260918-emotes-filtered-v4",
+      "role": "admin",
+      "file": "menus/admin-offline-messages.png",
+      "caption": "Opened from the Admin Control Center menu. View queued offline messages."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Map",
+      "route": "/Other/grid-map.php?from=admin&ccfit=2",
+      "role": "admin",
+      "file": "menus/admin-map.png",
+      "caption": "Opened from the Admin Control Center menu. Explore the 2D map and destination regions."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "3D Map",
+      "route": "/Other/grid-map-3d.php?from=admin",
+      "role": "admin",
+      "file": "menus/admin-3d-map.png",
+      "caption": "Opened from the Admin Control Center menu. Explore the interactive 3D map. Native helper services supply destination data."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Linked Regions",
+      "route": "/Other/user-linked-regions.php?from=admin",
+      "role": "admin",
+      "file": "menus/admin-linked-regions.png",
+      "caption": "Opened from the Admin Control Center menu. Browse regions and open their related tools."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "HELP CENTRE",
+      "route": "/Other/panel-help-centre.php?from=admin",
+      "role": "admin",
+      "file": "menus/admin-help-centre.png",
+      "caption": "Opened from the Admin Control Center menu. Read help topics and related tutorials."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Manage Accounts",
+      "route": "/Other/admin-accounts-clean.php",
+      "role": "admin",
+      "file": "menus/admin-manage-accounts.png",
+      "caption": "Opened from the Admin Control Center menu. Find and manage grid accounts."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Manage Groups",
+      "route": "/Other/admin-groups-clean.php",
+      "role": "admin",
+      "file": "menus/admin-manage-groups.png",
+      "caption": "Opened from the Admin Control Center menu. Browse or manage groups and membership."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Console",
+      "route": "/Other/admin-console.php",
+      "role": "admin",
+      "file": "menus/admin-console.png",
+      "caption": "Opened from the Admin Control Center menu. Open the administrative console workspace."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Control Panel",
+      "route": "/Other/control-panel-home.php",
+      "role": "admin",
+      "file": "menus/admin-control-panel.png",
+      "caption": "Opened from the Admin Control Center menu. Review grid service controls and administrative options."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Stats",
+      "route": "/Other/stats.php",
+      "role": "admin",
+      "file": "menus/admin-stats.png",
+      "caption": "Opened from the Admin Control Center menu. View grid statistics."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "All Regions",
+      "route": "/Other/admin-all-regions.php",
+      "role": "admin",
+      "file": "menus/admin-all-regions.png",
+      "caption": "Opened from the Admin Control Center menu. Browse regions and open their related tools."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Region Manager",
+      "route": "/Other/admin-regions.php",
+      "role": "admin",
+      "file": "menus/admin-region-manager.png",
+      "caption": "Opened from the Admin Control Center menu. Browse regions and open their related tools."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Create Region",
+      "route": "/Other/admin-create-region.php",
+      "role": "admin",
+      "file": "menus/admin-create-region.png",
+      "caption": "Opened from the Admin Control Center menu. Review the region creation workspace."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Region Map Textures",
+      "route": "/Other/admin-region-map-textures.php",
+      "role": "admin",
+      "file": "menus/admin-region-map-textures.png",
+      "caption": "Opened from the Admin Control Center menu. Manage region map texture generation and related options."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Page Designer",
+      "route": "/Other/admin-page-designer.php",
+      "role": "admin",
+      "file": "menus/admin-page-designer.png",
+      "caption": "Opened from the Admin Control Center menu. Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Site & Page Design",
+      "route": "/Other/admin-site-design.php",
+      "role": "admin",
+      "file": "menus/admin-site-page-design.png",
+      "caption": "Opened from the Admin Control Center menu. Configure website branding and design settings."
+    },
+    {
+      "category": "Admin Control Center menu",
+      "title": "Help Tutorial Pictures",
+      "route": "/Other/admin-help-pictures.php",
+      "role": "admin",
+      "file": "menus/admin-help-tutorial-pictures.png",
+      "caption": "Opened from the Admin Control Center menu. Read help topics and related tutorials."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Account",
+      "route": "/Other/FreshUserDashboardExact/UserPages/account.php",
+      "role": "member",
+      "file": "menus/member-account.png",
+      "caption": "Opened from the User Dashboard menu. View account information and account-related actions."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Profile",
+      "route": "/Other/FreshUserDashboardExact/UserPages/profile.php",
+      "role": "member",
+      "file": "menus/member-profile.png",
+      "caption": "Opened from the User Dashboard menu. View or edit avatar profile information."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Regions",
+      "route": "/Other/FreshUserDashboardExact/UserPages/regions.php",
+      "role": "member",
+      "file": "menus/member-regions.png",
+      "caption": "Opened from the User Dashboard menu. Browse regions and open their related tools."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Inventory",
+      "route": "/Other/FreshUserDashboardExact/UserPages/inventory.php",
+      "role": "member",
+      "file": "menus/member-inventory.png",
+      "caption": "Opened from the User Dashboard menu. Review inventory and its available tools."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "IAR Backups",
+      "route": "/Other/FreshUserDashboardExact/UserPages/iar-backups.php",
+      "role": "member",
+      "file": "menus/member-iar-backups.png",
+      "caption": "Opened from the User Dashboard menu. Review inventory archive backups and available actions."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Offline Messages",
+      "route": "/Other/FreshUserDashboardExact/UserPages/offline-messages.php?v=20260918-emotes-filtered-v4",
+      "role": "member",
+      "file": "menus/member-offline-messages.png",
+      "caption": "Opened from the User Dashboard menu. View queued offline messages."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Map",
+      "route": "/Other/FreshUserDashboardExact/UserPages/map.php?ccfit=2&v=20260918-user-layers-v9c",
+      "role": "member",
+      "file": "menus/member-map.png",
+      "caption": "Opened from the User Dashboard menu. Explore the 2D map and destination regions."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "3D Map",
+      "route": "/Other/FreshUserDashboardExact/UserPages/map-3d.php?from=user&v=20260918-user-3d-v1",
+      "role": "member",
+      "file": "menus/member-3d-map.png",
+      "caption": "Opened from the User Dashboard menu. Explore the interactive 3D map. Native helper services supply destination data."
+    },
+    {
+      "category": "User Dashboard menu",
+      "title": "Help Centre",
+      "route": "/Other/FreshUserDashboardExact/UserPages/help-centre.php?v=20260918-user-help-v1",
+      "role": "member",
+      "file": "menus/member-help-centre.png",
+      "caption": "Opened from the User Dashboard menu. Read help topics and related tutorials."
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Login page",
+      "route": "/Other/login.php",
+      "role": "public",
+      "file": "details/login-page.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Public home page",
+      "route": "/Other/",
+      "role": "public",
+      "file": "details/public-home.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Health diagnostics",
+      "route": "/Other/health-diagnostics.php",
+      "role": "admin",
+      "file": "details/other-health-diagnostics-php.png",
+      "caption": "Open this website screen through its route or the corresponding page link. Some native tools depend on running destination services.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help tutorial pictures",
+      "route": "/Other/admin-help-pictures.php",
+      "role": "admin",
+      "file": "details/other-admin-help-pictures-php.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Region console",
+      "route": "/Other/admin-region-console.php?region=Demo%20Region",
+      "role": "admin",
+      "file": "details/other-admin-region-console-php-region-demo-20region.png",
+      "caption": "Open the console for a selected region.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Region edit",
+      "route": "/Other/admin-region-edit.php?region=Demo%20Region",
+      "role": "admin",
+      "file": "details/other-admin-region-edit-php-region-demo-20region.png",
+      "caption": "Review the selected region configuration fields.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Region log",
+      "route": "/Other/admin-region-log.php?region=Demo%20Region",
+      "role": "admin",
+      "file": "details/other-admin-region-log-php-region-demo-20region.png",
+      "caption": "Read the selected region log.",
+      "status": 200
+    },
+    {
+      "category": "Compatibility and service diagnostics",
+      "title": "Region map",
+      "route": "/Other/admin-region-map.php?region=Demo%20Region",
+      "role": "admin",
+      "file": "details/other-admin-region-map-php-region-demo-20region.png",
+      "caption": "The actual request returned HTTP 404 in the demo. See coverage notes; this is not a successful working-page screenshot.",
+      "status": 404
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Region statistics",
+      "route": "/Other/admin-region-statistics.php?region=Demo%20Region",
+      "role": "admin",
+      "file": "details/other-admin-region-statistics-php-region-demo-20region.png",
+      "caption": "Inspect statistics for a selected region.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Admin Accounts Clean — Admin demo",
+      "route": "/Other/admin-accounts-clean.php?id=e9bfa624-534f-d9e8-168d-35231b62ff6c",
+      "role": "admin",
+      "file": "details/admin-accounts-clean-admin.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Admin Accounts Clean — Disabled demo",
+      "route": "/Other/admin-accounts-clean.php?id=f0c8d4dd-b92a-bb9e-fdc4-45d128c9b9c7",
+      "role": "admin",
+      "file": "details/admin-accounts-clean-disabled.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Admin Accounts Clean — Member demo",
+      "route": "/Other/admin-accounts-clean.php?id=e0179ba5-25eb-ddd0-6086-606002dd6928",
+      "role": "admin",
+      "file": "details/admin-accounts-clean-member.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Admin Accounts — Admin demo",
+      "route": "/Other/admin-accounts.php?id=e9bfa624-534f-d9e8-168d-35231b62ff6c",
+      "role": "admin",
+      "file": "details/admin-accounts-admin.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Admin Accounts — Disabled demo",
+      "route": "/Other/admin-accounts.php?id=f0c8d4dd-b92a-bb9e-fdc4-45d128c9b9c7",
+      "role": "admin",
+      "file": "details/admin-accounts-disabled.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Admin Accounts — Member demo",
+      "route": "/Other/admin-accounts.php?id=e0179ba5-25eb-ddd0-6086-606002dd6928",
+      "role": "admin",
+      "file": "details/admin-accounts-member.png",
+      "caption": "Find and manage grid accounts.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "BACK TO GROUP MANAGER",
+      "route": "/Other/admin-group-manage-clean.php?id=",
+      "role": "admin",
+      "file": "details/other-admin-group-manage-clean-php-id-.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "BACK TO MANAGE GROUPS",
+      "route": "/Other/admin-groups-clean.php?id=",
+      "role": "admin",
+      "file": "details/other-admin-groups-clean-php-id-.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "BACK TO GROUP",
+      "route": "/Other/admin-groups.php?id=",
+      "role": "admin",
+      "file": "details/other-admin-groups-php-id-.png",
+      "caption": "Browse or manage groups and membership.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Firestorm Grid",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=firestorm-grid",
+      "role": "admin",
+      "file": "details/help-topic-firestorm-grid.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Login",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=login",
+      "role": "admin",
+      "file": "details/help-topic-login.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Teleport",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=teleport",
+      "role": "admin",
+      "file": "details/help-topic-teleport.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Edit Account",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=edit-account",
+      "role": "admin",
+      "file": "details/help-topic-edit-account.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — My Profile",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=my-profile",
+      "role": "admin",
+      "file": "details/help-topic-my-profile.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Inventory Browser",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=inventory-browser",
+      "role": "admin",
+      "file": "details/help-topic-inventory-browser.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Clean Inventory",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=clean-inventory",
+      "role": "admin",
+      "file": "details/help-topic-clean-inventory.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Safety Iar",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=safety-iar",
+      "role": "admin",
+      "file": "details/help-topic-safety-iar.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Iar Backups",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=iar-backups",
+      "role": "admin",
+      "file": "details/help-topic-iar-backups.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Selected pages and help topics",
+      "title": "Help topic — Grid Map",
+      "route": "/Other/panel-help-centre.php?from=admin&topic=grid-map",
+      "role": "admin",
+      "file": "details/help-topic-grid-map.png",
+      "caption": "Read help topics and related tutorials.",
+      "status": 200
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Visual canvas",
+      "file": "builder/builder-canvas.png",
+      "role": "admin",
+      "caption": "Add and select content in the webpage preview."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Add",
+      "file": "builder/builder-panel-add.png",
+      "role": "admin",
+      "caption": "The ＋\nAdd workspace of the Page Designer."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Layers",
+      "file": "builder/builder-panel-layers.png",
+      "role": "admin",
+      "caption": "The ▱\nLayers workspace of the Page Designer."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Pages",
+      "file": "builder/builder-panel-pages.png",
+      "role": "admin",
+      "caption": "The ▤\nPages workspace of the Page Designer."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Reusable sections",
+      "file": "builder/builder-sections.png",
+      "role": "admin",
+      "caption": "Save and insert reusable editable sections."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Image library",
+      "file": "builder/builder-images.png",
+      "role": "admin",
+      "caption": "Manage reusable images independently of individual pages."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Global Site Styles",
+      "file": "builder/builder-site-styles.png",
+      "role": "admin",
+      "caption": "Configure shared typography, colours and spacing."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Header & footer",
+      "file": "builder/builder-site-header-footer.png",
+      "role": "admin",
+      "caption": "Configure the shared header & footer settings."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Navigation",
+      "file": "builder/builder-site-navigation.png",
+      "role": "admin",
+      "caption": "Configure the shared navigation settings."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Navigation builder",
+      "file": "builder/builder-navigation.png",
+      "role": "admin",
+      "caption": "Link menu items to custom pages, grid pages, URLs or anchors."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Form submissions",
+      "file": "builder/builder-forms-inbox.png",
+      "role": "admin",
+      "caption": "Read submissions and manage inbox messages. Demo inbox only."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Site tools",
+      "file": "builder/builder-site-tools.png",
+      "role": "admin",
+      "caption": "Search/replace and scan page links and assets."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Built-in tutorials",
+      "file": "builder/builder-tutorials.png",
+      "role": "admin",
+      "caption": "Follow lessons on a practice draft."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Revision history",
+      "file": "builder/builder-history.png",
+      "role": "admin",
+      "caption": "Preview saved versions and restore one as a draft."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Import and export",
+      "file": "builder/builder-import-export.png",
+      "role": "admin",
+      "caption": "Transfer a saved page package."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Page templates",
+      "file": "builder/builder-templates.png",
+      "role": "admin",
+      "caption": "Choose a layout or your saved template."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Element Layout",
+      "file": "builder/builder-element-layout.png",
+      "role": "admin",
+      "caption": "Edit layout properties of the selected element."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Publish checker",
+      "file": "builder/builder-publish-check.png",
+      "role": "admin",
+      "caption": "Review broken images, links, anchors and missing image descriptions."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Page settings and SEO",
+      "file": "builder/builder-page-settings.png",
+      "role": "admin",
+      "caption": "Set title, slug, access, menu placement and page SEO."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Page theme",
+      "file": "builder/builder-page-theme.png",
+      "role": "admin",
+      "caption": "Set page colours, typography, width and local defaults."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Autosave recovery",
+      "file": "builder/builder-recovery.png",
+      "role": "admin",
+      "caption": "Inspect and recover browser-local unsaved snapshots."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Saved templates",
+      "file": "builder/builder-saved-templates.png",
+      "role": "admin",
+      "caption": "Insert a reusable saved page template."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Save a page template",
+      "file": "builder/builder-save-template.png",
+      "role": "admin",
+      "caption": "Give the reusable page template a name."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Free website templates and ZIP import",
+      "file": "builder/builder-template-import.png",
+      "role": "admin",
+      "caption": "Choose a supported template ZIP, review its HTML and import as editable content."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Page management",
+      "file": "builder/builder-page-management.png",
+      "role": "admin",
+      "caption": "Open, create and delete saved pages through the Pages workspace."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Element Content",
+      "file": "builder/builder-element-content.png",
+      "role": "admin",
+      "caption": "Edit content properties of the selected element."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Element Style",
+      "file": "builder/builder-element-style.png",
+      "role": "admin",
+      "caption": "Edit style properties of the selected element."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Desktop preview",
+      "file": "builder/builder-device-desktop.png",
+      "role": "admin",
+      "caption": "Preview the selected device breakpoint."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Tablet preview",
+      "file": "builder/builder-device-tablet.png",
+      "role": "admin",
+      "caption": "Preview the selected device breakpoint."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Phone preview",
+      "file": "builder/builder-device-phone.png",
+      "role": "admin",
+      "caption": "Preview the selected device breakpoint."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Form content and handling",
+      "file": "builder/builder-form-editor.png",
+      "role": "admin",
+      "caption": "Configure title, submission handling, fields and validation."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Form field editor",
+      "file": "builder/builder-form-field.png",
+      "role": "admin",
+      "caption": "Edit the type, label, required state, help and validation of one field."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Motion and hover effects",
+      "file": "builder/builder-animations.png",
+      "role": "admin",
+      "caption": "Configure element motion/hover effects and mobile animation behavior."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Device visibility and layout",
+      "file": "builder/builder-visibility.png",
+      "role": "admin",
+      "caption": "Set spacing, alignment and visibility at the selected device."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Multi-select and clipboard",
+      "file": "builder/builder-multi-select.png",
+      "role": "admin",
+      "caption": "Select several elements to copy, paste, move or lock them."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Page SEO and page interactions",
+      "file": "builder/builder-seo.png",
+      "role": "admin",
+      "caption": "Set metadata, indexing, accessible motion and page-level behavior."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Search and replace preview",
+      "file": "builder/builder-replace-preview.png",
+      "role": "admin",
+      "caption": "Review matches before saving replacement drafts; published pages remain unchanged."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Saved-page link scan results",
+      "file": "builder/builder-link-scan-results.png",
+      "role": "admin",
+      "caption": "Inspect findings across saved drafts or published pages. External websites are not fetched."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Save a reusable section",
+      "file": "builder/builder-save-section.png",
+      "role": "admin",
+      "caption": "Name a selected element for the independent reusable library."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Library image upload",
+      "file": "builder/builder-image-upload.png",
+      "role": "admin",
+      "caption": "Choose a local supported image; the library copy is independent of individual pages."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Revision preview",
+      "file": "builder/builder-history-preview.png",
+      "role": "admin",
+      "caption": "Inspect a previous saved revision before restoring it as a private draft."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Page preview",
+      "file": "builder/builder-page-preview.png",
+      "role": "admin",
+      "caption": "Inspect the page without editing overlays."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Template conversion preview",
+      "file": "builder/builder-template-conversion-preview.png",
+      "role": "admin",
+      "caption": "Review native editable output, conversion warnings and the bundled template licence. Synthetic demonstration ZIP."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Imported template draft",
+      "file": "builder/builder-template-imported.png",
+      "role": "admin",
+      "caption": "The imported HTML becomes a new private draft; original pages remain in place."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Convert an existing page",
+      "file": "builder/builder-legacy-conversion.png",
+      "role": "admin",
+      "caption": "Existing pages are preserved until explicit conversion is selected."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Converted individual elements",
+      "file": "builder/builder-legacy-converted.png",
+      "role": "admin",
+      "caption": "The converted page has individually editable nested native elements. Save and publish separately."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Form message detail",
+      "file": "builder/builder-demo-submission.png",
+      "role": "admin",
+      "caption": "A synthetic demonstration message shows the normal private inbox controls."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Tabs editor",
+      "file": "builder/builder-tabs.png",
+      "role": "admin",
+      "caption": "Build and select individually editable content panels."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Accordion editor",
+      "file": "builder/builder-accordion.png",
+      "role": "admin",
+      "caption": "Configure expandable native panels."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Locked element",
+      "file": "builder/builder-locked-element.png",
+      "role": "admin",
+      "caption": "Unlock protected content before editing or moving it."
+    },
+    {
+      "category": "DreamGrid settings",
+      "title": "DreamGrid settings menu",
+      "file": "settings/dreamgrid-settings-menu.png",
+      "caption": "Find the native Apache Webserver, Hypergrid DNS Name and Web Control Panel settings."
+    },
+    {
+      "category": "DreamGrid settings",
+      "title": "Apache settings — DIVA OFF, OTHER enabled, Folder Other",
+      "file": "settings/dreamgrid-apache-other.png",
+      "caption": "Required selection. Enable Apache; read the destination web port. Port 80/PHP 8 are example selections."
+    },
+    {
+      "category": "DreamGrid settings",
+      "title": "Hypergrid DNS Name",
+      "file": "settings/dreamgrid-dns-name-redacted.png",
+      "caption": "Example from the AUSTRALIA grid. Public hostname location; Dynamic DNS password covered. This documentation copy was redacted and rescaled."
+    },
+    {
+      "category": "DreamGrid settings",
+      "title": "Web Control Panel — Splash Screen URL",
+      "file": "settings/dreamgrid-web-panel-url-redacted.png",
+      "caption": "Example from the AUSTRALIA grid. The viewer splash page URL is visible; personal/credential fields are covered. This documentation copy was redacted and rescaled."
+    },
+    {
+      "category": "Installation",
+      "title": "Browser address bar and live public site",
+      "file": "installation/australia-example-browser-url.png",
+      "caption": "Example from the AUSTRALIA grid: http://australia.outworldz.net/Other/. Installing the website does not open it automatically. Use your own grid URL."
+    },
+    {
+      "category": "Installation",
+      "title": "Successful installer result",
+      "file": "installation/installer-success.png",
+      "caption": "Actual isolated installer result rendered for documentation with paths replaced. Installed hashes were verified; no services were started."
+    },
+    {
+      "category": "DreamGrid settings",
+      "title": "DreamGrid running and Apache status",
+      "file": "settings/dreamgrid-running-redacted.png",
+      "caption": "Example from the AUSTRALIA grid. Green checks show MySQL, Robust and Apache running. The Stop button means the grid is already running. Runtime log is covered in this redacted/rescaled documentation copy."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Release overview — visual builder",
+      "file": "visual-builder.png",
+      "caption": "Original release overview captured with synthetic Demo Grid content; retained separately from the detailed tool screens."
+    },
+    {
+      "category": "Page Designer tools",
+      "title": "Release overview — built-in tutorials",
+      "file": "built-in-tutorials.png",
+      "caption": "Original release tutorial overview with synthetic content; retained separately from the detailed Help capture."
+    }
+  ]
+}
