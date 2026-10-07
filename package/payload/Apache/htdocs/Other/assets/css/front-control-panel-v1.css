@@ -1,0 +1,1261 @@
+/*
+================================================================
+ FRONT CONTROL PANEL V1
+
+ Rebuilt to follow the supplied OpenSimulator control-panel
+ reference.
+
+ NO SITE BACKGROUND RULES EXIST IN THIS FILE.
+================================================================
+*/
+
+
+:root{
+
+    --cp-black:
+        #080908;
+
+    --cp-card:
+        #0b0c0a;
+
+    --cp-input:
+        #050605;
+
+    --cp-metal-top:
+        #4a493f;
+
+    --cp-metal-mid:
+        #2e2e28;
+
+    --cp-metal-low:
+        #171814;
+
+    --cp-gold:
+        #987020;
+
+    --cp-gold-hi:
+        #d5a43b;
+
+    --cp-gold-text:
+        #f2cc68;
+
+    --cp-text:
+        #ddd5c2;
+
+    --cp-muted:
+        #948b78;
+}
+
+
+
+/* =============================================================
+   STATS GRID
+   ============================================================= */
+
+#grid-stats-cards.cp-stats{
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    margin:
+        7px 0 0 0 !important;
+
+    padding:
+        0 !important;
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr)) !important;
+
+    grid-template-rows:
+        repeat(2,64px) !important;
+
+    grid-auto-flow:
+        row !important;
+
+    gap:
+        7px !important;
+
+    background:
+        none !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+
+    opacity:
+        1 !important;
+}
+
+
+
+/* =============================================================
+   SOLID STAT CARD
+   ============================================================= */
+
+#grid-stats-cards
+.cp-stat-card{
+
+    position:
+        relative !important;
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    height:
+        64px !important;
+
+    min-height:
+        64px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        9px 8px 6px 9px !important;
+
+    overflow:
+        hidden !important;
+
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        30px minmax(0,1fr) !important;
+
+    grid-template-rows:
+        auto !important;
+
+    align-items:
+        center !important;
+
+    column-gap:
+        8px !important;
+
+
+    background:
+        #0b0c0a !important;
+
+    background-color:
+        #0b0c0a !important;
+
+    background-image:
+        none !important;
+
+
+    opacity:
+        1 !important;
+
+    backdrop-filter:
+        none !important;
+
+    -webkit-backdrop-filter:
+        none !important;
+
+
+    border:
+        1px solid
+        #987020 !important;
+
+    border-radius:
+        5px !important;
+
+
+    box-shadow:
+        inset 0 0 0 1px #201d13,
+        inset 0 1px 0 #2c2a22,
+        0 2px 3px #000 !important;
+}
+
+
+
+/* METALLIC TOP DETAIL */
+
+#grid-stats-cards
+.cp-stat-card:before{
+
+    content:
+        "" !important;
+
+    position:
+        absolute !important;
+
+    left:
+        4px !important;
+
+    right:
+        4px !important;
+
+    top:
+        4px !important;
+
+    height:
+        5px !important;
+
+    border-radius:
+        3px 3px 1px 1px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #555248 0%,
+            #37362f 45%,
+            #24251f 100%
+        ) !important;
+
+    border:
+        0 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+
+/* =============================================================
+   STAT ICON
+
+   NO BOX
+   NO TILE
+   NO BORDER
+   NO ICON HOLDER
+   ============================================================= */
+
+#grid-stats-cards
+.cp-stat-icon{
+
+    display:
+        block !important;
+
+    width:
+        27px !important;
+
+    height:
+        27px !important;
+
+    min-width:
+        27px !important;
+
+    min-height:
+        27px !important;
+
+    max-width:
+        27px !important;
+
+    max-height:
+        27px !important;
+
+    margin:
+        4px 0 0 0 !important;
+
+    padding:
+        0 !important;
+
+    object-fit:
+        contain !important;
+
+
+    background:
+        transparent !important;
+
+    background-image:
+        none !important;
+
+    border:
+        0 !important;
+
+    outline:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+
+/* =============================================================
+   STAT TEXT
+   ============================================================= */
+
+.cp-stat-copy{
+
+    box-sizing:
+        border-box !important;
+
+    min-width:
+        0 !important;
+
+    margin:
+        5px 0 0 0 !important;
+
+    padding:
+        0 !important;
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        1fr !important;
+
+    align-content:
+        center !important;
+
+    row-gap:
+        0 !important;
+
+    background:
+        none !important;
+}
+
+
+.cp-stat-label{
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    color:
+        #c2b590 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        10px !important;
+
+    font-weight:
+        600 !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+.cp-stat-value{
+
+    margin:
+        1px 0 0 0 !important;
+
+    padding:
+        0 !important;
+
+    color:
+        #f2cc68 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        17px !important;
+
+    line-height:
+        17px !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+.cp-stat-sub{
+
+    margin:
+        1px 0 0 0 !important;
+
+    padding:
+        0 !important;
+
+    color:
+        #8e8674 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        8px !important;
+
+    line-height:
+        9px !important;
+}
+
+
+
+/* =============================================================
+   MAIN MENU BUTTONS
+   ============================================================= */
+
+.australia-public-button.cp-menu-button{
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    height:
+        36px !important;
+
+    min-height:
+        36px !important;
+
+    max-height:
+        36px !important;
+
+    margin:
+        0 0 6px 0 !important;
+
+    padding:
+        0 8px !important;
+
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        23px 1fr 23px !important;
+
+    align-items:
+        center !important;
+
+    column-gap:
+        5px !important;
+
+
+    background:
+        #141510 !important;
+
+    background-color:
+        #141510 !important;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            #302f29 0%,
+            #22231e 15%,
+            #141510 100%
+        ) !important;
+
+
+    opacity:
+        1 !important;
+
+
+    border:
+        1px solid #5b5039 !important;
+
+    border-left:
+        2px solid #987020 !important;
+
+    border-radius:
+        5px !important;
+
+
+    box-shadow:
+        inset 0 1px 0 #46443b,
+        0 1px 2px #000 !important;
+
+
+    color:
+        #dfd8c8 !important;
+
+    text-decoration:
+        none !important;
+
+    transform:
+        none !important;
+}
+
+
+.cp-menu-icon{
+
+    grid-column:
+        1 !important;
+
+    display:
+        block !important;
+
+    width:
+        22px !important;
+
+    height:
+        22px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    object-fit:
+        contain !important;
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+.cp-menu-text{
+
+    grid-column:
+        2 !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    height:
+        34px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+
+    color:
+        #e2dbcb !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1 !important;
+
+    font-weight:
+        600 !important;
+
+    text-align:
+        center !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+
+/* =============================================================
+   MEMBER LOGIN OUTER CARD
+
+   FULLY SOLID.
+   ============================================================= */
+
+.australia-login-card.cp-login{
+
+    position:
+        relative !important;
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    margin:
+        7px 0 0 0 !important;
+
+    padding:
+        6px !important;
+
+
+    background:
+        #0b0c0a !important;
+
+    background-color:
+        #0b0c0a !important;
+
+    background-image:
+        none !important;
+
+
+    opacity:
+        1 !important;
+
+    backdrop-filter:
+        none !important;
+
+    -webkit-backdrop-filter:
+        none !important;
+
+
+    border:
+        1px solid #987020 !important;
+
+    border-radius:
+        5px !important;
+
+
+    box-shadow:
+        inset 0 0 0 1px #211e13,
+        inset 0 1px 0 #2d2a22,
+        0 2px 4px #000 !important;
+}
+
+
+.australia-login-card.cp-login:before{
+
+    display:
+        none !important;
+}
+
+
+.australia-login-card.cp-login:after{
+
+    content:
+        "" !important;
+
+    position:
+        absolute !important;
+
+    inset:
+        3px !important;
+
+    pointer-events:
+        none !important;
+
+    border:
+        1px solid #31260f !important;
+
+    border-radius:
+        3px !important;
+
+    background:
+        transparent !important;
+}
+
+
+
+/* =============================================================
+   LOGIN METAL HEADER
+   ============================================================= */
+
+.cp-login-title{
+
+    position:
+        relative !important;
+
+    z-index:
+        2 !important;
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    height:
+        31px !important;
+
+    margin:
+        0 0 6px 0 !important;
+
+    padding:
+        0 10px !important;
+
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #4d4b41 0%,
+            #3a3931 12%,
+            #25251f 17%,
+            #161713 100%
+        ) !important;
+
+
+    border:
+        1px solid #946b1a !important;
+
+    border-radius:
+        4px !important;
+
+
+    box-shadow:
+        inset 0 1px 0 #686459,
+        0 1px 2px #000 !important;
+
+
+    color:
+        #f0cc6a !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1 !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+
+/* =============================================================
+   LOGIN BODY
+   ============================================================= */
+
+.cp-login-body{
+
+    position:
+        relative !important;
+
+    z-index:
+        2 !important;
+
+    box-sizing:
+        border-box !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 4px 3px 4px !important;
+
+
+    background:
+        #0b0c0a !important;
+
+    background-color:
+        #0b0c0a !important;
+
+    opacity:
+        1 !important;
+}
+
+
+.cp-login-form,
+.cp-secondary-form{
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    background:
+        #0b0c0a !important;
+
+    background-color:
+        #0b0c0a !important;
+
+    border:
+        0 !important;
+
+    opacity:
+        1 !important;
+}
+
+
+
+/* =============================================================
+   LOGIN LABEL
+   ============================================================= */
+
+.cp-field-label{
+
+    display:
+        block !important;
+
+    margin:
+        4px 0 2px 0 !important;
+
+    padding:
+        0 !important;
+
+
+    color:
+        #beb18e !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        10px !important;
+
+    font-weight:
+        500 !important;
+}
+
+
+
+/* =============================================================
+   LOGIN INPUTS
+   ============================================================= */
+
+.cp-login-input{
+
+    box-sizing:
+        border-box !important;
+
+    display:
+        block !important;
+
+    width:
+        100% !important;
+
+    height:
+        28px !important;
+
+    min-height:
+        28px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        4px 8px !important;
+
+
+    background:
+        #050605 !important;
+
+    background-color:
+        #050605 !important;
+
+    background-image:
+        none !important;
+
+
+    opacity:
+        1 !important;
+
+
+    border:
+        1px solid #5d4b1b !important;
+
+    border-radius:
+        4px !important;
+
+
+    box-shadow:
+        inset 0 2px 3px #000 !important;
+
+
+    color:
+        #e8e1d0 !important;
+
+    outline:
+        0 !important;
+
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        18px !important;
+}
+
+
+.cp-login-input:focus{
+
+    border-color:
+        #ad8024 !important;
+
+    box-shadow:
+        inset 0 2px 3px #000,
+        0 0 0 1px #46340f !important;
+}
+
+
+
+/* =============================================================
+   REMEMBER
+   ============================================================= */
+
+.cp-remember{
+
+    box-sizing:
+        border-box !important;
+
+    height:
+        18px !important;
+
+    margin:
+        4px 0 2px 0 !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    gap:
+        5px !important;
+
+
+    color:
+        #938a77 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+.cp-remember input{
+
+    width:
+        13px !important;
+
+    height:
+        13px !important;
+
+    margin:
+        0 !important;
+
+    accent-color:
+        #9b701c;
+}
+
+
+
+/* =============================================================
+   ALL THREE LOGIN BUTTONS
+
+   IDENTICAL SIZE AND ALIGNMENT
+   ============================================================= */
+
+.cp-login-button{
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    height:
+        30px !important;
+
+    min-height:
+        30px !important;
+
+    max-height:
+        30px !important;
+
+    margin:
+        4px 0 0 0 !important;
+
+    padding:
+        0 6px !important;
+
+
+    display:
+        grid !important;
+
+    grid-template-columns:
+        21px 1fr 21px !important;
+
+    align-items:
+        center !important;
+
+    column-gap:
+        4px !important;
+
+
+    border-radius:
+        4px !important;
+
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1 !important;
+
+    font-weight:
+        600 !important;
+
+    text-align:
+        center !important;
+
+    transform:
+        none !important;
+}
+
+
+
+/* PRIMARY LOGIN BUTTON */
+
+.cp-login-primary{
+
+    background:
+        linear-gradient(
+            180deg,
+            #946b22 0%,
+            #724d0b 47%,
+            #342202 100%
+        ) !important;
+
+
+    border:
+        1px solid #a87a21 !important;
+
+
+    box-shadow:
+        inset 0 1px 0 #c69b49,
+        0 1px 2px #000 !important;
+
+
+    color:
+        #eee5d3 !important;
+}
+
+
+
+/* FORGOT + TERMS BUTTONS */
+
+.cp-login-secondary{
+
+    background:
+        linear-gradient(
+            180deg,
+            #36352f 0%,
+            #24251f 17%,
+            #151612 100%
+        ) !important;
+
+
+    border:
+        1px solid #5d513b !important;
+
+
+    box-shadow:
+        inset 0 1px 0 #4b4940,
+        0 1px 2px #000 !important;
+
+
+    color:
+        #ddd6c6 !important;
+}
+
+
+
+/* BUTTON ICON */
+
+.cp-login-button-icon{
+
+    grid-column:
+        1 !important;
+
+    display:
+        block !important;
+
+    width:
+        19px !important;
+
+    height:
+        19px !important;
+
+    min-width:
+        19px !important;
+
+    min-height:
+        19px !important;
+
+    max-width:
+        19px !important;
+
+    max-height:
+        19px !important;
+
+    margin:
+        0 auto !important;
+
+    padding:
+        0 !important;
+
+    object-fit:
+        contain !important;
+
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+
+/* BUTTON TEXT */
+
+.cp-login-button-text{
+
+    grid-column:
+        2 !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    height:
+        28px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    color:
+        inherit !important;
+
+    font:
+        inherit !important;
+
+    line-height:
+        1 !important;
+
+    text-align:
+        center !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+
+/* =============================================================
+   HOVERS
+   ============================================================= */
+
+.cp-login-button:hover,
+.cp-menu-button:hover{
+
+    filter:
+        brightness(1.07) !important;
+
+    transform:
+        none !important;
+}
+
+
+
+/* =============================================================
+   ABSOLUTELY NO CARD TRANSPARENCY
+   ============================================================= */
+
+.cp-stat-card,
+.cp-login,
+.cp-login-body,
+.cp-login-form,
+.cp-secondary-form{
+
+    opacity:
+        1 !important;
+
+    mix-blend-mode:
+        normal !important;
+
+    backdrop-filter:
+        none !important;
+
+    -webkit-backdrop-filter:
+        none !important;
+}
+
+
+
+/*
+================================================================
+ THERE ARE INTENTIONALLY NO RULES FOR:
+
+ html
+ body background
+ Site-background
+ Frontpage-background
+ page artwork
+ footer artwork
+================================================================
+*/

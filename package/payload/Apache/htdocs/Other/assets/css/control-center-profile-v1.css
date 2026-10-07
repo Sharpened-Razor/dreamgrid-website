@@ -1,0 +1,1417 @@
+/*
+ * ============================================================
+ * CONTROL CENTER PROFILE V4
+ * FIRESTORM-INSPIRED / CONTROL CENTER THEME
+ * ============================================================
+ */
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+    margin:0;
+    min-height:100%;
+}
+
+
+body{
+    background:transparent;
+    color:#d8dcd6;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/*
+ * ============================================================
+ * TABS
+ * ============================================================
+ */
+
+.pv4-tabs{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    padding:5px;
+
+    margin-bottom:12px;
+
+    background:#090c09;
+
+    border:1px solid #57471f;
+
+    border-radius:6px;
+}
+
+
+.pv4-tab{
+
+    position:relative;
+
+    min-width:105px;
+
+    height:37px;
+
+    padding:0 16px;
+
+    cursor:pointer;
+
+    color:#d5d7d1;
+
+    background:
+        linear-gradient(
+            180deg,
+            #292a25 0%,
+            #111310 46%,
+            #0d0f0d 100%
+        );
+
+    border:1px solid #484a44;
+
+    border-radius:4px;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.25px;
+}
+
+
+.pv4-tab:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:3px;
+    right:3px;
+    top:1px;
+
+    height:2px;
+
+    background:#666860;
+
+    opacity:.34;
+}
+
+
+.pv4-tab:hover{
+
+    border-color:#9d7628;
+}
+
+
+.pv4-tab.active{
+
+    color:#efc65b;
+
+    border-color:#a17b2c;
+
+    background:
+        linear-gradient(
+            180deg,
+            #433519,
+            #231b0f 48%,
+            #12120d
+        );
+}
+
+
+/*
+ * ============================================================
+ * PANELS
+ * ============================================================
+ */
+
+.pv4-panel{
+
+    display:none;
+}
+
+
+.pv4-panel.active{
+
+    display:block;
+}
+
+
+/*
+ * ============================================================
+ * CARD SYSTEM
+ * ============================================================
+ */
+
+.pv4-left-card,
+.pv4-card,
+.pv4-list-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121510 0%,
+            #080b09 100%
+        );
+
+    border:
+        1px solid #625021;
+
+    border-radius:6px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(112,112,103,.23),
+        0 3px 8px rgba(0,0,0,.50);
+}
+
+
+.pv4-left-card:before,
+.pv4-card:before,
+.pv4-list-card:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:0;
+
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6a6c64,
+            #2c2e29 45%,
+            #151713
+        );
+
+    opacity:.40;
+}
+
+
+.pv4-card{
+
+    min-width:0;
+
+    padding:15px;
+}
+
+
+.pv4-large-card{
+
+    min-height:420px;
+}
+
+
+.pv4-card-head{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:20px;
+}
+
+
+.pv4-kicker{
+
+    margin-bottom:4px;
+
+    color:#aa8331;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+}
+
+
+.pv4-card h2{
+
+    margin:0 0 11px;
+
+    color:#dbb652;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+
+.pv4-count{
+
+    color:#cca344;
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+
+/*
+ * ============================================================
+ * MAIN PROFILE LAYOUT
+ * ============================================================
+ */
+
+.pv4-profile-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        270px
+        minmax(0,1fr);
+
+    gap:12px;
+
+    align-items:start;
+}
+
+
+.pv4-main-column{
+
+    min-width:0;
+}
+
+
+.pv4-left-card{
+
+    padding:14px;
+}
+
+
+.pv4-profile-picture{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    overflow:hidden;
+
+    background:#030605;
+
+    border:1px solid #4c4633;
+
+    border-radius:5px;
+}
+
+
+.pv4-profile-picture img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.pv4-no-picture{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    height:100%;
+
+    color:#98752b;
+}
+
+
+.pv4-placeholder-icon{
+
+    width:62px;
+
+    height:62px;
+
+    opacity:.65;
+}
+
+
+.pv4-name{
+
+    margin-top:12px;
+
+    color:#f2eee5;
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+
+.pv4-subtitle{
+
+    margin-top:4px;
+
+    color:#b58a34;
+
+    font-size:8px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+}
+
+
+.pv4-line{
+
+    height:1px;
+
+    margin:13px 0;
+
+    background:#34362f;
+}
+
+
+.pv4-info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    padding:5px 0;
+
+    font-size:8px;
+}
+
+
+.pv4-info-row span{
+
+    flex:0 0 auto;
+
+    color:#8d918a;
+
+    font-weight:700;
+}
+
+
+.pv4-info-row strong{
+
+    min-width:0;
+
+    color:#d1ab4a;
+
+    text-align:right;
+
+    overflow-wrap:anywhere;
+}
+
+
+.pv4-small-value{
+
+    font-size:7px;
+}
+
+
+/*
+ * ============================================================
+ * FORMS
+ * ============================================================
+ */
+
+.pv4-card textarea,
+.pv4-card input[type="url"]{
+
+    display:block;
+
+    width:100%;
+
+    margin:0;
+
+    padding:10px 11px;
+
+    background:#050806;
+
+    color:#e6e8e3;
+
+    border:1px solid #464a43;
+
+    border-radius:4px;
+
+    outline:none;
+
+    box-shadow:
+        inset 0 2px 5px rgba(0,0,0,.55);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:10px;
+
+    line-height:1.5;
+}
+
+
+.pv4-card textarea{
+
+    resize:vertical;
+}
+
+
+.pv4-card input[type="url"]{
+
+    height:38px;
+}
+
+
+.pv4-card textarea:focus,
+.pv4-card input[type="url"]:focus{
+
+    border-color:#997328;
+}
+
+
+.pv4-about{
+
+    min-height:175px;
+}
+
+
+.pv4-short{
+
+    min-height:78px;
+}
+
+
+.pv4-medium{
+
+    min-height:125px;
+}
+
+
+.pv4-first-text{
+
+    min-height:330px;
+}
+
+
+.pv4-first-card{
+
+    height:100%;
+}
+
+
+.pv4-two{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:12px;
+
+    margin-top:12px;
+}
+
+
+.pv4-gap-top{
+
+    margin-top:12px;
+}
+
+
+/*
+ * ============================================================
+ * GROUPS
+ * ============================================================
+ */
+
+.pv4-groups{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(220px,1fr)
+        );
+
+    gap:8px;
+}
+
+
+.pv4-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-width:0;
+
+    padding:8px;
+
+    background:#080b08;
+
+    border:1px solid #32362f;
+
+    border-radius:4px;
+}
+
+
+.pv4-group-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex:0 0 42px;
+
+    width:42px;
+
+    height:42px;
+
+    overflow:hidden;
+
+    background:#040604;
+
+    border:1px solid #4f4326;
+
+    border-radius:4px;
+
+    color:#b28a35;
+
+    font-weight:700;
+}
+
+
+.pv4-group-logo img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.pv4-group strong{
+
+    display:block;
+
+    color:#d7d9d4;
+
+    font-size:9px;
+}
+
+
+.pv4-group span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#7b8079;
+
+    font-size:7px;
+}
+
+
+/*
+ * ============================================================
+ * OPTIONS
+ * ============================================================
+ */
+
+.pv4-options{
+
+    padding-top:10px;
+
+    padding-bottom:10px;
+}
+
+
+.pv4-option{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    min-height:50px;
+
+    padding:5px 2px;
+}
+
+
+.pv4-option + .pv4-option{
+
+    border-top:1px solid #2c2f29;
+}
+
+
+.pv4-option strong{
+
+    display:block;
+
+    color:#d2ad4b;
+
+    font-size:10px;
+}
+
+
+.pv4-option span{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:#737970;
+
+    font-size:8px;
+}
+
+
+.pv4-switch{
+
+    position:relative;
+
+    flex:0 0 auto;
+
+    width:42px;
+
+    height:21px;
+}
+
+
+.pv4-switch input{
+
+    position:absolute;
+
+    opacity:0;
+}
+
+
+.pv4-switch > span{
+
+    position:absolute;
+
+    inset:0;
+
+    margin:0;
+
+    cursor:pointer;
+
+    background:#171a16;
+
+    border:1px solid #4c4f47;
+
+    border-radius:20px;
+}
+
+
+.pv4-switch > span:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:2px;
+
+    top:2px;
+
+    width:15px;
+
+    height:15px;
+
+    background:#777a72;
+
+    border-radius:50%;
+
+    transition:.15s ease;
+}
+
+
+.pv4-switch input:checked + span{
+
+    background:#302715;
+
+    border-color:#9a752b;
+}
+
+
+.pv4-switch input:checked + span:before{
+
+    left:22px;
+
+    background:#d2aa48;
+}
+
+
+/*
+ * ============================================================
+ * SAVE BAR
+ * ============================================================
+ */
+
+.pv4-savebar,
+.pv4-notes-actions{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    min-height:61px;
+
+    margin-top:12px;
+
+    padding:11px 13px;
+
+    color:#767c74;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10130f,
+            #080a08
+        );
+
+    border:1px solid #514522;
+
+    border-radius:6px;
+
+    font-size:8px;
+}
+
+
+/*
+ * ============================================================
+ * PICKS / CLASSIFIEDS
+ * ============================================================
+ */
+
+.pv4-pick-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:12px;
+}
+
+
+.pv4-list-image{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16 / 8;
+
+    overflow:hidden;
+
+    background:#030605;
+
+    border-bottom:1px solid #4b4127;
+}
+
+
+.pv4-list-image img{
+
+    display:block;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+.pv4-image-empty{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    height:100%;
+
+    color:#737871;
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+
+.pv4-list-body{
+
+    padding:13px;
+}
+
+
+.pv4-list-heading{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+
+.pv4-list-card h3{
+
+    margin:0;
+
+    color:#deb653;
+
+    font-size:12px;
+}
+
+
+.pv4-list-card p{
+
+    min-height:38px;
+
+    margin:9px 0;
+
+    color:#aeb3ad;
+
+    font-size:9px;
+
+    line-height:1.45;
+}
+
+
+.pv4-live{
+
+    color:#69d979;
+
+    font-size:7px;
+
+    font-weight:700;
+}
+
+
+.pv4-off{
+
+    color:#ab6f65;
+
+    font-size:7px;
+
+    font-weight:700;
+}
+
+
+.pv4-meta{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:8px;
+
+    padding-top:9px;
+
+    border-top:1px solid #2e312b;
+}
+
+
+.pv4-meta-three{
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+}
+
+
+.pv4-meta span{
+
+    display:block;
+
+    margin-bottom:3px;
+
+    color:#99782f;
+
+    font-size:7px;
+
+    font-weight:700;
+}
+
+
+.pv4-meta strong{
+
+    display:block;
+
+    color:#b2b7b0;
+
+    font-size:8px;
+
+    overflow-wrap:anywhere;
+}
+
+
+/*
+ * ============================================================
+ * EMPTY / FEED
+ * ============================================================
+ */
+
+.pv4-empty{
+
+    padding:24px 15px;
+
+    text-align:center;
+
+    color:#737972;
+
+    background:#070a07;
+
+    border:1px solid #30342e;
+
+    border-radius:4px;
+
+    font-size:9px;
+}
+
+
+.pv4-feed-empty{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:320px;
+
+    text-align:center;
+}
+
+
+.pv4-feed-icon{
+
+    margin-bottom:12px;
+
+    color:#a98334;
+
+    font-size:32px;
+
+    opacity:.6;
+}
+
+
+.pv4-feed-empty strong{
+
+    color:#d4ae4b;
+
+    font-size:11px;
+}
+
+
+.pv4-feed-empty p{
+
+    max-width:470px;
+
+    margin:8px auto 0;
+
+    color:#7c817b;
+
+    font-size:9px;
+
+    line-height:1.55;
+}
+
+
+/*
+ * ============================================================
+ * FIRST LIFE PLACEHOLDER
+ * ============================================================
+ */
+
+.pv4-person-silhouette{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            #343833,
+            #111411 65%
+        );
+}
+
+
+.pv4-silhouette-head{
+
+    position:absolute;
+
+    left:50%;
+
+    top:17%;
+
+    width:29%;
+
+    aspect-ratio:1 / 1;
+
+    transform:translateX(-50%);
+
+    background:#0b0d0b;
+
+    border-radius:50%;
+}
+
+
+.pv4-silhouette-body{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8%;
+
+    width:72%;
+
+    height:59%;
+
+    transform:translateX(-50%);
+
+    background:#0b0d0b;
+
+    border-radius:50% 50% 12% 12%;
+}
+
+
+/*
+ * ============================================================
+ * NOTES
+ * ============================================================
+ */
+
+.pv4-notes-message{
+
+    margin-bottom:12px;
+
+    padding:10px 11px;
+
+    color:#898e87;
+
+    background:#080b08;
+
+    border:1px solid #30342e;
+
+    border-radius:4px;
+
+    font-size:8px;
+
+    line-height:1.5;
+}
+
+
+.pv4-notes{
+
+    display:block;
+
+    width:100%;
+
+    min-height:330px;
+
+    resize:vertical;
+
+    padding:12px;
+
+    color:#e6e8e3;
+
+    background:#050806;
+
+    border:1px solid #464a43;
+
+    border-radius:4px;
+
+    outline:none;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:10px;
+
+    line-height:1.5;
+}
+
+
+.pv4-notes:focus{
+
+    border-color:#997328;
+}
+
+
+/*
+ * ============================================================
+ * STATUS
+ * ============================================================
+ */
+
+.pv4-alert{
+
+    margin-bottom:12px;
+
+    padding:10px 13px;
+
+    border-radius:5px;
+
+    font-size:9px;
+
+    font-weight:600;
+}
+
+
+.pv4-alert.success{
+
+    color:#78d88a;
+
+    background:#09120b;
+
+    border:1px solid #315b37;
+}
+
+
+.pv4-alert.error{
+
+    color:#e08a80;
+
+    background:#170b0a;
+
+    border:1px solid #623029;
+}
+
+
+/*
+ * ============================================================
+ * RESPONSIVE
+ * ============================================================
+ */
+
+@media(max-width:950px){
+
+    .pv4-profile-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .pv4-pick-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:700px){
+
+    .pv4-two{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .pv4-meta-three{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .pv4-tab{
+
+        flex:1 1 calc(50% - 5px);
+    }
+
+
+    .pv4-savebar,
+    .pv4-notes-actions{
+
+        align-items:stretch;
+
+        flex-direction:column;
+    }
+}
+
+/* PROFILE SHARED GROUPS ICON */
+
+.pv4-group-system-icon,
+.pv-group-system-icon{
+    display:block;
+    width:24px;
+    height:24px;
+    margin:auto;
+    color:#d2aa48;
+}
+
+/* PROFILE GROUP ICON CLEANUP START */
+
+/*
+ * Remove the little box around Profile group icons.
+ */
+
+.pv-group-image,
+.pv4-group-logo{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    flex:0 0 46px !important;
+
+    width:46px !important;
+    height:46px !important;
+
+    padding:0 !important;
+
+    margin:0 !important;
+
+    background:transparent !important;
+
+    border:0 !important;
+
+    border-radius:0 !important;
+
+    box-shadow:none !important;
+
+    overflow:visible !important;
+}
+
+
+/*
+ * Shared Control Center groups icon.
+ */
+
+.pv-group-system-icon,
+.pv4-group-system-icon{
+
+    display:block !important;
+
+    width:31px !important;
+    height:31px !important;
+
+    margin:auto !important;
+
+    color:#d2aa48;
+
+    flex:0 0 auto;
+}
+
+
+/*
+ * If a real OpenSim group insignia exists,
+ * keep it centered without the surrounding box.
+ */
+
+.pv-group-image > img,
+.pv4-group-logo > img{
+
+    display:block !important;
+
+    width:34px !important;
+    height:34px !important;
+
+    margin:auto !important;
+
+    object-fit:contain !important;
+
+    border:0 !important;
+
+    border-radius:0 !important;
+
+    box-shadow:none !important;
+}
+
+
+/*
+ * Keep group row contents vertically centred.
+ */
+
+.pv-group,
+.pv4-group{
+
+    align-items:center !important;
+}
+
+/* PROFILE GROUP ICON CLEANUP END */

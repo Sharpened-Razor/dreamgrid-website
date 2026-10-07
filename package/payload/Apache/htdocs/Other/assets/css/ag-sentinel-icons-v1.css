@@ -1,0 +1,169 @@
+/* ============================================================
+   AUSTRALIA SENTINEL WEBSITE-WIDE PICTURE ICONS V1
+   Graphite / brushed silver / restrained gold PNG system.
+   ============================================================ */
+
+.ag-sentinel-icon{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    flex:0 0 auto !important;
+    padding:0 !important;
+    border:0 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    filter:none !important;
+    line-height:0 !important;
+    overflow:visible !important;
+}
+
+.ag-sentinel-icon::before,
+.ag-sentinel-icon::after{
+    content:none !important;
+    display:none !important;
+}
+
+.ag-sentinel-icon > img,
+img.ag-sentinel-direct-icon{
+    display:block !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+    object-position:center !important;
+    border:0 !important;
+    background:transparent !important;
+    box-shadow:none !important;
+    filter:none !important;
+    pointer-events:none !important;
+    user-select:none !important;
+}
+
+img.ag-sentinel-direct-icon{
+    width:30px !important;
+    height:30px !important;
+    min-width:0 !important;
+    flex:0 0 auto !important;
+    vertical-align:middle !important;
+}
+
+img.ag-sentinel-xs{
+    width:18px !important;
+    height:18px !important;
+}
+
+img.ag-sentinel-sm{
+    width:24px !important;
+    height:24px !important;
+}
+
+img.ag-sentinel-md{
+    width:30px !important;
+    height:30px !important;
+}
+
+img.ag-sentinel-lg{
+    width:40px !important;
+    height:40px !important;
+}
+
+img.ag-sentinel-xl{
+    width:50px !important;
+    height:50px !important;
+}
+
+/* Existing card/menu containers keep their layout, not their old artwork. */
+.card-icon > img.ag-sentinel-direct-icon,
+.control-hub-icon > img.ag-sentinel-direct-icon,
+.stat-icon > img.ag-sentinel-direct-icon{
+    margin:auto !important;
+}
+
+.hc-topic-icon > img.ag-sentinel-direct-icon,
+.ag-inv-symbol > img.ag-sentinel-direct-icon,
+.folder-icon > img.ag-sentinel-direct-icon{
+    margin:0 !important;
+}
+
+.bt-tool > img.ag-sentinel-direct-icon,
+.dg-map-tool > img.ag-sentinel-direct-icon,
+.gridmap-fullscreen-button > img.ag-sentinel-direct-icon{
+    margin-right:6px !important;
+}
+
+/* Central helper classes used by Region Manager controls. */
+.dg-icon.ag-sentinel-icon,
+.dg-control-icon.ag-sentinel-icon{
+    width:24px !important;
+    height:24px !important;
+}
+
+/* Dashboard/Admin Home picture icon sizing. */
+.card-icon.ag-sentinel-icon,
+.php-tool-icon.ag-sentinel-icon{
+    width:50px !important;
+    height:50px !important;
+    min-width:50px !important;
+}
+
+/* User Home compact menu icons. */
+.user-home-icon.ag-sentinel-icon,
+.menu-icon.ag-sentinel-icon{
+    width:28px !important;
+    height:28px !important;
+}
+/* AUSTRALIA SENTINEL GLOBAL SIZE FIX V1
+   Every centrally-rendered Sentinel icon gets a safe default
+   footprint. More-specific card/tool rules below may override it.
+*/
+.ag-sentinel-icon{
+    width:30px !important;
+    min-width:30px !important;
+    height:30px !important;
+    flex:0 0 30px !important;
+}
+
+.ag-sentinel-icon > img{
+    width:100% !important;
+    height:100% !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    object-fit:contain !important;
+}
+
+/* Admin right-side navigation */
+.australia-admin-menu-icon.ag-sentinel-icon{
+    width:30px !important;
+    min-width:30px !important;
+    height:30px !important;
+    flex:0 0 30px !important;
+}
+
+/* Keep card artwork at the intended larger size */
+.card-icon.ag-sentinel-icon,
+.php-tool-icon.ag-sentinel-icon{
+    width:50px !important;
+    min-width:50px !important;
+    height:50px !important;
+    flex:0 0 50px !important;
+}
+
+/* Region Manager toolbar/control icons */
+.dg-icon.ag-sentinel-icon,
+.dg-control-icon.ag-sentinel-icon{
+    width:24px !important;
+    min-width:24px !important;
+    height:24px !important;
+    flex:0 0 24px !important;
+}
+
+/* User-side compact menu icons */
+.user-home-icon.ag-sentinel-icon,
+.menu-icon.ag-sentinel-icon{
+    width:28px !important;
+    min-width:28px !important;
+    height:28px !important;
+    flex:0 0 28px !important;
+}
+
+/* END AUSTRALIA SENTINEL GLOBAL SIZE FIX V1 */

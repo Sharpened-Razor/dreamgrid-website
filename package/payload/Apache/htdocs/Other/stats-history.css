@@ -1,0 +1,921 @@
+/*
+ ============================================================
+ AUSTRALIA CONTROL CENTER
+ PERFORMANCE HISTORY V1
+ ============================================================
+*/
+
+
+.stats-history-panel{
+
+    margin-top:
+        8px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(210,162,45,.43);
+
+    border-radius:
+        7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(14,20,21,.99),
+            rgba(5,9,10,.99)
+        );
+
+    box-shadow:
+        0 9px 26px
+        rgba(0,0,0,.27);
+}
+
+
+.stats-history-head{
+
+    min-height:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        14px;
+
+    padding:
+        7px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+
+    background:
+        linear-gradient(
+            180deg,
+            #192021,
+            #101617
+        );
+}
+
+
+.stats-history-kicker{
+
+    color:
+        #d6a73a;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+}
+
+
+.stats-history-heading{
+
+    margin-top:
+        2px;
+
+    color:
+        #efc759;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+}
+
+
+.stats-history-controls{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+}
+
+
+.stats-history-range{
+
+    min-width:
+        38px;
+
+    padding:
+        5px 8px;
+
+    border:
+        1px solid
+        rgba(205,163,54,.32);
+
+    border-radius:
+        4px;
+
+    background:
+        #0b1112;
+
+    color:
+        #8c9b9f;
+
+    cursor:
+        pointer;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .06em;
+}
+
+
+.stats-history-range:hover{
+
+    border-color:
+        rgba(229,184,65,.66);
+
+    color:
+        #d9edf1;
+}
+
+
+.stats-history-range.active{
+
+    border-color:
+        #d7a83d;
+
+    background:
+        linear-gradient(
+            180deg,
+            #392f13,
+            #1b180e
+        );
+
+    color:
+        #f0c85c;
+
+    box-shadow:
+        0 0 10px
+        rgba(218,172,52,.11);
+}
+
+
+.stats-history-status{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    margin-left:
+        7px;
+
+    color:
+        #6edfb2;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        7px;
+}
+
+
+.stats-history-status::before{
+
+    content:
+        "";
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #53dfa2;
+
+    box-shadow:
+        0 0 8px
+        rgba(83,223,162,.85);
+}
+
+
+.stats-history-status.stale{
+
+    color:
+        #ecbb4e;
+}
+
+
+.stats-history-status.stale::before{
+
+    background:
+        #ecb83f;
+
+    box-shadow:
+        0 0 8px
+        rgba(236,184,63,.8);
+}
+
+
+.stats-history-status.bad{
+
+    color:
+        #ee7777;
+}
+
+
+.stats-history-status.bad::before{
+
+    background:
+        #ef5b5b;
+
+    box-shadow:
+        0 0 9px
+        rgba(239,91,91,.9);
+}
+
+
+/* ============================================================
+   BODY
+   ============================================================ */
+
+.stats-history-body{
+
+    padding:
+        9px;
+}
+
+
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+
+.stats-history-summary{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6,minmax(0,1fr));
+
+    gap:
+        6px;
+}
+
+
+.stats-history-summary-card{
+
+    min-width:
+        0;
+
+    padding:
+        8px 9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.055);
+
+    border-radius:
+        6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111718,
+            #080d0e
+        );
+}
+
+
+.stats-history-summary-label{
+
+    color:
+        #927829;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.stats-history-summary-value{
+
+    margin-top:
+        5px;
+
+    color:
+        #e9f8fa;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+}
+
+
+.stats-history-summary-value.cyan{
+
+    color:
+        #58dcff;
+}
+
+
+.stats-history-summary-value.green{
+
+    color:
+        #61e2a7;
+}
+
+
+.stats-history-summary-value.gold{
+
+    color:
+        #ebbc49;
+}
+
+
+.stats-history-summary-value.red{
+
+    color:
+        #ef7d7d;
+}
+
+
+.stats-history-summary-sub{
+
+    margin-top:
+        3px;
+
+    color:
+        #556469;
+
+    font-size:
+        6px;
+}
+
+
+/* ============================================================
+   CHART GRID
+   ============================================================ */
+
+.stats-history-charts{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        8px;
+
+    margin-top:
+        8px;
+}
+
+
+.stats-history-chart-card{
+
+    min-width:
+        0;
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(66,144,169,.17);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-history-chart-head{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        7px;
+}
+
+
+.stats-history-chart-title{
+
+    color:
+        #d4a638;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-history-legend{
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    color:
+        #718085;
+
+    font-size:
+        6px;
+}
+
+
+.stats-history-legend span{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+}
+
+
+.stats-history-legend i{
+
+    width:
+        8px;
+
+    height:
+        2px;
+
+    display:
+        inline-block;
+}
+
+
+.stats-history-canvas-box{
+
+    position:
+        relative;
+
+    height:
+        130px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(68,146,172,.16);
+
+    border-radius:
+        5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #061014,
+            #03090b
+        );
+}
+
+
+.stats-history-canvas-box::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(91,158,178,.065) calc(25% - 1px),
+            rgba(91,158,178,.065) 25%
+        ),
+
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(91,158,178,.065) calc(25% - 1px),
+            rgba(91,158,178,.065) 25%
+        );
+}
+
+
+.stats-history-canvas{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        130px;
+}
+
+
+.stats-history-chart-footer{
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        8px;
+
+    margin-top:
+        5px;
+
+    color:
+        #526166;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        6px;
+}
+
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
+
+.stats-history-events{
+
+    margin-top:
+        8px;
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(66,144,169,.17);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-history-events-title{
+
+    margin-bottom:
+        7px;
+
+    color:
+        #d4a638;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-history-events-list{
+
+    max-height:
+        145px;
+
+    overflow-y:
+        auto;
+}
+
+
+.stats-history-event{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        150px 1fr;
+
+    gap:
+        9px;
+
+    padding:
+        5px 2px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.035);
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        7px;
+}
+
+
+.stats-history-event-time{
+
+    color:
+        #59696e;
+}
+
+
+.stats-history-event-text{
+
+    color:
+        #9babb0;
+}
+
+
+.stats-history-event.good
+.stats-history-event-text{
+
+    color:
+        #65d8a5;
+}
+
+
+.stats-history-event.bad
+.stats-history-event-text{
+
+    color:
+        #ec7878;
+}
+
+
+.stats-history-event.info
+.stats-history-event-text{
+
+    color:
+        #63cfea;
+}
+
+
+.stats-history-empty{
+
+    padding:
+        14px;
+
+    color:
+        #617176;
+
+    text-align:
+        center;
+
+    font-size:
+        7px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:1500px){
+
+    .stats-history-summary{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+}
+
+
+@media(max-width:1000px){
+
+    .stats-history-head{
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .stats-history-charts{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .stats-history-summary{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+/* AUSTRALIA HISTORY GRAPH FIX V2 START */
+
+
+/* ============================================================
+   COLLECTION PROGRESS
+   ============================================================ */
+
+.stats-history-progress{
+
+    margin-left:
+        8px;
+
+    padding:
+        4px 7px;
+
+    border:
+        1px solid
+        rgba(75,183,212,.24);
+
+    border-radius:
+        4px;
+
+    background:
+        rgba(6,19,23,.7);
+
+    color:
+        #61d5f4;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        6px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .04em;
+}
+
+
+.stats-history-progress.collecting{
+
+    color:
+        #e9bd50;
+
+    border-color:
+        rgba(225,177,61,.30);
+
+    background:
+        rgba(42,32,9,.35);
+}
+
+
+/* ============================================================
+   MAKE SPARSE HISTORY CLEAR
+   ============================================================ */
+
+.stats-history-canvas-box{
+
+    min-height:
+        130px;
+}
+
+
+.stats-history-canvas-box::after{
+
+    content:
+        "PAST";
+
+    position:
+        absolute;
+
+    left:
+        7px;
+
+    bottom:
+        5px;
+
+    z-index:
+        1;
+
+    color:
+        rgba(113,138,145,.24);
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        5px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-history-chart-card
+.stats-history-canvas-box{
+
+    box-shadow:
+
+        inset 0 0 18px
+        rgba(29,139,172,.025);
+}
+
+
+/*
+ * Right edge represents NOW.
+ */
+
+.stats-history-chart-card
+.stats-history-canvas-box::before{
+
+    box-shadow:
+
+        inset -1px 0 0
+        rgba(77,215,246,.28);
+}
+
+
+/* AUSTRALIA HISTORY GRAPH FIX V2 END */

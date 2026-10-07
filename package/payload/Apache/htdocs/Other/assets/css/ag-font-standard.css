@@ -1,0 +1,228 @@
+/* ============================================================
+   AUSTRALIA GRID - MASTER SHARP FONT V2
+   ============================================================ */
+
+:root{
+
+    --ag-main-font:
+        "Segoe UI Variable Text",
+        "Segoe UI Variable Display",
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+/* NORMAL TEXT */
+
+html,
+body,
+button,
+input,
+select,
+textarea{
+
+    font-family:
+        var(--ag-main-font)
+        !important;
+
+    font-style:
+        normal !important;
+
+    font-stretch:
+        normal !important;
+
+    -webkit-font-smoothing:
+        antialiased !important;
+
+    -moz-osx-font-smoothing:
+        grayscale !important;
+
+    text-rendering:
+        optimizeLegibility !important;
+}
+
+
+/* MAIN PAGE TITLES */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+
+.ag-title,
+.dashboard-title,
+.dashboard-heading h1,
+.rm-master-title h1{
+
+    font-family:
+        var(--ag-main-font)
+        !important;
+
+    font-style:
+        normal !important;
+
+    font-stretch:
+        normal !important;
+
+    font-weight:
+        800 !important;
+
+    filter:
+        none !important;
+
+    -webkit-text-stroke:
+        0 !important;
+
+    text-shadow:
+        none !important;
+
+    -webkit-font-smoothing:
+        antialiased !important;
+
+    -moz-osx-font-smoothing:
+        grayscale !important;
+}
+
+
+/* BOX / PANEL / CARD HEADERS */
+
+.panel-title,
+.panel-title span,
+
+.section-title,
+
+.card-title,
+
+.texture-panel-title,
+
+.overview-heading strong,
+.overview-kicker,
+
+.dashboard-kicker,
+
+.ag-eyebrow,
+
+.rm-kicker,
+.rm-master-title h1,
+
+.detail-title h2,
+
+.row-name,
+
+.iar-kicker,
+
+.tab{
+
+    font-family:
+        var(--ag-main-font)
+        !important;
+
+    font-style:
+        normal !important;
+
+    font-stretch:
+        normal !important;
+
+    font-weight:
+        800 !important;
+
+    letter-spacing:
+        .035em !important;
+
+    filter:
+        none !important;
+
+    -webkit-text-stroke:
+        0 !important;
+
+    text-shadow:
+        none !important;
+
+    -webkit-font-smoothing:
+        antialiased !important;
+
+    -moz-osx-font-smoothing:
+        grayscale !important;
+}
+
+
+/* SMALL GOLD LABELS */
+
+.dashboard-kicker,
+.ag-eyebrow,
+.overview-kicker,
+.rm-kicker,
+.iar-kicker{
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        .09em !important;
+}
+
+
+/* BUTTONS */
+
+button,
+.card-button,
+.ag-button,
+.top-button,
+.rm-action-button,
+.region-tool-button,
+.backup-download,
+.backup-delete,
+.backup-restore{
+
+    font-family:
+        var(--ag-main-font)
+        !important;
+
+    font-weight:
+        700 !important;
+
+    text-shadow:
+        none !important;
+
+    filter:
+        none !important;
+}
+
+
+/* TECHNICAL VALUES */
+
+code,
+pre,
+.uuid,
+.path,
+.monospace{
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace
+        !important;
+
+    text-shadow:
+        none !important;
+}
+
+
+/* Do not interfere with emoji/symbol icon fonts */
+
+.card-icon,
+.ag-inv-symbol,
+.folder-icon{
+
+    text-rendering:
+        auto !important;
+}
+
+
+/* ============================================================
+   END MASTER SHARP FONT V2
+   ============================================================ */

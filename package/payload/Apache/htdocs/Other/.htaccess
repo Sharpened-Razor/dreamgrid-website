@@ -1,0 +1,19 @@
+# BEGIN AUSTRALIA REGION MAP UPLOAD LIMIT
+# Region Map Textures accepts images up to 15 MB.
+# post_max_size must be larger than that so PHP receives the POST.
+php_value post_max_size 20M
+# END AUSTRALIA REGION MAP UPLOAD LIMIT
+
+# Source snapshots and diagnostic artifacts must never be served as website content.
+<FilesMatch "(?i)(\.bak(?:\.|$)|\.before-|\.(?:log|ps1|cs|ini|sql)$)">
+    Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule (^|/)(?:_?backups?[^/]*|private|jobs)/ - [F,L,NC]
+</IfModule>
+
+# Private engineering inventory; no Apache restart is required.
+<Files "CODEX-AUDIT-STATE.md">
+    Require all denied
+</Files>

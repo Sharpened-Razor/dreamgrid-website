@@ -1,0 +1,1212 @@
+/*
+==============================================================
+ AUSTRALIA - ADMIN COMMAND CENTER V1
+
+ Fresh layout.
+ No old dashboard skin.
+ All panels use SOLID backgrounds.
+==============================================================
+*/
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+    min-height:100%;
+}
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    background-color:#020405;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(0,4,8,.12),
+            rgba(0,0,0,.50)
+        ),
+        url("/Other/assets/images/admin-control-bg.png");
+
+    background-position:center center;
+
+    background-size:cover;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    color:#ddd7c9;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* ============================================================
+   MASTER SHELL
+   ============================================================ */
+
+.adc-shell{
+
+    width:
+        min(
+            1580px,
+            calc(100% - 34px)
+        );
+
+    min-height:
+        calc(100vh - 36px);
+
+    margin:
+        18px auto;
+
+    display:grid;
+
+    grid-template-columns:
+        292px minmax(0,1fr);
+
+    gap:
+        18px;
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.adc-sidebar{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:
+        calc(100vh - 36px);
+
+    padding:
+        14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #151612 0%,
+            #080908 100%
+        );
+
+    border:
+        1px solid #a27520;
+
+    border-radius:
+        10px;
+
+    box-shadow:
+        inset 0 0 0 1px #2c2515,
+        0 10px 25px #000;
+}
+
+
+.adc-brand{
+
+    min-height:
+        82px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+        13px;
+
+    padding:
+        10px 10px 15px;
+
+    border-bottom:
+        1px solid #3c3016;
+}
+
+
+.adc-brand-icon{
+
+    width:46px;
+    height:46px;
+
+    color:#e7b84e;
+}
+
+
+.adc-brand-icon svg{
+    width:46px;
+    height:46px;
+}
+
+
+.adc-brand-title{
+
+    color:#eee5ca;
+
+    font-size:
+        20px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.05;
+}
+
+
+.adc-brand-sub{
+
+    margin-top:
+        4px;
+
+    color:#c68d22;
+
+    font-size:
+        13px;
+
+    font-weight:
+        500;
+}
+
+
+/* ============================================================
+   LEFT NAVIGATION BUTTONS
+   ============================================================ */
+
+.adc-nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+        7px;
+
+    padding:
+        12px 0;
+}
+
+
+.adc-nav-button{
+
+    position:relative;
+
+    width:100%;
+
+    height:
+        46px;
+
+    min-height:
+        46px;
+
+    display:grid;
+
+    grid-template-columns:
+        34px minmax(0,1fr);
+
+    align-items:center;
+
+    gap:
+        8px;
+
+    padding:
+        0 10px;
+
+    color:#dcd8ce;
+
+    text-decoration:none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        500;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #252621 0%,
+            #141613 100%
+        );
+
+
+    border:
+        1px solid #5f5d54;
+
+    border-radius:
+        6px;
+
+
+    box-shadow:
+        inset 0 1px 0 #3b3c35,
+        0 1px 2px #000;
+}
+
+
+.adc-nav-button:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:9px;
+
+    right:9px;
+
+    top:7px;
+
+    height:
+        5px;
+
+    border-radius:
+        4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #45443b,
+            #656051,
+            #44443b
+        );
+}
+
+
+.adc-nav-button:hover{
+
+    color:#fff1bf;
+
+    border-color:#9a7423;
+}
+
+
+.adc-nav-button.active{
+
+    color:#ffe393;
+
+    border:
+        1px solid #c18c20;
+
+    background:
+        linear-gradient(
+            180deg,
+            #3b3018 0%,
+            #1c170e 100%
+        );
+
+    box-shadow:
+        inset 0 0 0 1px #6f4d0d,
+        0 2px 4px #000;
+}
+
+
+.adc-nav-icon{
+
+    position:relative;
+
+    z-index:2;
+
+    width:
+        25px;
+
+    height:
+        25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#c9d0d4;
+}
+
+
+.adc-nav-button.active
+.adc-nav-icon{
+
+    color:#f0bd4e;
+}
+
+
+.adc-nav-icon svg{
+
+    width:
+        24px;
+
+    height:
+        24px;
+}
+
+
+/* ============================================================
+   SIDEBAR OWNER CARD
+   ============================================================ */
+
+.adc-owner-card{
+
+    margin-top:auto;
+
+    padding:
+        12px;
+
+    background:#0a0b09;
+
+    border:
+        1px solid #725716;
+
+    border-radius:
+        6px;
+
+    box-shadow:
+        inset 0 1px 0 #28271f;
+}
+
+
+.adc-owner-title{
+
+    color:#e2b64c;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+}
+
+
+.adc-owner-name{
+
+    margin-top:
+        6px;
+
+    color:#e5e0d3;
+
+    font-size:
+        11px;
+}
+
+
+.adc-owner-level{
+
+    margin-top:
+        3px;
+
+    color:#948d7d;
+
+    font-size:
+        9px;
+}
+
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.adc-main{
+
+    min-width:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:
+        14px;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.adc-header{
+
+    min-height:
+        116px;
+
+    padding:
+        20px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:
+        20px;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #181914 0%,
+            #0a0b09 100%
+        );
+
+
+    border:
+        1px solid #a27520;
+
+    border-radius:
+        9px;
+
+
+    box-shadow:
+        inset 0 1px 0 #35342b,
+        0 5px 15px #000;
+}
+
+
+.adc-header-kicker{
+
+    color:#a17a28;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .16em;
+}
+
+
+.adc-header h1{
+
+    margin:
+        4px 0 5px;
+
+    color:#f0ce72;
+
+    font-size:
+        31px;
+
+    line-height:
+        1;
+
+    font-weight:
+        600;
+}
+
+
+.adc-header p{
+
+    margin:0;
+
+    color:#aba493;
+
+    font-size:
+        12px;
+}
+
+
+.adc-header-actions{
+
+    display:flex;
+
+    gap:
+        10px;
+}
+
+
+/* ============================================================
+   COMMON BUTTONS
+   ============================================================ */
+
+.adc-top-button,
+.adc-action-button{
+
+    min-height:
+        39px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:
+        7px;
+
+    padding:
+        0 14px;
+
+
+    color:#e8e3d6;
+
+    text-decoration:none;
+
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #38372f 0%,
+            #181a16 100%
+        );
+
+
+    border:
+        1px solid #625d4d;
+
+    border-radius:
+        5px;
+
+
+    box-shadow:
+        inset 0 1px 0 #535146,
+        0 2px 3px #000;
+}
+
+
+.adc-top-button.primary,
+.adc-action-button.primary{
+
+    color:#fff0c6;
+
+    border-color:#a87917;
+
+    background:
+        linear-gradient(
+            180deg,
+            #90651a 0%,
+            #513304 100%
+        );
+
+    box-shadow:
+        inset 0 1px 0 #c2943b,
+        0 2px 3px #000;
+}
+
+
+.adc-top-button:hover,
+.adc-action-button:hover{
+
+    filter:brightness(1.08);
+}
+
+
+/* ============================================================
+   FIVE MAIN TILES
+   ============================================================ */
+
+.adc-tiles{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(0,1fr)
+        );
+
+    gap:
+        12px;
+}
+
+
+.adc-tile{
+
+    height:
+        156px;
+
+    padding:
+        17px 10px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    color:#ddd7c7;
+
+    text-decoration:none;
+
+
+    background:#090a08;
+
+
+    border:
+        1px solid #966b17;
+
+    border-radius:
+        7px;
+
+
+    box-shadow:
+        inset 0 1px 0 #25251f,
+        0 4px 8px #000;
+}
+
+
+.adc-tile:hover{
+
+    border-color:#c38c20;
+}
+
+
+.adc-tile-icon{
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:
+        7px;
+
+    color:#e0ad45;
+}
+
+
+.adc-tile-svg svg{
+
+    width:
+        42px;
+
+    height:
+        42px;
+}
+
+
+.adc-tile-small{
+
+    color:#aaa18d;
+
+    font-size:
+        9px;
+}
+
+
+.adc-tile-value{
+
+    margin-top:
+        5px;
+
+    max-width:
+        190px;
+
+    color:#f2cc68;
+
+    font-size:
+        17px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.2;
+
+    text-align:center;
+}
+
+
+/* ============================================================
+   THREE SLIM BARS
+   ============================================================ */
+
+.adc-info-bars{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:
+        10px;
+}
+
+
+.adc-info-bar{
+
+    height:
+        42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:
+        8px;
+
+
+    color:#ddd9ce;
+
+    text-decoration:none;
+
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #444238 0%,
+            #24251f 18%,
+            #0e0f0d 100%
+        );
+
+
+    border:
+        1px solid #73591c;
+
+    border-radius:
+        5px;
+
+
+    box-shadow:
+        inset 0 1px 0 #605d50,
+        0 2px 3px #000;
+}
+
+
+.adc-info-icon{
+
+    width:19px;
+    height:19px;
+
+    color:#cbd3d7;
+}
+
+
+.adc-info-icon svg{
+
+    width:18px;
+    height:18px;
+}
+
+
+/* ============================================================
+   LOWER PANELS
+   ============================================================ */
+
+.adc-lower{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.4fr)
+        minmax(340px,.9fr);
+
+    gap:
+        14px;
+}
+
+
+.adc-panel{
+
+    min-height:
+        326px;
+
+    padding:
+        18px;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #181914 0%,
+            #0a0b09 100%
+        );
+
+
+    border:
+        1px solid #987020;
+
+    border-radius:
+        7px;
+
+
+    box-shadow:
+        inset 0 1px 0 #34332b,
+        0 5px 12px #000;
+}
+
+
+.adc-panel-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        12px;
+
+
+    color:#efca69;
+
+    font-size:
+        18px;
+
+    font-weight:
+        600;
+}
+
+
+.adc-panel-title-icon{
+
+    width:
+        24px;
+
+    height:
+        24px;
+
+    color:#e6b34b;
+}
+
+
+.adc-panel-title-icon svg{
+
+    width:
+        23px;
+
+    height:
+        23px;
+}
+
+
+/* ============================================================
+   ADMIN STATUS / CONSOLE
+   ============================================================ */
+
+.adc-console{
+
+    min-height:
+        222px;
+
+    padding:
+        15px;
+
+    background:#020302;
+
+    border:
+        1px solid #61501f;
+
+    border-radius:
+        5px;
+
+    box-shadow:
+        inset 0 3px 8px #000;
+}
+
+
+.adc-console-line{
+
+    margin-bottom:
+        9px;
+
+    color:#75e86d;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        12px;
+}
+
+
+.adc-console-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        150px 1fr;
+
+    gap:
+        7px 12px;
+
+    margin-top:
+        18px;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        11px;
+}
+
+
+.adc-console-key{
+
+    color:#828b91;
+}
+
+
+.adc-console-value{
+
+    color:#d9d7cd;
+}
+
+
+/* ============================================================
+   QUICK ACTIONS
+   ============================================================ */
+
+.adc-actions-copy{
+
+    margin:
+        0 0 15px;
+
+    color:#a9a291;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.55;
+}
+
+
+.adc-actions-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        9px;
+}
+
+
+.adc-action-button{
+
+    padding:
+        0 10px;
+
+    min-height:
+        46px;
+}
+
+
+.adc-action-icon{
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    color:#d9b052;
+}
+
+
+.adc-action-icon svg{
+
+    width:
+        19px;
+
+    height:
+        19px;
+}
+
+
+/* ============================================================
+   BOTTOM STATUS BAR
+   ============================================================ */
+
+.adc-statusbar{
+
+    min-height:
+        44px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:
+        15px;
+
+    padding:
+        0 13px;
+
+
+    background:#07101a;
+
+
+    border:
+        1px solid #124f78;
+
+    border-radius:
+        8px;
+
+
+    box-shadow:
+        inset 0 1px 0 #16354a,
+        0 3px 7px #000;
+
+
+    color:#9fc4df;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        10px;
+}
+
+
+.adc-status-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+        9px;
+}
+
+
+.adc-status-dot{
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    border-radius:
+        50%;
+
+    background:#89e62e;
+
+    box-shadow:
+        0 0 6px #69b820;
+}
+
+
+.adc-status-right{
+
+    display:flex;
+
+    gap:
+        12px;
+
+    color:#83a9c4;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:1200px){
+
+    .adc-shell{
+
+        grid-template-columns:
+            250px minmax(0,1fr);
+    }
+
+
+    .adc-tiles{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+}
+
+
+@media(max-width:850px){
+
+    .adc-shell{
+
+        display:block;
+    }
+
+
+    .adc-sidebar{
+
+        min-height:0;
+
+        margin-bottom:14px;
+    }
+
+
+    .adc-nav{
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .adc-tiles{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .adc-lower{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .adc-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+}

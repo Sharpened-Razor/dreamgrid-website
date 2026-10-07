@@ -1,0 +1,638 @@
+
+/* ============================================================
+   AUSTRALIA GRID
+   BACK TO DASHBOARD MASTER STANDARD V1
+   ============================================================ */
+
+a.ag-back-dashboard,
+button.ag-back-dashboard{
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        160px !important;
+
+    min-width:
+        160px !important;
+
+    max-width:
+        160px !important;
+
+    height:
+        30px !important;
+
+    min-height:
+        30px !important;
+
+    max-height:
+        30px !important;
+
+    padding:
+        0 10px !important;
+
+    margin:
+        0 !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    flex:
+        0 0 160px !important;
+
+    border:
+        1px solid
+        #d8a128 !important;
+
+    border-radius:
+        6px !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            #ffd55e 0%,
+
+            #efb126 18%,
+
+            #dc9815 55%,
+
+            #9b6206 100%
+        )
+        !important;
+
+    color:
+        #171108 !important;
+
+    font-family:
+        "Segoe UI Variable Text",
+        "Segoe UI",
+        Arial,
+        sans-serif
+        !important;
+
+    font-size:
+        10px !important;
+
+    font-weight:
+        800 !important;
+
+    font-style:
+        normal !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .025em !important;
+
+    text-align:
+        center !important;
+
+    text-transform:
+        uppercase !important;
+
+    text-decoration:
+        none !important;
+
+    text-shadow:
+        none !important;
+
+    white-space:
+        nowrap !important;
+
+    cursor:
+        pointer !important;
+
+    filter:
+        none !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.55),
+
+        inset 0 -2px 3px
+        rgba(89,50,0,.42),
+
+        0 2px 5px
+        rgba(0,0,0,.40)
+
+        !important;
+
+    transition:
+        transform .12s ease,
+        filter .12s ease,
+        box-shadow .12s ease
+        !important;
+}
+
+
+a.ag-back-dashboard:hover,
+button.ag-back-dashboard:hover{
+
+    transform:
+        translateY(-1px)
+        !important;
+
+    filter:
+        brightness(1.08)
+        !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.65),
+
+        inset 0 -2px 3px
+        rgba(89,50,0,.36),
+
+        0 4px 8px
+        rgba(0,0,0,.46)
+
+        !important;
+}
+
+
+a.ag-back-dashboard:active,
+button.ag-back-dashboard:active{
+
+    transform:
+        translateY(1px)
+        !important;
+
+    filter:
+        brightness(.96)
+        !important;
+}
+
+
+/* ============================================================
+   END BACK TO DASHBOARD MASTER STANDARD V1
+   ============================================================ */
+
+
+/* AUSTRALIA GOLD HEADER RETURN V8 START */
+
+/*
+ * MASTER RETURN BUTTON
+ *
+ * Used for:
+ * BACK
+ * BACK TO DASHBOARD
+ * BACK TO ADMIN MENU
+ * BACK TO ADMIN DASHBOARD
+ * HOME return buttons
+ * ADMIN DASHBOARD return buttons
+ */
+
+.ag-return-button,
+a.ag-return-button,
+button.ag-return-button {
+    appearance: none !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-width: 150px !important;
+    min-height: 40px !important;
+
+    padding: 9px 20px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe89a 0%,
+            #efc451 18%,
+            #d99a18 62%,
+            #a96505 100%
+        ) !important;
+
+    color: #111111 !important;
+
+    border:
+        1px solid #ffe7a0 !important;
+
+    border-radius:
+        9px !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.72),
+        inset 0 -1px 0 rgba(80,40,0,.35),
+        0 0 0 1px rgba(126,73,0,.75),
+        0 4px 10px rgba(0,0,0,.32) !important;
+
+    text-decoration:
+        none !important;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.35) !important;
+
+    font-weight:
+        800 !important;
+
+    white-space:
+        nowrap !important;
+
+    cursor:
+        pointer !important;
+}
+
+.ag-return-button:hover,
+a.ag-return-button:hover,
+button.ag-return-button:hover {
+    background:
+        linear-gradient(
+            180deg,
+            #fff1b5 0%,
+            #f7d267 20%,
+            #e4aa29 62%,
+            #bd7808 100%
+        ) !important;
+
+    color:
+        #000000 !important;
+
+    border-color:
+        #fff0b6 !important;
+
+    transform:
+        translateY(-1px);
+}
+
+.ag-return-button:active,
+a.ag-return-button:active,
+button.ag-return-button:active {
+    transform:
+        translateY(0);
+}
+
+/*
+ * Header placement.
+ *
+ * Existing right-side header action containers are preferred.
+ * This slot is only used on pages that do not already have one.
+ */
+
+.ag-header-return-host {
+    position:
+        relative !important;
+}
+
+.ag-header-return-slot {
+    position:
+        absolute !important;
+
+    top:
+        14px !important;
+
+    right:
+        18px !important;
+
+    z-index:
+        50 !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        flex-end !important;
+
+    gap:
+        10px !important;
+}
+
+/*
+ * Never allow old glow-icon styling inside return buttons.
+ */
+
+.ag-return-button svg.ag-icon,
+.ag-return-button .ag-auto-icon,
+.ag-return-button [data-ag-auto-icon] {
+    display:
+        none !important;
+}
+
+/* AUSTRALIA GOLD HEADER RETURN V8 END */
+
+
+/* AUSTRALIA UNIFORM RETURN BUTTON V10 START */
+
+/*
+ * ============================================================
+ * AUSTRALIA GRID - MASTER RETURN BUTTON STANDARD
+ * ============================================================
+ *
+ * ALL Admin/User return-navigation buttons:
+ *
+ *   BACK
+ *   BACK TO DASHBOARD
+ *   BACK TO ADMIN DASHBOARD
+ *   BACK TO ADMIN MENU
+ *   RETURN TO ...
+ *
+ * must use this exact presentation.
+ */
+
+[data-ag-uniform-return="1"],
+.ag-uniform-return-button {
+
+    appearance:none !important;
+
+    width:240px !important;
+    min-width:240px !important;
+    max-width:240px !important;
+
+    height:46px !important;
+    min-height:46px !important;
+    max-height:46px !important;
+
+    box-sizing:border-box !important;
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    flex:0 0 240px !important;
+
+    margin:0 !important;
+
+    padding:0 18px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0ad 0%,
+            #f1c84f 20%,
+            #db9d18 63%,
+            #a76505 100%
+        ) !important;
+
+    color:#101010 !important;
+
+    border:
+        1px solid #ffe9a5 !important;
+
+    border-radius:
+        9px !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.78),
+        inset 0 -1px 0 rgba(74,35,0,.38),
+        0 0 0 1px rgba(119,69,0,.78),
+        0 4px 10px rgba(0,0,0,.34) !important;
+
+    font-family:
+        inherit !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        800 !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .2px !important;
+
+    text-align:
+        center !important;
+
+    text-decoration:
+        none !important;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.38) !important;
+
+    white-space:
+        nowrap !important;
+
+    overflow:
+        hidden !important;
+
+    cursor:
+        pointer !important;
+}
+
+[data-ag-uniform-return="1"]:hover,
+.ag-uniform-return-button:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff6ca 0%,
+            #f8d865 22%,
+            #e6ad28 64%,
+            #bc7808 100%
+        ) !important;
+
+    color:#000 !important;
+
+    transform:
+        translateY(-1px) !important;
+}
+
+[data-ag-uniform-return="1"]:active,
+.ag-uniform-return-button:active {
+
+    transform:
+        translateY(0) !important;
+}
+
+/*
+ * Header containing a standard return button.
+ */
+
+.ag-uniform-return-host {
+
+    position:
+        relative !important;
+
+    /*
+     * Reserve room so the title never runs underneath
+     * the standard 240px return button.
+     */
+
+    padding-right:
+        300px !important;
+}
+
+/*
+ * One consistent location on EVERY page.
+ */
+
+.ag-uniform-return-slot {
+
+    position:
+        absolute !important;
+
+    top:
+        28px !important;
+
+    right:
+        30px !important;
+
+    z-index:
+        100 !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    width:
+        240px !important;
+
+    height:
+        46px !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+}
+
+/*
+ * Remove any old glow/automatic icon from return buttons.
+ */
+
+[data-ag-uniform-return="1"] svg,
+[data-ag-uniform-return="1"] .ag-icon,
+[data-ag-uniform-return="1"] .ag-auto-icon,
+[data-ag-uniform-return="1"] [data-ag-auto-icon] {
+
+    display:
+        none !important;
+}
+
+/* AUSTRALIA UNIFORM RETURN BUTTON V10 END */
+
+
+/* AUSTRALIA INTERNAL HEADER STANDARD V11 START */
+
+/*
+ * ============================================================
+ * INTERNAL PAGE HEADER STANDARD
+ * ============================================================
+ *
+ * LEFT:
+ *   PAGE TITLE
+ *   SIGNED IN AS: Avatar Name
+ *
+ * RIGHT:
+ *   UNIFORM RETURN BUTTON
+ */
+
+.ag-header-identity {
+
+    position:
+        static !important;
+
+    float:
+        none !important;
+
+    display:
+        block !important;
+
+    width:
+        auto !important;
+
+    height:
+        auto !important;
+
+    min-width:
+        0 !important;
+
+    max-width:
+        none !important;
+
+    margin:
+        6px 0 0 0 !important;
+
+    padding:
+        0 !important;
+
+    background:
+        none !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+
+    color:
+        #b8c2c7 !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        500 !important;
+
+    line-height:
+        1.4 !important;
+
+    letter-spacing:
+        0 !important;
+
+    text-align:
+        left !important;
+
+    text-transform:
+        none !important;
+
+    white-space:
+        normal !important;
+}
+
+.ag-header-identity strong {
+
+    color:
+        #f2ae24 !important;
+
+    font-weight:
+        800 !important;
+}
+
+/*
+ * Old decorative internal branding labels are removed.
+ */
+
+.ag-internal-brand-hidden {
+
+    display:
+        none !important;
+}
+
+/*
+ * Ensure the title/identity area has room for the
+ * standard 240px button at top-right.
+ */
+
+.ag-uniform-return-host {
+
+    padding-right:
+        300px !important;
+}
+
+/* AUSTRALIA INTERNAL HEADER STANDARD V11 END */

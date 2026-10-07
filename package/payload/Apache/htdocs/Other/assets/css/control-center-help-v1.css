@@ -1,0 +1,1704 @@
+/* =========================================================
+   AUSTRALIA CONTROL CENTER
+   HELP CENTRE PANEL V3
+
+   FRESH BUILD.
+   Larger resident-help presentation.
+   No legacy Help Centre CSS.
+   ========================================================= */
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    margin:0;
+}
+
+.hcp-page{
+    width:100%;
+    min-height:calc(100vh - 28px);
+
+    padding:18px 20px 26px;
+
+    color:#d7dde0;
+}
+
+.hcp-page,
+.hcp-page *{
+    box-sizing:border-box;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.hcp-intro{
+    min-height:96px;
+
+    margin:0 0 18px;
+    padding:18px 22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+
+    border:1px solid rgba(214,164,59,.42);
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #191e1d 0%,
+            #0c1110 100%
+        );
+
+    box-shadow:
+        0 8px 22px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.hcp-intro-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    min-width:0;
+}
+
+.hcp-intro-icon{
+    width:56px;
+    height:56px;
+    flex:0 0 56px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(214,164,59,.48);
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1b201e,
+            #080c0b
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.hcp-intro-icon img{
+    width:36px;
+    height:36px;
+
+    object-fit:contain;
+}
+
+.hcp-intro-kicker{
+    color:#d3a23b;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.13em;
+}
+
+.hcp-intro-title{
+    margin-top:5px;
+
+    color:#f2f5f6;
+
+    font-size:24px;
+    font-weight:900;
+    line-height:1.1;
+}
+
+.hcp-intro-note{
+    color:#8a969a;
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.10em;
+}
+
+
+/* =========================================================
+   WORKSPACE
+   ========================================================= */
+
+.hcp-workspace{
+    display:grid;
+    grid-template-columns:330px minmax(0,1fr);
+    gap:18px;
+    align-items:stretch;
+
+    min-height:720px;
+}
+
+
+/* =========================================================
+   HELP TOPICS
+   ========================================================= */
+
+.hcp-nav{
+    overflow:hidden;
+
+    border:1px solid rgba(214,164,59,.38);
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #161b1a 0%,
+            #090d0c 100%
+        );
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.31);
+}
+
+.hcp-nav-head{
+    padding:18px 17px 15px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            180deg,
+            #1e2422 0%,
+            #111615 100%
+        );
+}
+
+.hcp-nav-title{
+    color:#f2f5f6;
+
+    font-size:17px;
+    font-weight:900;
+}
+
+.hcp-nav-subtitle{
+    margin-top:5px;
+
+    color:#859095;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.hcp-nav-body{
+    padding:15px 13px 18px;
+}
+
+.hcp-group{
+    margin:0 0 22px;
+}
+
+.hcp-group:last-child{
+    margin-bottom:0;
+}
+
+.hcp-group-label{
+    margin:0 0 9px;
+    padding:0 7px;
+
+    color:#d5a33c;
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.11em;
+}
+
+.hcp-topic{
+    width:100%;
+    min-height:48px;
+
+    margin:0 0 7px;
+    padding:8px 12px;
+
+    display:grid;
+    grid-template-columns:32px minmax(0,1fr);
+    align-items:center;
+    gap:11px;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #262d2b 0%,
+            #131817 55%,
+            #090d0c 100%
+        );
+
+    color:#d5dbdd;
+
+    text-align:left;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        0 3px 7px rgba(0,0,0,.26);
+
+    transition:
+        border-color .15s ease,
+        background .15s ease;
+}
+
+.hcp-topic.active{
+    border-color:rgba(214,164,59,.78);
+
+    background:
+        linear-gradient(
+            180deg,
+            #3c3522 0%,
+            #201a10 55%,
+            #0e0c08 100%
+        );
+
+    box-shadow:
+        inset 4px 0 0 #d6a53d,
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 4px 8px rgba(0,0,0,.30);
+
+    color:#f7f8f8;
+}
+
+.hcp-topic-icon{
+    width:30px;
+    height:30px;
+
+    display:grid;
+    place-items:center;
+}
+
+.hcp-topic-icon img{
+    width:25px;
+    height:25px;
+
+    object-fit:contain;
+}
+
+.hcp-topic-label{
+    min-width:0;
+
+    font-size:12px;
+    font-weight:900;
+    line-height:1.25;
+}
+
+
+/* =========================================================
+   MAIN CONTENT FRAME
+   ========================================================= */
+
+.hcp-content{
+    min-width:0;
+    min-height:720px;
+
+    border:1px solid rgba(214,164,59,.38);
+    border-radius:8px;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #131817 0%,
+            #070b0a 100%
+        );
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.31);
+}
+
+.hcp-content-head{
+    min-height:112px;
+
+    padding:22px 26px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            180deg,
+            #1d2321 0%,
+            #101514 100%
+        );
+}
+
+.hcp-content-kicker{
+    color:#d0a03b;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.13em;
+}
+
+.hcp-content-title{
+    margin-top:7px;
+
+    color:#f4f6f7;
+
+    font-size:28px;
+    font-weight:900;
+    line-height:1.12;
+}
+
+.hcp-ready{
+    position:relative;
+
+    padding-left:17px;
+
+    color:#78e09a;
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.10em;
+}
+
+.hcp-ready:before{
+    content:"";
+
+    position:absolute;
+    left:0;
+    top:50%;
+
+    width:9px;
+    height:9px;
+    margin-top:-5px;
+
+    border-radius:50%;
+
+    background:#5ce28e;
+
+    box-shadow:
+        0 0 10px rgba(92,226,142,.95);
+}
+
+.hcp-content-body{
+    padding:24px;
+}
+
+
+/* =========================================================
+   INTRODUCTION CARD
+   ========================================================= */
+
+.hcp-welcome{
+    margin:0 0 20px;
+    padding:22px 24px;
+
+    border:1px solid rgba(214,164,59,.28);
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121715,
+            #090e0d
+        );
+}
+
+.hcp-welcome h2{
+    margin:0 0 10px;
+
+    color:#f2f5f6;
+
+    font-size:20px;
+    font-weight:900;
+}
+
+.hcp-welcome p{
+    max-width:1000px;
+    margin:0;
+
+    color:#a0aaad;
+
+    font-size:13px;
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   HELP CATEGORY CARDS
+   ========================================================= */
+
+.hcp-card-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+
+.hcp-card{
+    min-height:185px;
+
+    padding:22px;
+
+    border:1px solid rgba(214,164,59,.34);
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1a201e 0%,
+            #0b100f 72%
+        );
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,.27),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.hcp-card-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:18px;
+}
+
+.hcp-card-icon{
+    width:48px;
+    height:48px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(214,164,59,.42);
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1a1f1d,
+            #080c0b
+        );
+}
+
+.hcp-card-icon img{
+    width:32px;
+    height:32px;
+
+    object-fit:contain;
+}
+
+.hcp-card-title{
+    color:#f0f3f4;
+
+    font-size:16px;
+    font-weight:900;
+}
+
+.hcp-card p{
+    margin:0;
+
+    color:#929da1;
+
+    font-size:12px;
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   TEMP BUILD MESSAGE
+   ========================================================= */
+
+.hcp-build-note{
+    margin-top:18px;
+    padding:13px 15px;
+
+    border:1px dashed rgba(214,164,59,.30);
+    border-radius:6px;
+
+    background:#080c0b;
+
+    color:#788488;
+
+    font-size:10px;
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1200px){
+
+    .hcp-workspace{
+        grid-template-columns:285px minmax(0,1fr);
+    }
+
+    .hcp-content-title{
+        font-size:24px;
+    }
+}
+
+@media(max-width:850px){
+
+    .hcp-workspace{
+        grid-template-columns:1fr;
+    }
+
+    .hcp-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hcp-intro-note{
+        display:none;
+    }
+
+    .hcp-content{
+        min-height:0;
+    }
+}
+
+/* =========================================================
+   HELP CENTRE FUNCTIONAL CONTENT V1
+   Fresh styling for transplanted tutorial CONTENT only.
+   No legacy Help Centre stylesheet has been imported.
+   ========================================================= */
+
+.hcp-topic-panel{
+    display:none;
+}
+
+.hcp-topic-panel.active{
+    display:block;
+}
+
+
+/* Tutorial typography */
+
+.hcp-topic-panel .hc-kicker{
+    margin:0 0 8px;
+
+    color:#d1a13b;
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+.hcp-topic-panel h2{
+    margin:0 0 12px;
+
+    color:#f2f5f6;
+
+    font-size:24px;
+    line-height:1.18;
+}
+
+.hcp-topic-panel h3{
+    margin:0 0 8px;
+
+    color:#e8edef;
+
+    font-size:16px;
+}
+
+.hcp-topic-panel p,
+.hcp-topic-panel li{
+    color:#a4aeb1;
+
+    font-size:13px;
+    line-height:1.65;
+}
+
+.hcp-topic-panel .hc-lead{
+    max-width:1000px;
+
+    margin:0 0 20px;
+
+    color:#aab4b7;
+
+    font-size:14px;
+    line-height:1.7;
+}
+
+.hcp-topic-panel strong{
+    color:#e7ecee;
+}
+
+.hcp-topic-panel a{
+    color:#d6aa48;
+}
+
+
+/* Lists */
+
+.hcp-topic-panel ul,
+.hcp-topic-panel ol{
+    margin:12px 0 18px;
+    padding-left:24px;
+}
+
+.hcp-topic-panel li{
+    margin:0 0 7px;
+}
+
+
+/* Information / step cards */
+
+.hcp-topic-panel .hc-info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+
+    margin:16px 0;
+}
+
+.hcp-topic-panel .hc-mini-card,
+.hcp-topic-panel .hc-step,
+.hcp-topic-panel .hc-note,
+.hcp-topic-panel .hc-callout{
+    margin:0 0 14px;
+    padding:16px 18px;
+
+    border:1px solid rgba(214,164,59,.28);
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #151a19,
+            #0a0f0e
+        );
+}
+
+.hcp-topic-panel .hc-mini-card p,
+.hcp-topic-panel .hc-step p,
+.hcp-topic-panel .hc-note p,
+.hcp-topic-panel .hc-callout p{
+    margin-bottom:0;
+}
+
+
+/* Tutorial actions */
+
+.hcp-topic-panel .hc-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin:18px 0;
+}
+
+.hcp-topic-panel .hc-btn,
+.hcp-topic-panel [data-picture-toggle]{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:38px;
+    padding:0 15px;
+
+    border:1px solid rgba(214,164,59,.48);
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #282d2b,
+            #111513
+        );
+
+    color:#eef2f3;
+
+    font-size:10px;
+    font-weight:900;
+    text-decoration:none;
+
+    cursor:pointer;
+}
+
+.hcp-topic-panel .hc-btn:hover,
+.hcp-topic-panel [data-picture-toggle]:hover{
+    border-color:#d4a43b;
+}
+
+
+/* Picture tutorial system */
+
+.hcp-topic-panel [id^="pic-"]{
+    display:none;
+
+    margin:16px 0;
+    padding:14px;
+
+    border:1px solid rgba(214,164,59,.30);
+    border-radius:6px;
+
+    background:#080c0b;
+}
+
+.hcp-topic-panel [id^="pic-"].open{
+    display:block;
+}
+
+.hcp-topic-panel [id^="pic-"] img{
+    display:block;
+
+    width:auto;
+    max-width:100%;
+    height:auto;
+
+    margin:0 auto;
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:5px;
+}
+
+
+/* Generic old tutorial containers receive fresh styling */
+
+.hcp-topic-panel > div{
+    max-width:100%;
+}
+
+.hcp-topic-panel code{
+    display:inline-block;
+
+    padding:2px 5px;
+
+    border:1px solid rgba(214,164,59,.18);
+    border-radius:3px;
+
+    background:#060908;
+
+    color:#d8dee0;
+}
+
+
+/* Responsive tutorial cards */
+
+@media(max-width:850px){
+
+    .hcp-topic-panel .hc-info-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   HELP CENTRE INTERNAL NAVIGATION FIX V2
+   ========================================================= */
+
+/*
+ * Absolutely only one Help topic may be visible.
+ * Embedded Control Center styles must not override this.
+ */
+
+.hcp-content-body > .hcp-topic-panel{
+    display:none !important;
+}
+
+.hcp-content-body > .hcp-topic-panel.active{
+    display:block !important;
+}
+
+
+/*
+ * Fresh Help Centre buttons.
+ * Override browser / embedded legacy button presentation.
+ */
+
+.hcp-content-body .hc-btn,
+.hcp-content-body button.hc-btn,
+.hcp-content-body a.hc-btn,
+.hcp-content-body [data-picture-toggle],
+.hcp-content-body [data-open-topic]{
+    appearance:none !important;
+    -webkit-appearance:none !important;
+
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    min-height:40px !important;
+    margin:0 !important;
+    padding:0 16px !important;
+
+    border:1px solid rgba(214,164,59,.52) !important;
+    border-radius:5px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #292f2d 0%,
+            #151a18 52%,
+            #090d0c 100%
+        ) !important;
+
+    color:#eef2f3 !important;
+
+    font-family:inherit !important;
+    font-size:10px !important;
+    font-weight:900 !important;
+    line-height:1 !important;
+    letter-spacing:.025em !important;
+
+    text-decoration:none !important;
+    text-shadow:0 1px 1px #000 !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 3px 7px rgba(0,0,0,.32) !important;
+
+    cursor:pointer !important;
+}
+
+.hcp-content-body .hc-btn:hover,
+.hcp-content-body button.hc-btn:hover,
+.hcp-content-body a.hc-btn:hover,
+.hcp-content-body [data-picture-toggle]:hover,
+.hcp-content-body [data-open-topic]:hover{
+    border-color:#d9aa40 !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #343b38 0%,
+            #191f1c 52%,
+            #0b100e 100%
+        ) !important;
+
+    color:#ffffff !important;
+}
+
+
+/*
+ * Secondary controls remain charcoal, not white.
+ */
+
+.hcp-content-body .hc-btn-secondary{
+    border-color:rgba(214,164,59,.38) !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #222826,
+            #0f1412
+        ) !important;
+
+    color:#dde3e5 !important;
+}
+
+
+/*
+ * Tutorial action rows.
+ */
+
+.hcp-content-body .hc-actions{
+    display:flex !important;
+    flex-wrap:wrap !important;
+    align-items:center !important;
+    gap:9px !important;
+
+    margin:18px 0 !important;
+}
+
+
+/*
+ * Do not show visited-link purple inside fresh Help content.
+ */
+
+.hcp-topic-panel a,
+.hcp-topic-panel a:visited{
+    color:#d8ad4a !important;
+}
+
+.hcp-topic-panel a.hc-btn,
+.hcp-topic-panel a.hc-btn:visited{
+    color:#eef2f3 !important;
+}
+
+
+/*
+ * Picture tutorial containers.
+ */
+
+.hcp-topic-panel [id^="pic-"]{
+    display:none !important;
+}
+
+.hcp-topic-panel [id^="pic-"].open{
+    display:block !important;
+}
+
+/* =========================================================
+   GETTING STARTED IMPORTANT STEPS V1
+   ========================================================= */
+
+/*
+ * Highlight the introductory setup instructions so new
+ * residents immediately see what they must do.
+ */
+
+.hcp-topic-panel[data-help-panel="getting-started"] > p:first-of-type{
+    margin:0 0 14px !important;
+    padding:17px 19px !important;
+
+    border:1px solid rgba(214,164,59,.42) !important;
+    border-left:4px solid #d6a43b !important;
+    border-radius:6px !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(214,164,59,.12) 0%,
+            rgba(214,164,59,.035) 55%,
+            rgba(10,15,14,.82) 100%
+        ) !important;
+
+    color:#e8edef !important;
+
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1.55 !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.035),
+        0 4px 10px rgba(0,0,0,.20) !important;
+}
+
+
+/*
+ * Numbered first-time setup steps.
+ */
+
+.hcp-topic-panel[data-help-panel="getting-started"] > ol:first-of-type{
+    margin:0 0 22px !important;
+    padding:17px 22px 17px 48px !important;
+
+    border:1px solid rgba(214,164,59,.32) !important;
+    border-radius:6px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #151a19 0%,
+            #0a0f0e 100%
+        ) !important;
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.23) !important;
+}
+
+
+.hcp-topic-panel[data-help-panel="getting-started"] > ol:first-of-type li{
+    margin:0 0 10px !important;
+    padding-left:5px !important;
+
+    color:#dce2e4 !important;
+
+    font-size:15px !important;
+    font-weight:700 !important;
+    line-height:1.55 !important;
+}
+
+
+.hcp-topic-panel[data-help-panel="getting-started"] > ol:first-of-type li:last-child{
+    margin-bottom:0 !important;
+}
+
+
+.hcp-topic-panel[data-help-panel="getting-started"] > ol:first-of-type li::marker{
+    color:#e0ad42 !important;
+    font-weight:900 !important;
+}
+
+
+/*
+ * Make the main Getting Started heading stronger as well.
+ */
+
+.hcp-topic-panel[data-help-panel="getting-started"] > h2{
+    margin-bottom:12px !important;
+
+    color:#f4f6f7 !important;
+
+    font-size:27px !important;
+    font-weight:900 !important;
+}
+
+
+/* =========================================================
+   GETTING STARTED STEP ONE V1
+   ========================================================= */
+
+.hcp-gs-step-one{
+    max-width:1000px;
+
+    margin:22px 0 18px;
+    padding:22px;
+
+    border:1px solid rgba(214,164,59,.42);
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171c1b 0%,
+            #0b100f 100%
+        );
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.26),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+.hcp-gs-step-head{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:16px;
+}
+
+
+.hcp-gs-step-label{
+    margin-bottom:4px;
+
+    color:#d5a43d;
+
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+
+.hcp-gs-step-one h3{
+    margin:0 !important;
+
+    color:#f3f5f6 !important;
+
+    font-size:21px !important;
+    font-weight:900 !important;
+}
+
+
+.hcp-gs-step-one p{
+    max-width:900px;
+
+    margin:0 0 11px !important;
+
+    color:#aeb8bb !important;
+
+    font-size:14px !important;
+    line-height:1.65 !important;
+}
+
+
+.hcp-gs-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+
+    margin-top:18px;
+}
+
+
+.hcp-gs-actions .hc-btn{
+    min-width:310px !important;
+}
+
+
+.hcp-gs-actions .hcp-primary-action{
+    min-height:46px !important;
+
+    border-color:rgba(214,164,59,.80) !important;
+
+    color:#ffffff !important;
+
+    font-size:11px !important;
+}
+
+
+.hcp-gs-picture{
+    margin-top:18px;
+}
+
+
+/* =========================================================
+   FIRESTORM GRID SETUP HIGHLIGHT V1
+   ========================================================= */
+
+.hcp-firestorm-important{
+    max-width:1050px;
+
+    margin:0 0 16px;
+    padding:17px 19px;
+
+    border:1px solid rgba(214,164,59,.42);
+    border-left:4px solid #d6a43b;
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(214,164,59,.12),
+            rgba(214,164,59,.03) 58%,
+            rgba(10,15,14,.82)
+        );
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,.20);
+}
+
+.hcp-firestorm-important p{
+    margin:0 !important;
+
+    color:#e6ebed !important;
+
+    font-size:16px !important;
+    font-weight:700 !important;
+    line-height:1.55 !important;
+}
+
+
+/* Dynamic grid address */
+
+.hcp-grid-address-card{
+    max-width:1050px;
+
+    margin:0 0 18px;
+    padding:18px 20px;
+
+    border:1px solid rgba(214,164,59,.48);
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171c1a,
+            #090e0d
+        );
+
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.24);
+}
+
+.hcp-grid-address-label{
+    margin-bottom:8px;
+
+    color:#d8a63e;
+
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+.hcp-grid-address-link,
+.hcp-grid-address-link:visited{
+    display:inline-block;
+
+    max-width:100%;
+    padding:11px 14px;
+
+    border:1px solid rgba(214,164,59,.40);
+    border-radius:5px;
+
+    background:#050908;
+
+    color:#f0c562 !important;
+
+    font-family:Consolas,monospace;
+    font-size:16px !important;
+    font-weight:700;
+    line-height:1.4;
+
+    text-decoration:none !important;
+
+    overflow-wrap:anywhere;
+    user-select:all;
+}
+
+.hcp-grid-address-link:hover{
+    border-color:#d8a83f;
+
+    color:#ffffff !important;
+}
+
+.hcp-grid-address-note{
+    margin-top:8px;
+
+    color:#778387;
+
+    font-size:10px;
+}
+
+
+/* Highlighted numbered instructions */
+
+.hcp-firestorm-steps{
+    display:grid;
+    gap:10px;
+
+    max-width:1050px;
+}
+
+.hcp-firestorm-step{
+    display:grid;
+    grid-template-columns:44px minmax(0,1fr);
+    align-items:center;
+    gap:14px;
+
+    min-height:64px;
+    padding:11px 16px;
+
+    border:1px solid rgba(214,164,59,.27);
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #151a19,
+            #0a0f0e
+        );
+}
+
+.hcp-firestorm-step-number{
+    width:38px;
+    height:38px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(214,164,59,.60);
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #352f1e,
+            #151109
+        );
+
+    color:#e5b951;
+
+    font-size:16px;
+    font-weight:900;
+}
+
+.hcp-firestorm-step-text{
+    color:#d7dde0;
+
+    font-size:15px;
+    font-weight:700;
+    line-height:1.55;
+}
+
+.hcp-firestorm-step-text strong{
+    color:#f0c562;
+}
+
+@media(max-width:650px){
+
+    .hcp-firestorm-step{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* =========================================================
+   GRID LOGIN COPY BOX V1
+   ========================================================= */
+
+.hcp-grid-copy-row{
+    display:flex;
+    align-items:stretch;
+    flex-wrap:wrap;
+    gap:9px;
+
+    margin-top:8px;
+}
+
+.hcp-grid-copy-value{
+    flex:1 1 430px;
+
+    min-height:42px;
+    padding:11px 14px;
+
+    border:1px solid rgba(214,164,59,.42);
+    border-radius:5px;
+
+    background:#050908;
+
+    color:#f0c562;
+
+    font-family:Consolas,monospace;
+    font-size:16px;
+    font-weight:700;
+    line-height:1.4;
+
+    overflow-wrap:anywhere;
+    user-select:all;
+    cursor:text;
+}
+
+.hcp-grid-copy-value:focus{
+    outline:1px solid #d6a43b;
+    outline-offset:2px;
+}
+
+.hcp-copy-grid-url{
+    min-height:42px !important;
+    white-space:nowrap;
+}
+
+@media(max-width:700px){
+
+    .hcp-grid-copy-row{
+        display:block;
+    }
+
+    .hcp-copy-grid-url{
+        margin-top:8px;
+    }
+}
+
+
+/* =========================================================
+   HELP CENTRE BUTTON SPACING V1
+   ========================================================= */
+
+/* Back / Next button row */
+.hcp-guide-footer{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:16px !important;
+
+    margin-top:26px !important;
+    margin-bottom:22px !important;
+    padding-top:20px !important;
+}
+
+/* Back / Next buttons */
+.hcp-guide-footer .hc-btn{
+    min-width:250px !important;
+    min-height:48px !important;
+}
+
+/* Picture tutorial block */
+.hcp-gs-picture{
+    margin-top:24px !important;
+    padding-top:4px !important;
+}
+
+/* Picture tutorial button */
+.hcp-gs-picture .hc-btn,
+.hcp-topic-panel .hc-picture-button{
+    min-width:250px !important;
+    min-height:48px !important;
+    margin-top:0 !important;
+}
+
+/* Extra space between action groups in all help topics */
+.hcp-topic-panel .hc-btn + .hc-btn{
+    margin-left:0 !important;
+}
+
+/* Mobile / narrow widths */
+@media(max-width:760px){
+
+    .hcp-guide-footer{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:12px !important;
+    }
+
+    .hcp-guide-footer .hc-btn,
+    .hcp-gs-picture .hc-btn,
+    .hcp-topic-panel .hc-picture-button{
+        width:100% !important;
+        min-width:0 !important;
+    }
+}
+
+
+/* =========================================================
+   FIRESTORM PICTURE SCREEN V1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MAIN FIRESTORM PAGE BUTTONS
+   ORDER:
+   1. VIEW PICTURE TUTORIAL
+   2. NEXT: LOGGING IN
+   3. BACK TO: GETTING STARTED
+   --------------------------------------------------------- */
+
+.hcp-firestorm-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:13px;
+
+    width:min(100%, 430px);
+
+    margin-top:30px;
+    margin-bottom:20px;
+}
+
+.hcp-firestorm-actions .hc-btn{
+    width:100% !important;
+    min-width:0 !important;
+    min-height:52px !important;
+
+    margin:0 !important;
+}
+
+.hcp-firestorm-actions .hcp-picture-action{
+    border-color:rgba(214,164,59,.82) !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #3c3521,
+            #20190d 58%,
+            #0f0c07
+        ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   SEPARATE PICTURE SCREEN
+   --------------------------------------------------------- */
+
+.hcp-picture-screen[hidden]{
+    display:none !important;
+}
+
+.hcp-picture-screen{
+    width:100%;
+    max-width:1150px;
+}
+
+.hcp-picture-screen > h2{
+    margin-top:6px;
+
+    color:#f3f5f6;
+
+    font-size:28px;
+    font-weight:900;
+}
+
+.hcp-picture-intro{
+    max-width:900px;
+
+    margin:0 0 24px;
+
+    padding:16px 18px;
+
+    border:1px solid rgba(214,164,59,.36);
+    border-left:4px solid #d6a43b;
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(214,164,59,.11),
+            rgba(214,164,59,.025)
+        );
+
+    color:#e2e7e9;
+
+    font-size:15px;
+    font-weight:700;
+    line-height:1.6;
+}
+
+
+/* ---------------------------------------------------------
+   PICTURE STEPS
+   --------------------------------------------------------- */
+
+.hcp-picture-guide{
+    display:grid;
+    gap:22px;
+}
+
+.hcp-picture-step{
+    margin:0;
+    padding:20px;
+
+    border:1px solid rgba(214,164,59,.30);
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #151a19,
+            #090e0d
+        );
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,.24);
+}
+
+.hcp-picture-step-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:10px;
+
+    color:#f1f4f5;
+
+    font-size:18px;
+    font-weight:900;
+}
+
+.hcp-picture-step-title span{
+    width:36px;
+    height:36px;
+
+    display:grid;
+    place-items:center;
+    flex:0 0 36px;
+
+    border:1px solid rgba(214,164,59,.65);
+    border-radius:50%;
+
+    background:#211b0e;
+
+    color:#e7b84e;
+
+    font-size:15px;
+    font-weight:900;
+}
+
+.hcp-picture-step p{
+    margin:0 0 15px;
+
+    color:#b5bec1;
+
+    font-size:14px;
+    line-height:1.65;
+}
+
+.hcp-picture-placeholder{
+    display:grid;
+    place-items:center;
+
+    min-height:320px;
+
+    padding:25px;
+
+    border:2px dashed rgba(214,164,59,.35);
+    border-radius:6px;
+
+    background:#050908;
+
+    color:#756b4d;
+
+    text-align:center;
+
+    font-size:14px;
+    font-weight:800;
+    line-height:1.7;
+    letter-spacing:.04em;
+}
+
+
+/* ---------------------------------------------------------
+   PICTURE SCREEN BACK BUTTON
+   --------------------------------------------------------- */
+
+.hcp-picture-screen-actions{
+    width:min(100%,430px);
+
+    margin-top:25px;
+    padding-bottom:20px;
+}
+
+.hcp-picture-screen-actions .hc-btn{
+    width:100% !important;
+    min-height:52px !important;
+}
+
+
+/* ---------------------------------------------------------
+   SMALLER SCREENS
+   --------------------------------------------------------- */
+
+@media(max-width:700px){
+
+    .hcp-picture-placeholder{
+        min-height:220px;
+    }
+
+    .hcp-picture-screen > h2{
+        font-size:23px;
+    }
+}
+
+
+/* =========================================================
+   FIRESTORM REAL TUTORIAL IMAGES V1
+   ========================================================= */
+
+.hcp-picture-image{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+
+    margin:14px 0 0;
+
+    border:1px solid rgba(214,164,59,.42);
+    border-radius:7px;
+
+    background:#050908;
+
+    box-shadow:
+        0 7px 20px rgba(0,0,0,.36);
+
+    object-fit:contain;
+}
+
+.hcp-picture-step{
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   STEP 1 KICKER LARGE V1
+   ========================================================= */
+
+.hcp-step-kicker-large{
+    display:inline-block;
+    font-size:26px !important;
+    line-height:1 !important;
+    font-weight:900 !important;
+    letter-spacing:.14em !important;
+    text-transform:uppercase !important;
+    color:#d6a43b !important;
+}
+
+
+/* =========================================================
+   LOGGING IN GUIDE V1
+   ========================================================= */
+
+.hcp-topic-panel[data-help-panel="login"] .hcp-firestorm-actions{
+    margin-top:28px;
+}
+
+.hcp-topic-panel[data-help-panel="login"] .hc-picture{
+    margin-top:20px;
+    max-width:1100px;
+}
+

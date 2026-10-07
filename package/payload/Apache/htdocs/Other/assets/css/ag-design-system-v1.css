@@ -1,0 +1,858 @@
+/*
+============================================================
+ AUSTRALIA WEBSITE DESIGN SYSTEM V1
+============================================================
+
+ ONE SOURCE OF TRUTH FOR:
+
+ - Page typography
+ - Colours
+ - Header controls
+ - Buttons
+ - Cards / panels
+ - Forms
+ - Tables
+ - Status badges
+ - Icons
+ - Spacing
+ - Responsive sizes
+
+ Shared visual components must use this system.
+============================================================
+*/
+
+
+:root{
+
+    /* ========================================================
+       CORE COLOURS
+       ======================================================== */
+
+    --ag-gold-light:#ffd367;
+    --ag-gold:#e5a925;
+    --ag-gold-dark:#c48613;
+
+    --ag-bg:#071015;
+
+    --ag-panel:
+        rgba(7,16,21,.94);
+
+    --ag-card:
+        rgba(11,23,29,.94);
+
+    --ag-card-alt:
+        rgba(14,27,34,.94);
+
+    --ag-border:
+        rgba(229,169,37,.38);
+
+    --ag-border-soft:
+        rgba(255,255,255,.11);
+
+    --ag-text:#f7f9fa;
+    --ag-muted:#aebac0;
+
+    --ag-success:#52d477;
+    --ag-danger:#d34949;
+    --ag-info:#4db1ff;
+    --ag-purple:#a98cff;
+    --ag-cyan:#53d9e8;
+
+
+    /* ========================================================
+       TYPOGRAPHY
+       ======================================================== */
+
+    --ag-font:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    --ag-font-body:14px;
+
+    --ag-font-h1:
+        clamp(30px,3vw,40px);
+
+    --ag-font-h2:
+        clamp(22px,2vw,28px);
+
+    --ag-font-h3:
+        18px;
+
+    --ag-font-label:
+        11px;
+
+    --ag-font-button:
+        13px;
+
+
+    /* ========================================================
+       BUTTON SIZES
+       ======================================================== */
+
+    --ag-button-height:44px;
+
+    --ag-header-button-width:
+        190px;
+
+    --ag-header-button-height:
+        50px;
+
+
+    /* ========================================================
+       ICON SIZES
+       ======================================================== */
+
+    --ag-icon-small:32px;
+    --ag-icon-medium:44px;
+    --ag-icon-large:54px;
+
+
+    /* ========================================================
+       CORNER RADII
+       ======================================================== */
+
+    --ag-radius-button:10px;
+    --ag-radius-card:12px;
+    --ag-radius-panel:14px;
+
+
+    /* ========================================================
+       SPACING
+       ======================================================== */
+
+    --ag-space-1:8px;
+    --ag-space-2:16px;
+    --ag-space-3:24px;
+    --ag-space-4:32px;
+}
+
+
+/*
+============================================================
+ GLOBAL TYPOGRAPHY
+============================================================
+*/
+
+html,
+body{
+
+    font-family:
+        var(--ag-font) !important;
+
+    color:
+        var(--ag-text);
+}
+
+
+body,
+input,
+select,
+textarea,
+button{
+
+    font-family:
+        var(--ag-font) !important;
+}
+
+
+h1{
+
+    font-family:
+        var(--ag-font) !important;
+
+    font-size:
+        var(--ag-font-h1);
+
+    font-weight:
+        900;
+}
+
+
+h2{
+
+    font-family:
+        var(--ag-font) !important;
+
+    font-size:
+        var(--ag-font-h2);
+
+    font-weight:
+        900;
+}
+
+
+h3{
+
+    font-family:
+        var(--ag-font) !important;
+
+    font-size:
+        var(--ag-font-h3);
+
+    font-weight:
+        800;
+}
+
+
+/*
+============================================================
+ STANDARD PAGE HEADER
+============================================================
+*/
+
+.ag-page-header,
+.ag-standard-header,
+.rm-master-header,
+.console-master-header,
+header.ag-top,
+.account-header.header,
+.inventory-header.header{
+
+    box-sizing:
+        border-box;
+
+}
+
+
+.ag-page-header,
+.ag-standard-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--ag-space-3);
+}
+
+
+.ag-header-copy{
+
+    min-width:0;
+
+    flex:
+        1 1 auto;
+}
+
+
+.ag-header-actions{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:flex-end !important;
+
+    gap:12px !important;
+
+    margin-left:auto !important;
+
+    flex:0 0 auto !important;
+}
+
+
+/*
+============================================================
+ MASTER HEADER NAVIGATION BUTTON
+
+ BACK
+ BACK TO DASHBOARD
+ ADMIN HOME
+ LOGOUT
+============================================================
+*/
+
+.ag-header-end-button,
+
+a.ag-return-button,
+
+a.australia-back-dashboard,
+
+a.dashboard-logout,
+
+a.top-button.home,
+
+a.top-button.logout,
+
+a.rm-admin-home-button,
+
+a.console-admin-home-button,
+
+a.account-header-back,
+
+a.back-button{
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    flex:0 0 auto !important;
+
+    width:
+        var(--ag-header-button-width) !important;
+
+    min-width:
+        var(--ag-header-button-width) !important;
+
+    max-width:
+        var(--ag-header-button-width) !important;
+
+    height:
+        var(--ag-header-button-height) !important;
+
+    min-height:
+        var(--ag-header-button-height) !important;
+
+    max-height:
+        var(--ag-header-button-height) !important;
+
+    padding:
+        0 18px !important;
+
+    margin:
+        0 !important;
+
+    box-sizing:
+        border-box !important;
+
+    border:
+        1px solid
+        var(--ag-gold) !important;
+
+    border-radius:
+        var(--ag-radius-button) !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--ag-gold-light) 0%,
+            var(--ag-gold) 56%,
+            var(--ag-gold-dark) 100%
+        ) !important;
+
+    color:
+        #17120a !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.48),
+
+        0 4px 12px
+        rgba(0,0,0,.42) !important;
+
+    font-family:
+        var(--ag-font) !important;
+
+    font-size:
+        var(--ag-font-button) !important;
+
+    font-weight:
+        900 !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .025em !important;
+
+    text-align:
+        center !important;
+
+    text-decoration:
+        none !important;
+
+    text-transform:
+        uppercase !important;
+
+    text-shadow:
+        none !important;
+
+    white-space:
+        nowrap !important;
+
+    cursor:
+        pointer !important;
+}
+
+
+.ag-header-end-button:hover,
+
+a.ag-return-button:hover,
+
+a.australia-back-dashboard:hover,
+
+a.dashboard-logout:hover,
+
+a.top-button.home:hover,
+
+a.top-button.logout:hover,
+
+a.rm-admin-home-button:hover,
+
+a.console-admin-home-button:hover,
+
+a.account-header-back:hover,
+
+a.back-button:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe596 0%,
+            #efbd3e 56%,
+            #d29118 100%
+        ) !important;
+
+    color:
+        #111 !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+/*
+============================================================
+ NORMAL ACTION BUTTON
+============================================================
+*/
+
+.ag-btn,
+.ag-button,
+a.button,
+button.button{
+
+    min-height:
+        var(--ag-button-height);
+
+    padding:
+        0 18px;
+
+    box-sizing:
+        border-box;
+
+    border-radius:
+        var(--ag-radius-button);
+
+    font-family:
+        var(--ag-font);
+
+    font-size:
+        var(--ag-font-button);
+
+    font-weight:
+        800;
+
+    text-decoration:
+        none;
+
+    text-shadow:
+        none;
+}
+
+
+/*
+============================================================
+ PRIMARY BUTTON
+============================================================
+*/
+
+.ag-btn-primary{
+
+    color:#161108;
+
+    border:
+        1px solid
+        var(--ag-gold);
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--ag-gold-light),
+            var(--ag-gold-dark)
+        );
+}
+
+
+/*
+============================================================
+ SECONDARY BUTTON
+============================================================
+*/
+
+.ag-btn-secondary{
+
+    color:
+        var(--ag-text);
+
+    border:
+        1px solid
+        var(--ag-border-soft);
+
+    background:
+        linear-gradient(
+            180deg,
+            #34414a,
+            #202a30
+        );
+}
+
+
+/*
+============================================================
+ DANGER BUTTON
+============================================================
+*/
+
+.ag-btn-danger,
+.button.danger{
+
+    color:#fff;
+
+    border:
+        1px solid
+        rgba(255,90,90,.45);
+
+    background:
+        linear-gradient(
+            180deg,
+            #b73b3b,
+            #7a2323
+        );
+}
+
+
+/*
+============================================================
+ CARDS / PANELS
+============================================================
+*/
+
+.ag-card,
+
+.dashboard-card,
+
+.tool-card,
+
+.account-card,
+
+.inventory-card,
+
+.delete-card,
+
+.manage-card{
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid
+        var(--ag-border-soft);
+
+    border-radius:
+        var(--ag-radius-card);
+
+    background:
+        var(--ag-card);
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.28);
+}
+
+
+.ag-panel{
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid
+        var(--ag-border);
+
+    border-radius:
+        var(--ag-radius-panel);
+
+    background:
+        var(--ag-panel);
+}
+
+
+/*
+============================================================
+ FORM CONTROLS
+============================================================
+*/
+
+.ag-input,
+.ag-select,
+.ag-textarea{
+
+    min-height:
+        44px;
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(1,7,10,.92);
+
+    color:
+        var(--ag-text);
+
+    font-family:
+        var(--ag-font);
+}
+
+
+.ag-input:focus,
+.ag-select:focus,
+.ag-textarea:focus{
+
+    border-color:
+        var(--ag-gold);
+
+    outline:
+        2px solid
+        rgba(229,169,37,.18);
+
+    outline-offset:
+        1px;
+}
+
+
+/*
+============================================================
+ TABLE SYSTEM
+============================================================
+*/
+
+.ag-table{
+
+    width:100%;
+
+    border-collapse:
+        collapse;
+
+    font-family:
+        var(--ag-font);
+}
+
+
+.ag-table th{
+
+    color:
+        var(--ag-gold-light);
+
+    font-size:
+        var(--ag-font-label);
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
+}
+
+
+.ag-table th,
+.ag-table td{
+
+    padding:
+        11px 13px;
+
+    border-bottom:
+        1px solid
+        var(--ag-border-soft);
+}
+
+
+/*
+============================================================
+ STATUS BADGES
+============================================================
+*/
+
+.ag-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    min-height:26px;
+
+    padding:
+        0 10px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .06em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.ag-status-live,
+.ag-status-active{
+
+    color:
+        var(--ag-success);
+}
+
+
+.ag-status-danger,
+.ag-status-offline{
+
+    color:
+        var(--ag-danger);
+}
+
+
+.ag-status-info{
+
+    color:
+        var(--ag-info);
+}
+
+
+/*
+============================================================
+ CENTRAL ICON SYSTEM
+============================================================
+*/
+
+.ag-icon-badge,
+.svg-badge{
+
+    width:
+        var(--ag-icon-medium);
+
+    height:
+        var(--ag-icon-medium);
+
+    min-width:
+        var(--ag-icon-medium);
+
+    min-height:
+        var(--ag-icon-medium);
+
+    box-sizing:
+        border-box;
+}
+
+
+.ag-icon-small{
+
+    width:
+        var(--ag-icon-small) !important;
+
+    height:
+        var(--ag-icon-small) !important;
+
+    min-width:
+        var(--ag-icon-small) !important;
+
+    min-height:
+        var(--ag-icon-small) !important;
+}
+
+
+.ag-icon-large{
+
+    width:
+        var(--ag-icon-large) !important;
+
+    height:
+        var(--ag-icon-large) !important;
+
+    min-width:
+        var(--ag-icon-large) !important;
+
+    min-height:
+        var(--ag-icon-large) !important;
+}
+
+
+/*
+============================================================
+ RESPONSIVE
+============================================================
+*/
+
+@media(max-width:760px){
+
+    .ag-page-header,
+    .ag-standard-header{
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+
+    .ag-header-actions{
+
+        width:
+            100% !important;
+
+        margin-left:
+            0 !important;
+    }
+
+
+    .ag-header-end-button,
+
+    a.ag-return-button,
+
+    a.australia-back-dashboard,
+
+    a.dashboard-logout,
+
+    a.top-button.home,
+
+    a.top-button.logout,
+
+    a.rm-admin-home-button,
+
+    a.console-admin-home-button,
+
+    a.account-header-back,
+
+    a.back-button{
+
+        width:
+            100% !important;
+
+        min-width:
+            0 !important;
+
+        max-width:
+            none !important;
+    }
+}
+
+

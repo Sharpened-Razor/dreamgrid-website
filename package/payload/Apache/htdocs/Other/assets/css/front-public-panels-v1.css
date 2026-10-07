@@ -1,0 +1,783 @@
+/*
+ * ============================================================
+ * AUSTRALIA FRONT PUBLIC PANELS V1
+ * ============================================================
+ */
+
+.ag-public-panel-layer{
+
+    position:fixed;
+    inset:0;
+
+    z-index:30000;
+
+    overflow:auto;
+
+    padding:42px 24px 60px;
+
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:center;
+
+    background:
+        rgba(0,0,0,.52);
+
+    backdrop-filter:
+        blur(2px);
+}
+
+
+.ag-public-panel-card{
+
+    width:min(860px, calc(100vw - 40px));
+
+    margin:auto;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(213,163,43,.58);
+
+    border-radius:14px;
+
+    color:#edf0ef;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15,20,21,.99),
+            rgba(7,11,12,.99)
+        );
+
+    box-shadow:
+        0 28px 80px rgba(0,0,0,.70),
+        inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+
+.ag-public-panel-header{
+
+    min-height:104px;
+
+    padding:20px 22px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:22px;
+
+    border-bottom:
+        1px solid
+        rgba(213,163,43,.34);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(26,31,31,.99),
+            rgba(10,14,15,.99)
+        );
+}
+
+
+.ag-public-panel-heading{
+    min-width:0;
+}
+
+
+.ag-public-panel-kicker{
+
+    margin-bottom:5px;
+
+    color:#e2ab25;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.14em;
+}
+
+
+.ag-public-panel-title{
+
+    color:#fff;
+
+    font-size:clamp(26px,3vw,38px);
+
+    line-height:1.08;
+
+    font-weight:900;
+
+    letter-spacing:-.02em;
+}
+
+
+.ag-public-panel-subtitle{
+
+    margin-top:7px;
+
+    color:#9facb0;
+
+    font-size:14px;
+
+    line-height:1.45;
+}
+
+
+.ag-public-panel-close{
+
+    flex:0 0 auto;
+
+    min-height:46px;
+
+    padding:9px 16px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    border:
+        1px solid
+        rgba(222,169,43,.68);
+
+    border-radius:9px;
+
+    color:#f2bf3b;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:.055em;
+
+    background:
+        linear-gradient(
+            180deg,
+            #282a27,
+            #111311
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 6px 18px rgba(0,0,0,.28);
+}
+
+
+.ag-public-panel-close:hover{
+
+    color:#ffe07d;
+
+    border-color:#f0b72d;
+
+    background:
+        linear-gradient(
+            180deg,
+            #40351e,
+            #19150d
+        );
+}
+
+
+.ag-public-panel-close img{
+
+    width:22px;
+    height:22px;
+
+    object-fit:contain;
+}
+
+
+.ag-public-panel-body{
+
+    padding:26px;
+}
+
+
+.ag-public-section-title{
+
+    margin:0 0 5px;
+
+    color:#efb52c;
+
+    font-size:22px;
+    font-weight:900;
+}
+
+
+.ag-public-section-copy{
+
+    margin-bottom:22px;
+
+    color:#aab5b8;
+
+    font-size:14px;
+
+    line-height:1.55;
+}
+
+
+.ag-public-form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:17px 18px;
+}
+
+
+.ag-public-field{
+    min-width:0;
+}
+
+
+.ag-public-field-full{
+    grid-column:1 / -1;
+}
+
+
+.ag-public-field label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#e8eceb;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.055em;
+}
+
+
+.ag-public-field input{
+
+    box-sizing:border-box;
+
+    width:100%;
+
+    min-height:44px;
+
+    padding:10px 12px;
+
+    border:
+        1px solid
+        #253034;
+
+    border-radius:7px;
+
+    outline:none;
+
+    color:#f4f6f5;
+
+    font-size:14px;
+
+    background:#070b0c;
+
+    box-shadow:
+        inset 0 1px 4px rgba(0,0,0,.72);
+}
+
+
+.ag-public-field input:focus{
+
+    border-color:#d5a12c;
+
+    box-shadow:
+        inset 0 1px 4px rgba(0,0,0,.72),
+        0 0 0 2px rgba(213,161,44,.13);
+}
+
+
+.ag-public-field-help{
+
+    margin-top:6px;
+
+    color:#718085;
+
+    font-size:11px;
+}
+
+
+.ag-public-terms-check{
+
+    margin-top:21px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    color:#aeb8bb;
+
+    font-size:13px;
+}
+
+
+.ag-public-terms-check input{
+    margin-top:3px;
+}
+
+
+.ag-public-terms-check a{
+
+    color:#e9b333;
+
+    font-weight:800;
+}
+
+
+.ag-public-panel-actions{
+
+    margin-top:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    flex-wrap:wrap;
+}
+
+
+.ag-public-primary-button,
+.ag-public-secondary-button{
+
+    min-height:46px;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:.045em;
+}
+
+
+.ag-public-primary-button{
+
+    border:1px solid #f0bd42;
+
+    color:#17130a;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffd05a,
+            #d79408
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.56),
+        0 6px 16px rgba(0,0,0,.28);
+}
+
+
+.ag-public-primary-button:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffdc79,
+            #e8a817
+        );
+}
+
+
+.ag-public-secondary-button{
+
+    border:1px solid #344145;
+
+    color:#dce2e2;
+
+    background:
+        linear-gradient(
+            180deg,
+            #20292b,
+            #111718
+        );
+}
+
+
+.ag-public-secondary-button:hover{
+
+    border-color:#59676b;
+
+    color:#fff;
+}
+
+
+.ag-public-primary-button img,
+.ag-public-secondary-button img{
+
+    width:22px;
+    height:22px;
+
+    object-fit:contain;
+}
+
+
+button.ag-public-primary-button,
+button.ag-public-secondary-button{
+
+    appearance:none;
+}
+
+
+.ag-public-message{
+
+    margin:0 0 20px;
+
+    padding:15px 17px;
+
+    border-radius:8px;
+
+    font-size:13px;
+
+    line-height:1.55;
+}
+
+
+.ag-public-message-title{
+
+    margin-bottom:5px;
+
+    font-weight:900;
+
+    letter-spacing:.045em;
+}
+
+
+.ag-public-message-error{
+
+    border:
+        1px solid
+        rgba(219,93,73,.58);
+
+    color:#ffd3cb;
+
+    background:
+        rgba(89,26,18,.38);
+}
+
+
+.ag-public-message-success{
+
+    border:
+        1px solid
+        rgba(100,189,116,.55);
+
+    color:#d7f4dc;
+
+    background:
+        rgba(24,73,33,.34);
+}
+
+
+@media (max-width:720px){
+
+    .ag-public-panel-layer{
+        padding:18px 10px 36px;
+    }
+
+    .ag-public-panel-card{
+        width:100%;
+    }
+
+    .ag-public-panel-header{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+    .ag-public-panel-close{
+        width:100%;
+    }
+
+    .ag-public-panel-body{
+        padding:20px 16px;
+    }
+
+    .ag-public-form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ag-public-field-full{
+        grid-column:auto;
+    }
+
+    .ag-public-primary-button,
+    .ag-public-secondary-button{
+        width:100%;
+    }
+}
+
+/*
+ * ============================================================
+ * AUSTRALIA FRONT PUBLIC TERMS PANEL V1
+ * ============================================================
+ */
+
+.ag-public-terms-card{
+
+    width:
+        min(
+            1040px,
+            calc(100vw - 40px)
+        );
+
+    max-height:
+        calc(100vh - 56px);
+
+    display:flex;
+    flex-direction:column;
+}
+
+
+.ag-public-terms-card .ag-public-panel-header{
+
+    flex:0 0 auto;
+}
+
+
+.ag-public-terms-body{
+
+    min-height:0;
+
+    overflow:auto;
+
+    scrollbar-color:
+        #9d771f
+        #0a0e0f;
+}
+
+
+.ag-public-terms-copy{
+
+    padding:24px 26px;
+
+    border:
+        1px solid
+        rgba(213,163,43,.26);
+
+    border-radius:10px;
+
+    color:#bdc7ca;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(11,16,17,.96),
+            rgba(6,10,11,.96)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+
+.ag-public-terms-copy h3{
+
+    margin:
+        0 0 18px;
+
+    padding-bottom:12px;
+
+    border-bottom:
+        1px solid
+        rgba(213,163,43,.26);
+
+    color:#f0b72d;
+
+    font-size:24px;
+    font-weight:900;
+}
+
+
+.ag-public-terms-copy h4{
+
+    margin:
+        25px 0 8px;
+
+    color:#e9b333;
+
+    font-size:15px;
+    font-weight:900;
+
+    letter-spacing:.025em;
+}
+
+
+.ag-public-terms-copy p{
+
+    margin:
+        0 0 14px;
+
+    color:#b9c3c6;
+
+    font-size:13px;
+
+    line-height:1.72;
+}
+
+
+.ag-public-terms-copy strong{
+
+    color:#eef2f1;
+}
+
+
+.ag-public-terms-copy ul{
+
+    margin:
+        8px 0 18px 22px;
+
+    padding:0;
+
+    color:#b9c3c6;
+
+    font-size:13px;
+
+    line-height:1.65;
+}
+
+
+.ag-public-terms-copy li{
+
+    margin:
+        5px 0;
+}
+
+
+.ag-public-terms-copy ul ul{
+
+    margin-top:7px;
+    margin-bottom:7px;
+}
+
+
+@media (max-width:720px){
+
+    .ag-public-terms-card{
+
+        width:100%;
+
+        max-height:
+            calc(100vh - 26px);
+    }
+
+
+    .ag-public-terms-copy{
+
+        padding:
+            19px 16px;
+    }
+}
+
+/*
+ * ============================================================
+ * AUSTRALIA FRONT PUBLIC FORGOT PASSWORD PANEL V1
+ * ============================================================
+ */
+
+.ag-public-forgot-card{
+
+    width:
+        min(
+            650px,
+            calc(100vw - 40px)
+        );
+}
+
+
+.ag-public-forgot-card .ag-public-field{
+
+    max-width:100%;
+}
+
+
+.ag-public-forgot-security-note{
+
+    margin-top:18px;
+
+    padding:12px 14px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    border:
+        1px solid
+        rgba(213,163,43,.24);
+
+    border-radius:8px;
+
+    color:#98a5a8;
+
+    font-size:12px;
+
+    line-height:1.55;
+
+    background:
+        rgba(8,12,13,.66);
+}
+
+
+.ag-public-forgot-security-note img{
+
+    flex:0 0 auto;
+
+    width:21px;
+    height:21px;
+
+    object-fit:contain;
+}
+
+
+.ag-public-forgot-success-note{
+
+    margin-top:12px;
+
+    color:#a8c7ae;
+
+    font-size:12px;
+
+    font-weight:700;
+}
+
+
+@media (max-width:720px){
+
+    .ag-public-forgot-card{
+        width:100%;
+    }
+}

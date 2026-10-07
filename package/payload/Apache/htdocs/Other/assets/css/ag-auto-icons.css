@@ -1,0 +1,85 @@
+/* AUSTRALIA GRID - SITE-WIDE AUTO GLOW ICONS */
+
+.ag-auto-icon-control{
+    display:inline-flex !important;
+    align-items:center !important;
+    gap:8px !important;
+}
+
+.ag-auto-icon{
+    width:24px;
+    min-width:24px;
+    height:24px;
+    flex:0 0 24px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    line-height:1;
+}
+
+.ag-auto-icon svg{
+    width:20px;
+    height:20px;
+    display:block;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    pointer-events:none;
+}
+
+.ag-glow-icon,
+.ag-auto-icon,
+.dg-control-icon,
+.dg-icon,
+.ag-dashboard-glow{
+    filter:
+        drop-shadow(0 0 .5px currentColor)
+        drop-shadow(0 0 1px currentColor) !important;
+    opacity:.94;
+    transition:
+        filter .16s ease,
+        transform .16s ease,
+        opacity .16s ease;
+}
+
+button:hover .ag-glow-icon,
+a:hover .ag-glow-icon,
+button:hover .dg-control-icon,
+a:hover .dg-control-icon,
+button:hover .dg-icon,
+a:hover .dg-icon,
+.dashboard-card:hover .ag-dashboard-glow{
+    filter:
+        drop-shadow(0 0 1px currentColor)
+        drop-shadow(0 0 2px currentColor) !important;
+    opacity:1;
+}
+
+.ag-auto-icon-control:active .ag-auto-icon{
+    transform:scale(.94);
+}
+
+.small-button .ag-auto-icon,
+.dg-button .ag-auto-icon,
+.dg-button-link .ag-auto-icon{
+    width:21px;
+    min-width:21px;
+    height:21px;
+    flex-basis:21px;
+}
+
+.small-button .ag-auto-icon svg,
+.dg-button .ag-auto-icon svg,
+.dg-button-link .ag-auto-icon svg{
+    width:18px;
+    height:18px;
+}
+
+button:disabled .ag-auto-icon,
+.ag-auto-icon-control[aria-disabled="true"] .ag-auto-icon{
+    opacity:.55;
+    filter:none !important;
+}
+

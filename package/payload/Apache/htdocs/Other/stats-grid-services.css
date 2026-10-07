@@ -1,0 +1,1099 @@
+/*
+ ============================================================
+ AUSTRALIA CONTROL CENTER
+ GRID SERVICES & NETWORK V1
+ ============================================================
+*/
+
+
+.stats-grid-services{
+
+    margin-top:
+        8px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(211,163,46,.43);
+
+    border-radius:
+        7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15,21,22,.99),
+            rgba(5,9,10,.99)
+        );
+
+    box-shadow:
+        0 9px 26px
+        rgba(0,0,0,.28);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.stats-grid-services-head{
+
+    min-height:
+        40px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    padding:
+        7px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+
+    background:
+        linear-gradient(
+            180deg,
+            #192021,
+            #101617
+        );
+}
+
+
+.stats-grid-services-kicker{
+
+    color:
+        #d6a73a;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+}
+
+
+.stats-grid-services-title{
+
+    margin-top:
+        2px;
+
+    color:
+        #efc759;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .045em;
+}
+
+
+.stats-grid-services-clock{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #66dcff;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+}
+
+
+.stats-grid-services-clock::before{
+
+    content:
+        "";
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #34d5ff;
+
+    box-shadow:
+        0 0 9px
+        rgba(52,213,255,.9);
+}
+
+
+/* ============================================================
+   ALARM BAR
+   ============================================================ */
+
+.stats-grid-alarm{
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        7px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(255,81,81,.30);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(118,24,24,.38),
+            rgba(58,16,16,.20)
+        );
+
+    color:
+        #ff9696;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .055em;
+}
+
+
+.stats-grid-alarm.visible{
+
+    display:
+        flex;
+}
+
+
+.stats-grid-alarm-dot{
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    flex:
+        0 0 7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #ff5252;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,65,65,.95);
+
+    animation:
+        statsGridAlarmPulse
+        1s ease-in-out
+        infinite;
+}
+
+
+@keyframes statsGridAlarmPulse{
+
+    0%,
+    100%{
+
+        opacity:
+            .55;
+    }
+
+    50%{
+
+        opacity:
+            1;
+    }
+}
+
+
+/* ============================================================
+   MAIN BODY
+   ============================================================ */
+
+.stats-grid-services-body{
+
+    padding:
+        9px;
+}
+
+
+/* ============================================================
+   SERVICE RACK
+   ============================================================ */
+
+.stats-service-rack{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        7px;
+}
+
+
+.stats-service-module{
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    min-height:
+        78px;
+
+    overflow:
+        hidden;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(92,114,120,.20);
+
+    border-radius:
+        7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #101617,
+            #070b0c
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.025);
+}
+
+
+.stats-service-module::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        15%;
+
+    right:
+        15%;
+
+    bottom:
+        -20px;
+
+    height:
+        30px;
+
+    border-radius:
+        50%;
+
+    background:
+        #55dfa1;
+
+    opacity:
+        .06;
+
+    filter:
+        blur(18px);
+}
+
+
+.stats-service-top{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        8px;
+}
+
+
+.stats-service-name{
+
+    color:
+        #d7aa3e;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-service-led{
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    border-radius:
+        50%;
+
+    background:
+        #50595c;
+}
+
+
+.stats-service-module.running
+.stats-service-led{
+
+    background:
+        #51e09d;
+
+    box-shadow:
+        0 0 10px
+        rgba(81,224,157,.86);
+}
+
+
+.stats-service-module.warning
+.stats-service-led{
+
+    background:
+        #f0b83c;
+
+    box-shadow:
+        0 0 10px
+        rgba(240,184,60,.82);
+}
+
+
+.stats-service-module.down
+.stats-service-led{
+
+    background:
+        #ef5c5c;
+
+    box-shadow:
+        0 0 11px
+        rgba(239,92,92,.90);
+}
+
+
+.stats-service-value{
+
+    margin-top:
+        9px;
+
+    color:
+        #dff8ef;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+}
+
+
+.stats-service-state{
+
+    margin-top:
+        3px;
+
+    color:
+        #617176;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .07em;
+}
+
+
+.stats-service-module.running
+.stats-service-state{
+
+    color:
+        #5dca97;
+}
+
+
+.stats-service-module.down
+.stats-service-state{
+
+    color:
+        #e26f6f;
+}
+
+
+/* ============================================================
+   NETWORK + WORKLOAD GRID
+   ============================================================ */
+
+.stats-grid-network-layout{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(360px,.95fr)
+        minmax(500px,1.55fr)
+        minmax(350px,1fr);
+
+    gap:
+        8px;
+
+    margin-top:
+        8px;
+}
+
+
+/* ============================================================
+   PORT STATUS
+   ============================================================ */
+
+.stats-grid-port-panel{
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(71,149,174,.18);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-grid-subtitle{
+
+    margin-bottom:
+        7px;
+
+    color:
+        #d5a638;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-grid-port{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        11px 1fr auto;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        7px 3px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.045);
+}
+
+
+.stats-grid-port:last-child{
+
+    border-bottom:
+        0;
+}
+
+
+.stats-grid-port-led{
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #525d60;
+}
+
+
+.stats-grid-port.good
+.stats-grid-port-led{
+
+    background:
+        #50dfa0;
+
+    box-shadow:
+        0 0 8px
+        rgba(80,223,160,.75);
+}
+
+
+.stats-grid-port.bad
+.stats-grid-port-led{
+
+    background:
+        #ef5c5c;
+
+    box-shadow:
+        0 0 8px
+        rgba(239,92,92,.85);
+}
+
+
+.stats-grid-port-name{
+
+    color:
+        #c8d4d7;
+
+    font-size:
+        7px;
+
+    font-weight:
+        700;
+}
+
+
+.stats-grid-port-state{
+
+    color:
+        #68777c;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        7px;
+}
+
+
+.stats-grid-port.good
+.stats-grid-port-state{
+
+    color:
+        #62d7a3;
+}
+
+
+.stats-grid-port.bad
+.stats-grid-port-state{
+
+    color:
+        #ed7777;
+}
+
+
+/* ============================================================
+   GRID WORKLOAD
+   ============================================================ */
+
+.stats-grid-workload{
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(71,149,174,.18);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-grid-workload-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        6px;
+}
+
+
+.stats-grid-workload-item{
+
+    min-width:
+        0;
+
+    padding:
+        8px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.05);
+
+    border-radius:
+        5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #101617,
+            #090d0e
+        );
+}
+
+
+.stats-grid-workload-label{
+
+    color:
+        #897126;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.stats-grid-workload-value{
+
+    margin-top:
+        5px;
+
+    color:
+        #e8f7fa;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        16px;
+
+    font-weight:
+        700;
+}
+
+
+.stats-grid-workload-value.cyan{
+
+    color:
+        #56dbff;
+}
+
+
+.stats-grid-workload-value.green{
+
+    color:
+        #5de3a5;
+}
+
+
+.stats-grid-workload-value.gold{
+
+    color:
+        #e7b946;
+}
+
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
+
+.stats-grid-events{
+
+    min-width:
+        0;
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(71,149,174,.18);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-grid-events-list{
+
+    max-height:
+        116px;
+
+    overflow-y:
+        auto;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        6px;
+}
+
+
+.stats-grid-event{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        50px 1fr;
+
+    gap:
+        7px;
+
+    padding:
+        5px 2px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.035);
+}
+
+
+.stats-grid-event-time{
+
+    color:
+        #536267;
+}
+
+
+.stats-grid-event-text{
+
+    color:
+        #9eafb3;
+}
+
+
+.stats-grid-event.good
+.stats-grid-event-text{
+
+    color:
+        #6ed4a8;
+}
+
+
+.stats-grid-event.warn
+.stats-grid-event-text{
+
+    color:
+        #e8bd55;
+}
+
+
+.stats-grid-event.bad
+.stats-grid-event-text{
+
+    color:
+        #e87b7b;
+}
+
+
+/* ============================================================
+   GRAPHS
+   ============================================================ */
+
+.stats-grid-graphs{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        8px;
+
+    margin-top:
+        8px;
+}
+
+
+.stats-grid-graph{
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(71,149,174,.17);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-grid-graph-head{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        6px;
+}
+
+
+.stats-grid-graph-title{
+
+    color:
+        #d4a638;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .09em;
+}
+
+
+.stats-grid-graph-value{
+
+    color:
+        #5fdcff;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        8px;
+}
+
+
+.stats-grid-canvas-box{
+
+    position:
+        relative;
+
+    height:
+        62px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(67,143,168,.15);
+
+    border-radius:
+        5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #061014,
+            #03090b
+        );
+}
+
+
+.stats-grid-canvas-box::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(88,154,174,.07) calc(25% - 1px),
+            rgba(88,154,174,.07) 25%
+        ),
+
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent calc(50% - 1px),
+            rgba(88,154,174,.07) calc(50% - 1px),
+            rgba(88,154,174,.07) 50%
+        );
+}
+
+
+.stats-grid-canvas{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        62px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:1500px){
+
+    .stats-grid-network-layout{
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .stats-grid-events{
+
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+@media(max-width:1050px){
+
+    .stats-service-rack{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .stats-grid-network-layout{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .stats-grid-workload-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .stats-grid-graphs{
+
+        grid-template-columns:
+            1fr;
+    }
+}

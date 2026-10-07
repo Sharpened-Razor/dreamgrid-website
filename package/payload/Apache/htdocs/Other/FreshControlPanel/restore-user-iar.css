@@ -1,0 +1,360 @@
+/* FRESH RESTORE HISTORY + USER IAR */
+
+.agcp-restore-tools{
+    display:grid;
+
+    grid-template-columns:
+        minmax(260px,1fr)
+        170px
+        170px;
+
+    gap:7px;
+
+    padding:8px;
+}
+
+.agcp-restore-field{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+
+.agcp-restore-field label{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-restore-field input,
+.agcp-restore-field select{
+    min-height:30px;
+
+    padding:5px 8px;
+
+    border:1px solid #393d34;
+    border-radius:3px;
+
+    outline:none;
+
+    background:#060806;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+}
+
+.agcp-restore-field input:focus,
+.agcp-restore-field select:focus{
+    border-color:#7d641d;
+}
+
+.agcp-restore-head,
+.agcp-restore-row{
+    display:grid;
+
+    grid-template-columns:
+        82px
+        72px
+        minmax(130px,1fr)
+        minmax(130px,1fr)
+        minmax(110px,.8fr)
+        150px;
+
+    align-items:start;
+
+    gap:8px;
+}
+
+.agcp-restore-head{
+    min-height:29px;
+
+    padding:5px 8px;
+
+    border-bottom:1px solid #302f26;
+
+    color:#747a72;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-restore-list{
+    display:grid;
+
+    gap:4px;
+
+    padding:8px;
+}
+
+.agcp-restore-row{
+    min-height:39px;
+
+    padding:7px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-restore-row:hover{
+    border-color:#59491c;
+}
+
+.agcp-restore-row.success{
+    border-left:3px solid #4d8d60;
+}
+
+.agcp-restore-row.warning{
+    border-left:3px solid #a18429;
+}
+
+.agcp-restore-row.failed{
+    border-left:3px solid #9a5050;
+}
+
+.agcp-restore-badge{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:22px;
+
+    padding:3px 6px;
+
+    border:1px solid #474c41;
+    border-radius:999px;
+
+    background:#11150f;
+
+    color:#afb4ac;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-restore-badge.success{
+    border-color:#315d3d;
+    color:#70cb88;
+}
+
+.agcp-restore-badge.warning{
+    border-color:#6f591d;
+    color:#d2ad3d;
+}
+
+.agcp-restore-badge.failed{
+    border-color:#694040;
+    color:#dd8585;
+}
+
+.agcp-restore-data{
+    min-width:0;
+
+    color:#aeb3ab;
+
+    font-size:7px;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-restore-sub{
+    margin-top:4px;
+
+    color:#626961;
+
+    font-size:6px;
+
+    line-height:1.4;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-restore-detail{
+    grid-column:
+        3 / -1;
+
+    margin-top:1px;
+
+    padding:5px 7px;
+
+    border:1px solid #252922;
+    border-radius:3px;
+
+    background:#080a08;
+
+    color:#72786f;
+
+    font-size:6px;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* USER IAR */
+
+.agcp-user-iar-form{
+    display:grid;
+
+    grid-template-columns:
+        minmax(220px,1fr)
+        minmax(220px,1fr)
+        auto;
+
+    align-items:end;
+
+    gap:7px;
+
+    padding:9px;
+}
+
+.agcp-user-iar-field{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.agcp-user-iar-field label{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-user-iar-field input,
+.agcp-user-iar-field select{
+    min-height:31px;
+
+    padding:5px 8px;
+
+    border:1px solid #393d34;
+    border-radius:3px;
+
+    outline:none;
+
+    background:#060806;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+}
+
+.agcp-user-iar-field input:focus,
+.agcp-user-iar-field select:focus{
+    border-color:#7d641d;
+}
+
+.agcp-user-iar-action{
+    display:flex;
+
+    align-items:flex-end;
+}
+
+.agcp-user-iar-action .agcp-button{
+    min-height:31px;
+}
+
+.agcp-user-iar-job{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:5px;
+
+    padding:8px;
+}
+
+.agcp-user-iar-job-row{
+    display:grid;
+
+    grid-template-columns:
+        100px minmax(0,1fr);
+
+    gap:8px;
+
+    padding:7px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-user-iar-job-row span{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-user-iar-job-row strong{
+    color:#c8ccc5;
+
+    font-size:7px;
+
+    overflow-wrap:anywhere;
+}
+
+@media(max-width:1000px){
+
+    .agcp-restore-tools{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .agcp-restore-search{
+        grid-column:1 / -1;
+    }
+
+    .agcp-user-iar-form{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .agcp-user-iar-action{
+        grid-column:1 / -1;
+    }
+}
+
+@media(max-width:800px){
+
+    .agcp-restore-head{
+        display:none;
+    }
+
+    .agcp-restore-row{
+        grid-template-columns:
+            75px
+            65px
+            minmax(0,1fr);
+    }
+
+    .agcp-restore-row > :nth-child(4),
+    .agcp-restore-row > :nth-child(5),
+    .agcp-restore-row > :nth-child(6){
+        display:none;
+    }
+
+    .agcp-restore-detail{
+        grid-column:1 / -1;
+    }
+}
+
+@media(max-width:700px){
+
+    .agcp-restore-tools,
+    .agcp-user-iar-form,
+    .agcp-user-iar-job{
+        grid-template-columns:1fr;
+    }
+
+    .agcp-restore-search,
+    .agcp-user-iar-action{
+        grid-column:auto;
+    }
+}

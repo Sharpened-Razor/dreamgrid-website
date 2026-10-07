@@ -1,0 +1,46 @@
+<head>
+    <title>VR View</title>
+    <script src="/assets/vendor/jquery-3.6.1.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $.getJSON("list3D.plx?V=" + Math.random(), function (data) {
+                var items = [];
+                $.each(data, function (key, val) {
+                    items.push("<li><p class=\"title\">" + val + "</p>");
+                    items.push("<iframe src=\"./index1.html?image=/VR/photo/" + val + ".jpg\" width=\"1024\" height=\"512\" ></iframe></li>");
+                });
+
+                $("<ul>", {
+                    "class": "data",
+                    html: items.join("\n")
+                }).appendTo("#3D");
+            }
+            );
+        });
+    </script>
+    <style>
+        .centered {
+            width: 1024px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .title {
+            margin: 0 auto;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 0;
+            margin: 0 20px 0 0;
+            font-family: Gotham, Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="centered" id="3D">
+
+      
+    </div>
+</body>

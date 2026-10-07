@@ -1,0 +1,2063 @@
+/* ============================================================
+   AUSTRALIA GRID
+   MASTER ULTRA 3D THEME V3.1
+
+   PERMANENT DESIGN STANDARD:
+   - Rich blue/black metallic faces
+   - Bright gold bevelled borders
+   - Deep raised 3D shadows
+   - Glass reflections
+   - Moving gold sparkle
+   - Metallic 3D major headings
+   ============================================================ */
+
+
+:root{
+
+    --au31-bg0:#030506;
+
+    --au31-metal1:#465158;
+    --au31-metal2:#303a40;
+    --au31-metal3:#1b2429;
+    --au31-metal4:#0a1013;
+
+    --au31-gold-hi:#fff1b3;
+    --au31-gold:#f1b73f;
+    --au31-gold-mid:#c98b15;
+    --au31-gold-low:#73500d;
+
+    --au31-text:#edf2f4;
+    --au31-soft:#bdc7cc;
+
+}
+
+
+/* ============================================================
+   GOLD BORDER PULSE
+   ============================================================ */
+
+@keyframes auGoldBorderPulseV31{
+
+    0%,
+    100%{
+
+        border-color:
+            rgba(122,87,24,.92);
+
+        filter:
+            brightness(1);
+
+    }
+
+
+    38%{
+
+        border-color:
+            rgba(221,159,39,.95);
+
+        filter:
+            brightness(1.03);
+
+    }
+
+
+    46%{
+
+        border-color:
+            rgba(255,218,117,.99);
+
+        filter:
+            brightness(1.08);
+
+    }
+
+
+    53%{
+
+        border-color:
+            rgba(255,240,184,.99);
+
+        filter:
+            brightness(1.10);
+
+    }
+
+
+    62%{
+
+        border-color:
+            rgba(183,130,28,.94);
+
+        filter:
+            brightness(1.02);
+
+    }
+
+}
+
+
+/* ============================================================
+   GOLD SPARKLE SWEEP
+   ============================================================ */
+
+@keyframes auGoldSweepV31{
+
+    0%{
+
+        transform:
+            translateX(-190%);
+
+        opacity:0;
+
+    }
+
+
+    8%{
+
+        opacity:1;
+
+    }
+
+
+    25%{
+
+        transform:
+            translateX(350%);
+
+        opacity:0;
+
+    }
+
+
+    100%{
+
+        transform:
+            translateX(350%);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ============================================================
+   LARGE 3D METALLIC FONT
+   ============================================================ */
+
+h1,
+
+.page-title,
+
+.main-title,
+
+.hero-title,
+
+.dashboard-heading h1,
+
+.panel-title,
+
+.map-title{
+
+    color:#f4f4f4 !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .025em !important;
+
+    text-shadow:
+
+        0 1px 0
+        #ffffff,
+
+        0 2px 0
+        #d7d7d7,
+
+        0 3px 0
+        #929292,
+
+        0 4px 0
+        #4d5255,
+
+        0 7px 4px
+        rgba(0,0,0,.90),
+
+        0 11px 18px
+        rgba(0,0,0,.78) !important;
+
+}
+
+
+/* ============================================================
+   GOLD SECTION TITLES
+   ============================================================ */
+
+h2,
+
+h3,
+
+.card-title,
+
+.section-title,
+
+.dashboard-kicker,
+
+.eyebrow,
+
+.nav-headline,
+
+.australia-create-kicker,
+
+.australia-terms-kicker{
+
+    color:
+        #ffc448 !important;
+
+    font-weight:
+        900 !important;
+
+    text-shadow:
+
+        0 1px 0
+        #ffe9a0,
+
+        0 2px 0
+        #815606,
+
+        0 3px 3px
+        rgba(0,0,0,.84),
+
+        0 6px 9px
+        rgba(0,0,0,.72) !important;
+
+}
+
+
+/* ============================================================
+   MASTER CARD / PANEL STYLE
+   ============================================================ */
+
+#right-nav,
+
+.australia-menu-panel,
+
+.australia-home-panel,
+
+.dashboard-shell,
+
+.dashboard-header,
+
+.dashboard-card,
+
+.dashboard-note,
+
+.card,
+
+.panel,
+
+.header,
+
+.faq,
+
+.step,
+
+fieldset,
+
+.metric-card,
+
+.stat-card,
+
+.stats-card,
+
+.health-card,
+
+.region-card,
+
+.backup-card,
+
+.message-card,
+
+.account-card,
+
+.support-card,
+
+.data-card,
+
+.info-card,
+
+.map-card,
+
+.control-card,
+
+.summary-card,
+
+[class$="-card"],
+
+[class$="-panel"],
+
+[class$="-box"]{
+
+    position:
+        relative !important;
+
+    isolation:
+        isolate !important;
+
+    overflow:
+        hidden;
+
+    border:
+        2px solid
+        var(--au31-gold-low) !important;
+
+    border-radius:
+        14px !important;
+
+    background:
+
+        radial-gradient(
+            ellipse at 40% -8%,
+            rgba(255,238,186,.22),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            var(--au31-metal1) 0%,
+            var(--au31-metal2) 22%,
+            var(--au31-metal3) 49%,
+            var(--au31-metal4) 74%,
+            #030506 100%
+        ) !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.30),
+
+        inset 2px 0 0
+        rgba(255,255,255,.05),
+
+        inset -4px -7px 13px
+        rgba(0,0,0,.93),
+
+        0 3px 0
+        #402c09,
+
+        0 8px 0
+        rgba(0,0,0,.48),
+
+        0 18px 35px
+        rgba(0,0,0,.67),
+
+        0 0 9px
+        rgba(239,175,47,.19) !important;
+
+    animation:
+
+        auGoldBorderPulseV31
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* ============================================================
+   GLASS REFLECTION
+   ============================================================ */
+
+.dashboard-card:after,
+
+.dashboard-header:after,
+
+.card:after,
+
+.panel:after,
+
+.header:after,
+
+.faq:after,
+
+.step:after,
+
+.australia-home-panel:after,
+
+.australia-menu-panel:after{
+
+    content:"";
+
+    position:absolute;
+
+    z-index:-1;
+
+    left:2px;
+
+    right:2px;
+
+    top:2px;
+
+    height:47%;
+
+    pointer-events:none;
+
+    border-radius:
+        11px 11px 45% 45%;
+
+    background:
+
+        linear-gradient(
+            153deg,
+            rgba(255,255,255,.19),
+            rgba(255,255,255,.045) 46%,
+            transparent 47%
+        );
+
+}
+
+
+/* ============================================================
+   SPARKLING GOLD TOP EDGE
+   ============================================================ */
+
+.dashboard-card:before,
+
+.dashboard-header:before,
+
+.dashboard-shell:before,
+
+.card:before,
+
+.panel:before,
+
+.header:before,
+
+.faq:before,
+
+.step:before,
+
+.australia-home-panel:before,
+
+.australia-menu-panel:before{
+
+    content:"";
+
+    position:absolute;
+
+    z-index:10;
+
+    top:-1px;
+
+    left:0;
+
+    width:31%;
+
+    height:3px;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            #e7a92f 22%,
+            #fff7d5 50%,
+            #ffc447 70%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 8px
+        rgba(255,194,55,.95),
+
+        0 0 17px
+        rgba(255,177,29,.45);
+
+    animation:
+
+        auGoldSweepV31
+        5.8s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* Different sparkle timing */
+
+.dashboard-card:nth-child(3n+1):before{
+
+    animation-delay:
+        -.8s;
+
+}
+
+
+.dashboard-card:nth-child(3n+2):before{
+
+    animation-delay:
+        -2.3s;
+
+}
+
+
+.dashboard-card:nth-child(3n):before{
+
+    animation-delay:
+        -3.7s;
+
+}
+
+
+/* ============================================================
+   FRONT WIFI MENU OUTER BOX
+   ============================================================ */
+
+#right-nav{
+
+    border-color:
+        #a77a24 !important;
+
+}
+
+
+/* ============================================================
+   FRONT WIFI MENU BUTTON CARDS
+   ============================================================ */
+
+.australia-main-menu
+li a{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        #947024 !important;
+
+    border-radius:
+        9px !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #4a5053 0%,
+            #30373b 26%,
+            #1b2226 51%,
+            #0b1012 74%,
+            #050708 100%
+        ) !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.25),
+
+        inset 0 -4px 7px
+        rgba(0,0,0,.83),
+
+        0 2px 0
+        #3e2c09,
+
+        0 6px 10px
+        rgba(0,0,0,.63) !important;
+
+    transition:
+        transform .16s ease,
+        border-color .16s ease,
+        box-shadow .16s ease !important;
+
+}
+
+
+.australia-main-menu
+li a:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        #efb440 !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.30),
+
+        inset 0 -4px 7px
+        rgba(0,0,0,.82),
+
+        0 3px 0
+        #58400f,
+
+        0 8px 13px
+        rgba(0,0,0,.68),
+
+        0 0 14px
+        rgba(241,180,51,.36) !important;
+
+}
+
+
+/* ============================================================
+   ICON BOXES
+   ============================================================ */
+
+.menu-icon,
+
+.card-icon,
+
+.step-num{
+
+    border:
+        2px solid
+        #b0822b !important;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #414748,
+            #1b2022 42%,
+            #080b0c 70%,
+            #030404
+        ) !important;
+
+    color:
+        #ffc647 !important;
+
+    text-shadow:
+
+        0 1px 0
+        #704b08,
+
+        0 2px 4px
+        #000 !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.30),
+
+        inset 0 -4px 7px
+        rgba(0,0,0,.87),
+
+        0 2px 0
+        #44310b,
+
+        0 6px 10px
+        rgba(0,0,0,.68),
+
+        0 0 8px
+        rgba(239,174,44,.18) !important;
+
+}
+
+
+/* ============================================================
+   RECESSED INPUTS
+   ============================================================ */
+
+input[type="text"],
+
+input[type="password"],
+
+input[type="email"],
+
+input[type="search"],
+
+input[type="number"],
+
+input[type="date"],
+
+input[type="time"],
+
+input[type="datetime-local"],
+
+select,
+
+textarea{
+
+    border:
+        1px solid
+        #5d686e !important;
+
+    border-radius:
+        7px !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #0d1113,
+            #020303
+        ) !important;
+
+    color:
+        #f0f3f4 !important;
+
+    box-shadow:
+
+        inset 0 4px 9px
+        rgba(0,0,0,.93),
+
+        inset 0 -1px 0
+        rgba(255,255,255,.06),
+
+        0 1px 0
+        rgba(255,255,255,.05) !important;
+
+}
+
+
+input:focus,
+
+select:focus,
+
+textarea:focus{
+
+    outline:none !important;
+
+    border-color:
+        #e6ab31 !important;
+
+    box-shadow:
+
+        inset 0 4px 9px
+        rgba(0,0,0,.91),
+
+        0 0 11px
+        rgba(240,178,48,.42) !important;
+
+}
+
+
+/* ============================================================
+   NORMAL METALLIC BUTTONS
+   ============================================================ */
+
+button,
+
+.button,
+
+.btn,
+
+.card-button,
+
+.top-button,
+
+input[type="button"]{
+
+    border:
+        1px solid
+        #667177 !important;
+
+    border-radius:
+        8px !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #465158,
+            #2b3439 39%,
+            #101619 55%,
+            #1b2226 100%
+        ) !important;
+
+    color:
+        #f1f3f4 !important;
+
+    font-weight:
+        900 !important;
+
+    text-shadow:
+        0 2px 3px
+        #000 !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.27),
+
+        inset 0 -4px 7px
+        rgba(0,0,0,.85),
+
+        0 2px 0
+        #030404,
+
+        0 6px 10px
+        rgba(0,0,0,.64) !important;
+
+}
+
+
+/* ============================================================
+   GOLD PRIMARY BUTTONS
+   ============================================================ */
+
+input[type="submit"],
+
+.card-button.primary,
+
+.top-button.home,
+
+.btn-primary,
+
+.button-primary{
+
+    border:
+        1px solid
+        #fff0a7 !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fff9da 0%,
+            #ffe282 10%,
+            #f2ba3e 33%,
+            #d39112 64%,
+            #8b5405 100%
+        ) !important;
+
+    color:
+        #160f05 !important;
+
+    font-weight:
+        900 !important;
+
+    text-shadow:
+        0 1px 0
+        rgba(255,255,255,.50) !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.82),
+
+        inset 0 -5px 7px
+        rgba(91,47,0,.54),
+
+        0 2px 0
+        #593400,
+
+        0 7px 11px
+        rgba(0,0,0,.65),
+
+        0 0 10px
+        rgba(242,179,47,.35) !important;
+
+}
+
+
+/* ============================================================
+   LOGOUT / DANGER
+   ============================================================ */
+
+.top-button.logout,
+
+.btn-danger,
+
+.danger,
+
+.delete{
+
+    border:
+        1px solid
+        #963a41 !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #803138,
+            #491b20 44%,
+            #200c0f 72%,
+            #100506
+        ) !important;
+
+    color:
+        #ffdbde !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.18),
+
+        inset 0 -4px 7px
+        rgba(0,0,0,.79),
+
+        0 2px 0
+        #090304,
+
+        0 6px 10px
+        rgba(0,0,0,.65) !important;
+
+}
+
+
+/* ============================================================
+   TABLES / DATA
+   ============================================================ */
+
+table{
+
+    border:
+        2px solid
+        #805d1b !important;
+
+    border-radius:
+        10px !important;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #273136,
+            #080d0f
+        ) !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.12),
+
+        0 3px 0
+        #342509,
+
+        0 10px 21px
+        rgba(0,0,0,.54) !important;
+
+}
+
+
+th{
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #474d50,
+            #171c1e
+        ) !important;
+
+    color:
+        #ffc448 !important;
+
+    text-shadow:
+        0 2px 3px
+        #000 !important;
+
+}
+
+
+td{
+
+    border-color:
+        rgba(255,255,255,.08) !important;
+
+}
+
+
+tbody tr:nth-child(even){
+
+    background:
+        rgba(255,255,255,.028) !important;
+
+}
+
+
+tbody tr:hover{
+
+    background:
+        rgba(230,170,46,.085) !important;
+
+}
+
+
+/* ============================================================
+   MAP BOXES / CONTROLS
+   ============================================================ */
+
+.map-controls,
+
+.map-toolbar,
+
+.map-popup,
+
+.region-info,
+
+.leaflet-control,
+
+.leaflet-popup-content-wrapper,
+
+.mapboxgl-popup-content,
+
+.mapboxgl-ctrl,
+
+.ol-control{
+
+    border:
+        1px solid
+        #a27728 !important;
+
+    border-radius:
+        9px !important;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(55,65,70,.98),
+            rgba(8,13,15,.98)
+        ) !important;
+
+    color:
+        #edf1f2 !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.20),
+
+        inset 0 -4px 7px
+        rgba(0,0,0,.80),
+
+        0 3px 0
+        #392809,
+
+        0 9px 16px
+        rgba(0,0,0,.60) !important;
+
+}
+
+
+/* ============================================================
+   DASHBOARD RAISED EFFECT
+   ============================================================ */
+
+.dashboard-card:hover{
+
+    transform:
+        translateY(-4px) !important;
+
+    border-color:
+        #efb343 !important;
+
+    box-shadow:
+
+        inset 0 2px 0
+        rgba(255,255,255,.31),
+
+        inset -4px -7px 13px
+        rgba(0,0,0,.91),
+
+        0 4px 0
+        #573d0d,
+
+        0 11px 0
+        rgba(0,0,0,.41),
+
+        0 24px 40px
+        rgba(0,0,0,.69),
+
+        0 0 17px
+        rgba(243,182,52,.32) !important;
+
+}
+
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.card-status,
+
+.status,
+
+.badge,
+
+.pill{
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.18),
+
+        inset 0 -2px 3px
+        rgba(0,0,0,.47),
+
+        0 2px 5px
+        rgba(0,0,0,.55) !important;
+
+}
+
+
+/* ============================================================
+   REDUCE MOTION WHEN OS REQUESTS IT
+   ============================================================ */
+
+@media(
+    prefers-reduced-motion:
+    reduce
+){
+
+    #right-nav,
+
+    .australia-menu-panel,
+
+    .australia-home-panel,
+
+    .dashboard-shell,
+
+    .dashboard-header,
+
+    .dashboard-card,
+
+    .dashboard-note,
+
+    .card,
+
+    .panel,
+
+    .header,
+
+    .faq,
+
+    .step,
+
+    fieldset,
+
+    [class$="-card"],
+
+    [class$="-panel"],
+
+    [class$="-box"]{
+
+        animation:
+            none !important;
+
+    }
+
+}
+/* AUSTRALIA CRISP LARGE TITLES V1 */
+
+/*
+ * Keep the 3D panels, gold borders, buttons and card effects.
+ * Large headings are deliberately kept SHARP and readable.
+ */
+
+h1,
+.au-title,
+.page-title,
+.dashboard-title,
+.browser-header h1,
+.clean-header h1,
+.iar-header h1,
+.account-header h1,
+.profile-header h1,
+.panel-title-large{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .015em !important;
+
+    color:
+        #f5f6f7 !important;
+
+    -webkit-text-stroke:
+        0 !important;
+
+    text-shadow:
+        0 2px 2px
+        rgba(0,0,0,.78) !important;
+
+    filter:
+        none !important;
+}
+
+
+/*
+ * Main gold section headings remain gold but crisp.
+ */
+
+h2,
+.section-title{
+
+    -webkit-text-stroke:
+        0 !important;
+
+    filter:
+        none !important;
+}
+
+
+/*
+ * Never apply blur/drop-shadow filters to text.
+ */
+
+h1,
+h2,
+h3,
+.au-title,
+.page-title{
+
+    backdrop-filter:
+        none !important;
+}
+
+
+/* AUSTRALIA PERFECT BACKGROUND OVERRIDE V1 START */
+
+html,
+body{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    overflow-x:hidden !important;
+}
+
+
+body{
+
+    min-height:100vh !important;
+
+    background-color:#000 !important;
+
+    background-image:
+        url("/Other/assets/images/Site-background.png")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+body.australia-home-page,
+body.ag-frontpage{
+
+    background-image:
+        url("/Other/assets/images/Frontpage-background.png")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+body > .dashboard-shell,
+body > .ag-shell,
+body > .ag-frontpage-shell{
+
+    background-color:
+        transparent !important;
+
+    background-image:
+        none !important;
+}
+
+
+@media(max-width:900px){
+
+    body,
+    body.australia-home-page,
+    body.ag-frontpage{
+
+        background-size:
+            cover !important;
+
+        background-position:
+            center center !important;
+
+        background-attachment:
+            scroll !important;
+    }
+}
+
+/* AUSTRALIA PERFECT BACKGROUND OVERRIDE V1 END */
+
+
+
+/* AUSTRALIA MASTER COMPACT UI V2 START */
+
+
+/* ============================================================
+   MASTER VALUES
+   ============================================================ */
+
+:root{
+
+    --ag-ui-button-height: 28px;
+
+    --ag-ui-button-padding:
+        0 9px;
+
+    --ag-ui-button-radius:
+        6px;
+
+    --ag-ui-button-font:
+        9px;
+
+
+    --ag-ui-box-radius:
+        10px;
+
+    --ag-ui-box-padding:
+        10px;
+
+    --ag-ui-box-gap:
+        7px;
+
+
+    --ag-ui-gold:
+        #dda429;
+
+    --ag-ui-gold-light:
+        #ffd45d;
+
+    --ag-ui-gold-dark:
+        #9a6106;
+
+
+    --ag-ui-dark-top:
+        #303b41;
+
+    --ag-ui-dark-mid:
+        #1a2226;
+
+    --ag-ui-dark-bottom:
+        #080c0f;
+
+
+    --ag-ui-red-top:
+        #713038;
+
+    --ag-ui-red-mid:
+        #45191e;
+
+    --ag-ui-red-bottom:
+        #20090c;
+}
+
+
+/* ============================================================
+   STANDARD BUTTON SIZE
+   ============================================================ */
+
+button:not(.tab):not(.dg-modal-x),
+
+input[type="button"],
+input[type="submit"],
+
+.dashboard-nav a,
+.ag-nav a,
+
+.card-button,
+.button-primary,
+.top-button,
+
+.dashboard-logout,
+.back-button,
+
+.ag-button,
+
+.rm-action-button,
+.region-tool-button,
+
+.backup-download,
+.backup-delete,
+.backup-restore{
+
+    box-sizing:
+        border-box !important;
+
+    height:
+        var(--ag-ui-button-height)
+        !important;
+
+    min-height:
+        var(--ag-ui-button-height)
+        !important;
+
+    padding:
+        var(--ag-ui-button-padding)
+        !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    gap:
+        5px !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.16)
+        !important;
+
+    border-radius:
+        var(--ag-ui-button-radius)
+        !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--ag-ui-dark-top),
+
+            var(--ag-ui-dark-mid) 52%,
+
+            var(--ag-ui-dark-bottom)
+        )
+        !important;
+
+    color:
+        #f1f3f4 !important;
+
+    font-size:
+        var(--ag-ui-button-font)
+        !important;
+
+    font-weight:
+        700 !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .025em !important;
+
+    text-decoration:
+        none !important;
+
+    text-shadow:
+        none !important;
+
+    white-space:
+        nowrap;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.11),
+
+        inset 0 -2px 3px
+        rgba(0,0,0,.55),
+
+        0 2px 5px
+        rgba(0,0,0,.38)
+
+        !important;
+}
+
+
+/* ============================================================
+   GOLD PRIMARY BUTTONS
+   ============================================================ */
+
+.card-button.primary,
+.button-primary,
+
+.ag-button.primary,
+
+.rm-action-button.primary,
+.region-tool-button.primary,
+
+.back-dashboard,
+
+button.gold,
+button.primary{
+
+    border-color:
+        var(--ag-ui-gold)
+        !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--ag-ui-gold-light),
+
+            #e4a41d 52%,
+
+            var(--ag-ui-gold-dark)
+        )
+        !important;
+
+    color:
+        #171108 !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.52),
+
+        inset 0 -2px 3px
+        rgba(92,52,0,.45),
+
+        0 2px 6px
+        rgba(0,0,0,.40)
+
+        !important;
+}
+
+
+/* ============================================================
+   LOGOUT / DELETE / DANGER
+   ============================================================ */
+
+.top-button.logout,
+.dashboard-logout.logout,
+
+.logout,
+.danger,
+
+button.danger,
+
+.backup-delete{
+
+    border-color:
+        #7b3239 !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--ag-ui-red-top),
+
+            var(--ag-ui-red-mid) 52%,
+
+            var(--ag-ui-red-bottom)
+        )
+        !important;
+
+    color:
+        #ffe8e8 !important;
+}
+
+
+/* ============================================================
+   BUTTON HOVER
+   ============================================================ */
+
+button:not(.tab):not(.dg-modal-x):hover,
+
+.dashboard-nav a:hover,
+.ag-nav a:hover,
+
+.card-button:hover,
+.button-primary:hover,
+
+.top-button:hover,
+.dashboard-logout:hover,
+.back-button:hover,
+
+.ag-button:hover,
+
+.rm-action-button:hover,
+.region-tool-button:hover{
+
+    filter:
+        brightness(1.10);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* ============================================================
+   DISABLED
+   ============================================================ */
+
+button:disabled,
+.card-button.disabled,
+.disabled{
+
+    opacity:
+        .40 !important;
+
+    cursor:
+        not-allowed !important;
+
+    filter:
+        grayscale(.55)
+        !important;
+
+    transform:
+        none !important;
+}
+
+
+/* ============================================================
+   STANDARD NAVIGATION BARS
+   ============================================================ */
+
+.dashboard-nav,
+.ag-nav{
+
+    min-height:
+        0 !important;
+
+    padding:
+        5px 6px !important;
+
+    gap:
+        4px !important;
+
+    border-radius:
+        9px !important;
+}
+
+
+/* ============================================================
+   STANDARD PANELS / BOXES
+   ============================================================ */
+
+.panel,
+.ag-panel,
+
+.dashboard-card,
+
+.overview-card,
+.summary-card,
+
+.region-card,
+.region-list,
+.region-detail,
+
+.grid-overview,
+.grid-alerts,
+
+.profile-card,
+.workspace-card,
+.storage-card,
+
+.ag-card{
+
+    box-sizing:
+        border-box !important;
+
+    border:
+        1px solid
+        rgba(202,151,37,.38)
+        !important;
+
+    border-radius:
+        var(--ag-ui-box-radius)
+        !important;
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            rgba(27,35,39,.95),
+
+            rgba(6,10,13,.96)
+        )
+        !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.055),
+
+        0 4px 10px
+        rgba(0,0,0,.34)
+
+        !important;
+}
+
+
+/* ============================================================
+   STANDARD PANEL PADDING
+   ============================================================ */
+
+.panel,
+.ag-panel,
+
+.region-detail,
+
+.profile-card,
+.workspace-card,
+.ag-card,
+
+.grid-overview,
+.grid-alerts{
+
+    padding:
+        var(--ag-ui-box-padding)
+        !important;
+}
+
+
+/* ============================================================
+   STANDARD GRID SPACING
+   ============================================================ */
+
+.dashboard-grid,
+.overview-cards,
+.region-grid,
+.storage-cards,
+.region-summary,
+.summary-grid{
+
+    gap:
+        var(--ag-ui-box-gap)
+        !important;
+}
+
+
+/* ============================================================
+   STANDARD CARD PADDING
+   ============================================================ */
+
+.dashboard-card,
+.overview-card,
+.summary-card,
+.region-card,
+.storage-card{
+
+    padding:
+        9px !important;
+}
+
+
+/* ============================================================
+   BOX HEADERS
+   ============================================================ */
+
+.panel-title,
+.section-title,
+.card-title,
+
+.overview-heading strong,
+.detail-title h2{
+
+    color:
+        #efb130 !important;
+
+    font-weight:
+        800 !important;
+
+    text-shadow:
+        none !important;
+
+    filter:
+        none !important;
+}
+
+
+/* ============================================================
+   COMPACT PANEL HEADERS
+   ============================================================ */
+
+.panel-title,
+.overview-heading,
+.alerts-heading,
+.detail-title{
+
+    min-height:
+        0 !important;
+
+    margin-bottom:
+        6px !important;
+
+    padding-bottom:
+        5px !important;
+}
+
+
+/* ============================================================
+   STANDARD INPUTS
+   ============================================================ */
+
+input[type="text"],
+input[type="search"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+
+select{
+
+    box-sizing:
+        border-box !important;
+
+    height:
+        28px !important;
+
+    min-height:
+        28px !important;
+
+    padding:
+        0 7px !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15)
+        !important;
+
+    border-radius:
+        6px !important;
+
+    background:
+        rgba(2,6,8,.90)
+        !important;
+
+    color:
+        #f2f4f4
+        !important;
+
+    font-size:
+        9px !important;
+}
+
+
+textarea{
+
+    border:
+        1px solid
+        rgba(255,255,255,.15)
+        !important;
+
+    border-radius:
+        6px !important;
+
+    background:
+        rgba(2,6,8,.90)
+        !important;
+
+    color:
+        #f2f4f4
+        !important;
+}
+
+
+/* ============================================================
+   CONTROL PANEL HEADER
+   ============================================================ */
+
+body.control-panel-page .shell > header{
+
+    padding:
+        8px 12px !important;
+
+    margin-bottom:
+        6px !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+body.control-panel-page header h1{
+
+    font-size:
+        22px !important;
+
+    line-height:
+        1 !important;
+
+    margin:
+        1px 0 !important;
+}
+
+
+body.control-panel-page header p{
+
+    margin:
+        3px 0 0 !important;
+
+    font-size:
+        10px !important;
+}
+
+
+body.control-panel-page .header-account{
+
+    gap:
+        5px !important;
+}
+
+
+body.control-panel-page .level{
+
+    padding:
+        5px 8px !important;
+
+    min-height:
+        0 !important;
+
+    border-radius:
+        6px !important;
+}
+
+
+body.control-panel-page .level strong{
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .level span{
+
+    font-size:
+        7px !important;
+}
+
+
+/* ============================================================
+   CONTROL PANEL OVERVIEW
+   ============================================================ */
+
+body.control-panel-page .grid-overview{
+
+    margin-bottom:
+        6px !important;
+}
+
+
+body.control-panel-page .overview-card{
+
+    min-height:
+        56px !important;
+}
+
+
+body.control-panel-page .overview-value{
+
+    font-size:
+        17px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .overview-label,
+body.control-panel-page .overview-card small{
+
+    font-size:
+        8px !important;
+}
+
+
+/* ============================================================
+   CONTROL PANEL ALERTS
+   ============================================================ */
+
+body.control-panel-page .grid-alerts{
+
+    margin-bottom:
+        6px !important;
+}
+
+
+body.control-panel-page .alert-row{
+
+    margin-top:
+        3px !important;
+
+    padding:
+        5px 7px !important;
+
+    min-height:
+        0 !important;
+
+    font-size:
+        8px !important;
+}
+
+
+/* ============================================================
+   TABLE ROWS
+   ============================================================ */
+
+th{
+
+    padding:
+        6px 7px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+td{
+
+    padding:
+        6px 7px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media(max-width:700px){
+
+    :root{
+
+        --ag-ui-button-height:
+            27px;
+
+        --ag-ui-button-padding:
+            0 7px;
+
+        --ag-ui-box-padding:
+            8px;
+    }
+}
+
+
+/* AUSTRALIA MASTER COMPACT UI V2 END */
+

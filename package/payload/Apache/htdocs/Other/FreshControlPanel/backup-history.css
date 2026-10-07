@@ -1,0 +1,274 @@
+/* FRESH BACKUP HISTORY V1 */
+
+.agcp-history-tools{
+    display:grid;
+
+    grid-template-columns:
+        minmax(240px,1fr)
+        160px
+        160px
+        160px;
+
+    gap:7px;
+
+    padding:8px;
+}
+
+.agcp-history-field{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.agcp-history-field label{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-history-field input,
+.agcp-history-field select{
+    min-height:30px;
+
+    padding:5px 8px;
+
+    border:1px solid #393d34;
+    border-radius:3px;
+
+    outline:none;
+
+    background:#060806;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+}
+
+.agcp-history-field input:focus,
+.agcp-history-field select:focus{
+    border-color:#7d641d;
+}
+
+.agcp-history-list{
+    display:grid;
+
+    gap:5px;
+
+    padding:8px;
+}
+
+.agcp-history-row{
+    display:grid;
+
+    grid-template-columns:
+        78px
+        minmax(125px,.9fr)
+        minmax(150px,1.1fr)
+        minmax(150px,1fr)
+        minmax(160px,1.3fr);
+
+    gap:8px;
+
+    align-items:start;
+
+    padding:8px 9px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-history-row.success{
+    border-left:3px solid #4d8c60;
+}
+
+.agcp-history-row.warning{
+    border-left:3px solid #9b7d25;
+}
+
+.agcp-history-row.failed{
+    border-left:3px solid #985050;
+}
+
+.agcp-history-badge{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:22px;
+
+    padding:3px 6px;
+
+    border:1px solid #484d42;
+    border-radius:999px;
+
+    background:#11150f;
+
+    color:#aeb3aa;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-history-badge.success{
+    border-color:#315d3d;
+    color:#70cb88;
+}
+
+.agcp-history-badge.warning{
+    border-color:#6e591d;
+    color:#d1ad3d;
+}
+
+.agcp-history-badge.failed{
+    border-color:#694040;
+    color:#dd8585;
+}
+
+.agcp-history-primary{
+    min-width:0;
+}
+
+.agcp-history-title{
+    color:#d6d9d2;
+
+    font-size:8px;
+    font-weight:900;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-history-sub{
+    margin-top:3px;
+
+    color:#626961;
+
+    font-size:6px;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-history-cell{
+    min-width:0;
+}
+
+.agcp-history-cell span{
+    display:block;
+
+    color:#696f67;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-history-cell strong{
+    display:block;
+
+    margin-top:3px;
+
+    color:#aeb3ab;
+
+    font-size:7px;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-history-extra{
+    grid-column:
+        2 / -1;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:4px;
+
+    margin-top:2px;
+}
+
+.agcp-history-extra-item{
+    padding:5px 6px;
+
+    border:1px solid #252922;
+    border-radius:3px;
+
+    background:#080a08;
+}
+
+.agcp-history-extra-item span{
+    display:block;
+
+    color:#646a62;
+
+    font-size:5px;
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+.agcp-history-extra-item strong{
+    display:block;
+
+    margin-top:3px;
+
+    color:#91968e;
+
+    font-size:6px;
+
+    overflow-wrap:anywhere;
+}
+
+@media(max-width:1100px){
+
+    .agcp-history-tools{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .agcp-history-row{
+        grid-template-columns:
+            75px
+            minmax(150px,1fr)
+            minmax(130px,1fr);
+    }
+
+    .agcp-history-row > :nth-child(4),
+    .agcp-history-row > :nth-child(5){
+        display:none;
+    }
+
+    .agcp-history-extra{
+        grid-column:
+            2 / -1;
+    }
+}
+
+@media(max-width:760px){
+
+    .agcp-history-tools{
+        grid-template-columns:1fr;
+    }
+
+    .agcp-history-row{
+        grid-template-columns:
+            70px minmax(0,1fr);
+    }
+
+    .agcp-history-row > :nth-child(3),
+    .agcp-history-row > :nth-child(4),
+    .agcp-history-row > :nth-child(5){
+        display:none;
+    }
+
+    .agcp-history-extra{
+        grid-template-columns:1fr;
+        grid-column:
+            1 / -1;
+    }
+}

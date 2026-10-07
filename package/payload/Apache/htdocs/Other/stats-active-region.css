@@ -1,0 +1,757 @@
+/*
+ ============================================================
+ AUSTRALIA CONTROL CENTER
+ ACTIVE REGION PANEL V1
+ ============================================================
+*/
+
+
+.stats-active-region{
+
+    margin-top:
+        8px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(211,163,46,.43);
+
+    border-radius:
+        7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15,22,23,.99),
+            rgba(6,10,11,.99)
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.25);
+}
+
+
+.stats-active-region-head{
+
+    min-height:
+        39px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    padding:
+        7px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+
+    background:
+        linear-gradient(
+            180deg,
+            #182021,
+            #111617
+        );
+}
+
+
+.stats-active-region-kicker{
+
+    color:
+        #d7a83b;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+}
+
+
+.stats-active-region-title{
+
+    margin-top:
+        2px;
+
+    color:
+        #efc75a;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+}
+
+
+.stats-active-region-live{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        #5ddcff;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.stats-active-region-live::before{
+
+    content:
+        "";
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        #35d5ff;
+
+    box-shadow:
+        0 0 9px
+        rgba(53,213,255,.90);
+}
+
+
+.stats-active-region-body{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(220px,.85fr)
+        minmax(500px,2fr)
+        minmax(330px,1.2fr);
+
+    gap:
+        8px;
+
+    padding:
+        9px;
+}
+
+
+/* ============================================================
+   ACTIVE REGION HERO
+   ============================================================ */
+
+.stats-active-hero{
+
+    min-width:
+        0;
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        rgba(62,158,189,.20);
+
+    border-radius:
+        7px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(40,201,245,.08),
+            transparent 55%
+        ),
+        #080d0e;
+}
+
+
+.stats-active-mode{
+
+    color:
+        #6e7d82;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .12em;
+}
+
+
+.stats-active-name{
+
+    margin-top:
+        6px;
+
+    overflow:
+        hidden;
+
+    color:
+        #eafcff;
+
+    font-size:
+        19px;
+
+    font-weight:
+        900;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+
+    text-shadow:
+        0 0 10px
+        rgba(51,207,245,.18);
+}
+
+
+.stats-active-avatar-line{
+
+    margin-top:
+        6px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #88989d;
+
+    font-size:
+        8px;
+}
+
+
+.stats-active-avatar-dot{
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    flex:
+        0 0 7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #50dfa0;
+
+    box-shadow:
+        0 0 8px
+        rgba(80,223,160,.70);
+}
+
+
+.stats-active-region-status{
+
+    margin-top:
+        11px;
+
+    height:
+        7px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(53,168,200,.24);
+
+    border-radius:
+        5px;
+
+    background:
+        #051014;
+}
+
+
+.stats-active-region-status span{
+
+    display:
+        block;
+
+    width:
+        0;
+
+    height:
+        100%;
+
+    border-radius:
+        4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0783ad,
+            #35d7ff
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(53,215,255,.55);
+
+    transition:
+        width .6s ease;
+}
+
+
+.stats-active-updated{
+
+    margin-top:
+        7px;
+
+    color:
+        #536267;
+
+    font-size:
+        6px;
+
+    font-family:
+        Consolas,
+        monospace;
+}
+
+
+/* ============================================================
+   METRICS
+   ============================================================ */
+
+.stats-active-metrics{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:
+        6px;
+}
+
+
+.stats-active-metric{
+
+    min-width:
+        0;
+
+    min-height:
+        68px;
+
+    padding:
+        8px 9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.055);
+
+    border-radius:
+        6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16,23,24,.96),
+            rgba(8,12,13,.96)
+        );
+}
+
+
+.stats-active-metric-label{
+
+    color:
+        #a7832d;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-active-metric-value{
+
+    margin-top:
+        5px;
+
+    color:
+        #e9f9fc;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        16px;
+
+    font-weight:
+        700;
+}
+
+
+.stats-active-metric-value.cyan{
+
+    color:
+        #59ddff;
+
+    text-shadow:
+        0 0 7px
+        rgba(89,221,255,.28);
+}
+
+
+.stats-active-metric-value.green{
+
+    color:
+        #63e4aa;
+}
+
+
+.stats-active-metric-value.gold{
+
+    color:
+        #edbd48;
+}
+
+
+.stats-active-metric-sub{
+
+    margin-top:
+        3px;
+
+    color:
+        #56666a;
+
+    font-size:
+        6px;
+}
+
+
+/* ============================================================
+   TREND PANEL
+   ============================================================ */
+
+.stats-active-trend{
+
+    min-width:
+        0;
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        rgba(61,150,179,.17);
+
+    border-radius:
+        7px;
+
+    background:
+        #070c0d;
+}
+
+
+.stats-active-trend-head{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    margin-bottom:
+        7px;
+}
+
+
+.stats-active-trend-title{
+
+    color:
+        #d8a93c;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+}
+
+
+.stats-active-trend-legend{
+
+    display:
+        flex;
+
+    gap:
+        9px;
+
+    color:
+        #728186;
+
+    font-size:
+        6px;
+}
+
+
+.stats-active-trend-legend span{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+}
+
+
+.stats-active-trend-legend i{
+
+    width:
+        7px;
+
+    height:
+        2px;
+
+    display:
+        inline-block;
+}
+
+
+.stats-active-trend-legend .sim i{
+
+    background:
+        #39d8ff;
+
+    box-shadow:
+        0 0 5px
+        #39d8ff;
+}
+
+
+.stats-active-trend-legend .physics i{
+
+    background:
+        #39ddc8;
+
+    box-shadow:
+        0 0 5px
+        #39ddc8;
+}
+
+
+.stats-active-chart-wrap{
+
+    position:
+        relative;
+
+    height:
+        105px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(69,151,176,.16);
+
+    border-radius:
+        5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(4,15,19,.94),
+            rgba(3,8,10,.99)
+        );
+}
+
+
+.stats-active-chart-wrap::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(88,154,174,.07) calc(25% - 1px),
+            rgba(88,154,174,.07) 25%
+        ),
+
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(88,154,174,.07) calc(25% - 1px),
+            rgba(88,154,174,.07) 25%
+        );
+}
+
+
+#stats-active-chart{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        105px;
+}
+
+
+.stats-active-minmax{
+
+    margin-top:
+        6px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        6px;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        6px;
+}
+
+
+.stats-active-minmax div{
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        #647378;
+}
+
+
+.stats-active-minmax strong{
+
+    color:
+        #dcebed;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:1500px){
+
+    .stats-active-region-body{
+
+        grid-template-columns:
+            1fr 2fr;
+    }
+
+
+    .stats-active-trend{
+
+        grid-column:
+            1 / -1;
+    }
+}
+
+
+@media(max-width:900px){
+
+    .stats-active-region-body{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .stats-active-metrics{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}

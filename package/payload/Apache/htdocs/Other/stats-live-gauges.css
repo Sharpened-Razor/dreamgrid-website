@@ -1,0 +1,248 @@
+/*
+ ============================================================
+ AUSTRALIA STATS TRUE LIVE GAUGES V5
+ ============================================================
+*/
+
+
+/*
+ * Hide the original gauge needle.
+ *
+ * Older gauge JavaScript is free to move this hidden needle,
+ * but it can no longer interfere with the new live needle.
+ */
+
+.stats-gauge-needle{
+
+    opacity:
+        0 !important;
+}
+
+
+/*
+ * Independent V5 needle.
+ */
+
+.stats-live-v5-needle{
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        10px;
+
+    width:
+        48px;
+
+    height:
+        2px;
+
+    z-index:
+        8;
+
+    pointer-events:
+        none;
+
+    border-radius:
+        4px;
+
+    transform:
+        rotate(-180deg);
+
+    transform-origin:
+        0 50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff1b8,
+            var(--gauge-color)
+        );
+
+    box-shadow:
+        0 0 7px
+        var(--gauge-color);
+
+    transition:
+        transform .72s
+        cubic-bezier(.22,.72,.22,1),
+        background .35s ease,
+        box-shadow .35s ease;
+
+    will-change:
+        transform;
+}
+
+
+.stats-gauge-hub{
+
+    z-index:
+        10 !important;
+}
+
+
+/*
+ * Make the live value slightly brighter.
+ */
+
+.stats-gauge-card.v5-live
+.stats-gauge-reading strong{
+
+    text-shadow:
+        0 0 9px
+        var(--gauge-color);
+}
+
+
+/*
+ * Direct live telemetry indicator.
+ */
+
+.stats-gauge-card.v5-live::before{
+
+    content:
+        "LIVE";
+
+    position:
+        absolute;
+
+    top:
+        7px;
+
+    right:
+        7px;
+
+    z-index:
+        10;
+
+    color:
+        #58d9ff;
+
+    font-size:
+        5px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .10em;
+
+    opacity:
+        .65;
+}
+
+
+/*
+ * Warning live needle.
+ */
+
+.stats-gauge-card.gauge-warn
+.stats-live-v5-needle{
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff0bb,
+            #ffb52d
+        );
+
+    box-shadow:
+        0 0 9px
+        rgba(255,181,45,.92);
+}
+
+
+/*
+ * Critical live needle.
+ */
+
+.stats-gauge-card.gauge-bad
+.stats-live-v5-needle{
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffe0e0,
+            #ff4242
+        );
+
+    box-shadow:
+        0 0 11px
+        rgba(255,60,60,.95);
+}
+/* RAM DRIVE NEEDLE FIX START */
+
+/*
+ * V5 hides the original needles because CPU / SIM / PHYSICS /
+ * FRAME use independent V5 live needles.
+ *
+ * RAM and DRIVE still use the original gauge controller,
+ * therefore their original needles must remain visible.
+ */
+
+.stats-gauge-card[data-gauge="ram"]
+.stats-gauge-needle,
+
+.stats-gauge-card[data-gauge="disk"]
+.stats-gauge-needle{
+
+    opacity:
+        1 !important;
+
+    z-index:
+        8 !important;
+
+    transition:
+        transform .65s cubic-bezier(.2,.7,.2,1),
+        background .35s ease,
+        box-shadow .35s ease !important;
+
+    will-change:
+        transform;
+}
+
+
+/*
+ * Keep RAM needle green.
+ */
+
+.stats-gauge-card[data-gauge="ram"]
+.stats-gauge-needle{
+
+    background:
+        linear-gradient(
+            90deg,
+            #eafff2,
+            #57e394
+        ) !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(87,227,148,.90) !important;
+}
+
+
+/*
+ * Keep Drive needle gold.
+ */
+
+.stats-gauge-card[data-gauge="disk"]
+.stats-gauge-needle{
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff0b4,
+            #d9ab39
+        ) !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(217,171,57,.90) !important;
+}
+
+
+/* RAM DRIVE NEEDLE FIX END */

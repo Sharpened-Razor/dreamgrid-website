@@ -1,0 +1,2990 @@
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Arial,sans-serif;color:#f5f5f5;background:#090b0d}body:before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.82));z-index:-1}.shell{width:min(1180px,94%);margin:auto;padding:34px 0 60px}header{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}h1{font:700 44px Georgia,serif;margin:3px 0}.eyebrow, .panel-title{letter-spacing:.12em;color:#f4b323;font-weight:800}.level{padding:10px 14px;border:1px solid #f4b323;border-radius:10px}.panel{background:rgba(8,12,16,.82);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 18px 50px rgba(0,0,0,.5)}.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.admin-actions{display:flex;flex-wrap:wrap;gap:8px}button{border:1px solid rgba(255,255,255,.24);background:#1a2026;color:#fff;border-radius:8px;padding:10px 13px;font-weight:800;cursor:pointer}button:hover{filter:brightness(1.15)}button.gold{background:linear-gradient(#f0b733,#a96605);border-color:#ffd46e;color:#171006}.inventory-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.inventory-row h2{margin:0}.inventory-row p{color:#bbb}.result{position:sticky;bottom:16px;background:#111b13;border:1px solid #3c7d49;padding:13px 16px;border-radius:10px}.result.bad{background:#251010;border-color:#9b4141}.warning{color:#d7b56a}@media(max-width:700px){header, .inventory-row{display:block}.level{display:inline-block;margin-top:15px}.shell{padding-top:20px}h1{font-size:34px}}
+.result{white-space:pre-wrap;min-height:46px}.result:before{content:'RESULT: ';font-weight:800;color:#f4b323}
+
+.result{line-height:1.45;font-family:Consolas,monospace;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+
+
+.iar-panel-status{
+  margin-top:14px;
+  padding:11px 13px;
+  border-radius:9px;
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.025em;
+  line-height:1.4;
+  word-break:break-word;
+}
+.iar-panel-status[hidden]{display:none}
+.iar-panel-status.iar-processing{
+  border:1px solid #c88c25;
+  background:rgba(180,125,20,.15);
+  color:#ffd67a;
+}
+.iar-panel-status.iar-finalising{
+  border:1px solid #c88c25;
+  background:rgba(180,125,20,.20);
+  color:#ffe09a;
+}
+.iar-panel-status.iar-complete{
+  border:1px solid #4ca968;
+  background:rgba(40,130,70,.16);
+  color:#91e0a5;
+}
+.iar-panel-status.iar-error{
+  border:1px solid #a84a4a;
+  background:rgba(140,45,45,.16);
+  color:#f0a0a0;
+}
+
+.admin-iar-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.admin-iar-copy h2{
+  margin:0 0 5px;
+}
+.admin-iar-copy p{
+  margin:0;
+  opacity:.78;
+}
+.admin-iar-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.admin-iar-controls select{
+  min-width:260px;
+  max-width:360px;
+  padding:11px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,.18);
+  background:#121212;
+  color:#eee;
+  font-weight:700;
+}
+.admin-iar-controls select:disabled{
+  opacity:.5;
+}
+@media (max-width:800px){
+  .admin-iar-row{
+    align-items:stretch;
+    flex-direction:column;
+  }
+  .admin-iar-controls{
+    justify-content:flex-start;
+  }
+  .admin-iar-controls select{
+    width:100%;
+    max-width:none;
+  }
+}
+
+.backup-help{margin:0 0 14px;opacity:.78}
+.backup-files{display:flex;flex-direction:column;gap:8px}
+.backup-file-row{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:12px 14px;border:1px solid rgba(255,255,255,.10);
+  border-radius:9px;background:rgba(255,255,255,.025)
+}
+.backup-file-main{min-width:0}
+.backup-file-title{display:flex;align-items:center;gap:9px;min-width:0}
+.backup-file-title strong{overflow-wrap:anywhere}
+.backup-file-meta{margin-top:5px;font-size:.88rem;opacity:.68}
+.backup-type{
+  display:inline-block;min-width:38px;text-align:center;padding:3px 7px;
+  border-radius:5px;font-size:.72rem;font-weight:900;letter-spacing:.04em
+}
+.backup-iar{background:rgba(70,170,255,.15);border:1px solid rgba(70,170,255,.38)}
+.backup-oar{background:rgba(255,190,60,.13);border:1px solid rgba(255,190,60,.36)}
+.backup-download{
+  flex:0 0 auto;text-decoration:none;font-weight:900;font-size:.78rem;
+  padding:9px 12px;border-radius:7px;border:1px solid rgba(255,190,60,.65);
+  color:inherit;background:rgba(255,190,60,.10)
+}
+.backup-download:hover{background:rgba(255,190,60,.18)}
+.backup-empty{padding:13px;border:1px dashed rgba(255,255,255,.14);border-radius:8px;opacity:.72}
+.backup-error{opacity:1}
+@media(max-width:700px){
+  .backup-file-row{align-items:flex-start;flex-direction:column}
+  .backup-download{align-self:stretch;text-align:center}
+}
+
+.backup-tools{display:grid;grid-template-columns:minmax(220px,1fr) auto auto;gap:9px;margin:0 0 13px}
+.backup-tools input, .backup-tools select{
+  min-height:40px;border:1px solid rgba(255,255,255,.16);border-radius:8px;
+  background:#111416;color:inherit;padding:0 11px;font-weight:800
+}
+.backup-file-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.backup-delete{
+  min-height:38px;padding:0 12px;border-radius:7px;border:1px solid rgba(235,85,85,.60);
+  background:rgba(235,85,85,.09);color:#ffaaaa;font-weight:900;font-size:.78rem;cursor:pointer
+}
+.backup-delete:hover{background:rgba(235,85,85,.17)}
+.backup-delete:disabled{opacity:.55;cursor:wait}
+@media(max-width:800px){
+  .backup-tools{grid-template-columns:1fr}
+  .backup-file-actions{width:100%}
+  .backup-file-actions .backup-download, .backup-file-actions .backup-delete{flex:1;text-align:center}
+}
+
+.backup-restore{
+  min-height:38px;padding:0 12px;border-radius:7px;border:1px solid rgba(80,190,120,.62);
+  background:rgba(80,190,120,.10);color:#aef2c4;font-weight:900;font-size:.78rem;cursor:pointer
+}
+.backup-restore:hover{background:rgba(80,190,120,.18)}
+.backup-restore:disabled{opacity:.55;cursor:wait}
+
+
+/* V51 Restore Safety & History */
+.restore-active{
+  margin:0 0 12px;
+  padding:11px 13px;
+  border:1px solid rgba(255,190,60,.55);
+  border-radius:8px;
+  background:rgba(255,190,60,.09);
+  color:#ffd876;
+  font-weight:900;
+}
+.restore-history{display:flex;flex-direction:column;gap:8px}
+.restore-history-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:12px 14px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:9px;
+  background:rgba(255,255,255,.025);
+}
+.restore-history-main{min-width:0}
+.restore-history-meta{
+  margin-top:5px;
+  font-size:.86rem;
+  opacity:.72;
+  overflow-wrap:anywhere;
+}
+.restore-history-detail{
+  margin-top:5px;
+  font-size:.82rem;
+  color:#ffaaaa;
+  overflow-wrap:anywhere;
+}
+.restore-history-status{
+  flex:0 0 auto;
+  padding:5px 9px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.restore-complete{
+  color:#aef2c4;
+  border:1px solid rgba(80,190,120,.55);
+  background:rgba(80,190,120,.10);
+}
+.restore-restoring, .restore-prepared{
+  color:#ffd876;
+  border:1px solid rgba(255,190,60,.55);
+  background:rgba(255,190,60,.09);
+}
+.restore-error{
+  color:#ffaaaa;
+  border:1px solid rgba(235,85,85,.60);
+  background:rgba(235,85,85,.09);
+}
+.backup-restore:disabled{
+  opacity:.38;
+  cursor:not-allowed;
+}
+@media(max-width:750px){
+  .restore-history-row{align-items:flex-start;flex-direction:column}
+}
+
+
+/* V52 read-only Backup Storage */
+.storage-cards{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:14px;
+}
+.storage-card{
+  padding:14px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:9px;
+  background:rgba(255,255,255,.025);
+}
+.storage-card span{display:block;font-size:.72rem;font-weight:900;letter-spacing:.06em;opacity:.68}
+.storage-card strong{display:block;font-size:1.35rem;margin-top:5px}
+.storage-card small{display:block;margin-top:3px;opacity:.65}
+.storage-meter{margin:8px 0 16px}
+.storage-meter-label{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;opacity:.75;margin-bottom:5px}
+.storage-meter-track{height:9px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden}
+.storage-meter-free{height:100%;background:rgba(85,210,135,.65)}
+.storage-columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.storage-columns h3{font-size:.78rem;letter-spacing:.05em;opacity:.72;margin:0 0 8px}
+.storage-group-row{
+  display:flex;justify-content:space-between;gap:14px;
+  padding:8px 10px;border-top:1px solid rgba(255,255,255,.07);
+  font-size:.86rem;
+}
+.storage-group-row span:last-child{text-align:right;opacity:.72}
+@media(max-width:900px){
+  .storage-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .storage-columns{grid-template-columns:1fr}
+}
+
+
+/* V53 Safe Backup Cleanup */
+.backup-cleanup-tools{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 13px;padding:10px 12px;border:1px solid rgba(255,190,60,.22);border-radius:9px;background:rgba(255,190,60,.035)}
+.backup-cleanup-summary{display:flex;align-items:baseline;gap:10px}.backup-cleanup-summary strong{font-size:.88rem}.backup-cleanup-summary span{font-size:.82rem;opacity:.7}
+.backup-cleanup-actions{display:flex;gap:8px;flex-wrap:wrap}.backup-cleanup-actions button{min-height:36px;padding:0 11px;border-radius:7px;border:1px solid rgba(255,255,255,.18);background:#15191c;color:inherit;font-weight:900;font-size:.74rem;cursor:pointer}
+.backup-cleanup-actions button:hover{background:#1c2226}.backup-cleanup-actions .danger{border-color:rgba(235,85,85,.62);background:rgba(235,85,85,.09);color:#ffaaaa}.backup-cleanup-actions .danger:hover{background:rgba(235,85,85,.18)}.backup-cleanup-actions button:disabled{opacity:.42;cursor:not-allowed}
+.backup-select-wrap{display:flex;align-items:center;justify-content:center;flex:0 0 auto}.backup-select{width:19px;height:19px;accent-color:#e8ad22;cursor:pointer}.backup-file-row.is-selected{border-color:rgba(255,190,60,.48);background:rgba(255,190,60,.055)}
+@media(max-width:800px){.backup-cleanup-tools{align-items:flex-start;flex-direction:column}.backup-cleanup-actions{width:100%}.backup-cleanup-actions button{flex:1}.backup-select-wrap{align-self:flex-start}}
+
+
+/* V55 Grid Owner multi-region OAR backup */
+.grid-backup-toolbar{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin:0 0 12px;
+}
+.grid-backup-toolbar #grid-backup-count{
+  margin-left:auto;
+  font-size:.86rem;
+  font-weight:900;
+  opacity:.78;
+}
+.grid-backup-regions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+.grid-backup-row{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:8px;
+  background:rgba(255,255,255,.025);
+}
+.grid-backup-row.is-disabled{opacity:.45}
+.grid-backup-row.is-running{
+  border-color:rgba(255,190,60,.60);
+  background:rgba(255,190,60,.07);
+}
+.grid-backup-row.is-complete{
+  border-color:rgba(80,190,120,.52);
+  background:rgba(80,190,120,.06);
+}
+.grid-backup-row.is-error{
+  border-color:rgba(235,85,85,.58);
+  background:rgba(235,85,85,.06);
+}
+.grid-backup-region-name{font-weight:900}
+.grid-backup-region-meta{display:block;margin-top:2px;font-size:.78rem;opacity:.65}
+.grid-backup-status{
+  max-width:340px;
+  text-align:right;
+  font-size:.78rem;
+  font-weight:800;
+  opacity:.82;
+  overflow-wrap:anywhere;
+}
+@media(max-width:900px){
+  .grid-backup-regions{grid-template-columns:1fr}
+  .grid-backup-toolbar #grid-backup-count{margin-left:0}
+}
+
+#grid-backup-start:disabled{
+  opacity:.38;
+  cursor:not-allowed;
+  filter:saturate(.35);
+}
+
+
+/* V56 Backup Scheduler configuration */
+.schedule-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:10px;
+  margin-bottom:12px;
+}
+.schedule-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:.76rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  opacity:.9;
+}
+.schedule-field select, .schedule-field input[type="time"]{
+  min-height:40px;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:8px;
+  background:#111417;
+  color:#f0f0f0;
+  padding:8px 10px;
+  font-weight:800;
+}
+.schedule-enable{
+  justify-content:center;
+  flex-direction:row;
+  align-items:center;
+  border:1px solid rgba(255,190,60,.35);
+  border-radius:8px;
+  padding:10px 12px;
+  color:#ffd368;
+  background:rgba(255,190,60,.05);
+}
+.schedule-days{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 14px;
+}
+.schedule-days label{
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:7px;
+  padding:7px 9px;
+  font-size:.74rem;
+  font-weight:900;
+}
+.schedule-days.is-hidden{display:none}
+.schedule-subtitle{
+  margin:4px 0 8px;
+  font-size:.76rem;
+  font-weight:900;
+  letter-spacing:.06em;
+  opacity:.72;
+}
+.schedule-toolbar, .schedule-actions{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:10px;
+}
+.schedule-toolbar #schedule-region-count{margin-left:auto;font-size:.84rem;font-weight:900;opacity:.78}
+.schedule-regions{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin-bottom:12px;
+}
+.schedule-region-row{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;
+  gap:9px;
+  padding:9px 11px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:8px;
+  background:rgba(255,255,255,.025);
+}
+.schedule-region-row.is-offline{opacity:.45}
+.schedule-region-name{font-weight:900}
+.schedule-region-meta{display:block;font-size:.76rem;opacity:.65;margin-top:2px}
+.schedule-region-state{font-size:.74rem;font-weight:900;opacity:.72}
+@media(max-width:900px){
+  .schedule-grid{grid-template-columns:1fr 1fr}
+  .schedule-regions{grid-template-columns:1fr}
+  .schedule-toolbar #schedule-region-count{margin-left:0}
+}
+
+/* V58 Backup History */
+.history-toolbar{display:grid;grid-template-columns:minmax(220px,2fr) repeat(3,minmax(130px,1fr)) auto;gap:8px;margin-bottom:10px}
+.history-toolbar input, .history-toolbar select{min-height:40px;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:#111417;color:#f0f0f0;padding:8px 10px;font-weight:800}
+.history-summary{margin:8px 0 10px;font-size:.82rem;font-weight:900;opacity:.78}
+.history-list{display:flex;flex-direction:column;gap:7px}
+.history-row{display:grid;grid-template-columns:165px 62px 100px 90px minmax(130px,1fr) minmax(180px,1.5fr) 90px;gap:8px;align-items:center;padding:9px 11px;border:1px solid rgba(255,255,255,.09);border-radius:8px;background:rgba(255,255,255,.025);font-size:.78rem}
+.history-row.history-head{font-weight:900;opacity:.65;background:rgba(255,255,255,.045)}
+.history-result{font-weight:950}.history-result.success{color:#8de6a2}.history-result.failed{color:#ff8f8f}.history-result.skipped{color:#ffd36c}
+.history-subject{font-weight:900}.history-file{overflow-wrap:anywhere;opacity:.78}.history-empty{padding:16px;border:1px dashed rgba(255,255,255,.14);border-radius:8px;text-align:center;opacity:.7}
+@media(max-width:1100px){.history-toolbar{grid-template-columns:1fr 1fr}.history-row{grid-template-columns:1fr 70px 100px 100px}.history-file{grid-column:1/-2}.history-size{grid-column:-2}.history-row.history-head{display:none}}
+
+
+/* V59.1 Backup Health - read-only UI */
+.backup-health-summary{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:8px 0 10px;border:1px solid rgba(255,255,255,.12);border-radius:9px;background:rgba(255,255,255,.03)}
+.backup-health-summary strong{font-size:1rem;letter-spacing:.06em}
+.backup-health-summary span{font-size:.82rem;font-weight:800;opacity:.75}
+.backup-health-summary.healthy strong{color:#8de6a2}.backup-health-summary.warning strong{color:#ffd36c}.backup-health-summary.error strong{color:#ff8f8f}
+.backup-health-checks{display:flex;flex-direction:column;gap:7px}
+.backup-health-row{display:grid;grid-template-columns:90px minmax(180px,.8fr) minmax(260px,2fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid rgba(255,255,255,.09);border-radius:8px;background:rgba(255,255,255,.025);font-size:.8rem}
+.backup-health-state{font-weight:950}.backup-health-title{font-weight:900}.backup-health-detail{opacity:.8}
+.backup-health-row.healthy .backup-health-state{color:#8de6a2}.backup-health-row.warning .backup-health-state{color:#ffd36c}.backup-health-row.error .backup-health-state{color:#ff8f8f}
+@media(max-width:850px){.backup-health-row{grid-template-columns:90px 1fr}.backup-health-detail{grid-column:1/-1}}
+
+
+/* V60 Control Panel Modal / Submenu System */
+body.modal-open{overflow:hidden}
+.dg-modal[hidden]{display:none!important}
+.dg-modal{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}
+.dg-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+.dg-modal-card{position:relative;width:min(720px,94vw);max-height:86vh;overflow:auto;border:1px solid rgba(255,187,45,.42);border-radius:16px;background:#0c1013;box-shadow:0 24px 80px rgba(0,0,0,.65);padding:0}
+.dg-modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:20px 22px 16px;border-bottom:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,181,35,.055),rgba(255,181,35,0))}
+.dg-modal-kicker{font-size:.68rem;font-weight:950;letter-spacing:.12em;color:#e9aa25;margin-bottom:6px}
+.dg-modal-head h2{margin:0;color:#f3b52c;font-size:1.05rem;letter-spacing:.05em}
+.dg-modal-x{width:38px;height:38px;border-radius:9px;font-size:1.5rem;line-height:1;padding:0}
+.dg-modal-body{padding:18px 22px;color:#e6e6e6}
+.dg-modal-copy p{margin:0 0 10px;line-height:1.5}
+.dg-modal-warning{display:flex;flex-direction:column;gap:10px;padding:14px;border:1px solid rgba(255,190,60,.25);border-radius:10px;background:rgba(255,190,60,.045)}
+.dg-modal-warning>strong{font-size:.92rem;color:#fff}
+.dg-modal-size-warning{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;padding:11px;margin:2px 0;border:1px solid rgba(255,180,40,.35);border-radius:9px;background:rgba(255,170,30,.07)}
+.dg-modal-size-warning strong{grid-column:1/-1;color:#ffd36c}
+.dg-modal-size-warning span:last-child{grid-column:1/-1}
+.dg-modal-list{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.dg-modal-list>div{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:center;padding:8px 10px;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:#11161a}
+.dg-modal-list>div span{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;background:rgba(255,185,35,.10);color:#f0b52e;font-weight:950}
+.dg-modal-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:0 22px 18px}
+.dg-modal-option{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:64px;padding:12px 14px;text-align:left;border:1px solid rgba(255,255,255,.11);background:#11161a}
+.dg-modal-option:hover{border-color:rgba(255,185,35,.45);background:#151b20}
+.dg-modal-option.selected{border-color:#dfa321;background:rgba(223,163,33,.10);box-shadow:inset 0 0 0 1px rgba(223,163,33,.25)}
+.dg-modal-option-title{font-weight:950;color:#f4f4f4}
+.dg-modal-option-meta{font-size:.75rem;opacity:.62}
+.dg-modal-actions{display:flex;justify-content:flex-end;gap:10px;padding:16px 22px 20px;border-top:1px solid rgba(255,255,255,.08)}
+.dg-modal-actions button{min-width:112px}
+.dg-modal-actions .danger{border-color:#8f3840!important;color:#ff9da3!important;background:rgba(134,36,45,.18)!important}
+@media(max-width:700px){.dg-modal-options{grid-template-columns:1fr}.dg-modal{padding:12px}.dg-modal-card{width:100%}}
+
+
+/* V61 Formal Dashboard Layout */
+html{scroll-behavior:smooth}
+.shell{max-width:1540px;margin:0 auto;padding:22px 26px 34px}
+.shell>header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:22px 26px;
+  margin-bottom:12px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  background:linear-gradient(135deg,rgba(255,180,35,.055),rgba(255,255,255,.015) 42%,rgba(255,255,255,.01));
+}
+.shell>header h1{margin:.1rem 0 .2rem;font-size:2rem;letter-spacing:.01em}
+.shell>header p{margin:0;opacity:.72}
+.dashboard-nav{
+  position:sticky;
+  top:8px;
+  z-index:3000;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  padding:9px;
+  margin:0 0 14px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:12px;
+  background:rgba(9,12,14,.94);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 24px rgba(0,0,0,.28);
+}
+.dashboard-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:7px 11px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:8px;
+  color:#d5d8da;
+  text-decoration:none;
+  font-size:.72rem;
+  font-weight:950;
+  letter-spacing:.04em;
+  background:#11161a;
+}
+.dashboard-nav a:hover{border-color:rgba(232,171,38,.48);color:#f1b735;background:rgba(232,171,38,.07)}
+.dashboard-grid{
+  display:grid;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:16px;
+  align-items:start;
+}
+.dashboard-grid>.panel{margin:0;min-width:0;height:auto}
+.dash-span-12{grid-column:span 12}
+.dash-span-8{grid-column:span 8}
+.dash-span-7{grid-column:span 7}
+.dash-span-5{grid-column:span 5}
+.dash-span-4{grid-column:span 4}
+.dashboard-grid>.panel{
+  border-radius:14px;
+  box-shadow:0 9px 28px rgba(0,0,0,.16);
+}
+.dashboard-grid>.panel.admin{
+  background:linear-gradient(180deg,rgba(255,181,35,.018),rgba(255,255,255,.005) 55%),#0b0f12;
+}
+.dashboard-grid>.panel:hover{border-color:rgba(255,255,255,.16)}
+.dashboard-grid .panel-title{
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.dashboard-grid .panel-title>span{letter-spacing:.08em}
+.dash-compact{min-height:100%}
+.dash-compact .inventory-row, .dash-compact .admin-iar-row{min-height:112px}
+#panel-backup-health .backup-health-row{
+  grid-template-columns:82px minmax(130px,.75fr) minmax(180px,1.5fr);
+}
+#panel-storage #backup-storage{min-height:160px}
+#panel-restore-history #restore-history{max-height:520px;overflow:auto;padding-right:3px}
+#panel-history #backup-history{max-height:720px;overflow:auto;padding-right:4px}
+#panel-backup-files #backup-files{max-height:820px;overflow:auto;padding-right:4px}
+.dashboard-grid>.result{
+  position:sticky;
+  bottom:12px;
+  z-index:2500;
+  margin:0;
+  border-radius:11px;
+  box-shadow:0 10px 35px rgba(0,0,0,.38);
+}
+@media(max-width:1180px){
+  .dash-span-8, .dash-span-7, .dash-span-5, .dash-span-4{grid-column:span 12}
+  #panel-backup-health .backup-health-row{grid-template-columns:90px minmax(160px,.8fr) minmax(220px,1.5fr)}
+}
+@media(max-width:760px){
+  .shell{padding:12px}
+  .shell>header{padding:16px;align-items:flex-start;flex-direction:column}
+  .dashboard-nav{top:4px;overflow-x:auto;flex-wrap:nowrap}
+  .dashboard-nav a{white-space:nowrap}
+  .dashboard-grid{gap:10px}
+  #panel-backup-health .backup-health-row{grid-template-columns:90px 1fr}
+  #panel-backup-health .backup-health-detail{grid-column:1/-1}
+}
+
+
+/* V61.1 WIDE FORMAL LAYOUT
+   Uses the browser width with deliberate paired rows and larger gutters. */
+.shell{
+  width:calc(100% - 64px)!important;
+  max-width:1880px!important;
+  margin:0 auto!important;
+  padding:24px 0 42px!important;
+}
+
+.dashboard-grid{
+  grid-template-columns:repeat(12,minmax(0,1fr))!important;
+  column-gap:32px!important;
+  row-gap:30px!important;
+  align-items:start!important;
+}
+
+.dash-span-12{grid-column:span 12!important}
+.dash-span-9{grid-column:span 9!important}
+.dash-span-8{grid-column:span 8!important}
+.dash-span-7{grid-column:span 7!important}
+.dash-span-5{grid-column:span 5!important}
+.dash-span-4{grid-column:span 4!important}
+.dash-span-3{grid-column:span 3!important}
+
+/* Compact cards keep their own natural height instead of stretching down
+   to the height of the large panel next to them. */
+.dash-compact{
+  min-height:0!important;
+  height:auto!important;
+  align-self:start!important;
+}
+.dash-compact .inventory-row, .dash-compact .admin-iar-row{
+  min-height:0!important;
+}
+
+/* Give each formal dashboard block more breathing room. */
+.dashboard-grid>.panel{
+  padding:24px!important;
+  border-radius:15px!important;
+}
+.dashboard-grid .panel-title{
+  margin-bottom:16px!important;
+  padding-bottom:13px!important;
+}
+.dashboard-grid .backup-help{
+  margin-bottom:18px!important;
+}
+
+/* Scheduler and region selectors get slightly wider internal gaps. */
+#panel-scheduler .schedule-grid{gap:14px!important}
+#panel-scheduler .schedule-regions, #panel-region-backup .grid-backup-regions{gap:12px!important}
+
+/* Health fits cleanly in the right column. */
+#panel-backup-health .backup-health-row{
+  grid-template-columns:78px 1fr!important;
+  gap:7px 12px!important;
+}
+#panel-backup-health .backup-health-detail{
+  grid-column:1/-1!important;
+  padding-left:90px!important;
+}
+
+/* Keep the large data panels comfortably wide. */
+#panel-history, #panel-backup-files{
+  padding-left:28px!important;
+  padding-right:28px!important;
+}
+
+/* Keep the top nav aligned to the wider dashboard. */
+.dashboard-nav{
+  margin-bottom:28px!important;
+  padding:11px!important;
+  gap:10px!important;
+}
+
+/* At ordinary laptop widths, paired cards can fall back cleanly. */
+@media(max-width:1350px){
+  .dash-span-9, .dash-span-8, .dash-span-4, .dash-span-3{
+    grid-column:span 12!important;
+  }
+  .shell{
+    width:calc(100% - 36px)!important;
+  }
+  #panel-backup-health .backup-health-detail{
+    padding-left:0!important;
+  }
+}
+@media(max-width:760px){
+  .shell{
+    width:calc(100% - 20px)!important;
+    padding-top:10px!important;
+  }
+  .dashboard-grid{
+    row-gap:14px!important;
+  }
+}
+
+
+/* V62 AUSTRALIA GRID BACKGROUND */
+html, body{
+  min-height:100%;
+}
+body{
+  position:relative;
+  background:
+    linear-gradient(rgba(2,5,7,.34), rgba(2,5,7,.52)),
+    url('/Other/assets/australia-grid-control-panel-background.png') center top / cover fixed no-repeat!important;
+}
+
+/* Subtle overall readability veil without hiding the artwork. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(0,0,0,.10), rgba(0,0,0,.32) 58%, rgba(0,0,0,.48) 100%);
+}
+
+.shell{
+  position:relative;
+  z-index:1;
+}
+
+/* Make the main control surfaces slightly translucent so the Australia artwork
+   remains visible through the spaces around and faintly behind the dashboard. */
+.shell>header, .dashboard-nav, .dashboard-grid>.panel, .dg-modal-card{
+  background-color:rgba(7,10,12,.88)!important;
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+}
+
+.dashboard-grid>.panel.admin{
+  background:
+    linear-gradient(180deg, rgba(255,181,35,.025), rgba(255,255,255,.005) 55%),
+    rgba(7,10,12,.88)!important;
+}
+
+/* Stronger contrast for dense data areas while preserving the background. */
+#panel-history, #panel-backup-files, #panel-region-backup, #panel-scheduler{
+  background-color:rgba(7,10,12,.93)!important;
+}
+
+/* Keep the nav readable over bright sky. */
+.dashboard-nav{
+  background:rgba(7,10,12,.93)!important;
+  box-shadow:0 8px 28px rgba(0,0,0,.42);
+}
+
+/* Result banner should remain very legible. */
+.dashboard-grid>.result{
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+
+/* On smaller screens, fixed backgrounds can be janky; keep visual but allow normal scroll. */
+@media(max-width:900px){
+  body{
+    background-attachment:scroll!important;
+    background-position:center top!important;
+  }
+}
+
+
+/* V62.1 BACKGROUND BOUNDARY FIX
+   Keep the Australia artwork INSIDE the control-panel page only.
+   Outside the page stays black. */
+body{
+  background:#050708!important;
+}
+
+body::before{
+  display:none!important;
+}
+
+.shell{
+  position:relative!important;
+  overflow:hidden!important;
+  border-radius:18px;
+  background:
+    linear-gradient(rgba(2,5,7,.30), rgba(2,5,7,.48)),
+    url('/Other/assets/australia-grid-control-panel-background.png')
+      center top / 100% auto no-repeat!important;
+  background-color:#050708!important;
+}
+
+/* Keep all dashboard content above the shell background. */
+.shell>header, .dashboard-nav, .dashboard-grid{
+  position:relative;
+  z-index:1;
+}
+
+/* Remove any accidental extra image bleed below the shell. */
+html{
+  background:#050708!important;
+}
+
+@media(max-width:900px){
+  .shell{
+    background-size:auto 100vh!important;
+    background-position:center top!important;
+  }
+}
+
+
+/* V62.2 SCREEN-FIT BACKGROUND
+   One fixed Australia image, fitted to the visible screen,
+   only behind the control-panel width. */
+html, body{
+  background:#050708!important;
+}
+
+body::before{
+  display:none!important;
+}
+
+/* Remove the V62.1 tall-shell background so it does not repeat down the page. */
+.shell{
+  background:none!important;
+  overflow:visible!important;
+  position:relative!important;
+  z-index:1;
+}
+
+/* Fixed viewport-sized artwork behind the panels only. */
+.shell::before{
+  content:"";
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(calc(100vw - 64px),1880px);
+  height:100vh;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(2,5,7,.28), rgba(2,5,7,.44)),
+    url('/Other/assets/australia-grid-control-panel-background.png')
+      center center / cover no-repeat;
+  border-radius:18px;
+}
+
+/* Small readability veil, also constrained to panel width. */
+.shell::after{
+  content:"";
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(calc(100vw - 64px),1880px);
+  height:100vh;
+  z-index:-1;
+  pointer-events:none;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,.10),
+    rgba(0,0,0,.18) 42%,
+    rgba(0,0,0,.26)
+  );
+  border-radius:18px;
+}
+
+.shell>header, .dashboard-nav, .dashboard-grid{
+  position:relative;
+  z-index:1;
+}
+
+@media(max-width:900px){
+  .shell::before, .shell::after{
+    width:calc(100vw - 20px);
+    border-radius:12px;
+  }
+  .shell::before{
+    background-size:cover;
+    background-position:center center;
+  }
+}
+
+
+/* V62.3 FULL-SCREEN BACKGROUND
+   Restore the original V62 idea: Australia artwork across the ENTIRE browser
+   screen, not limited to the panel/dashboard width. Fit it to the viewport. */
+html{
+  min-height:100%;
+  background:#050708!important;
+}
+
+body{
+  min-height:100vh!important;
+  background:
+    linear-gradient(rgba(2,5,7,.30), rgba(2,5,7,.46)),
+    url('/Other/assets/australia-grid-control-panel-background.png')
+      center center / cover fixed no-repeat!important;
+}
+
+/* Disable the constrained V62.2 shell pseudo-backgrounds. */
+.shell::before, .shell::after{
+  display:none!important;
+  content:none!important;
+}
+
+.shell{
+  background:transparent!important;
+  overflow:visible!important;
+}
+
+/* Keep panels translucent over the full-screen artwork. */
+.shell>header, .dashboard-nav, .dashboard-grid>.panel, .dg-modal-card{
+  background-color:rgba(7,10,12,.88)!important;
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+}
+
+#panel-history, #panel-backup-files, #panel-region-backup, #panel-scheduler{
+  background-color:rgba(7,10,12,.93)!important;
+}
+
+@media(max-width:900px){
+  body{
+    background-attachment:scroll!important;
+    background-position:center center!important;
+  }
+}
+
+
+/* V63 Live Grid Overview */
+.grid-overview{
+  position:relative;
+  z-index:1;
+  margin:0 0 30px;
+  padding:18px 20px 20px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:15px;
+  background:rgba(7,10,12,.90);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:0 10px 32px rgba(0,0,0,.30);
+}
+.overview-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:13px;
+  margin-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.overview-heading>div{display:flex;flex-direction:column;gap:3px}
+.overview-kicker{
+  color:#dfa321;
+  font-size:.67rem;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.overview-heading strong{
+  color:#f1f1f1;
+  font-size:.88rem;
+  letter-spacing:.055em;
+}
+.overview-cards{
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:14px;
+}
+.overview-card{
+  position:relative;
+  min-width:0;
+  min-height:118px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:7px;
+  padding:16px 17px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:11px;
+  background:rgba(15,20,24,.90);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+.overview-card::before{
+  content:"";
+  position:absolute;
+  top:-1px;left:14px;right:14px;
+  height:2px;
+  border-radius:2px;
+  background:#dfa321;
+  opacity:.72;
+}
+.overview-card.healthy::before{background:#64d98a}
+.overview-card.warning::before{background:#f1bd4d}
+.overview-card.error::before{background:#ef6c74}
+.overview-label{
+  color:#aeb5b9;
+  font-size:.67rem;
+  font-weight:950;
+  letter-spacing:.075em;
+}
+.overview-value{
+  color:#f2f3f3;
+  font-size:1.55rem;
+  font-weight:950;
+  line-height:1.05;
+}
+.overview-value-small{font-size:1rem;line-height:1.25}
+.overview-card.healthy .overview-value{color:#82e09e}
+.overview-card.warning .overview-value{color:#f0c768}
+.overview-card.error .overview-value{color:#f18b91}
+.overview-detail{
+  color:#8e989e;
+  font-size:.72rem;
+  font-weight:750;
+  line-height:1.35;
+}
+@media(max-width:1450px){
+  .overview-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .overview-cards{grid-template-columns:1fr 1fr}
+  .overview-card{min-height:105px}
+}
+@media(max-width:480px){
+  .overview-cards{grid-template-columns:1fr}
+}
+
+
+/* V64 Live Grid Alerts */
+.grid-alerts{
+  position:relative;
+  z-index:1;
+  margin:0 0 30px;
+  padding:16px 18px 17px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:14px;
+  background:rgba(7,10,12,.92);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:0 9px 28px rgba(0,0,0,.28);
+}
+.grid-alerts.healthy{border-color:rgba(78,196,119,.35)}
+.grid-alerts.warning{border-color:rgba(235,179,53,.45)}
+.grid-alerts.error{border-color:rgba(230,87,95,.52)}
+.grid-alerts-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding-bottom:11px;
+  margin-bottom:11px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.grid-alerts-head>div:first-child{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+.grid-alerts-kicker{
+  color:#dfa321;
+  font-size:.66rem;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.grid-alerts-head strong{
+  color:#f0f2f3;
+  font-size:.88rem;
+  letter-spacing:.055em;
+}
+.grid-alerts.healthy .grid-alerts-head strong{color:#82e09e}
+.grid-alerts.warning .grid-alerts-head strong{color:#f0c768}
+.grid-alerts.error .grid-alerts-head strong{color:#f18b91}
+.grid-alerts-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.grid-alerts-actions>span{
+  font-size:.69rem;
+  color:#7f8a90;
+  font-weight:800;
+}
+.grid-alerts-body{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+.grid-alert-item{
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:12px;
+  align-items:center;
+  min-height:40px;
+  padding:9px 11px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:8px;
+  background:rgba(15,20,24,.72);
+}
+.grid-alert-level{
+  font-size:.67rem;
+  font-weight:950;
+  letter-spacing:.055em;
+}
+.grid-alert-message{
+  color:#c7cdd0;
+  font-size:.78rem;
+  font-weight:760;
+}
+.grid-alert-item.healthy .grid-alert-level{color:#82e09e}
+.grid-alert-item.warning .grid-alert-level{color:#f0c768}
+.grid-alert-item.error .grid-alert-level{color:#f18b91}
+.grid-alert-item.info .grid-alert-level{color:#76bce8}
+.grid-alert-item.neutral .grid-alert-level{color:#aaa}
+@media(max-width:760px){
+  .grid-alerts-head{align-items:flex-start;flex-direction:column}
+  .grid-alerts-actions{width:100%;justify-content:space-between}
+  .grid-alert-item{grid-template-columns:82px 1fr}
+}
+
+
+/* V65 Website Login / Role-Based Dashboard */
+.level{
+  display:flex!important;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:2px;
+}
+.level strong{
+  color:#e2a72c;
+  font-size:.72rem;
+  letter-spacing:.08em;
+}
+.level span{
+  font-size:.69rem;
+  opacity:.72;
+}
+.member-welcome{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin:0 0 30px;
+  padding:18px 20px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:14px;
+  background:rgba(7,10,12,.90);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.member-welcome>div{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.member-welcome-kicker{
+  color:#dfa321;
+  font-size:.66rem;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.member-welcome strong{
+  color:#f1f1f1;
+  font-size:1rem;
+}
+.member-welcome p{
+  margin:2px 0 0;
+  color:#9aa3a8;
+  font-size:.78rem;
+}
+.member-role{
+  flex:none;
+  padding:8px 11px;
+  border:1px solid rgba(223,163,33,.28);
+  border-radius:8px;
+  background:rgba(223,163,33,.07);
+  color:#e8b64b;
+  font-size:.7rem;
+  font-weight:950;
+  letter-spacing:.055em;
+}
+@media(max-width:760px){
+  .member-welcome{align-items:flex-start;flex-direction:column}
+  .level{align-items:flex-start}
+}
+
+
+/* V65.1 Dashboard Logout */
+.header-account{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.dashboard-logout{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 13px;
+  border:1px solid rgba(223,163,33,.46);
+  border-radius:7px;
+  background:rgba(223,163,33,.09);
+  color:#e8b64b!important;
+  text-decoration:none!important;
+  font-size:.68rem;
+  font-weight:950;
+  letter-spacing:.065em;
+  transition:background .15s ease,border-color .15s ease;
+}
+.dashboard-logout:hover{
+  background:rgba(223,163,33,.18);
+  border-color:rgba(223,163,33,.72);
+}
+@media(max-width:760px){
+  .header-account{align-items:flex-end;flex-direction:column}
+}
+
+
+/* V69 ROLE-BASED MEMBER ACCESS SUMMARY */
+.member-access{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin:0 0 30px;
+}
+
+.member-access-card{
+  min-width:0;
+  padding:15px 16px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:11px;
+  background:rgba(7,10,12,.88);
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
+}
+
+.member-access-card span{
+  display:block;
+  margin-bottom:5px;
+  color:#aab2b7;
+  font-size:.65rem;
+  font-weight:950;
+  letter-spacing:.075em;
+}
+
+.member-access-card strong{
+  display:block;
+  margin-bottom:5px;
+  color:#e5b34b;
+  font-size:.82rem;
+  line-height:1.25;
+}
+
+.member-access-card small{
+  display:block;
+  color:#7f8a90;
+  font-size:.69rem;
+  line-height:1.4;
+}
+
+@media(max-width:1150px){
+  .member-access{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:650px){
+  .member-access{grid-template-columns:1fr}
+}
+
+
+/* === AUSTRALIA PROFESSIONAL UI V1 === */
+
+:root{
+  --au-bg:#090b0d;
+  --au-panel:rgba(10,14,18,.91);
+  --au-panel-soft:rgba(255,255,255,.035);
+  --au-line:rgba(255,255,255,.11);
+  --au-line-strong:rgba(255,255,255,.18);
+  --au-gold:#f4b323;
+  --au-gold-soft:#ffd774;
+  --au-text:#f5f7f8;
+  --au-muted:#9ea6ad;
+  --au-blue:#39b9ff;
+  --au-yellow:#ffd34f;
+  --au-red:#ff6262;
+}
+
+/* PAGE */
+body{
+  color:var(--au-text);
+  background:#090b0d;
+  font-family:Arial,"Segoe UI",sans-serif;
+  letter-spacing:.01em;
+}
+
+body:before{
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.20),rgba(0,0,0,.88));
+}
+
+.shell{
+  width:min(1240px,94%);
+  padding:28px 0 72px;
+}
+
+/* HEADER */
+header{
+  align-items:center;
+  padding:8px 2px 22px;
+  margin-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+header h1{
+  margin:4px 0 5px;
+  font:700 42px Georgia,serif;
+  letter-spacing:-.025em;
+  text-shadow:0 3px 18px rgba(0,0,0,.55);
+}
+
+header p{
+  margin:0;
+  color:#b8bec4;
+}
+
+.eyebrow{
+  font-size:.78rem;
+  letter-spacing:.18em;
+  color:var(--au-gold);
+}
+
+.header-account{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.level{
+  min-width:145px;
+  text-align:center;
+  padding:10px 15px;
+  background:rgba(244,179,35,.055);
+  border:1px solid rgba(244,179,35,.55);
+  border-radius:10px;
+  box-shadow:inset 0 0 18px rgba(244,179,35,.035);
+}
+
+.level strong{
+  display:block;
+  color:var(--au-gold-soft);
+  font-size:.8rem;
+  letter-spacing:.08em;
+}
+
+.level span{
+  display:block;
+  margin-top:3px;
+  color:#9da4aa;
+  font-size:.68rem;
+  letter-spacing:.08em;
+}
+
+/* TOP NAVIGATION */
+.dashboard-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:14px 0 22px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:12px;
+  background:rgba(5,8,11,.70);
+  box-shadow:0 8px 28px rgba(0,0,0,.22);
+}
+
+.dashboard-nav a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:34px;
+  padding:0 11px;
+  border:1px solid transparent;
+  border-radius:7px;
+  color:#aeb5bb;
+  text-decoration:none;
+  font-size:.70rem;
+  font-weight:850;
+  letter-spacing:.055em;
+  transition:
+    background .15s ease,
+    border-color .15s ease,
+    color .15s ease,
+    transform .15s ease;
+}
+
+.dashboard-nav a:hover{
+  color:#fff;
+  border-color:rgba(244,179,35,.32);
+  background:rgba(244,179,35,.07);
+  transform:translateY(-1px);
+}
+
+/* MAIN PANELS */
+.panel, .grid-overview, .grid-alerts{
+  border:1px solid rgba(255,255,255,.11);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,18,22,.94),
+      rgba(8,11,14,.94)
+    );
+  box-shadow:
+    0 16px 42px rgba(0,0,0,.34),
+    inset 0 1px rgba(255,255,255,.025);
+}
+
+.panel{
+  border-radius:16px;
+  padding:22px;
+  margin:16px 0;
+}
+
+.panel:hover{
+  border-color:rgba(255,255,255,.15);
+}
+
+/* PANEL HEADERS */
+.panel-title{
+  padding-bottom:12px;
+  margin-bottom:16px;
+  border-bottom:1px solid rgba(255,255,255,.075);
+  color:var(--au-gold);
+  font-size:.78rem;
+  font-weight:900;
+  letter-spacing:.11em;
+}
+
+.panel-title > span:first-child{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.panel-title > span:first-child:before{
+  content:"";
+  width:3px;
+  height:16px;
+  border-radius:3px;
+  background:var(--au-gold);
+  box-shadow:0 0 10px rgba(244,179,35,.25);
+}
+
+/* BUTTONS */
+button, .dashboard-logout{
+  min-height:36px;
+  padding:0 13px;
+  border-radius:7px;
+  border:1px solid rgba(255,255,255,.16);
+  background:
+    linear-gradient(
+      180deg,
+      #20272d,
+      #151a1f
+    );
+  color:#f4f5f6;
+  font-size:.72rem;
+  font-weight:850;
+  letter-spacing:.035em;
+  cursor:pointer;
+  transition:
+    transform .14s ease,
+    border-color .14s ease,
+    background .14s ease,
+    box-shadow .14s ease;
+}
+
+button:hover, .dashboard-logout:hover{
+  filter:none;
+  transform:translateY(-1px);
+  border-color:rgba(244,179,35,.55);
+  background:
+    linear-gradient(
+      180deg,
+      #2b3136,
+      #1c2227
+    );
+  box-shadow:0 5px 14px rgba(0,0,0,.28);
+}
+
+button:active{
+  transform:translateY(0);
+}
+
+button.gold{
+  background:
+    linear-gradient(
+      180deg,
+      #f8c64d,
+      #bd790d
+    );
+  color:#171006;
+  border-color:#ffd878;
+  box-shadow:0 5px 16px rgba(180,110,0,.20);
+}
+
+.dashboard-logout{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  border-color:rgba(220,75,75,.46);
+  background:rgba(150,35,35,.10);
+  color:#ffb0b0;
+}
+
+.dashboard-logout:hover{
+  border-color:rgba(255,90,90,.70);
+  background:rgba(180,45,45,.15);
+}
+
+/* HELP / SECONDARY TEXT */
+.backup-help, .inventory-row p, .backup-file-meta, .restore-history-meta{
+  color:var(--au-muted);
+  opacity:1;
+  line-height:1.5;
+}
+
+/* INPUTS / SELECTS */
+input, select, textarea, .backup-tools input, .backup-tools select, .admin-iar-controls select{
+  border:1px solid rgba(255,255,255,.13);
+  background:#101418;
+  color:#f0f2f3;
+  outline:none;
+  transition:border-color .14s ease,box-shadow .14s ease;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color:rgba(244,179,35,.55);
+  box-shadow:0 0 0 2px rgba(244,179,35,.08);
+}
+
+/* BACKUP / HISTORY ROWS */
+.backup-file-row, .restore-history-row{
+  border-color:rgba(255,255,255,.085);
+  background:rgba(255,255,255,.022);
+  transition:background .14s ease,border-color .14s ease;
+}
+
+.backup-file-row:hover, .restore-history-row:hover{
+  border-color:rgba(255,255,255,.14);
+  background:rgba(255,255,255,.035);
+}
+
+/* RESULT BAR */
+.result{
+  bottom:14px;
+  min-height:50px;
+  padding:14px 17px;
+  border:1px solid rgba(60,150,85,.60);
+  border-radius:10px;
+  background:rgba(8,25,13,.96);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.48),
+    inset 0 1px rgba(255,255,255,.025);
+  backdrop-filter:blur(10px);
+}
+
+.result:before{
+  color:var(--au-gold);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+  width:11px;
+  height:11px;
+}
+
+::-webkit-scrollbar-track{
+  background:#080b0d;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#343a40;
+  border:2px solid #080b0d;
+  border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#4b535a;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  header{
+    align-items:flex-start;
+  }
+
+  .header-account{
+    margin-top:16px;
+    flex-wrap:wrap;
+  }
+
+  .dashboard-nav{
+    gap:5px;
+  }
+
+  .dashboard-nav a{
+    flex:1 1 auto;
+  }
+
+  .panel{
+    padding:17px;
+  }
+}
+
+/* === END AUSTRALIA PROFESSIONAL UI V1 === */
+
+/* =========================================================
+   AUSTRALIA GRID - PROFESSIONAL LIVE STATUS DOTS
+   Blue = Good | Yellow = Warning/Busy | Red = Error/Offline
+   ========================================================= */
+
+.overview-value::before{
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 7px;
+    border-radius: 50%;
+    vertical-align: 1px;
+    background: #38bdf8;
+    box-shadow:
+        0 0 0 2px rgba(56,189,248,.12),
+        0 0 8px rgba(56,189,248,.75);
+}
+
+/* OVERVIEW CARDS */
+
+.overview-card.healthy .overview-value::before{
+    background: #38bdf8;
+    box-shadow:
+        0 0 0 2px rgba(56,189,248,.12),
+        0 0 8px rgba(56,189,248,.8);
+}
+
+.overview-card.warning .overview-value::before{
+    background: #facc15;
+    box-shadow:
+        0 0 0 2px rgba(250,204,21,.12),
+        0 0 8px rgba(250,204,21,.8);
+}
+
+.overview-card.error .overview-value::before, .overview-card.offline .overview-value::before{
+    background: #ef4444;
+    box-shadow:
+        0 0 0 2px rgba(239,68,68,.12),
+        0 0 8px rgba(239,68,68,.8);
+}
+
+
+
+
+/* AUSTRALIA CONTROL PANEL COMPACT V1 START */
+
+
+/* ============================================================
+   MAIN PAGE
+   ============================================================ */
+
+body.control-panel-page .shell{
+
+    width:
+        min(
+            1500px,
+            96%
+        ) !important;
+
+    padding:
+        16px 0
+        36px !important;
+}
+
+
+/* ============================================================
+   TOP HEADER
+   ============================================================ */
+
+body.control-panel-page .shell > header{
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 0 12px !important;
+
+    padding:
+        14px 20px !important;
+
+    gap:
+        16px !important;
+
+    border-radius:
+        14px !important;
+}
+
+
+body.control-panel-page header h1{
+
+    margin:
+        2px 0 2px !important;
+
+    font-size:
+        30px !important;
+
+    line-height:
+        1.05 !important;
+}
+
+
+body.control-panel-page header .eyebrow{
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.1 !important;
+}
+
+
+body.control-panel-page header p{
+
+    margin:
+        4px 0 0 !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.2 !important;
+}
+
+
+/* ============================================================
+   ACCOUNT AREA
+   ============================================================ */
+
+body.control-panel-page .header-account{
+
+    gap:
+        8px !important;
+
+    align-items:
+        center !important;
+}
+
+
+body.control-panel-page .level{
+
+    min-height:
+        0 !important;
+
+    padding:
+        8px 12px !important;
+
+    border-radius:
+        9px !important;
+}
+
+
+body.control-panel-page .level strong{
+
+    font-size:
+        12px !important;
+
+    line-height:
+        1.1 !important;
+}
+
+
+body.control-panel-page .level span{
+
+    margin-top:
+        3px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .dashboard-logout{
+
+    min-height:
+        34px !important;
+
+    padding:
+        0 12px !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    font-size:
+        10px !important;
+
+    border-radius:
+        7px !important;
+}
+
+
+/* ============================================================
+   MAIN NAVIGATION BAR
+   ============================================================ */
+
+body.control-panel-page .dashboard-nav{
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 0 12px !important;
+
+    padding:
+        7px 10px !important;
+
+    gap:
+        6px !important;
+
+    border-radius:
+        12px !important;
+}
+
+
+body.control-panel-page .dashboard-nav a{
+
+    min-height:
+        32px !important;
+
+    padding:
+        0 11px !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1 !important;
+
+    border-radius:
+        7px !important;
+}
+
+
+/* ============================================================
+   LIVE GRID OVERVIEW
+   ============================================================ */
+
+body.control-panel-page .grid-overview{
+
+    margin:
+        0 0 12px !important;
+
+    padding:
+        14px 16px !important;
+
+    border-radius:
+        14px !important;
+}
+
+
+body.control-panel-page .overview-heading{
+
+    margin-bottom:
+        10px !important;
+}
+
+
+body.control-panel-page .overview-heading strong{
+
+    font-size:
+        13px !important;
+}
+
+
+body.control-panel-page .overview-kicker{
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .overview-heading button{
+
+    min-height:
+        32px !important;
+
+    padding:
+        0 11px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .overview-cards{
+
+    gap:
+        9px !important;
+}
+
+
+body.control-panel-page .overview-card{
+
+    min-height:
+        84px !important;
+
+    padding:
+        11px 13px !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+body.control-panel-page .overview-label{
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .overview-value{
+
+    margin-top:
+        5px !important;
+
+    font-size:
+        22px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .overview-card small{
+
+    margin-top:
+        5px !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.2 !important;
+}
+
+
+/* ============================================================
+   GRID ALERTS
+   ============================================================ */
+
+body.control-panel-page .grid-alerts{
+
+    margin:
+        0 0 12px !important;
+
+    padding:
+        13px 16px !important;
+
+    border-radius:
+        14px !important;
+}
+
+
+body.control-panel-page .alerts-heading{
+
+    margin-bottom:
+        9px !important;
+}
+
+
+body.control-panel-page .alerts-heading strong{
+
+    font-size:
+        13px !important;
+}
+
+
+body.control-panel-page .alerts-kicker{
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .alert-row{
+
+    min-height:
+        0 !important;
+
+    padding:
+        9px 11px !important;
+
+    margin-top:
+        6px !important;
+
+    border-radius:
+        7px !important;
+
+    font-size:
+        10px !important;
+}
+
+
+body.control-panel-page .alert-row strong{
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .grid-alerts button{
+
+    min-height:
+        32px !important;
+
+    padding:
+        0 11px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   ALL CONTROL PANEL SECTIONS
+   ============================================================ */
+
+body.control-panel-page .panel{
+
+    margin:
+        10px 0 !important;
+
+    padding:
+        14px 16px !important;
+
+    border-radius:
+        13px !important;
+}
+
+
+body.control-panel-page .panel-title{
+
+    min-height:
+        0 !important;
+
+    margin-bottom:
+        10px !important;
+
+    gap:
+        10px !important;
+}
+
+
+body.control-panel-page .panel-title span{
+
+    font-size:
+        11px !important;
+}
+
+
+body.control-panel-page .panel-title button{
+
+    min-height:
+        31px !important;
+
+    padding:
+        0 10px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+body.control-panel-page .backup-help{
+
+    margin:
+        0 0 10px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.35 !important;
+}
+
+
+/* ============================================================
+   DASHBOARD GRID SPACING
+   ============================================================ */
+
+body.control-panel-page .dashboard-grid{
+
+    gap:
+        10px !important;
+}
+
+
+/* ============================================================
+   TOOLBARS
+   ============================================================ */
+
+body.control-panel-page .backup-tools, body.control-panel-page .history-toolbar, body.control-panel-page .grid-backup-toolbar{
+
+    gap:
+        7px !important;
+
+    margin-bottom:
+        9px !important;
+}
+
+
+body.control-panel-page .backup-tools input, body.control-panel-page .backup-tools select, body.control-panel-page .history-toolbar input, body.control-panel-page .history-toolbar select{
+
+    min-height:
+        34px !important;
+
+    padding:
+        0 9px !important;
+
+    font-size:
+        10px !important;
+
+    border-radius:
+        7px !important;
+}
+
+
+body.control-panel-page .history-toolbar button, body.control-panel-page .grid-backup-toolbar button{
+
+    min-height:
+        34px !important;
+
+    padding:
+        0 10px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   HISTORY ROWS
+   ============================================================ */
+
+body.control-panel-page .history-row{
+
+    min-height:
+        0 !important;
+
+    padding:
+        8px 10px !important;
+
+    font-size:
+        10px !important;
+}
+
+
+body.control-panel-page .history-head{
+
+    padding-top:
+        7px !important;
+
+    padding-bottom:
+        7px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   BACKUP FILE ROWS
+   ============================================================ */
+
+body.control-panel-page .backup-file-row{
+
+    padding:
+        9px 11px !important;
+
+    gap:
+        12px !important;
+}
+
+
+body.control-panel-page .backup-file-meta{
+
+    margin-top:
+        3px !important;
+
+    font-size:
+        10px !important;
+}
+
+
+body.control-panel-page .backup-download, body.control-panel-page .backup-delete, body.control-panel-page .backup-restore{
+
+    min-height:
+        32px !important;
+
+    padding:
+        0 10px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   STORAGE / HEALTH / RESTORE ROWS
+   ============================================================ */
+
+body.control-panel-page .backup-health-row, body.control-panel-page .restore-history-row, body.control-panel-page .storage-group-row{
+
+    padding:
+        8px 10px !important;
+
+    min-height:
+        0 !important;
+}
+
+
+/* ============================================================
+   RESULT BAR
+   ============================================================ */
+
+body.control-panel-page .result{
+
+    padding:
+        9px 12px !important;
+
+    font-size:
+        10px !important;
+
+    border-radius:
+        8px !important;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:900px){
+
+    body.control-panel-page .shell{
+
+        width:
+            calc(100% - 18px)
+            !important;
+
+        padding-top:
+            9px !important;
+    }
+
+
+    body.control-panel-page .overview-cards{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            )
+            !important;
+    }
+
+
+    body.control-panel-page .dashboard-nav{
+
+        overflow-x:
+            auto !important;
+
+        flex-wrap:
+            nowrap !important;
+    }
+
+
+    body.control-panel-page .dashboard-nav a{
+
+        flex:
+            0 0 auto !important;
+    }
+}
+
+
+/* AUSTRALIA CONTROL PANEL COMPACT V1 END */
+
+
+
+/* AUSTRALIA CONTROL PANEL ULTRA COMPACT V2 START */
+
+
+/* ============================================================
+   WHOLE CONTROL PANEL
+   ============================================================ */
+
+body.control-panel-page .shell{
+
+    width:
+        min(
+            1450px,
+            calc(100% - 24px)
+        ) !important;
+
+    margin:
+        0 auto !important;
+
+    padding:
+        8px 0 24px !important;
+}
+
+
+/* ============================================================
+   TOP HEADER - MUCH SMALLER
+   ============================================================ */
+
+body.control-panel-page .shell > header{
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 0 7px !important;
+
+    padding:
+        9px 14px !important;
+
+    gap:
+        10px !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+body.control-panel-page header h1{
+
+    margin:
+        1px 0 !important;
+
+    font-size:
+        24px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page header .eyebrow{
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .08em !important;
+}
+
+
+body.control-panel-page header p{
+
+    margin:
+        3px 0 0 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+/* ============================================================
+   ACCOUNT AREA
+   ============================================================ */
+
+body.control-panel-page .header-account{
+
+    gap:
+        5px !important;
+}
+
+
+body.control-panel-page .level{
+
+    padding:
+        5px 9px !important;
+
+    min-height:
+        0 !important;
+
+    border-radius:
+        7px !important;
+}
+
+
+body.control-panel-page .level strong{
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .level span{
+
+    margin-top:
+        2px !important;
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .dashboard-logout{
+
+    min-height:
+        27px !important;
+
+    height:
+        27px !important;
+
+    padding:
+        0 9px !important;
+
+    font-size:
+        8px !important;
+
+    border-radius:
+        6px !important;
+}
+
+
+/* ============================================================
+   TOP MENU - MUCH SMALLER
+   ============================================================ */
+
+body.control-panel-page .dashboard-nav{
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 0 7px !important;
+
+    padding:
+        4px 6px !important;
+
+    gap:
+        4px !important;
+
+    border-radius:
+        9px !important;
+}
+
+
+body.control-panel-page .dashboard-nav a{
+
+    min-height:
+        26px !important;
+
+    height:
+        26px !important;
+
+    padding:
+        0 8px !important;
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1 !important;
+
+    border-radius:
+        5px !important;
+
+    letter-spacing:
+        .02em !important;
+}
+
+
+/* ============================================================
+   LIVE GRID OVERVIEW
+   ============================================================ */
+
+body.control-panel-page .grid-overview{
+
+    margin:
+        0 0 7px !important;
+
+    padding:
+        9px 11px !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+body.control-panel-page .overview-heading{
+
+    min-height:
+        0 !important;
+
+    margin-bottom:
+        6px !important;
+}
+
+
+body.control-panel-page .overview-kicker{
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .overview-heading strong{
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .overview-heading button{
+
+    min-height:
+        26px !important;
+
+    height:
+        26px !important;
+
+    padding:
+        0 8px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+body.control-panel-page .overview-cards{
+
+    gap:
+        6px !important;
+}
+
+
+body.control-panel-page .overview-card{
+
+    min-height:
+        61px !important;
+
+    padding:
+        7px 9px !important;
+
+    border-radius:
+        8px !important;
+}
+
+
+body.control-panel-page .overview-label{
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .overview-value{
+
+    margin:
+        4px 0 0 !important;
+
+    font-size:
+        18px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .overview-card small{
+
+    margin-top:
+        3px !important;
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1.1 !important;
+}
+
+
+/* ============================================================
+   ALERTS - MUCH SMALLER
+   ============================================================ */
+
+body.control-panel-page .grid-alerts{
+
+    margin:
+        0 0 7px !important;
+
+    padding:
+        9px 11px !important;
+
+    border-radius:
+        10px !important;
+}
+
+
+body.control-panel-page .alerts-heading{
+
+    margin-bottom:
+        5px !important;
+}
+
+
+body.control-panel-page .alerts-kicker{
+
+    font-size:
+        8px !important;
+}
+
+
+body.control-panel-page .alerts-heading strong{
+
+    font-size:
+        11px !important;
+}
+
+
+body.control-panel-page .alert-row{
+
+    margin-top:
+        4px !important;
+
+    padding:
+        6px 8px !important;
+
+    min-height:
+        0 !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.15 !important;
+
+    border-radius:
+        6px !important;
+}
+
+
+body.control-panel-page .alert-row strong{
+
+    font-size:
+        8px !important;
+}
+
+
+body.control-panel-page .grid-alerts button{
+
+    height:
+        26px !important;
+
+    min-height:
+        26px !important;
+
+    padding:
+        0 8px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+/* ============================================================
+   ALL CONTROL PANEL BOXES
+   ============================================================ */
+
+body.control-panel-page .panel{
+
+    margin:
+        6px 0 !important;
+
+    padding:
+        9px 11px !important;
+
+    border-radius:
+        9px !important;
+}
+
+
+body.control-panel-page .panel-title{
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 0 6px !important;
+
+    padding:
+        0 !important;
+
+    gap:
+        6px !important;
+}
+
+
+body.control-panel-page .panel-title span{
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1 !important;
+}
+
+
+body.control-panel-page .panel-title button{
+
+    min-height:
+        25px !important;
+
+    height:
+        25px !important;
+
+    padding:
+        0 8px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+body.control-panel-page .backup-help{
+
+    margin:
+        0 0 6px !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.2 !important;
+}
+
+
+/* ============================================================
+   GRID GAPS
+   ============================================================ */
+
+body.control-panel-page .dashboard-grid{
+
+    gap:
+        6px !important;
+}
+
+
+/* ============================================================
+   INPUTS / SELECTS / SEARCH BOXES
+   ============================================================ */
+
+body.control-panel-page input, body.control-panel-page select{
+
+    min-height:
+        28px !important;
+
+    height:
+        28px !important;
+
+    padding:
+        0 7px !important;
+
+    font-size:
+        9px !important;
+
+    border-radius:
+        5px !important;
+}
+
+
+/* ============================================================
+   BUTTONS INSIDE PANELS
+   ============================================================ */
+
+body.control-panel-page button{
+
+    min-height:
+        27px;
+
+    padding:
+        0 8px;
+
+    font-size:
+        8px;
+
+    border-radius:
+        5px;
+}
+
+
+/* ============================================================
+   HISTORY
+   ============================================================ */
+
+body.control-panel-page .history-toolbar{
+
+    gap:
+        4px !important;
+
+    margin-bottom:
+        5px !important;
+}
+
+
+body.control-panel-page .history-row{
+
+    padding:
+        5px 7px !important;
+
+    min-height:
+        0 !important;
+
+    font-size:
+        8px !important;
+
+    line-height:
+        1.15 !important;
+}
+
+
+body.control-panel-page .history-head{
+
+    padding:
+        5px 7px !important;
+
+    font-size:
+        7px !important;
+}
+
+
+/* ============================================================
+   BACKUP FILE ROWS
+   ============================================================ */
+
+body.control-panel-page .backup-file-row{
+
+    padding:
+        6px 8px !important;
+
+    gap:
+        7px !important;
+}
+
+
+body.control-panel-page .backup-file-meta{
+
+    margin-top:
+        2px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+body.control-panel-page .backup-download, body.control-panel-page .backup-delete, body.control-panel-page .backup-restore{
+
+    min-height:
+        25px !important;
+
+    height:
+        25px !important;
+
+    padding:
+        0 7px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+/* ============================================================
+   STORAGE / HEALTH / RESTORES
+   ============================================================ */
+
+body.control-panel-page .backup-health-row, body.control-panel-page .restore-history-row, body.control-panel-page .storage-group-row{
+
+    min-height:
+        0 !important;
+
+    padding:
+        5px 7px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+
+body.control-panel-page .dg-modal-card{
+
+    width:
+        min(
+            560px,
+            calc(100% - 30px)
+        ) !important;
+
+    padding:
+        14px !important;
+}
+
+
+body.control-panel-page .dg-modal-head h2{
+
+    font-size:
+        17px !important;
+}
+
+
+/* ============================================================
+   BOTTOM RESULT BAR
+   ============================================================ */
+
+body.control-panel-page .result{
+
+    padding:
+        6px 8px !important;
+
+    font-size:
+        8px !important;
+
+    min-height:
+        0 !important;
+
+    border-radius:
+        6px !important;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media(max-width:900px){
+
+    body.control-panel-page .shell{
+
+        width:
+            calc(100% - 10px)
+            !important;
+    }
+
+
+    body.control-panel-page .overview-cards{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            )
+            !important;
+    }
+
+
+    body.control-panel-page .dashboard-nav{
+
+        overflow-x:
+            auto !important;
+
+        flex-wrap:
+            nowrap !important;
+    }
+
+
+    body.control-panel-page .dashboard-nav a{
+
+        flex:
+            0 0 auto !important;
+    }
+}
+
+
+/* AUSTRALIA CONTROL PANEL ULTRA COMPACT V2 END */
+

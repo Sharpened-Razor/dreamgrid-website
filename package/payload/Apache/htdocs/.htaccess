@@ -1,0 +1,11 @@
+
+# Retain both existing sitemap URLs with runtime configuration.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(?:DreamGrid/)?Sitemap\.xml$ /sitemap.php [NC,L]
+</IfModule>
+
+# Protect configuration templates, diagnostics and server-side engineering files.
+<FilesMatch "(?i)(\.bak(?:\.|$)|\.before-|\.(?:log|ps1|cs|csproj|dll|pdb|ini|sql|proto)$|^session_secret\.php$)">
+    Require all denied
+</FilesMatch>

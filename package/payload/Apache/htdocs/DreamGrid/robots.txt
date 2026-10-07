@@ -1,0 +1,10 @@
+User-agent: *
+Crawl-delay: 1
+Allow: /DreamGrid
+Allow: /JOpensim
+Allow: /Wordpress
+Allow: /Metromap
+Allow: /Search
+Allow: /DreamGrid/Sitemap.xml
+
+

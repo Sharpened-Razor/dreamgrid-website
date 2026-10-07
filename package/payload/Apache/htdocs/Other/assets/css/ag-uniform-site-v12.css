@@ -1,0 +1,918 @@
+@import url("/Other/assets/css/ag-design-system-v1.css?v=20260902-adminhome-true3d-v12");
+@import url("/Other/assets/css/ag-header-actions-v1.css?v=20260902-header-actions-v1");
+@import url("/Other/assets/css/ag-icons-v2.css?v=20260901-icons-v2");
+
+/*
+ * ============================================================
+ * INTERNAL SITE UNIFORM STANDARD V13
+ * ============================================================
+ *
+ * MY REGIONS is the master visual reference.
+ */
+
+/*
+ * Main internal header.
+ */
+
+.ag-v12-header {
+
+    position:relative !important;
+    box-sizing:border-box !important;
+
+    /*
+     * Leave room for the 290px return button.
+     */
+
+    padding-right:360px !important;
+}
+
+
+/*
+ * SIGNED IN AS
+ * directly below page title.
+ */
+
+.ag-v12-identity {
+
+    display:block !important;
+
+    position:static !important;
+    float:none !important;
+
+    width:auto !important;
+
+    margin:6px 0 0 0 !important;
+    padding:0 !important;
+
+    background:none !important;
+    border:0 !important;
+    box-shadow:none !important;
+
+    color:#9ec5d8 !important;
+
+    font-family:inherit !important;
+    font-size:13px !important;
+    font-weight:500 !important;
+
+    line-height:1.35 !important;
+
+    text-align:left !important;
+    text-transform:uppercase !important;
+
+    white-space:nowrap !important;
+}
+
+.ag-v12-identity strong {
+
+    color:#f3ae20 !important;
+    font-weight:800 !important;
+}
+
+
+/*
+ * ============================================================
+ * MASTER BACK / RETURN BUTTON
+ *
+ * EXACT SITE STANDARD:
+ *
+ * WIDTH  = 290px
+ * HEIGHT = 66px
+ *
+ * ALL BACK/RETURN BUTTONS USE THIS.
+ * ============================================================
+ */
+
+html body [data-ag-v12-return="1"],
+html body a[data-ag-v12-return="1"],
+html body button[data-ag-v12-return="1"],
+html body .ag-v12-return {
+
+    appearance:none !important;
+
+    box-sizing:border-box !important;
+
+    width:290px !important;
+    min-width:290px !important;
+    max-width:290px !important;
+
+    height:66px !important;
+    min-height:66px !important;
+    max-height:66px !important;
+
+    flex:0 0 290px !important;
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    margin:0 !important;
+
+    padding:0 22px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0a8 0%,
+            #f4c94c 18%,
+            #dda018 62%,
+            #a96705 100%
+        ) !important;
+
+    color:#090909 !important;
+
+    border:
+        1px solid #ffeba5 !important;
+
+    border-radius:
+        10px !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.82),
+        inset 0 -1px 0 rgba(75,35,0,.42),
+        0 0 0 1px rgba(117,66,0,.78),
+        0 5px 12px rgba(0,0,0,.38)
+        !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif
+        !important;
+
+    font-size:16px !important;
+    font-weight:900 !important;
+
+    line-height:1 !important;
+
+    letter-spacing:.045em !important;
+
+    text-align:center !important;
+    text-decoration:none !important;
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.38)
+        !important;
+
+    white-space:nowrap !important;
+
+    overflow:hidden !important;
+
+    cursor:pointer !important;
+
+    transform:none !important;
+}
+
+html body [data-ag-v12-return="1"]:hover,
+html body .ag-v12-return:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff7cb 0%,
+            #f9d965 20%,
+            #e7ae28 63%,
+            #bd7908 100%
+        ) !important;
+
+    color:#000000 !important;
+}
+
+
+/*
+ * ============================================================
+ * SAME POSITION ON EVERY PAGE
+ *
+ * Right side of header.
+ * Vertically centred.
+ * ============================================================
+ */
+
+html body .ag-v12-return-slot {
+
+    position:absolute !important;
+
+    top:50% !important;
+    right:32px !important;
+
+    transform:
+        translateY(-50%)
+        !important;
+
+    z-index:500 !important;
+
+    width:290px !important;
+    min-width:290px !important;
+    max-width:290px !important;
+
+    height:66px !important;
+    min-height:66px !important;
+    max-height:66px !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+}
+
+
+/*
+ * No icons inside Back buttons.
+ */
+
+[data-ag-v12-return="1"] svg,
+[data-ag-v12-return="1"] .ag-icon,
+[data-ag-v12-return="1"] .ag-auto-icon,
+[data-ag-v12-return="1"] [data-ag-auto-icon] {
+
+    display:none !important;
+}
+
+
+/*
+ * Internal decorative branding.
+ */
+
+.ag-v12-hide-brand {
+
+    display:none !important;
+}
+
+
+/*
+ * Old shared return slots must not affect layout.
+ */
+
+.ag-uniform-return-slot,
+.ag-header-return-slot {
+
+    display:none !important;
+}
+
+
+/*
+ * Responsive.
+ */
+
+@media(max-width:720px){
+
+    .ag-v12-header {
+
+        padding-right:20px !important;
+        padding-top:100px !important;
+    }
+
+    html body .ag-v12-return-slot {
+
+        top:22px !important;
+        right:20px !important;
+
+        transform:none !important;
+    }
+}
+
+/* AG DASHBOARD ROLE BADGE V14 START */
+
+/*
+ * Exact visual rules copied from Admin Home .php-level.
+ */
+
+.ag-role-level-badge{
+
+    min-width:128px;
+
+    padding:
+        8px 12px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(67,151,220,.38);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(15,68,104,.22);
+
+    font-size:10px;
+
+    font-weight:800;
+}
+
+.ag-role-level-badge strong{
+
+    display:block;
+
+    margin-bottom:2px;
+
+    color:#7bc6ff;
+}
+
+/*
+ * Placement for dashboards that do not already contain
+ * the native Admin Home badge.
+ */
+
+.ag-role-badge-host{
+    position:relative !important;
+}
+
+.ag-role-level-badge{
+    position:absolute !important;
+
+    left:380px !important;
+    top:50% !important;
+
+    transform:
+        translateY(-50%) !important;
+
+    z-index:450 !important;
+}
+
+/*
+ * Existing Admin Home badge keeps its original position.
+ */
+
+.php-level[data-ag-role-badge="1"]{
+    position:static;
+}
+
+/*
+ * Smaller displays.
+ */
+
+@media(max-width:900px){
+
+    .ag-role-level-badge{
+        position:static !important;
+
+        display:inline-block !important;
+
+        transform:none !important;
+
+        margin-top:12px !important;
+    }
+}
+
+/* AG DASHBOARD ROLE BADGE V14 END */
+
+
+/* ============================================================
+   BACK BUTTON SIZE V15 - 10 PERCENT SMALLER
+   ============================================================ */
+
+html body [data-ag-v12-return="1"],
+html body a[data-ag-v12-return="1"],
+html body button[data-ag-v12-return="1"],
+html body .ag-v12-return {
+
+    width:261px !important;
+    min-width:261px !important;
+    max-width:261px !important;
+
+    height:59.4px !important;
+    min-height:59.4px !important;
+    max-height:59.4px !important;
+
+    flex:0 0 261px !important;
+
+    padding:0 20px !important;
+
+    font-size:14px !important;
+}
+
+html body .ag-v12-return-slot {
+
+    width:261px !important;
+    min-width:261px !important;
+    max-width:261px !important;
+
+    height:59.4px !important;
+    min-height:59.4px !important;
+    max-height:59.4px !important;
+}
+
+.ag-v12-header {
+
+    padding-right:330px !important;
+}
+
+/* ============================================================
+   END BACK BUTTON SIZE V15
+   ============================================================ */
+
+
+
+
+
+/* ============================================================
+   BACK BUTTON SIZE V16 - ANOTHER 10 PERCENT SMALLER
+   ============================================================ */
+
+html body [data-ag-v12-return="1"],
+html body a[data-ag-v12-return="1"],
+html body button[data-ag-v12-return="1"],
+html body .ag-v12-return {
+
+    width:234.9px !important;
+    min-width:234.9px !important;
+    max-width:234.9px !important;
+
+    height:53.46px !important;
+    min-height:53.46px !important;
+    max-height:53.46px !important;
+
+    flex:0 0 234.9px !important;
+
+    padding:0 18px !important;
+
+    font-size:12.6px !important;
+}
+
+html body .ag-v12-return-slot {
+
+    width:234.9px !important;
+    min-width:234.9px !important;
+    max-width:234.9px !important;
+
+    height:53.46px !important;
+    min-height:53.46px !important;
+    max-height:53.46px !important;
+}
+
+.ag-v12-header {
+
+    padding-right:305px !important;
+}
+
+/* ============================================================
+   END BACK BUTTON SIZE V16
+   ============================================================ */
+
+
+/* ============================================================
+   RETURN BUTTON ICON CLEANUP V17
+   ============================================================ */
+
+/*
+ * Old icon systems sometimes generate their icons through
+ * ::before instead of actual HTML.
+ *
+ * Back / Return buttons must contain TEXT ONLY.
+ */
+
+html body .ag-return-button::before,
+html body .ag-back-dashboard::before,
+html body [data-ag-v12-return="1"]::before,
+html body .ag-v12-return::before {
+
+    content:none !important;
+    display:none !important;
+
+    width:0 !important;
+    height:0 !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    background:none !important;
+    border:0 !important;
+    box-shadow:none !important;
+}
+
+
+/*
+ * Offline Message header envelope is not part of the
+ * uniform internal header standard.
+ */
+
+html body .offline-header .offline-icon {
+
+    display:none !important;
+}
+
+/* ============================================================
+   END RETURN BUTTON ICON CLEANUP V17
+   ============================================================ */
+
+
+/* AG MASTER COMMON HEADER V18 START */
+
+/*
+ * ============================================================
+ * MASTER INTERNAL HEADER
+ * ============================================================
+ */
+
+html body .ag-master-header {
+
+    position:relative !important;
+
+    box-sizing:border-box !important;
+
+    min-height:104px !important;
+
+    padding-right:305px !important;
+}
+
+
+/*
+ * MASTER PAGE TITLE
+ */
+
+html body .ag-master-title {
+
+    margin-left:0 !important;
+
+    text-align:left !important;
+
+    justify-content:flex-start !important;
+}
+
+
+/*
+ * Remove decorative icons from the MAIN PAGE HEADER only.
+ *
+ * This does NOT remove icons from cards, dialogs,
+ * Friends windows, tools or page-specific controls.
+ */
+
+html body .ag-master-header .offline-icon,
+html body .ag-master-header .header-icon,
+html body .ag-master-header .title-icon,
+html body .ag-master-header .page-title-icon,
+html body .ag-master-header .ag-header-icon {
+
+    display:none !important;
+}
+
+
+/*
+ * ============================================================
+ * MASTER SIGNED-IN LINE
+ * ============================================================
+ */
+
+html body .ag-master-identity,
+html body .ag-v12-identity {
+
+    display:block !important;
+
+    position:static !important;
+
+    float:none !important;
+
+    width:auto !important;
+    height:auto !important;
+
+    margin:
+        6px 0 0 0
+        !important;
+
+    padding:0 !important;
+
+    border:0 !important;
+
+    background:none !important;
+
+    box-shadow:none !important;
+
+    color:#9ec5d8 !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif
+        !important;
+
+    font-size:13px !important;
+
+    font-weight:500 !important;
+
+    line-height:1.35 !important;
+
+    text-align:left !important;
+
+    text-transform:uppercase !important;
+}
+
+html body .ag-master-identity strong,
+html body .ag-v12-identity strong {
+
+    color:#f3ae20 !important;
+
+    font-weight:800 !important;
+}
+
+
+/*
+ * Hide old page-specific Signed-In copies after the
+ * master identity has been created.
+ */
+
+html body .ag-master-old-identity {
+
+    display:none !important;
+}
+
+
+/*
+ * ============================================================
+ * MASTER RETURN BUTTON
+ *
+ * CURRENT APPROVED SIZE:
+ * 234.9px x 53.46px
+ * ============================================================
+ */
+
+html body [data-ag-v12-return="1"],
+html body [data-ag-master-return="1"],
+html body a[data-ag-v12-return="1"],
+html body a[data-ag-master-return="1"],
+html body button[data-ag-v12-return="1"],
+html body button[data-ag-master-return="1"],
+html body .ag-v12-return,
+html body .ag-return-button,
+html body .ag-back-dashboard {
+
+    appearance:none !important;
+
+    box-sizing:border-box !important;
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    width:234.9px !important;
+    min-width:234.9px !important;
+    max-width:234.9px !important;
+
+    height:53.46px !important;
+    min-height:53.46px !important;
+    max-height:53.46px !important;
+
+    flex:
+        0 0 234.9px
+        !important;
+
+    margin:0 !important;
+
+    padding:
+        0 18px
+        !important;
+
+    border:
+        1px solid #ffeba5
+        !important;
+
+    border-radius:
+        10px
+        !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff0a8 0%,
+            #f4c94c 18%,
+            #dda018 62%,
+            #a96705 100%
+        )
+        !important;
+
+    color:#090909 !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.82),
+        inset 0 -1px 0 rgba(75,35,0,.42),
+        0 0 0 1px rgba(117,66,0,.78),
+        0 5px 12px rgba(0,0,0,.38)
+        !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif
+        !important;
+
+    font-size:12.6px !important;
+
+    font-weight:900 !important;
+
+    line-height:1 !important;
+
+    letter-spacing:.045em !important;
+
+    text-align:center !important;
+
+    text-decoration:none !important;
+
+    text-transform:uppercase !important;
+
+    white-space:nowrap !important;
+
+    overflow:hidden !important;
+
+    cursor:pointer !important;
+
+    transform:none !important;
+}
+
+
+/*
+ * Hover remains uniform.
+ */
+
+html body [data-ag-master-return="1"]:hover,
+html body [data-ag-v12-return="1"]:hover,
+html body .ag-v12-return:hover,
+html body .ag-return-button:hover,
+html body .ag-back-dashboard:hover {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff7cb 0%,
+            #f9d965 20%,
+            #e7ae28 63%,
+            #bd7908 100%
+        )
+        !important;
+
+    color:#000000 !important;
+}
+
+
+/*
+ * ABSOLUTELY NO ICONS on common Back/Return navigation.
+ */
+
+html body [data-ag-master-return="1"]::before,
+html body [data-ag-master-return="1"]::after,
+html body [data-ag-v12-return="1"]::before,
+html body [data-ag-v12-return="1"]::after,
+html body .ag-return-button::before,
+html body .ag-return-button::after,
+html body .ag-back-dashboard::before,
+html body .ag-back-dashboard::after {
+
+    content:none !important;
+
+    display:none !important;
+
+    width:0 !important;
+    height:0 !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    border:0 !important;
+
+    background:none !important;
+
+    box-shadow:none !important;
+}
+
+html body [data-ag-master-return="1"] svg,
+html body [data-ag-master-return="1"] i,
+html body [data-ag-master-return="1"] .icon,
+html body [data-ag-master-return="1"] [class*="icon"],
+html body [data-ag-v12-return="1"] svg,
+html body [data-ag-v12-return="1"] i,
+html body [data-ag-v12-return="1"] .icon,
+html body [data-ag-v12-return="1"] [class*="icon"] {
+
+    display:none !important;
+}
+
+
+/*
+ * ============================================================
+ * ONE RETURN BUTTON POSITION
+ * ============================================================
+ */
+
+html body .ag-master-return-slot,
+html body .ag-v12-return-slot {
+
+    position:absolute !important;
+
+    top:50% !important;
+    right:32px !important;
+
+    transform:
+        translateY(-50%)
+        !important;
+
+    z-index:500 !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    width:234.9px !important;
+    min-width:234.9px !important;
+    max-width:234.9px !important;
+
+    height:53.46px !important;
+    min-height:53.46px !important;
+    max-height:53.46px !important;
+
+    margin:0 !important;
+    padding:0 !important;
+}
+
+
+/*
+ * Old return slots may no longer control layout.
+ */
+
+html body .ag-uniform-return-slot,
+html body .ag-header-return-slot {
+
+    display:none !important;
+}
+
+
+/*
+ * ============================================================
+ * RESPONSIVE
+ * ============================================================
+ */
+
+@media(max-width:720px){
+
+    html body .ag-master-header {
+
+        padding-right:20px !important;
+        padding-top:90px !important;
+    }
+
+    html body .ag-master-return-slot,
+    html body .ag-v12-return-slot {
+
+        top:20px !important;
+        right:20px !important;
+
+        transform:none !important;
+    }
+}
+
+/* AG MASTER COMMON HEADER V18 END */
+
+
+/* ============================================================
+   SHARED UI PHASE 3C
+   MASTER IDENTITY / ROLE AUTHORITY
+   ============================================================ */
+
+/*
+ * Any legacy Signed-In element identified by the master
+ * controller is permanently hidden.
+ */
+
+html body .ag-master-old-identity {
+    display:none !important;
+}
+
+
+/*
+ * Only the shared role badge controls role appearance.
+ */
+
+html body .ag-role-level-badge,
+html body .php-level[data-ag-role-badge="1"] {
+    visibility:visible !important;
+}
+
+
+/*
+ * Legacy role labels identified by the master are hidden.
+ */
+
+html body .ag-master-old-role {
+    display:none !important;
+}
+
+/* ============================================================
+   END SHARED UI PHASE 3C
+   ============================================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1602 @@
+
+/* ============================================================
+   AUSTRALIA GRID
+   PROFESSIONAL SITE PROPORTIONS V1
+   ============================================================ */
+
+
+:root{
+
+    /* MAIN CONTENT WIDTH */
+
+    --ag-pro-page-width:
+        1480px;
+
+    --ag-pro-page-side:
+        28px;
+
+
+    /* SPACING */
+
+    --ag-pro-gap:
+        10px;
+
+    --ag-pro-section-gap:
+        12px;
+
+    --ag-pro-padding:
+        12px;
+
+
+    /* CORNERS */
+
+    --ag-pro-radius:
+        10px;
+
+    --ag-pro-radius-large:
+        13px;
+
+
+    /* BUTTONS */
+
+    --ag-pro-button-height:
+        30px;
+
+    --ag-pro-button-font:
+        10px;
+
+    --ag-pro-button-padding:
+        0 10px;
+
+
+    /* INPUTS */
+
+    --ag-pro-input-height:
+        30px;
+
+
+    /* COLOURS */
+
+    --ag-pro-gold:
+        #d9a12a;
+
+    --ag-pro-gold-light:
+        #ffd45b;
+
+    --ag-pro-gold-mid:
+        #dfa018;
+
+    --ag-pro-gold-dark:
+        #976005;
+
+
+    --ag-pro-dark-top:
+        #303a3f;
+
+    --ag-pro-dark-mid:
+        #182024;
+
+    --ag-pro-dark-bottom:
+        #080c0e;
+
+
+    --ag-pro-panel-top:
+        rgba(26,34,38,.94);
+
+    --ag-pro-panel-bottom:
+        rgba(6,10,12,.96);
+}
+
+
+/* ============================================================
+   BASIC WEBSITE SCALE
+   ============================================================ */
+
+html{
+
+    width:
+        100% !important;
+
+    max-width:
+        100% !important;
+
+    overflow-x:
+        hidden !important;
+}
+
+
+body{
+
+    width:
+        100% !important;
+
+    max-width:
+        100% !important;
+
+    margin:
+        0 !important;
+
+    overflow-x:
+        hidden !important;
+
+    font-family:
+        "Segoe UI Variable Text",
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    font-size:
+        13px !important;
+
+    line-height:
+        1.35 !important;
+}
+
+
+/* ============================================================
+   TOP-LEVEL PAGE WIDTH
+   ============================================================ */
+
+body > .dashboard-shell,
+
+body > .profile-wrap,
+
+body > .offline-shell,
+
+body > .ag-shell,
+
+body > .shell{
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        min(
+            var(--ag-pro-page-width),
+            calc(100% - var(--ag-pro-page-side))
+        ) !important;
+
+    max-width:
+        var(--ag-pro-page-width)
+        !important;
+
+    margin:
+        14px auto
+        28px !important;
+}
+
+
+/* ============================================================
+   MAIN PAGE HEADERS
+   ============================================================ */
+
+.dashboard-header,
+
+.offline-header,
+
+.ag-top,
+
+.rm-master-header,
+
+body.control-panel-page .shell > header{
+
+    min-height:
+        0 !important;
+
+    padding:
+        12px 16px !important;
+
+    margin:
+        0 0
+        var(--ag-pro-section-gap)
+        !important;
+
+    gap:
+        12px !important;
+
+    border-radius:
+        var(--ag-pro-radius-large)
+        !important;
+}
+
+
+/* ============================================================
+   PAGE TITLES
+   ============================================================ */
+
+.dashboard-heading h1,
+
+.offline-title,
+
+.ag-title,
+
+.rm-master-title h1,
+
+.profile-wrap .hero h1,
+
+body.control-panel-page header h1{
+
+    margin:
+        0 0 4px !important;
+
+    font-size:
+        clamp(
+            24px,
+            2vw,
+            30px
+        ) !important;
+
+    font-weight:
+        800 !important;
+
+    line-height:
+        1.04 !important;
+
+    letter-spacing:
+        .01em !important;
+
+    text-shadow:
+        none !important;
+}
+
+
+/* ============================================================
+   SMALL HEADER TEXT
+   ============================================================ */
+
+.dashboard-kicker,
+
+.ag-eyebrow,
+
+.rm-kicker,
+
+.overview-kicker,
+
+.alerts-kicker,
+
+.profile-wrap .hero-small,
+
+body.control-panel-page .eyebrow{
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        .09em !important;
+
+    line-height:
+        1.1 !important;
+
+    text-shadow:
+        none !important;
+}
+
+
+.dashboard-avatar,
+
+.offline-subtitle,
+
+.ag-muted,
+
+.rm-master-title p,
+
+.profile-wrap .hero p,
+
+body.control-panel-page header p{
+
+    margin:
+        3px 0 0 !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.25 !important;
+}
+
+
+/* ============================================================
+   STANDARD MENU / ACTION ROWS
+   ============================================================ */
+
+.dashboard-actions,
+
+.header-actions,
+
+.ag-nav,
+
+.dashboard-nav,
+
+.rm-master-actions,
+
+.region-manager-toolbar,
+
+.profile-wrap .top-row{
+
+    gap:
+        6px !important;
+}
+
+
+/* ============================================================
+   STANDARD BUTTONS
+   ============================================================ */
+
+button:not(.dg-modal-x),
+
+input[type="button"],
+
+input[type="submit"],
+
+.card-button,
+
+.button-primary,
+
+.top-button,
+
+.dashboard-logout,
+
+.back-button,
+
+.back,
+
+.ag-button,
+
+.rm-action-button,
+
+.region-tool-button,
+
+.backup-download,
+
+.backup-delete,
+
+.backup-restore,
+
+.ag-back-dashboard{
+
+    box-sizing:
+        border-box !important;
+
+    min-height:
+        var(--ag-pro-button-height)
+        !important;
+
+    height:
+        var(--ag-pro-button-height)
+        !important;
+
+    padding:
+        var(--ag-pro-button-padding)
+        !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    gap:
+        5px !important;
+
+    border-radius:
+        6px !important;
+
+    font-size:
+        var(--ag-pro-button-font)
+        !important;
+
+    font-weight:
+        700 !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .02em !important;
+
+    text-shadow:
+        none !important;
+
+    text-decoration:
+        none !important;
+
+    white-space:
+        nowrap !important;
+}
+
+
+/* ============================================================
+   NORMAL BUTTON COLOUR
+   ============================================================ */
+
+button:not(.primary):not(.gold):not(.danger):not(.dg-modal-x),
+
+.card-button:not(.primary),
+
+.top-button:not(.logout),
+
+.dashboard-logout:not(.logout),
+
+.back-button,
+
+.back,
+
+.ag-button:not(.primary):not(.logout),
+
+.rm-action-button:not(.primary),
+
+.region-tool-button:not(.primary){
+
+    border:
+        1px solid
+        rgba(255,255,255,.16)
+        !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--ag-pro-dark-top),
+
+            var(--ag-pro-dark-mid) 52%,
+
+            var(--ag-pro-dark-bottom)
+        )
+        !important;
+
+    color:
+        #f3f5f5 !important;
+}
+
+
+/* ============================================================
+   GOLD PRIMARY BUTTONS
+   ============================================================ */
+
+.card-button.primary,
+
+.button-primary,
+
+button.primary,
+
+button.gold,
+
+.ag-button.primary,
+
+.rm-action-button.primary,
+
+.region-tool-button.primary{
+
+    border:
+        1px solid
+        var(--ag-pro-gold)
+        !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--ag-pro-gold-light),
+
+            var(--ag-pro-gold-mid) 54%,
+
+            var(--ag-pro-gold-dark)
+        )
+        !important;
+
+    color:
+        #171107 !important;
+}
+
+
+/* ============================================================
+   EVERY BACK TO DASHBOARD BUTTON
+   ============================================================ */
+
+.ag-back-dashboard,
+
+.back-dashboard{
+
+    width:
+        160px !important;
+
+    min-width:
+        160px !important;
+
+    max-width:
+        160px !important;
+
+    height:
+        30px !important;
+
+    min-height:
+        30px !important;
+
+    border:
+        1px solid
+        var(--ag-pro-gold)
+        !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+
+            var(--ag-pro-gold-light),
+
+            var(--ag-pro-gold-mid) 54%,
+
+            var(--ag-pro-gold-dark)
+        )
+        !important;
+
+    color:
+        #171107 !important;
+
+    font-size:
+        10px !important;
+
+    font-weight:
+        800 !important;
+}
+
+
+/* ============================================================
+   RED ACTIONS
+   ============================================================ */
+
+.top-button.logout,
+
+.logout,
+
+button.danger,
+
+.danger,
+
+.backup-delete{
+
+    border-color:
+        #783239 !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #743038,
+            #44191e 54%,
+            #20090c
+        )
+        !important;
+
+    color:
+        #ffe9e9 !important;
+}
+
+
+/* ============================================================
+   NAVIGATION BARS
+   ============================================================ */
+
+.dashboard-nav,
+
+.ag-nav{
+
+    min-height:
+        0 !important;
+
+    padding:
+        5px 7px !important;
+
+    margin:
+        0 0
+        var(--ag-pro-section-gap)
+        !important;
+
+    gap:
+        5px !important;
+
+    border-radius:
+        var(--ag-pro-radius)
+        !important;
+}
+
+
+.dashboard-nav a,
+
+.ag-nav a{
+
+    min-height:
+        30px !important;
+
+    height:
+        30px !important;
+
+    padding:
+        0 10px !important;
+
+    font-size:
+        9px !important;
+
+    border-radius:
+        6px !important;
+}
+
+
+/* ============================================================
+   PANELS / BOXES
+   ============================================================ */
+
+.panel,
+
+.ag-panel,
+
+.dashboard-card,
+
+.profile-card,
+
+.overview-card,
+
+.summary-card,
+
+.region-card,
+
+.region-list,
+
+.region-detail,
+
+.grid-overview,
+
+.grid-alerts,
+
+.storage-card,
+
+.workspace-card,
+
+.ag-card{
+
+    box-sizing:
+        border-box !important;
+
+    border:
+        1px solid
+        rgba(204,153,42,.35)
+        !important;
+
+    border-radius:
+        var(--ag-pro-radius)
+        !important;
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            var(--ag-pro-panel-top),
+
+            var(--ag-pro-panel-bottom)
+        )
+        !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.055),
+
+        0 4px 10px
+        rgba(0,0,0,.32)
+
+        !important;
+}
+
+
+/* ============================================================
+   COMMON PANEL PADDING
+   ============================================================ */
+
+.panel,
+
+.ag-panel,
+
+.profile-card,
+
+.region-detail,
+
+.grid-overview,
+
+.grid-alerts,
+
+.workspace-card,
+
+.ag-card{
+
+    padding:
+        var(--ag-pro-padding)
+        !important;
+}
+
+
+/* ============================================================
+   GRID SPACING
+   ============================================================ */
+
+.dashboard-grid,
+
+.overview-cards,
+
+.region-grid,
+
+.region-summary,
+
+.storage-cards,
+
+.summary-grid{
+
+    gap:
+        var(--ag-pro-gap)
+        !important;
+}
+
+
+/* ============================================================
+   DASHBOARDS
+   ============================================================ */
+
+.dashboard-shell{
+
+    padding:
+        14px !important;
+}
+
+
+.dashboard-section{
+
+    padding:
+        11px !important;
+
+    margin:
+        0 0 10px !important;
+
+    border-radius:
+        var(--ag-pro-radius-large)
+        !important;
+}
+
+
+.dashboard-grid{
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        )
+        !important;
+
+    align-items:
+        stretch !important;
+}
+
+
+.dashboard-card{
+
+    min-height:
+        178px !important;
+
+    height:
+        100% !important;
+
+    padding:
+        13px !important;
+
+    display:
+        flex !important;
+
+    flex-direction:
+        column !important;
+}
+
+
+.card-heading{
+
+    gap:
+        10px !important;
+
+    margin-bottom:
+        8px !important;
+}
+
+
+.card-icon{
+
+    width:
+        42px !important;
+
+    height:
+        42px !important;
+
+    min-width:
+        42px !important;
+
+    min-height:
+        42px !important;
+
+    font-size:
+        23px !important;
+
+    border-radius:
+        9px !important;
+}
+
+
+.card-title{
+
+    font-size:
+        17px !important;
+
+    line-height:
+        1.1 !important;
+}
+
+
+.card-status{
+
+    margin-top:
+        4px !important;
+
+    padding:
+        3px 7px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+.dashboard-card p{
+
+    margin:
+        4px 0 10px !important;
+
+    font-size:
+        11px !important;
+
+    line-height:
+        1.4 !important;
+}
+
+
+.card-actions{
+
+    margin-top:
+        auto !important;
+
+    gap:
+        6px !important;
+}
+
+
+/* ============================================================
+   CONTROL PANEL
+   ============================================================ */
+
+body.control-panel-page .shell{
+
+    padding:
+        0 !important;
+}
+
+
+body.control-panel-page .shell > header{
+
+    margin-bottom:
+        7px !important;
+
+    padding:
+        9px 13px !important;
+}
+
+
+body.control-panel-page .dashboard-nav{
+
+    margin-bottom:
+        7px !important;
+}
+
+
+body.control-panel-page .grid-overview,
+
+body.control-panel-page .grid-alerts,
+
+body.control-panel-page .panel{
+
+    margin:
+        0 0 7px !important;
+
+    padding:
+        9px 11px !important;
+}
+
+
+body.control-panel-page .overview-card{
+
+    min-height:
+        58px !important;
+
+    padding:
+        8px 9px !important;
+}
+
+
+body.control-panel-page .overview-value{
+
+    font-size:
+        17px !important;
+}
+
+
+body.control-panel-page .overview-label,
+
+body.control-panel-page .overview-detail,
+
+body.control-panel-page .overview-card small{
+
+    font-size:
+        8px !important;
+}
+
+
+body.control-panel-page .alert-row{
+
+    min-height:
+        0 !important;
+
+    margin-top:
+        4px !important;
+
+    padding:
+        6px 8px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   USER PROFILE
+   ============================================================ */
+
+.profile-wrap{
+
+    padding:
+        0 !important;
+}
+
+
+.profile-wrap .top-row{
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 0 8px !important;
+
+    padding:
+        5px 0 !important;
+
+    align-items:
+        center !important;
+}
+
+
+.profile-wrap .hero{
+
+    padding:
+        10px 14px !important;
+
+    margin:
+        0 0 8px !important;
+
+    border-radius:
+        var(--ag-pro-radius-large)
+        !important;
+}
+
+
+.profile-wrap .tabs{
+
+    gap:
+        5px !important;
+
+    margin:
+        0 0 8px !important;
+}
+
+
+.profile-wrap .tab{
+
+    min-height:
+        30px !important;
+
+    height:
+        30px !important;
+
+    padding:
+        0 10px !important;
+
+    font-size:
+        9px !important;
+
+    border-radius:
+        6px !important;
+}
+
+
+.profile-wrap .profile-card{
+
+    padding:
+        12px !important;
+}
+
+
+.profile-wrap .profile-grid{
+
+    grid-template-columns:
+        280px minmax(0,1fr)
+        !important;
+
+    gap:
+        16px !important;
+
+    align-items:
+        start !important;
+}
+
+
+.profile-wrap .image-box{
+
+    width:
+        100% !important;
+
+    max-width:
+        280px !important;
+}
+
+
+.profile-wrap .image-box img{
+
+    display:
+        block !important;
+
+    width:
+        100% !important;
+
+    height:
+        auto !important;
+
+    aspect-ratio:
+        1 / 1 !important;
+
+    object-fit:
+        cover !important;
+}
+
+
+.profile-wrap .avatar-name{
+
+    margin-top:
+        8px !important;
+
+    font-size:
+        17px !important;
+}
+
+
+.profile-wrap .partner{
+
+    margin-top:
+        3px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+.profile-wrap .section-title{
+
+    margin:
+        0 0 8px !important;
+
+    font-size:
+        18px !important;
+
+    line-height:
+        1.1 !important;
+}
+
+
+.profile-wrap .field{
+
+    margin-bottom:
+        9px !important;
+}
+
+
+.profile-wrap .field label{
+
+    margin-bottom:
+        4px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+.profile-wrap input[type="text"],
+
+.profile-wrap input[type="url"],
+
+.profile-wrap input[type="email"],
+
+.profile-wrap input[type="number"]{
+
+    min-height:
+        30px !important;
+
+    height:
+        30px !important;
+
+    padding:
+        0 8px !important;
+
+    font-size:
+        10px !important;
+}
+
+
+.profile-wrap textarea{
+
+    box-sizing:
+        border-box !important;
+
+    min-height:
+        78px !important;
+
+    height:
+        78px !important;
+
+    padding:
+        8px !important;
+
+    font-size:
+        10px !important;
+
+    line-height:
+        1.35 !important;
+
+    resize:
+        vertical !important;
+}
+
+
+.profile-wrap textarea.big{
+
+    min-height:
+        118px !important;
+
+    height:
+        118px !important;
+}
+
+
+.profile-wrap .two{
+
+    gap:
+        10px !important;
+}
+
+
+.profile-wrap .note{
+
+    margin:
+        8px 0 !important;
+
+    padding:
+        8px 10px !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.35 !important;
+}
+
+
+.profile-wrap .options{
+
+    margin:
+        8px 0 !important;
+
+    gap:
+        12px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+.profile-wrap .list-card{
+
+    padding:
+        10px !important;
+
+    margin-bottom:
+        8px !important;
+}
+
+
+/* ============================================================
+   OFFLINE MESSAGES
+   ============================================================ */
+
+.offline-shell{
+
+    padding:
+        0 !important;
+}
+
+
+.offline-header{
+
+    padding:
+        11px 15px !important;
+}
+
+
+.offline-title{
+
+    font-size:
+        27px !important;
+}
+
+
+.offline-icon{
+
+    width:
+        34px !important;
+
+    height:
+        34px !important;
+
+    font-size:
+        23px !important;
+}
+
+
+.offline-shell .header-actions{
+
+    gap:
+        6px !important;
+}
+
+
+.offline-shell [class*="stat-card"],
+
+.offline-shell [class*="summary-card"]{
+
+    min-height:
+        64px !important;
+
+    padding:
+        9px !important;
+}
+
+
+.offline-shell .message-table th{
+
+    padding:
+        6px 7px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+.offline-shell .message-table td{
+
+    padding:
+        7px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+.offline-shell .message-actions{
+
+    gap:
+        5px !important;
+}
+
+
+/* ============================================================
+   REGION MANAGER
+   ============================================================ */
+
+.rm-master-header{
+
+    padding:
+        12px 15px !important;
+}
+
+
+.region-summary{
+
+    margin-bottom:
+        10px !important;
+}
+
+
+.summary-card{
+
+    min-height:
+        64px !important;
+
+    padding:
+        9px 11px !important;
+}
+
+
+.region-layout{
+
+    gap:
+        10px !important;
+}
+
+
+.region-row{
+
+    padding:
+        9px 10px !important;
+}
+
+
+.region-detail{
+
+    padding:
+        12px !important;
+}
+
+
+/* ============================================================
+   STANDARD FORM CONTROLS
+   ============================================================ */
+
+select,
+
+input[type="text"],
+
+input[type="search"],
+
+input[type="number"],
+
+input[type="email"],
+
+input[type="password"],
+
+input[type="url"]{
+
+    box-sizing:
+        border-box !important;
+
+    min-height:
+        var(--ag-pro-input-height)
+        !important;
+
+    height:
+        var(--ag-pro-input-height)
+        !important;
+
+    border-radius:
+        6px !important;
+
+    font-size:
+        10px !important;
+}
+
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+th{
+
+    padding:
+        6px 7px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+td{
+
+    padding:
+        7px !important;
+
+    font-size:
+        9px !important;
+}
+
+
+/* ============================================================
+   REMOVE OLD GIANT MIN HEIGHTS
+   ============================================================ */
+
+.dashboard-card,
+
+.profile-card,
+
+.panel,
+
+.ag-panel,
+
+.region-card,
+
+.region-detail,
+
+.storage-card{
+
+    max-height:
+        none !important;
+}
+
+
+/* ============================================================
+   LAPTOP / SMALL DESKTOP
+   ============================================================ */
+
+@media(max-width:1200px){
+
+    .dashboard-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            )
+            !important;
+    }
+
+
+    .profile-wrap .profile-grid{
+
+        grid-template-columns:
+            240px minmax(0,1fr)
+            !important;
+    }
+
+
+    .profile-wrap .image-box{
+
+        max-width:
+            240px !important;
+    }
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media(max-width:850px){
+
+    body > .dashboard-shell,
+
+    body > .profile-wrap,
+
+    body > .offline-shell,
+
+    body > .ag-shell,
+
+    body > .shell{
+
+        width:
+            calc(100% - 16px)
+            !important;
+
+        margin:
+            8px auto
+            20px !important;
+    }
+
+
+    .dashboard-grid,
+
+    .profile-wrap .profile-grid,
+
+    .region-layout{
+
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .profile-wrap .image-box{
+
+        max-width:
+            260px !important;
+    }
+
+
+    .dashboard-header,
+
+    .offline-header,
+
+    .ag-top,
+
+    .rm-master-header{
+
+        flex-direction:
+            column !important;
+
+        align-items:
+            flex-start !important;
+    }
+}
+
+
+/* ============================================================
+   PHONE
+   ============================================================ */
+
+@media(max-width:600px){
+
+    :root{
+
+        --ag-pro-button-height:
+            29px;
+
+        --ag-pro-padding:
+            9px;
+    }
+
+
+    .dashboard-grid{
+
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    .dashboard-card{
+
+        min-height:
+            0 !important;
+    }
+
+
+    .dashboard-actions,
+
+    .header-actions,
+
+    .rm-master-actions{
+
+        width:
+            100% !important;
+
+        flex-wrap:
+            wrap !important;
+    }
+}
+
+
+/* ============================================================
+   END AUSTRALIA GRID PROFESSIONAL SITE PROPORTIONS V1
+   ============================================================ */

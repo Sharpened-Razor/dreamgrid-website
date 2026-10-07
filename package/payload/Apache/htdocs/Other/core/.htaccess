@@ -1,0 +1,5 @@
+# PHP files here are server-side helpers; public endpoints live outside core.
+# Keep the CSS and JavaScript in this directory available to the interface.
+<FilesMatch "(?i)\.php$">
+    Require all denied
+</FilesMatch>

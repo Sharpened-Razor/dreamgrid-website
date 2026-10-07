@@ -1,0 +1,1155 @@
+/*
+ * ==========================================================
+ * AUSTRALIA CONTROL CENTER
+ * TELEPORTING CLEAN REBUILD V1
+ *
+ * FRESH VISUAL DESIGN.
+ *
+ * This file does not override or modify the old Help Centre.
+ * ==========================================================
+ */
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+    margin:0;
+    min-height:100%;
+}
+
+
+body{
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color:#f2f2f2;
+
+    background:
+        radial-gradient(
+            circle at 18% 0%,
+            rgba(199,145,28,.09),
+            transparent 29rem
+        ),
+        linear-gradient(
+            145deg,
+            #080c0b 0%,
+            #0b1110 46%,
+            #070a09 100%
+        );
+
+    padding:22px;
+}
+
+
+button{
+    font:inherit;
+}
+
+
+.tp-shell{
+    width:min(1500px,100%);
+    margin:0 auto;
+}
+
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.tp-hero{
+    display:grid;
+
+    grid-template-columns:
+        76px
+        minmax(0,1fr)
+        auto;
+
+    gap:20px;
+
+    align-items:center;
+
+    padding:24px 26px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.48);
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(24,31,29,.98),
+            rgba(11,16,15,.98)
+        );
+
+    box-shadow:
+        0 18px 48px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+.tp-hero-icon{
+    width:66px;
+    height:66px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:8px;
+
+    border:
+        1px solid
+        rgba(211,160,39,.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            #242a27,
+            #101513
+        );
+
+    box-shadow:
+        inset 0 0 22px rgba(0,0,0,.45),
+        0 10px 22px rgba(0,0,0,.25);
+}
+
+
+.tp-icon-svg{
+    width:34px;
+    height:34px;
+}
+
+
+.tp-kicker,
+.tp-small-label{
+    color:#c99b35;
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:1.8px;
+}
+
+
+.tp-hero h1{
+    margin:5px 0 7px;
+
+    color:#f4f2e9;
+
+    font-size:28px;
+    line-height:1.1;
+
+    letter-spacing:.3px;
+}
+
+
+.tp-hero p{
+    margin:0;
+
+    color:#aeb7b3;
+
+    font-size:14px;
+    line-height:1.65;
+}
+
+
+.tp-status{
+    min-width:170px;
+
+    display:flex;
+    gap:11px;
+
+    align-items:center;
+
+    padding:12px 15px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.35);
+
+    border-radius:6px;
+
+    background:#0b100f;
+}
+
+
+.tp-status-light{
+    width:9px;
+    height:9px;
+
+    flex:0 0 auto;
+
+    border-radius:999px;
+
+    background:#96d65c;
+
+    box-shadow:
+        0 0 12px rgba(150,214,92,.5);
+}
+
+
+.tp-status strong,
+.tp-status span{
+    display:block;
+}
+
+
+.tp-status strong{
+    color:#d8b354;
+
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+
+.tp-status span{
+    margin-top:2px;
+
+    color:#9fa9a5;
+
+    font-size:9px;
+    letter-spacing:1.1px;
+}
+
+
+
+/* ==========================================================
+   INTRO
+   ========================================================== */
+
+.tp-intro-card{
+    margin-top:16px;
+
+    padding:20px 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.26);
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18,24,22,.96),
+            rgba(10,14,13,.96)
+        );
+}
+
+
+.tp-section-heading{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+
+.tp-heading-number{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#0b0d0c;
+
+    font-size:20px;
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0c45d,
+            #a87517
+        );
+
+    box-shadow:
+        0 0 20px rgba(217,164,47,.14);
+}
+
+
+.tp-intro-card h2,
+.tp-picture-card h2{
+    margin:4px 0 0;
+
+    color:#eeeae0;
+
+    font-size:18px;
+
+    letter-spacing:.3px;
+}
+
+
+.tp-intro-text{
+    max-width:650px;
+
+    margin:0;
+
+    color:#a9b2ae;
+
+    font-size:13px;
+    line-height:1.65;
+}
+
+
+
+/* ==========================================================
+   STEP CARDS
+   ========================================================== */
+
+.tp-step-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:14px;
+
+    margin-top:16px;
+}
+
+
+.tp-step-card{
+    position:relative;
+
+    min-height:285px;
+
+    padding:18px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(205,155,42,.30);
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            150deg,
+            rgba(23,29,27,.98),
+            rgba(9,13,12,.98)
+        );
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.24);
+}
+
+
+.tp-step-card:before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+    bottom:0;
+
+    width:3px;
+
+    background:
+        linear-gradient(
+            #e1b249,
+            #8c6215
+        );
+}
+
+
+.tp-step-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+
+.tp-step-number{
+    color:#d8aa42;
+
+    font-size:25px;
+    font-weight:900;
+
+    letter-spacing:-1px;
+}
+
+
+.tp-step-tag{
+    padding:5px 8px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.28);
+
+    border-radius:4px;
+
+    color:#ac9054;
+
+    background:#0c100f;
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.2px;
+}
+
+
+.tp-step-icon{
+    width:58px;
+    height:58px;
+
+    margin:28px 0 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(205,155,42,.32);
+
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #252b28,
+            #0d1110
+        );
+}
+
+
+.tp-step-svg{
+    width:29px;
+    height:29px;
+}
+
+
+.tp-symbol{
+    color:#d7ae51;
+
+    font-size:34px;
+    font-weight:600;
+    line-height:1;
+}
+
+
+.tp-symbol-arrow{
+    font-size:31px;
+}
+
+
+.tp-step-card h3{
+    margin:0 0 11px;
+
+    color:#f1eee5;
+
+    font-size:14px;
+
+    letter-spacing:.8px;
+}
+
+
+.tp-step-card p{
+    margin:0;
+
+    color:#9ea8a4;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+
+/* ==========================================================
+   PICTURE AREA
+   ========================================================== */
+
+.tp-picture-card{
+    margin-top:16px;
+
+    padding:23px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.34);
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            160deg,
+            rgba(20,26,24,.98),
+            rgba(8,12,11,.98)
+        );
+}
+
+
+.tp-picture-head{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    align-items:flex-start;
+}
+
+
+.tp-picture-head p{
+    max-width:680px;
+
+    margin:8px 0 0;
+
+    color:#9fa9a5;
+
+    font-size:12px;
+    line-height:1.65;
+}
+
+
+.tp-picture-badge{
+    min-width:105px;
+
+    padding:10px 14px;
+
+    text-align:center;
+
+    border:
+        1px solid
+        rgba(205,155,42,.37);
+
+    border-radius:6px;
+
+    background:#0c100f;
+}
+
+
+.tp-picture-badge span,
+.tp-picture-badge strong{
+    display:block;
+}
+
+
+.tp-picture-badge span{
+    color:#9d8c64;
+
+    font-size:8px;
+
+    letter-spacing:1.5px;
+}
+
+
+.tp-picture-badge strong{
+    margin-top:3px;
+
+    color:#dbb351;
+
+    font-size:12px;
+
+    letter-spacing:1.1px;
+}
+
+
+.tp-picture-placeholder{
+    min-height:230px;
+
+    margin-top:20px;
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    border:
+        1px dashed
+        rgba(205,155,42,.37);
+
+    border-radius:7px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(195,143,31,.07),
+            transparent 55%
+        ),
+        #080c0b;
+}
+
+
+.tp-picture-placeholder-icon{
+    width:70px;
+    height:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:16px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.35);
+
+    border-radius:50%;
+
+    background:#121715;
+}
+
+
+.tp-placeholder-svg{
+    width:34px;
+    height:34px;
+}
+
+
+.tp-picture-placeholder strong{
+    color:#e6c266;
+
+    font-size:14px;
+
+    letter-spacing:.8px;
+}
+
+
+.tp-picture-placeholder span{
+    max-width:520px;
+
+    margin-top:8px;
+
+    color:#8f9995;
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+
+.tp-actions{
+    margin-top:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+}
+
+
+.tp-button{
+    min-height:42px;
+
+    padding:0 19px;
+
+    display:inline-flex;
+
+    gap:10px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:5px;
+
+    cursor:default;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.6px;
+}
+
+
+.tp-button-primary{
+    border:
+        1px solid
+        #bd8f28;
+
+    color:#f7e7b0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2c2818,
+            #17140c
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+
+.tp-button-icon{
+    display:flex;
+}
+
+
+.tp-button-svg{
+    width:17px;
+    height:17px;
+}
+
+
+.tp-preview-note{
+    color:#756f60;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+}
+
+
+
+/* ==========================================================
+   INFORMATION STRIP
+   ========================================================== */
+
+.tp-info-strip{
+    margin-top:16px;
+
+    padding:15px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.23);
+
+    border-radius:7px;
+
+    background:#0b100f;
+}
+
+
+.tp-info-icon{
+    width:33px;
+    height:33px;
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(205,155,42,.42);
+
+    border-radius:50%;
+
+    color:#ddb44f;
+
+    font-size:16px;
+
+    font-weight:800;
+}
+
+
+.tp-info-strip strong{
+    display:block;
+
+    color:#d2a843;
+
+    font-size:10px;
+
+    letter-spacing:1.1px;
+}
+
+
+.tp-info-strip p{
+    margin:3px 0 0;
+
+    color:#939d99;
+
+    font-size:11px;
+    line-height:1.5;
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width:1100px){
+
+    .tp-step-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+
+@media (max-width:760px){
+
+    body{
+        padding:12px;
+    }
+
+
+    .tp-hero{
+        grid-template-columns:
+            58px
+            minmax(0,1fr);
+    }
+
+
+    .tp-hero-icon{
+        width:54px;
+        height:54px;
+    }
+
+
+    .tp-status{
+        grid-column:
+            1 / -1;
+
+        width:100%;
+    }
+
+
+    .tp-intro-card,
+    .tp-picture-head{
+        align-items:flex-start;
+
+        flex-direction:column;
+    }
+
+
+    .tp-step-grid{
+        grid-template-columns:1fr;
+    }
+
+
+    .tp-step-card{
+        min-height:auto;
+    }
+
+}
+
+/*
+ * ==========================================================
+ * AUSTRALIA TELEPORT 4 PICTURE GUIDE V1
+ * ==========================================================
+ */
+
+.tp-picture-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:20px;
+}
+
+
+.tp-picture-step{
+    padding:18px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.30);
+
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            155deg,
+            rgba(22,28,26,.98),
+            rgba(8,12,11,.98)
+        );
+
+    box-shadow:
+        0 10px 26px rgba(0,0,0,.22);
+}
+
+
+.tp-picture-step-head{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+}
+
+
+.tp-picture-step-number{
+    color:#e3b54e;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+
+.tp-picture-step-icon{
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(205,155,42,.34);
+
+    border-radius:5px;
+
+    background:#101513;
+}
+
+
+.tp-picture-step-svg{
+    width:18px;
+    height:18px;
+}
+
+
+.tp-picture-step h3{
+    margin:14px 0 5px;
+
+    color:#f0ede4;
+
+    font-size:14px;
+
+    letter-spacing:.7px;
+}
+
+
+.tp-picture-step > p{
+    margin:0 0 15px;
+
+    color:#929d98;
+
+    font-size:11px;
+
+    line-height:1.55;
+}
+
+
+.tp-picture-frame{
+    width:100%;
+
+    aspect-ratio:16 / 9;
+
+    padding:6px;
+
+    border:
+        1px solid
+        rgba(205,155,42,.31);
+
+    border-radius:6px;
+
+    background:#070a09;
+}
+
+
+.tp-picture-frame-inner{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-align:center;
+
+    border:
+        1px dashed
+        rgba(205,155,42,.28);
+
+    border-radius:4px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(202,150,31,.06),
+            transparent 60%
+        );
+}
+
+
+.tp-picture-placeholder-svg{
+    width:30px;
+    height:30px;
+}
+
+
+.tp-picture-frame-inner strong{
+    color:#d8ad49;
+
+    font-size:11px;
+
+    letter-spacing:.9px;
+}
+
+
+.tp-picture-frame-inner span{
+    color:#747e79;
+
+    font-size:9px;
+
+    letter-spacing:.4px;
+}
+
+
+@media (max-width:850px){
+
+    .tp-picture-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/*
+ * ==========================================================
+ * AUSTRALIA TELEPORT PICTURE TOGGLE V1
+ * ==========================================================
+ */
+
+.tp-picture-grid[hidden]{
+    display:none !important;
+}
+
+
+.tp-picture-controls{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:20px;
+}
+
+
+.tp-picture-grid:not([hidden]){
+    margin-top:18px;
+}
+
+
+/*
+ * ==========================================================
+ * AUSTRALIA TELEPORT REAL PICTURES V1
+ * ==========================================================
+ */
+
+.tp-picture-frame-live{
+    position:relative;
+    overflow:hidden;
+}
+
+
+.tp-picture-image{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+    border-radius:3px;
+
+    background:#050807;
+}
+
+
+.tp-picture-fallback{
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(202,150,31,.06),
+            transparent 60%
+        );
+}
+
+
+.tp-picture-fallback strong{
+    color:#d8ad49;
+
+    font-size:11px;
+
+    letter-spacing:.9px;
+}
+
+
+.tp-picture-fallback span{
+    color:#747e79;
+
+    font-size:9px;
+
+    letter-spacing:.4px;
+}

@@ -1,0 +1,2841 @@
+*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;}body{font-family:Arial,'Lucida Grande',Verdana,sans-serif;color:#f5f5f5;text-align:left;background:#090b0d url(/Other/assets/images/Site-background.png) center top/cover fixed no-repeat;}body:before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.55) 55%,rgba(0,0,0,.82));z-index:-1}a{color:#fff}#header{width:min(1180px,94%);height:auto;min-height:150px;margin:0 auto;padding:32px 0 20px;background:transparent}.textlogo{color:#f4b323;text-shadow:0 2px 0 #5b3500,0 5px 12px #000}p.textlogo{font:700 20px Georgia,serif;padding:0;text-align:left}.white{color:#fff}.nowrap{white-space:nowrap}#slogan{padding:8px 0 0;text-align:left;font:700 18px Arial;color:#fff;text-shadow:0 2px 6px #000}#page{width:min(1180px,94%);margin:0 auto;display:flex;gap:28px;align-items:flex-start}#content{float:none;flex:1;min-width:0;width:auto;padding:0}#right-nav{float:none;order:2;width:300px;padding:0;text-align:left;background:rgba(8,12,16,.78);border:1px solid rgba(255,255,255,.22);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.5);backdrop-filter:blur(10px);overflow:hidden}.box-top,.box-bottom{display:none}.box{font:16px Arial;background:rgba(8,12,16,.72);color:#e6e6e6;text-align:left;padding:32px;border:1px solid rgba(255,255,255,.22);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.5);backdrop-filter:blur(10px);min-height:430px}.box h1,.box h2,.box h3,.box h4,.box h5{font-family:Georgia,serif;color:#fff;text-align:left;text-shadow:0 3px 10px #000;margin-bottom:18px}.box h1{font-size:42px}.box p{padding:8px 0;line-height:1.6}.box a{color:#ffd36a;text-decoration:none}.box a:hover{text-decoration:underline}.box li{list-style-position:inside}.nav-headline{font:700 20px Georgia,serif;color:#fff;padding:22px 22px 10px;text-transform:uppercase;letter-spacing:.06em}#main-menu ul{list-style:none;padding:0 14px 14px}#main-menu li a{display:block;color:#fff;font:700 14px Arial;text-decoration:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px;margin:7px 0;line-height:normal;transition:.18s}#main-menu li a:hover{background:rgba(244,179,35,.18);border-color:rgba(244,179,35,.55);color:#fff;text-decoration:none}.right-nav-divider{width:auto;height:1px;margin:0 18px;padding:0;background:rgba(255,255,255,.16)}#subscribe{text-align:left;padding:0 22px 22px}#subscribe form{margin-bottom:10px}.inputstyle{display:block;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.28);border-radius:9px;width:100%;height:42px;color:#fff;font-size:14px;padding:0 12px;margin:8px 0}.inputstyle:focus{outline:2px solid #f4b323;outline-offset:1px}.button{background:linear-gradient(#f0b733,#a96605);border:1px solid #ffd46e;border-radius:9px;width:100%;height:40px;color:#171006;font:bold 13px Arial;cursor:pointer;margin:5px 0;text-transform:uppercase;box-shadow:inset 0 1px rgba(255,255,255,.45),0 4px 12px rgba(0,0,0,.35)}.button:hover{filter:brightness(1.08)}#posts{color:#ddd;padding:0 22px 18px}#posts ul{list-style:none;padding:0}#posts li a{color:#ddd;font:14px Arial;text-decoration:none;line-height:1.8}#posts li a:hover{color:#ffd36a;background:transparent}.bodytext{color:#fff;font-size:14px;padding:5px 10px}.imagefloat{float:left;margin:5px 15px;border:1px solid rgba(255,255,255,.2)}table.entries{margin-right:auto;border-collapse:collapse;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25)}.entries th,.entries td{border:1px solid rgba(255,255,255,.18);padding:6px}.entries th{border-bottom:2px solid rgba(255,255,255,.35)}#footer{clear:both;width:min(1180px,94%);height:auto;min-height:120px;margin:28px auto 0;padding:20px 0 40px;color:#ccc}#footer-pad{width:auto;padding:20px;text-align:center;margin:0;background:rgba(0,0,0,.42);border-radius:14px}#footer p{font:14px Arial;color:#ccc}#footer a{color:#ffd36a}.logo{border:0}.line,.line2{background:rgba(255,255,255,.15);width:100%;height:1px;margin:12px auto}.clearboth{clear:both}@media(max-width:800px){body{background-attachment:scroll}#header{min-height:110px;padding-top:22px}#page{display:block}#right-nav{width:100%;margin-bottom:22px}#content{width:100%}.box{padding:22px;min-height:0}.box h1{font-size:32px}#footer{margin-top:20px}}
+
+
+/* ============================================================
+   AUSTRALIA GRID WEBSITE UI V66
+   Presentation only. DreamGrid routes/actions remain native.
+   ============================================================ */
+
+.australia-menu-panel,
+.australia-login-card,
+.australia-user-card{
+  background:transparent;
+}
+
+.australia-main-menu ul{
+  list-style:none;
+  padding:0 14px 15px!important;
+  margin:0;
+}
+
+.australia-main-menu li{
+  list-style:none;
+}
+
+.australia-main-menu li a{
+  display:flex!important;
+  align-items:center;
+  gap:11px;
+  min-height:54px;
+  margin:8px 0!important;
+  padding:9px 11px!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:10px!important;
+  background:rgba(255,255,255,.055)!important;
+  color:#fff!important;
+  text-decoration:none!important;
+  transition:.16s ease;
+}
+
+.australia-main-menu li a:hover{
+  border-color:rgba(244,179,35,.62)!important;
+  background:rgba(244,179,35,.14)!important;
+  transform:translateX(2px);
+}
+
+.menu-icon{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  border:1px solid rgba(244,179,35,.28);
+  background:rgba(244,179,35,.08);
+  color:#f4b323;
+  font-size:17px;
+  font-weight:900;
+}
+
+.menu-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.menu-copy strong{
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.045em;
+}
+
+.menu-copy small{
+  color:#8e989e;
+  font-size:10px;
+  line-height:1.2;
+}
+
+.field-label{
+  display:block;
+  margin:10px 0 3px;
+  color:#c9ced1;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.035em;
+}
+
+.secondary-button{
+  background:rgba(255,255,255,.07)!important;
+  color:#ddd!important;
+  border-color:rgba(255,255,255,.18)!important;
+  box-shadow:none!important;
+}
+
+.user-avatar-wrap{
+  display:flex;
+  justify-content:center;
+  padding:20px 20px 4px;
+}
+
+.user-avatar-wrap img{
+  border-radius:12px;
+  border:1px solid rgba(244,179,35,.36);
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+.australia-user-name{
+  text-align:center!important;
+  padding-top:10px!important;
+}
+
+.logout-link{
+  border-color:rgba(215,92,101,.30)!important;
+}
+
+.logout-link .menu-icon{
+  color:#ff9aa1;
+  border-color:rgba(215,92,101,.32);
+  background:rgba(215,92,101,.08);
+}
+
+/* HOME-only stats */
+.content-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.eyebrow{
+  color:#e5a72b;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.16em;
+  margin-bottom:3px;
+}
+
+.content-divider{
+  height:1px;
+  margin:15px 0 18px;
+  background:rgba(255,255,255,.09);
+}
+
+.grid-stats-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:0 0 20px;
+}
+
+.stat-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:94px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:11px;
+  background:rgba(10,14,17,.78);
+}
+
+.stat-card-wide{
+  grid-column:span 3;
+}
+
+.stat-icon{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  color:#f2b63b;
+  background:rgba(242,182,59,.07);
+  border:1px solid rgba(242,182,59,.18);
+}
+
+.stat-icon svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+}
+
+.stat-copy{
+  min-width:0;
+}
+
+.stat-label{
+  color:#a8b0b5;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+.stat-value{
+  margin:2px 0;
+  color:#f1b83d;
+  font-size:27px;
+  font-weight:900;
+  line-height:1;
+}
+
+.stat-sub{
+  color:#707b82;
+  font-size:10px;
+}
+
+#dreamgrid-dynamic-content{
+  display:block;
+  padding:0!important;
+  margin:0!important;
+}
+
+/* Forms/tables loaded by native DreamGrid pages */
+#dreamgrid-dynamic-content form{
+  margin:12px 0;
+}
+
+#dreamgrid-dynamic-content input,
+#dreamgrid-dynamic-content select,
+#dreamgrid-dynamic-content textarea{
+  max-width:100%;
+}
+
+@media(max-width:900px){
+  .grid-stats-cards{grid-template-columns:1fr}
+  .stat-card-wide{grid-column:span 1}
+}
+
+
+/* AUSTRALIA GRID V66.4 - LIVE WIFI CSS REPAIR */
+.australia-main-menu .menu-copy small{display:none!important}
+.australia-main-menu .menu-copy{display:block!important}
+.australia-main-menu .menu-copy strong{
+  display:block!important;font-size:12px!important;line-height:1.2!important
+}
+#footer{display:none!important}
+#right-nav{margin-bottom:24px!important}
+#grid-stats-cards .stat-icon svg{
+  width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important
+}
+#grid-stats-cards .stat-icon{
+  width:42px!important;height:42px!important;flex:0 0 42px!important
+}
+
+
+/* =========================================================
+   AUSTRALIA GRID V66.5 - SCREEN POSITIONING
+   Right menu fixed to screen edge.
+   HOME stats smaller and fixed top-left.
+   ========================================================= */
+
+/* RIGHT MENU: keep it on the far right side of the browser */
+#right-nav{
+  position:fixed !important;
+  top:28px !important;
+  right:8px !important;
+  left:auto !important;
+  width:360px !important;
+  max-height:calc(100vh - 96px) !important;
+  overflow-y:auto !important;
+  margin:0 !important;
+  z-index:50 !important;
+}
+
+/* Give DreamGrid tool pages room so they do not sit behind the fixed menu */
+body:not(.australia-home-page) #page{
+  width:auto !important;
+  max-width:none !important;
+  margin:0 380px 0 28px !important;
+  display:block !important;
+}
+body:not(.australia-home-page) #content{
+  width:100% !important;
+  max-width:none !important;
+}
+
+/* HOME: stats panel in the top-left corner */
+body.australia-home-page #page{
+  width:auto !important;
+  max-width:none !important;
+  margin:0 !important;
+  display:block !important;
+}
+
+body.australia-home-page #content{
+  position:fixed !important;
+  top:28px !important;
+  left:18px !important;
+  right:auto !important;
+  width:420px !important;
+  max-width:420px !important;
+  padding:0 !important;
+  margin:0 !important;
+  z-index:45 !important;
+}
+
+/* Remove the oversized general content-box treatment on HOME only */
+body.australia-home-page #content .box{
+  min-height:0 !important;
+  padding:16px !important;
+  border-radius:14px !important;
+  background:rgba(8,12,16,.84) !important;
+}
+
+/* HOME title smaller */
+body.australia-home-page .content-heading h1{
+  margin:0 !important;
+  font-size:26px !important;
+  line-height:1.05 !important;
+}
+body.australia-home-page .eyebrow{
+  font-size:9px !important;
+}
+body.australia-home-page .content-divider{
+  margin:10px 0 12px !important;
+}
+
+/* =========================================================
+   AUSTRALIA GRID - PREMIUM HOME DATA BOX V4 FIXED
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   OUTER PANEL
+   --------------------------------------------------------- */
+
+body.australia-home-page .australia-page-box {
+
+    padding: 12px 13px 13px !important;
+
+    border: 2px solid #e0ab16 !important;
+
+    border-radius: 16px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(3,29,46,.97) 0%,
+            rgba(3,21,35,.98) 55%,
+            rgba(2,15,25,.99) 100%
+        ) !important;
+
+    box-shadow:
+        inset 0 0 24px rgba(25,117,177,.11),
+        inset 0 1px 0 rgba(255,255,255,.10),
+        0 0 0 1px rgba(255,204,56,.13),
+        0 7px 20px rgba(0,0,0,.47) !important;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+body.australia-home-page .content-heading {
+
+    margin: 0 !important;
+    padding: 0 1px !important;
+}
+
+
+body.australia-home-page .eyebrow {
+
+    margin: 0 0 4px !important;
+
+    color: #ffc83d !important;
+
+    font-size: 10px !important;
+
+    line-height: 1 !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: .10em !important;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.95) !important;
+}
+
+
+body.australia-home-page .content-heading h1 {
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 27px !important;
+
+    line-height: 1 !important;
+
+    font-weight: 900 !important;
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.92) !important;
+}
+
+
+body.australia-home-page .content-divider {
+
+    height: 1px !important;
+
+    margin: 10px 0 11px !important;
+
+    border: 0 !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(42,171,235,.18),
+            rgba(48,171,234,.67),
+            rgba(236,181,43,.34)
+        ) !important;
+}
+
+
+/* ---------------------------------------------------------
+   2 X 2 GRID
+   --------------------------------------------------------- */
+
+body.australia-home-page #grid-stats-cards {
+
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr)) !important;
+
+    gap: 8px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   EACH STAT CARD
+   --------------------------------------------------------- */
+
+body.australia-home-page
+#grid-stats-cards .stat-card {
+
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns:
+        62px minmax(0,1fr) !important;
+
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    min-height: 83px !important;
+
+    padding: 8px 10px !important;
+
+    border:
+        1px solid rgba(44,178,240,.75) !important;
+
+    border-radius: 11px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9,59,88,.96) 0%,
+            rgba(4,35,56,.98) 62%,
+            rgba(3,29,47,.99) 100%
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.09),
+        inset 0 0 14px rgba(23,130,192,.09),
+        0 3px 7px rgba(0,0,0,.31) !important;
+}
+
+
+body.australia-home-page
+#grid-stats-cards .stat-card-wide {
+
+    grid-column: auto !important;
+
+    min-height: 83px !important;
+}
+
+
+/* ---------------------------------------------------------
+   ICON BOX
+   --------------------------------------------------------- */
+
+/*
+   Strong selector intentionally beats the older:
+   #grid-stats-cards .stat-icon
+*/
+
+body.australia-home-page
+#grid-stats-cards .stat-card .stat-icon {
+
+    width: 58px !important;
+    height: 58px !important;
+
+    min-width: 58px !important;
+    min-height: 58px !important;
+
+    flex: 0 0 58px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+
+    padding: 2px !important;
+
+    border:
+        1px solid rgba(231,177,44,.67) !important;
+
+    border-radius: 11px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,61,78,.98),
+            rgba(4,26,40,.99)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16),
+        inset 0 0 12px rgba(255,255,255,.025),
+        0 3px 7px rgba(0,0,0,.43) !important;
+
+    overflow: visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   LARGE INLINE VECTOR ICONS
+   --------------------------------------------------------- */
+
+/*
+   Strong enough to beat the old 24px !important rule.
+*/
+
+body.australia-home-page
+#grid-stats-cards .stat-card .stat-icon svg {
+
+    display: block !important;
+
+    width: 52px !important;
+    height: 52px !important;
+
+    min-width: 52px !important;
+    min-height: 52px !important;
+
+    max-width: 52px !important;
+    max-height: 52px !important;
+
+    margin: 0 !important;
+
+    overflow: visible !important;
+}
+
+
+/* ---------------------------------------------------------
+   STAT TEXT
+   --------------------------------------------------------- */
+
+body.australia-home-page
+#grid-stats-cards .stat-copy {
+
+    min-width: 0 !important;
+
+    padding: 0 !important;
+
+    text-align: left !important;
+}
+
+
+body.australia-home-page
+#grid-stats-cards .stat-label {
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 9px !important;
+
+    line-height: 1.04 !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: .025em !important;
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,.95) !important;
+}
+
+
+body.australia-home-page
+#grid-stats-cards .stat-value {
+
+    margin: 2px 0 1px !important;
+    padding: 0 !important;
+
+    color: #ffc535 !important;
+
+    font-size: 27px !important;
+
+    line-height: 1 !important;
+
+    font-weight: 900 !important;
+
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.88),
+        0 0 6px rgba(255,192,36,.14) !important;
+}
+
+
+body.australia-home-page
+#grid-stats-cards .stat-sub {
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #d5dde1 !important;
+
+    font-size: 9px !important;
+
+    line-height: 1.05 !important;
+
+    font-weight: 500 !important;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:650px) {
+
+    body.australia-home-page
+    #grid-stats-cards {
+
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    body.australia-home-page
+    #grid-stats-cards .stat-card-wide {
+
+        grid-column:
+            auto !important;
+    }
+}
+
+
+/* END AUSTRALIA GRID - PREMIUM HOME DATA BOX V4 FIXED */
+
+/* Hide native HOME text after the numbers have been read.
+   The stat cards remain visible. */
+body.australia-home-page #dreamgrid-dynamic-content{
+  position:absolute !important;
+  left:-10000px !important;
+  top:auto !important;
+  width:1px !important;
+  height:1px !important;
+  overflow:hidden !important;
+}
+
+/* Right menu buttons slightly larger and more balanced */
+#right-nav .australia-main-menu li a{
+  min-height:48px !important;
+  padding:9px 11px !important;
+  margin:7px 0 !important;
+}
+#right-nav .menu-icon{
+  width:30px !important;
+  height:30px !important;
+  flex:0 0 30px !important;
+}
+#right-nav .menu-copy strong{
+  font-size:12px !important;
+}
+
+/* Smaller screens: return to normal stacked flow */
+@media(max-width:1050px){
+  #right-nav{
+    position:relative !important;
+    top:auto !important;
+    right:auto !important;
+    width:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+    margin:0 18px 20px !important;
+  }
+
+  body:not(.australia-home-page) #page,
+  body.australia-home-page #page{
+    margin:0 !important;
+  }
+
+  body.australia-home-page #content{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    width:auto !important;
+    max-width:none !important;
+    margin:0 18px 20px !important;
+  }
+}
+
+
+/* AUSTRALIA GRID V66.7 - RIGHT MENU ONLY */
+#right-nav .australia-main-menu li a{
+  min-height:52px !important;
+  padding:10px 12px !important;
+  margin:8px 0 !important;
+}
+#right-nav .menu-copy strong{
+  font-size:13px !important;
+}
+
+
+/* AUSTRALIA GRID V66.8 - BACKGROUND FIT ONLY
+   Keep the Australia background entirely inside the browser viewport. */
+html, body{
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100vw !important;
+  overflow-x:hidden !important;
+}
+
+body{
+  background-size:cover !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed !important;
+}
+
+
+/* AUSTRALIA GRID V66.9 - FULL IMAGE FIT
+   Show the entire Australia background inside the browser window. */
+body{
+  background-size:100vw 100vh !important;
+  background-position:center top !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed !important;
+}
+
+
+/* AUSTRALIA GRID V67.0 - WIFI FOOTER BOTTOM CENTRE */
+#footer{
+  display:block !important;
+  position:fixed !important;
+  left:50% !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:5px !important;
+  transform:translateX(-50%) !important;
+  width:700px !important;
+  max-width:calc(100vw - 760px) !important;
+  margin:0 !important;
+  padding:4px 10px !important;
+  box-sizing:border-box !important;
+  z-index:60 !important;
+  text-align:center !important;
+  background:rgba(0,0,0,.28) !important;
+  border-radius:7px !important;
+  pointer-events:auto !important;
+}
+
+#footer,
+#footer p,
+#footer a{
+  font-size:10px !important;
+  line-height:1.18 !important;
+}
+
+#footer p{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+#footer br{
+  line-height:1.05 !important;
+}
+
+
+/* AUSTRALIA GRID V67.1 - FOOTER INFO BOX */
+#footer{
+  background:rgba(8,12,16,.82) !important;
+  border:1px solid rgba(255,255,255,.18) !important;
+  border-radius:14px !important;
+  box-shadow:0 12px 32px rgba(0,0,0,.42) !important;
+  backdrop-filter:blur(8px) !important;
+  -webkit-backdrop-filter:blur(8px) !important;
+  padding:10px 16px !important;
+}
+
+#footer-pad{
+  width:auto !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+}
+
+#footer p{
+  color:#d7dcdf !important;
+  text-shadow:0 2px 5px #000 !important;
+}
+
+#footer a{
+  color:#ffd36a !important;
+  text-decoration:none !important;
+}
+
+#footer a:hover{
+  color:#fff0b8 !important;
+}
+
+
+/* AUSTRALIA GRID V67.2 - WIFI FOOTER CLEANUP ONLY */
+
+/* Remove the legacy ERDF / Diva WiFi image from the footer */
+#footer img{
+  display:none !important;
+}
+
+/* Compact bottom-centre information box */
+#footer{
+  width:auto !important;
+  min-width:460px !important;
+  max-width:650px !important;
+  padding:8px 18px !important;
+  bottom:6px !important;
+}
+
+/* Make the remaining DreamGrid information easier to read */
+#footer,
+#footer p,
+#footer a{
+  font-size:13px !important;
+  line-height:1.35 !important;
+}
+
+#footer p{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+
+/* AUSTRALIA GRID V67.3 - REMOVE TOP DREAMGRID TITLE ONLY */
+#header{
+  display:none !important;
+}
+
+
+/* AUSTRALIA GRID V67.4 - CENTRE FOOTER TEXT IN BOX */
+#footer{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
+}
+
+#footer-pad{
+  width:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  text-align:center !important;
+}
+
+#footer p{
+  width:100% !important;
+  margin:0 auto !important;
+  padding:0 !important;
+  text-align:center !important;
+}
+
+/* ============================================================
+   AUSTRALIA GRID - LOGGED OUT HOME FOOTER OFF V1
+   Final override: hide legacy DreamGrid footer.
+   ============================================================ */
+
+#footer{
+    display:none !important;
+}
+
+/* ==========================================================
+   AUSTRALIA GRID - UNIFIED RIGHT SIDEBAR V1
+   ========================================================== */
+
+#right-nav{
+    width:300px !important;
+    min-width:300px !important;
+    max-width:300px !important;
+
+    flex:0 0 300px !important;
+
+    box-sizing:border-box !important;
+}
+
+
+/* Everything inside must stay inside the same 300px box */
+
+#right-nav .australia-menu-panel,
+#right-nav .australia-login-card,
+#right-nav #main-menu,
+#right-nav #subscribe,
+#right-nav form{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+}
+
+
+#right-nav input[type="text"],
+#right-nav input[type="password"],
+#right-nav input[type="email"],
+#right-nav input[type="submit"],
+#right-nav button{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box !important;
+}
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+    #right-nav{
+        width:100% !important;
+        min-width:0 !important;
+        max-width:none !important;
+
+        flex:1 1 auto !important;
+    }
+}
+
+/* ==========================================================
+   AUSTRALIA GRID - MASTER SIDEBAR SIZE V1 START
+   ========================================================== */
+
+
+/* ----------------------------------------------------------
+   OUTER SIDEBAR
+   ---------------------------------------------------------- */
+
+html body #right-nav,
+html body.australia-terms-page #right-nav{
+
+    display:block !important;
+
+    width:360px !important;
+    min-width:360px !important;
+    max-width:360px !important;
+
+    flex:0 0 360px !important;
+
+    box-sizing:border-box !important;
+
+    transform:none !important;
+    zoom:1 !important;
+
+    font-size:14px !important;
+}
+
+
+/* ----------------------------------------------------------
+   MENU AND LOGIN CONTAINERS
+   ---------------------------------------------------------- */
+
+html body #right-nav .australia-menu-panel,
+html body #right-nav .australia-login-card,
+html body #right-nav #main-menu,
+html body #right-nav #subscribe{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    box-sizing:border-box !important;
+}
+
+
+/* ----------------------------------------------------------
+   HEADINGS
+   ---------------------------------------------------------- */
+
+html body #right-nav .nav-headline{
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif !important;
+
+    font-size:20px !important;
+    line-height:1.2 !important;
+
+    font-weight:700 !important;
+
+    padding:
+        18px 16px
+        10px 16px !important;
+
+    margin:0 !important;
+}
+
+
+/* ----------------------------------------------------------
+   MENU
+   ---------------------------------------------------------- */
+
+html body #right-nav #main-menu ul{
+
+    padding:
+        0 12px
+        14px 12px !important;
+
+    margin:0 !important;
+
+    box-sizing:border-box !important;
+}
+
+
+html body #right-nav #main-menu li{
+
+    margin:0 !important;
+    padding:0 !important;
+}
+
+
+html body #right-nav #main-menu li a{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    min-height:44px !important;
+
+    width:100% !important;
+
+    box-sizing:border-box !important;
+
+    margin:
+        6px 0 !important;
+
+    padding:
+        9px 12px !important;
+
+    font-size:12px !important;
+    line-height:1.2 !important;
+
+    border-radius:8px !important;
+}
+
+
+/* ----------------------------------------------------------
+   MENU ICONS
+   ---------------------------------------------------------- */
+
+html body #right-nav .menu-icon{
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    width:26px !important;
+    min-width:26px !important;
+
+    height:26px !important;
+
+    margin-right:8px !important;
+
+    font-size:14px !important;
+
+    box-sizing:border-box !important;
+}
+
+
+/* ----------------------------------------------------------
+   DIVIDERS
+   ---------------------------------------------------------- */
+
+html body #right-nav .right-nav-divider{
+
+    margin:
+        0 16px !important;
+
+    width:auto !important;
+}
+
+
+/* ----------------------------------------------------------
+   MEMBER LOGIN
+   ---------------------------------------------------------- */
+
+html body #right-nav #subscribe{
+
+    padding:
+        0 16px
+        18px 16px !important;
+}
+
+
+html body #right-nav #subscribe form{
+
+    display:block !important;
+
+    width:100% !important;
+
+    margin:0 0 8px 0 !important;
+    padding:0 !important;
+
+    box-sizing:border-box !important;
+}
+
+
+html body #right-nav .field-label,
+html body #right-nav #subscribe label{
+
+    display:block;
+
+    margin:
+        7px 0
+        4px 0 !important;
+
+    padding:0 !important;
+
+    font-size:10.5px !important;
+    line-height:1.2 !important;
+
+    box-sizing:border-box !important;
+}
+
+
+/* ----------------------------------------------------------
+   LOGIN INPUTS
+   ---------------------------------------------------------- */
+
+html body #right-nav input[type="text"],
+html body #right-nav input[type="password"],
+html body #right-nav input[type="email"]{
+
+    display:block !important;
+
+    width:100% !important;
+    max-width:100% !important;
+
+    height:42px !important;
+    min-height:42px !important;
+
+    margin:
+        0 0
+        7px 0 !important;
+
+    padding:
+        0 11px !important;
+
+    box-sizing:border-box !important;
+
+    font-size:13px !important;
+    line-height:42px !important;
+
+    border-radius:7px !important;
+}
+
+
+/* ----------------------------------------------------------
+   REMEMBER ME
+   ---------------------------------------------------------- */
+
+html body #right-nav .australia-remember-me{
+
+    display:flex !important;
+
+    flex-direction:row !important;
+
+    align-items:center !important;
+
+    height:22px !important;
+
+    margin:
+        3px 0
+        5px 0 !important;
+
+    padding:0 !important;
+
+    font-size:11px !important;
+    line-height:1 !important;
+}
+
+
+html body #right-nav .australia-remember-me input{
+
+    width:auto !important;
+    height:auto !important;
+
+    margin:
+        0 5px
+        0 0 !important;
+}
+
+
+/* ----------------------------------------------------------
+   LOGIN BUTTONS
+   ---------------------------------------------------------- */
+
+html body #right-nav input[type="submit"],
+html body #right-nav button,
+html body #right-nav .button{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    height:40px !important;
+    min-height:40px !important;
+
+    box-sizing:border-box !important;
+
+    margin:
+        6px 0 !important;
+
+    padding:
+        0 12px !important;
+
+    font-size:11px !important;
+    line-height:38px !important;
+
+    border-radius:7px !important;
+}
+
+
+/* Forgot Password */
+
+html body #right-nav .secondary-button{
+
+    height:38px !important;
+    min-height:38px !important;
+
+    line-height:36px !important;
+}
+
+
+/* ----------------------------------------------------------
+   MOBILE
+   ---------------------------------------------------------- */
+
+@media(max-width:900px){
+
+    html body #right-nav,
+    html body.australia-terms-page #right-nav{
+
+        width:100% !important;
+        min-width:0 !important;
+        max-width:none !important;
+
+        flex:1 1 auto !important;
+    }
+}
+
+
+/* ==========================================================
+   AUSTRALIA GRID - MASTER SIDEBAR SIZE V1 END
+   ========================================================== */
+
+/* ==========================================================
+   AUSTRALIA GRID - PUBLIC SIDEBAR EXACT HEIGHT V1
+   Remove only an unnecessary final spacer.
+   ========================================================== */
+
+#right-nav > br:last-child{
+    display:none !important;
+}
+
+
+/* =========================================================
+   AUSTRALIA GRID - COLOURFUL WIFI BUTTON ICONS V1
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   MAIN MENU ICON BOXES
+   --------------------------------------------------------- */
+
+.australia-main-menu a .menu-icon{
+
+    width:42px !important;
+    height:42px !important;
+
+    min-width:42px !important;
+
+    display:inline-block !important;
+
+    border:0 !important;
+
+    border-radius:10px !important;
+
+    background-color:transparent !important;
+
+    background-repeat:no-repeat !important;
+
+    background-position:center !important;
+
+    background-size:40px 40px !important;
+
+    font-size:0 !important;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.45) !important;
+
+}
+
+
+/* CREATE ACCOUNT */
+
+.australia-main-menu
+a[href="/Other/user-account.php"]
+.menu-icon{
+
+    background-image:
+        url("/Other/assets/australia-icons/create-account.svg") !important;
+
+}
+
+
+/* HELP CENTRE */
+
+.australia-main-menu
+a[href*="/Other/user-help.php"]
+.menu-icon{
+
+    background-image:
+        url("/Other/assets/australia-icons/help-centre.svg") !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   LOGIN AREA BUTTONS
+   --------------------------------------------------------- */
+
+.australia-login-card
+input.button{
+
+    background-repeat:
+        no-repeat !important;
+
+    background-position:
+        16px center !important;
+
+    background-size:
+        34px 34px !important;
+
+    padding-left:
+        58px !important;
+
+    padding-right:
+        22px !important;
+
+    min-height:
+        50px !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        900 !important;
+
+}
+
+
+/* LOG IN */
+
+.australia-login-card
+input[value="LOG IN"]{
+
+    background-image:
+        url("/Other/assets/australia-icons/login.svg"),
+        linear-gradient(
+            180deg,
+            #f3ba35 0%,
+            #b17209 100%
+        ) !important;
+
+    color:
+        #090703 !important;
+
+}
+
+
+/* FORGOT PASSWORD */
+
+.australia-login-card
+input[value="FORGOT PASSWORD"]{
+
+    background-image:
+        url("/Other/assets/australia-icons/forgot-password.svg"),
+        linear-gradient(
+            180deg,
+            #20282e 0%,
+            #0d1216 100%
+        ) !important;
+
+}
+
+
+/* TERMS OF SERVICE */
+
+.australia-login-card
+input[value="TERMS OF SERVICE"]{
+
+    background-image:
+        url("/Other/assets/australia-icons/terms.svg"),
+        linear-gradient(
+            180deg,
+            #24192d 0%,
+            #101117 100%
+        ) !important;
+
+    border-color:
+        rgba(190,98,255,.50) !important;
+
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE BUTTON HOVER
+   --------------------------------------------------------- */
+
+.australia-main-menu a:hover .menu-icon{
+
+    transform:
+        scale(1.06);
+
+    filter:
+        brightness(1.12);
+
+}
+
+
+.australia-login-card
+input.button:hover{
+
+    filter:
+        brightness(1.08);
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media(max-width:700px){
+
+    .australia-main-menu a .menu-icon{
+
+        width:38px !important;
+        height:38px !important;
+
+        min-width:38px !important;
+
+        background-size:
+            36px 36px !important;
+
+    }
+
+
+    .australia-login-card
+    input.button{
+
+        background-size:
+            30px 30px !important;
+
+        background-position:
+            13px center !important;
+
+        padding-left:
+            51px !important;
+
+    }
+
+}
+
+/* END AUSTRALIA GRID - COLOURFUL WIFI BUTTON ICONS V1 */
+
+
+/* ===========================================================
+   AUSTRALIA PUBLIC BUTTON ICONS V1
+   START
+   =========================================================== */
+
+.australia-public-button{
+    display:flex !important;
+    align-items:center !important;
+    gap:12px !important;
+    text-decoration:none !important;
+}
+
+.australia-public-button .menu-label{
+    display:inline-block;
+    font-weight:700;
+    letter-spacing:.03em;
+}
+
+.australia-public-button .icon-badge{
+    width:28px;
+    height:28px;
+    min-width:28px;
+    border-radius:9px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:900;
+    line-height:1;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.25),
+        0 0 0 1px rgba(255,255,255,.06),
+        0 4px 12px rgba(0,0,0,.30);
+}
+
+.australia-public-button.create-account .icon-badge{
+    background:linear-gradient(180deg,#ffd45b 0%,#f2b122 55%,#b97805 100%);
+    color:#2a1700;
+}
+
+.australia-public-button.help-centre .icon-badge{
+    background:linear-gradient(180deg,#5ce3ff 0%,#33b5ff 50%,#1d66ff 100%);
+    color:#ffffff;
+}
+
+.australia-public-button.create-account{
+    border-left:3px solid rgba(242,177,34,.70) !important;
+}
+
+.australia-public-button.help-centre{
+    border-left:3px solid rgba(51,181,255,.70) !important;
+}
+
+/* ===========================================================
+   AUSTRALIA PUBLIC BUTTON ICONS V1
+   END
+   =========================================================== */
+
+
+/* ===========================================================
+   AUSTRALIA GRID - REAL PUBLIC BUTTON PICTURES V2
+   =========================================================== */
+
+.australia-public-button .button-picture{
+
+    width:38px !important;
+    height:38px !important;
+
+    min-width:38px !important;
+
+    object-fit:contain !important;
+
+    display:block !important;
+
+    flex:0 0 38px !important;
+
+    filter:
+        drop-shadow(
+            0 3px 5px
+            rgba(0,0,0,.55)
+        ) !important;
+
+}
+
+
+.australia-public-button{
+
+    min-height:48px !important;
+
+    gap:11px !important;
+
+    padding-left:9px !important;
+
+}
+
+
+.australia-public-button:hover
+.button-picture{
+
+    transform:
+        scale(1.07) !important;
+
+}
+
+
+.australia-public-button
+.button-picture{
+
+    transition:
+        transform .15s ease !important;
+
+}
+
+
+/* END AUSTRALIA GRID - REAL PUBLIC BUTTON PICTURES V2 */
+
+
+/* ===========================================================
+   AUSTRALIA GRID - LOG IN PICTURE BUTTON V1
+   =========================================================== */
+
+.australia-login-picture-button-login{
+
+    width:100% !important;
+
+    min-height:52px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:12px !important;
+
+    padding:6px 18px !important;
+
+    border:
+        1px solid
+        #FFD55A !important;
+
+    border-radius:
+        8px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFD85A 0%,
+            #F3B31D 45%,
+            #C77B03 100%
+        ) !important;
+
+    color:
+        #130B00 !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .03em !important;
+
+    cursor:
+        pointer !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.38),
+
+        0 4px 12px
+        rgba(0,0,0,.28),
+
+        0 0 13px
+        rgba(255,183,30,.18) !important;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease !important;
+
+}
+
+
+.australia-login-picture-button-login:hover{
+
+    transform:
+        translateY(-1px);
+
+    filter:
+        brightness(1.08);
+
+}
+
+
+.australia-login-button-icon{
+
+    width:38px;
+
+    height:38px;
+
+    flex:
+        0 0 38px;
+
+    display:block;
+
+}
+
+
+.australia-login-button-icon svg{
+
+    display:block;
+
+    width:38px;
+
+    height:38px;
+
+}
+
+
+.australia-login-button-text{
+
+    display:inline-block;
+
+    line-height:1;
+
+}
+
+
+/* END AUSTRALIA GRID - LOG IN PICTURE BUTTON V1 */
+
+
+/* ===========================================================
+   AUSTRALIA GRID - REMAINING PICTURE BUTTONS V1
+   =========================================================== */
+
+
+.australia-action-picture-button{
+
+    width:100% !important;
+
+    min-height:52px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:12px !important;
+
+    padding:
+        6px 18px !important;
+
+    border-radius:
+        8px !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        900 !important;
+
+    letter-spacing:
+        .025em !important;
+
+    cursor:
+        pointer !important;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease,
+        box-shadow .15s ease !important;
+
+}
+
+
+.australia-action-icon{
+
+    width:38px;
+
+    height:38px;
+
+    flex:
+        0 0 38px;
+
+    display:block;
+
+}
+
+
+.australia-action-icon svg{
+
+    display:block;
+
+    width:38px;
+
+    height:38px;
+
+}
+
+
+.australia-action-button-text{
+
+    display:inline-block;
+
+    line-height:1;
+
+}
+
+
+/* -----------------------------------------------------------
+   FORGOT PASSWORD
+   ----------------------------------------------------------- */
+
+.australia-forgot-picture-button{
+
+    background:
+        linear-gradient(
+            180deg,
+            #173C55 0%,
+            #0B2639 48%,
+            #06151F 100%
+        ) !important;
+
+    border:
+        1px solid
+        rgba(45,184,255,.78) !important;
+
+    color:
+        #F5FBFF !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.12),
+
+        0 4px 12px
+        rgba(0,0,0,.27),
+
+        0 0 12px
+        rgba(40,171,255,.16) !important;
+
+}
+
+
+/* -----------------------------------------------------------
+   TERMS
+   ----------------------------------------------------------- */
+
+.australia-terms-picture-button{
+
+    background:
+        linear-gradient(
+            180deg,
+            #48225E 0%,
+            #291438 48%,
+            #160A20 100%
+        ) !important;
+
+    border:
+        1px solid
+        rgba(207,82,255,.76) !important;
+
+    color:
+        #FFF8FF !important;
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.12),
+
+        0 4px 12px
+        rgba(0,0,0,.27),
+
+        0 0 12px
+        rgba(190,66,255,.16) !important;
+
+}
+
+
+.australia-action-picture-button:hover{
+
+    transform:
+        translateY(-1px);
+
+    filter:
+        brightness(1.10);
+
+}
+
+
+/* END AUSTRALIA GRID - REMAINING PICTURE BUTTONS V1 */
+
+
+/* =========================================================
+   AUSTRALIA GRID - DATA BOX FORCED 2X2 LAYOUT
+   ========================================================= */
+
+/*
+   Explicitly force two columns and give each existing card
+   its own grid position.
+
+   This deliberately overrides any older 3-column / span-3
+   rules still present elsewhere in DreamGrid's CSS.
+*/
+
+body.australia-home-page div#grid-stats-cards.grid-stats-cards {
+
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr) !important;
+
+    grid-template-rows:
+        auto
+        auto !important;
+
+    grid-auto-flow:
+        row !important;
+
+    gap:
+        8px !important;
+
+    width:
+        100% !important;
+
+    box-sizing:
+        border-box !important;
+}
+
+
+/* USERS ONLINE */
+
+body.australia-home-page
+div#grid-stats-cards.grid-stats-cards
+> .stat-card:nth-child(1) {
+
+    grid-column:
+        1 / 2 !important;
+
+    grid-row:
+        1 / 2 !important;
+
+    width:
+        auto !important;
+
+    min-width:
+        0 !important;
+}
+
+
+/* REGIONS ONLINE */
+
+body.australia-home-page
+div#grid-stats-cards.grid-stats-cards
+> .stat-card:nth-child(2) {
+
+    grid-column:
+        2 / 3 !important;
+
+    grid-row:
+        1 / 2 !important;
+
+    width:
+        auto !important;
+
+    min-width:
+        0 !important;
+}
+
+
+/* TOTAL USERS */
+
+body.australia-home-page
+div#grid-stats-cards.grid-stats-cards
+> .stat-card:nth-child(3) {
+
+    grid-column:
+        1 / 2 !important;
+
+    grid-row:
+        2 / 3 !important;
+
+    width:
+        auto !important;
+
+    min-width:
+        0 !important;
+}
+
+
+/* ACTIVE USERS */
+
+body.australia-home-page
+div#grid-stats-cards.grid-stats-cards
+> .stat-card:nth-child(4),
+body.australia-home-page
+div#grid-stats-cards.grid-stats-cards
+> .stat-card.stat-card-wide {
+
+    grid-column:
+        2 / 3 !important;
+
+    grid-row:
+        2 / 3 !important;
+
+    width:
+        auto !important;
+
+    min-width:
+        0 !important;
+}
+
+
+/* END AUSTRALIA GRID - DATA BOX FORCED 2X2 LAYOUT */
+
+
+/* AUSTRALIA GRID NATIVE RESET SUCCESS CARD V1 START */
+
+
+/* =========================================================
+   EXACT DREAMGRID RESET-SUCCESS BOX
+
+   Actual rendered structure verified:
+
+   .box.australia-page-box
+       #dreamgrid-dynamic-content
+       p  <-- Check your email...
+       form[data-ag-notify][method="post"]
+       p
+
+   ========================================================= */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+){
+
+    width:
+        min(700px, calc(100vw - 50px)) !important;
+
+    min-height:
+        0 !important;
+
+    height:
+        auto !important;
+
+    box-sizing:
+        border-box !important;
+
+    margin:
+        38px auto !important;
+
+    padding:
+        24px 26px 24px !important;
+
+    border:
+        1px solid
+        rgba(232,177,39,.60) !important;
+
+    border-radius:
+        18px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7,28,43,.94),
+            rgba(4,19,31,.96),
+            rgba(4,15,25,.97)
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        inset 0 0 28px rgba(28,126,186,.08),
+        0 12px 34px rgba(0,0,0,.48) !important;
+
+    backdrop-filter:
+        blur(10px) !important;
+
+    -webkit-backdrop-filter:
+        blur(10px) !important;
+
+}
+
+
+/* =========================================================
+   HEADER - CSS ONLY
+   ========================================================= */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)::before{
+
+    content:
+        "ACCOUNT\A CHECK YOUR EMAIL";
+
+    white-space:
+        pre-line;
+
+    display:
+        block;
+
+    margin:
+        0 0 18px 0;
+
+    padding:
+        2px 0 15px 64px;
+
+    min-height:
+        48px;
+
+    box-sizing:
+        border-box;
+
+    color:
+        #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        25px;
+
+    line-height:
+        1.15;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .01em;
+
+    text-transform:
+        uppercase;
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.85);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.10);
+
+    background:
+
+        /* envelope body */
+        linear-gradient(
+            145deg,
+            #62dfff,
+            #168edc
+        )
+        7px 12px / 42px 29px
+        no-repeat;
+
+    border-radius:
+        0;
+
+}
+
+
+/* Gold small first line */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)::first-line{
+
+    color:
+        #ffc73d;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.8;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .12em;
+
+}
+
+
+/* =========================================================
+   NATIVE DREAMGRID PLACEHOLDER
+   ========================================================= */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
+> #dreamgrid-dynamic-content{
+
+    display:
+        none !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    height:
+        0 !important;
+
+    min-height:
+        0 !important;
+
+}
+
+
+/* =========================================================
+   NATIVE "CHECK YOUR EMAIL..." MESSAGE
+   ========================================================= */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
+> p:not(#dreamgrid-dynamic-content){
+
+    box-sizing:
+        border-box;
+
+}
+
+
+/* First actual message paragraph */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
+> #dreamgrid-dynamic-content
++ p{
+
+    display:
+        block !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        15px 17px !important;
+
+    border:
+        1px solid
+        rgba(49,176,237,.34) !important;
+
+    border-radius:
+        11px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12,54,80,.80),
+            rgba(5,30,48,.88)
+        ) !important;
+
+    color:
+        #e5edf1 !important;
+
+    font-family:
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        14px !important;
+
+    line-height:
+        1.55 !important;
+
+    text-align:
+        left !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.05) !important;
+
+}
+
+
+/* =========================================================
+   NATIVE NOTIFY FORM
+
+   Preserve DreamGrid functionality completely.
+   We only remove unwanted spacing if it has none of its own.
+   ========================================================= */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
+> form[data-ag-notify][method="post"]{
+
+    margin:
+        0 !important;
+
+}
+
+
+/* Empty paragraph after notify form */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
+> form[data-ag-notify][method="post"]
++ p:empty{
+
+    display:
+        none !important;
+
+}
+
+
+/* =========================================================
+   REMOVE THE OLD DECORATIVE BOTTOM PIECE FOR THIS CARD ONLY
+   ========================================================= */
+
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
++ .box-bottom{
+
+    display:
+        none !important;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:760px){
+
+    .box.australia-page-box:has(
+        > form[data-ag-notify][method="post"]
+    ){
+
+        width:
+            calc(100vw - 28px) !important;
+
+        margin:
+            20px auto !important;
+
+        padding:
+            20px 18px 20px !important;
+
+    }
+
+
+    .box.australia-page-box:has(
+        > form[data-ag-notify][method="post"]
+    )::before{
+
+        padding-left:
+            56px;
+
+        font-size:
+            21px;
+
+        background-size:
+            36px 25px;
+
+    }
+
+}
+
+
+/* AUSTRALIA GRID NATIVE RESET SUCCESS CARD V1 END */
+
+
+/* AUSTRALIA GRID RESET CLOSE BUTTON V2 START */
+
+
+/* =========================================================
+   CLOSE BUTTON AREA
+   ========================================================= */
+
+.ag-reset-close-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding-top:16px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.09);
+
+}
+
+
+/* =========================================================
+   GOLD CLOSE BUTTON
+   ========================================================= */
+
+.ag-reset-close-button{
+
+    min-width:190px;
+
+    height:44px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:
+        0 28px;
+
+    border:
+        1px solid
+        rgba(255,224,107,.90);
+
+    border-radius:
+        9px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffd95b 0%,
+            #ffc227 45%,
+            #e89b00 100%
+        );
+
+    color:
+        #111111;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.75),
+        inset 0 -2px 0 rgba(122,72,0,.28),
+        0 5px 14px rgba(0,0,0,.40);
+
+    text-shadow:
+        0 1px 0 rgba(255,255,255,.45);
+
+    transition:
+        transform .15s ease,
+        filter .15s ease,
+        box-shadow .15s ease;
+
+}
+
+
+.ag-reset-close-button:hover{
+
+    filter:
+        brightness(1.10);
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.85),
+        inset 0 -2px 0 rgba(122,72,0,.28),
+        0 7px 18px rgba(0,0,0,.48);
+
+}
+
+
+.ag-reset-close-button:active{
+
+    transform:
+        translateY(1px);
+
+    box-shadow:
+        inset 0 2px 5px rgba(0,0,0,.25),
+        0 2px 7px rgba(0,0,0,.35);
+
+}
+
+
+/* Small close symbol inside the button */
+
+.ag-reset-close-symbol{
+
+    width:24px;
+
+    height:24px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(20,30,35,.90);
+
+    color:
+        #ffc62d;
+
+    font-size:
+        19px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.16);
+
+}
+
+
+/* =========================================================
+   CLOSED STATE
+   ========================================================= */
+
+body.ag-reset-card-closed
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+){
+
+    display:none !important;
+
+}
+
+
+body.ag-reset-card-closed
+.box.australia-page-box:has(
+    > form[data-ag-notify][method="post"]
+)
++ .box-bottom{
+
+    display:none !important;
+
+}
+
+
+/* AUSTRALIA GRID RESET CLOSE BUTTON V2 END */
+
+
+/* AUSTRALIA GRID CLOSE BUTTON TEXT FIX V1 START */
+
+/* Remove the X circle completely */
+.ag-reset-close-symbol{
+    display:none !important;
+}
+
+/* CLOSE text only */
+.ag-reset-close-button{
+    gap:0 !important;
+
+    color:#000000 !important;
+
+    text-shadow:none !important;
+
+    font-weight:900 !important;
+
+    letter-spacing:.08em !important;
+}
+
+/* Make sure the inner CLOSE span is black too */
+.ag-reset-close-button > span:not(.ag-reset-close-symbol){
+    color:#000000 !important;
+
+    text-shadow:none !important;
+}
+
+/* AUSTRALIA GRID CLOSE BUTTON TEXT FIX V1 END */
+
+
+/* AUSTRALIA GRID RESIDENT LOGIN UI V1 START */
+
+
+/* =========================================================
+   RESIDENT MENU PICTURE-STYLE SVG ICONS
+   ========================================================= */
+
+#right-nav
+.australia-main-menu
+a
+.menu-icon.australia-resident-icon{
+
+    width:38px !important;
+    height:38px !important;
+
+    min-width:38px !important;
+    min-height:38px !important;
+
+    max-width:38px !important;
+    max-height:38px !important;
+
+    flex:
+        0 0 38px !important;
+
+    display:
+        inline-flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    margin:
+        0 10px 0 0 !important;
+
+    padding:
+        0 !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+    background:
+        none !important;
+
+    background-image:
+        none !important;
+
+    color:
+        inherit !important;
+
+    overflow:
+        visible !important;
+
+}
+
+
+#right-nav
+.australia-main-menu
+a
+.menu-icon.australia-resident-icon
+svg{
+
+    display:
+        block !important;
+
+    width:
+        38px !important;
+
+    height:
+        38px !important;
+
+    max-width:
+        38px !important;
+
+    max-height:
+        38px !important;
+
+    overflow:
+        visible !important;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease;
+
+}
+
+
+#right-nav
+.australia-main-menu
+a:hover
+.menu-icon.australia-resident-icon
+svg{
+
+    transform:
+        scale(1.07);
+
+    filter:
+        brightness(1.10);
+
+}
+
+
+/* Stop older HELP CENTRE icon rules overriding the inline SVG */
+
+#right-nav
+.australia-main-menu
+a[href*="/Other/user-help.php"]
+.menu-icon.australia-resident-icon{
+
+    background:
+        none !important;
+
+    background-image:
+        none !important;
+
+}
+
+
+/* Stop older Logout styling overriding new coloured artwork */
+
+#right-nav
+.logout-link
+.menu-icon.australia-resident-icon{
+
+    background:
+        none !important;
+
+    background-image:
+        none !important;
+
+    border:
+        0 !important;
+
+}
+
+/* AUSTRALIA GRID RESIDENT LOGIN UI V1 END */
+
+
+
+/* AUSTRALIA PERFECT BACKGROUND OVERRIDE V1 START */
+
+html,
+body{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    overflow-x:hidden !important;
+}
+
+
+body{
+
+    min-height:100vh !important;
+
+    background-color:#000 !important;
+
+    background-image:
+        url("/Other/assets/images/Site-background.png")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+body.australia-home-page,
+body.ag-frontpage{
+
+    background-image:
+        url("/Other/site-design-image.php?slot=frontpage-background")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+body > .dashboard-shell,
+body > .ag-shell,
+body > .ag-frontpage-shell{
+
+    background-color:
+        transparent !important;
+
+    background-image:
+        none !important;
+}
+
+
+@media(max-width:900px){
+
+    body,
+    body.australia-home-page,
+    body.ag-frontpage{
+
+        background-size:
+            cover !important;
+
+        background-position:
+            center center !important;
+
+        background-attachment:
+            scroll !important;
+    }
+}
+
+/* AUSTRALIA PERFECT BACKGROUND OVERRIDE V1 END */
+
+

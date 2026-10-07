@@ -1,0 +1,814 @@
+/*
+ * ==========================================================
+ * AUSTRALIA CONTROL CENTER
+ * MANAGE ACCOUNTS CLEAN REBUILD V1
+ * ==========================================================
+ */
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color:#eeeae0;
+
+    background:transparent;
+}
+
+
+.ma-shell{
+    width:100%;
+    max-width:none;
+
+    margin:0;
+
+    padding:
+        12px
+        16px
+        18px;
+}
+
+
+/* HERO */
+
+.ma-hero{
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border:
+        1px solid
+        rgba(211,160,43,.32);
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(23,29,26,.98),
+            rgba(8,12,10,.98)
+        );
+}
+
+
+.ma-hero-icon{
+    width:52px;
+    height:52px;
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(216,164,46,.38);
+
+    border-radius:7px;
+
+    background:#0a0f0d;
+}
+
+
+.ma-hero-icon img{
+    width:27px;
+    height:27px;
+
+    object-fit:contain;
+}
+
+
+.ma-hero-copy{
+    flex:1;
+}
+
+
+.ma-kicker{
+    color:#d9aa41;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+}
+
+
+.ma-hero h1{
+    margin:
+        3px
+        0
+        0;
+
+    font-size:22px;
+
+    letter-spacing:.7px;
+}
+
+
+.ma-hero p{
+    margin:
+        5px
+        0
+        0;
+
+    color:#919b96;
+
+    font-size:11px;
+}
+
+
+.ma-hero-status{
+    min-width:125px;
+
+    text-align:right;
+}
+
+
+.ma-hero-status span,
+.ma-hero-status strong{
+    display:block;
+}
+
+
+.ma-hero-status span{
+    color:#77827d;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:1.2px;
+}
+
+
+.ma-hero-status strong{
+    margin-top:3px;
+
+    color:#dcb14b;
+
+    font-size:12px;
+}
+
+
+/* SUMMARY */
+
+.ma-summary{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-top:12px;
+}
+
+
+.ma-summary article{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-height:66px;
+
+    padding:13px 15px;
+
+    border:
+        1px solid
+        rgba(190,145,41,.24);
+
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            150deg,
+            rgba(20,26,23,.98),
+            rgba(9,13,11,.98)
+        );
+}
+
+
+.ma-summary img{
+    width:23px;
+    height:23px;
+
+    object-fit:contain;
+}
+
+
+.ma-summary span,
+.ma-summary strong{
+    display:block;
+}
+
+
+.ma-summary span{
+    color:#7e8984;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+.ma-summary strong{
+    margin-top:2px;
+
+    color:#e4b64c;
+
+    font-size:19px;
+}
+
+
+/* TOOLBAR */
+
+.ma-toolbar{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        auto
+        auto;
+
+    gap:8px;
+
+    margin-top:12px;
+}
+
+
+.ma-search{
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    min-height:42px;
+
+    padding:
+        0
+        13px;
+
+    border:
+        1px solid
+        rgba(153,127,67,.25);
+
+    border-radius:6px;
+
+    background:#080c0a;
+}
+
+
+.ma-search img{
+    width:18px;
+    height:18px;
+}
+
+
+.ma-search input{
+    width:100%;
+
+    border:0;
+    outline:0;
+
+    color:#c9cec9;
+
+    background:transparent;
+}
+
+
+.ma-search input:disabled{
+    opacity:1;
+}
+
+
+.ma-toolbar button,
+.ma-demo-row button{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    border-radius:6px;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:.5px;
+}
+
+
+.ma-toolbar button img,
+.ma-demo-row button img{
+    width:16px;
+    height:16px;
+
+    object-fit:contain;
+}
+
+
+.ma-search-button{
+    min-width:105px;
+
+    border:
+        1px solid
+        rgba(169,141,77,.28);
+
+    color:#c8cbc5;
+
+    background:
+        linear-gradient(
+            180deg,
+            #202724,
+            #101513
+        );
+}
+
+
+.ma-create-button{
+    min-width:145px;
+
+    border:
+        1px solid
+        #b77c0d;
+
+    color:#171207;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f2c452,
+            #b97808
+        );
+}
+
+
+button:disabled{
+    opacity:1;
+
+    cursor:default;
+}
+
+
+/* TABLE */
+
+.ma-account-panel{
+    overflow:hidden;
+
+    margin-top:12px;
+
+    border:
+        1px solid
+        rgba(195,149,43,.27);
+
+    border-radius:8px;
+
+    background:#0a0f0d;
+}
+
+
+.ma-table-head,
+.ma-demo-row{
+    display:grid;
+
+    grid-template-columns:
+        minmax(250px,2.2fr)
+        minmax(180px,1.25fr)
+        90px
+        120px
+        minmax(150px,1fr)
+        100px;
+
+    align-items:center;
+
+    column-gap:14px;
+}
+
+
+.ma-table-head{
+    min-height:39px;
+
+    padding:
+        0
+        14px;
+
+    color:#e2b247;
+
+    background:#050806;
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+.ma-placeholder-row{
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:10px;
+
+    padding:12px;
+
+    border:
+        1px dashed
+        rgba(190,146,46,.23);
+
+    border-radius:6px;
+
+    background:#0d1310;
+}
+
+
+.ma-placeholder-icon{
+    width:37px;
+    height:37px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(199,152,45,.28);
+
+    border-radius:5px;
+}
+
+
+.ma-placeholder-icon img{
+    width:20px;
+    height:20px;
+}
+
+
+.ma-placeholder-row strong,
+.ma-placeholder-row span{
+    display:block;
+}
+
+
+.ma-placeholder-row strong{
+    color:#d3a744;
+
+    font-size:9px;
+
+    letter-spacing:.8px;
+}
+
+
+.ma-placeholder-row span{
+    margin-top:3px;
+
+    color:#77827d;
+
+    font-size:9px;
+}
+
+
+.ma-demo-row{
+    min-height:55px;
+
+    padding:
+        8px
+        14px;
+
+    border-top:
+        1px solid
+        rgba(122,132,126,.10);
+
+    color:#b8c0bb;
+
+    font-size:10px;
+}
+
+
+.ma-demo-row:nth-child(even){
+    background:#0d1311;
+}
+
+
+.ma-avatar-cell strong,
+.ma-avatar-cell span{
+    display:block;
+}
+
+
+.ma-avatar-cell strong{
+    color:#ece9df;
+
+    font-size:11px;
+}
+
+
+.ma-avatar-cell span{
+    margin-top:3px;
+
+    color:#6f7a75;
+
+    font-size:8px;
+}
+
+
+.ma-status{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:62px;
+
+    padding:
+        4px
+        8px;
+
+    border-radius:20px;
+
+    font-size:8px;
+
+    font-weight:900;
+}
+
+
+.ma-status.user{
+    border:
+        1px solid
+        rgba(66,147,105,.32);
+
+    color:#9fd7bc;
+
+    background:#10231a;
+}
+
+
+.ma-status.admin{
+    border:
+        1px solid
+        rgba(208,161,52,.31);
+
+    color:#e0b754;
+
+    background:#2a2415;
+}
+
+
+.ma-demo-row button{
+    min-height:29px;
+
+    padding:
+        5px
+        9px;
+
+    border:
+        1px solid
+        rgba(163,136,73,.25);
+
+    color:#d0d3ce;
+
+    background:#1b211f;
+}
+
+
+/* NOTE */
+
+.ma-note{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:12px;
+
+    padding:
+        11px
+        13px;
+
+    border:
+        1px solid
+        rgba(192,146,42,.22);
+
+    border-radius:6px;
+
+    background:#0b100e;
+}
+
+
+.ma-note img{
+    width:21px;
+    height:21px;
+}
+
+
+.ma-note strong,
+.ma-note span{
+    display:block;
+}
+
+
+.ma-note strong{
+    color:#d4a743;
+
+    font-size:9px;
+
+    letter-spacing:.8px;
+}
+
+
+.ma-note span{
+    margin-top:2px;
+
+    color:#74807a;
+
+    font-size:9px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:1100px){
+
+    .ma-summary{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .ma-account-panel{
+        overflow-x:auto;
+    }
+
+    .ma-table-head,
+    .ma-demo-row{
+        min-width:1000px;
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .ma-shell{
+        padding:
+            8px
+            9px
+            12px;
+    }
+
+    .ma-summary{
+        grid-template-columns:1fr;
+    }
+
+    .ma-toolbar{
+        grid-template-columns:1fr;
+    }
+
+    .ma-hero-status{
+        display:none;
+    }
+
+}
+
+/*
+ * ==========================================================
+ * AUSTRALIA MANAGE ACCOUNTS REAL DATA V1
+ * ==========================================================
+ */
+
+.ma-status.member{
+    border:
+        1px solid
+        rgba(66,132,175,.34);
+
+    color:#9fc9e5;
+
+    background:#10202b;
+}
+
+
+.ma-status.disabled{
+    border:
+        1px solid
+        rgba(183,70,70,.35);
+
+    color:#ef9c9c;
+
+    background:#291313;
+}
+
+
+.ma-empty{
+    min-height:110px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    gap:9px;
+
+    color:#8b9690;
+}
+
+
+.ma-empty img{
+    width:27px;
+    height:27px;
+}
+
+
+.ma-empty strong{
+    color:#d8aa43;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+}
+
+
+.ma-email-cell{
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    white-space:nowrap;
+}
+
+
+/*
+ * ==========================================================
+ * AUSTRALIA MANAGE ACCOUNTS CONTROL CENTER BACKGROUND V1
+ * ==========================================================
+ */
+
+html{
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            rgba(5,8,7,.36),
+            rgba(5,8,7,.36)
+        ),
+        url("/Other/site-design-image.php?slot=admin-control-center-background")
+        var(
+            --ag-site-admin-control-center-background-position,
+            center top
+        )
+        /
+        var(
+            --ag-site-admin-control-center-background-size,
+            cover
+        )
+        fixed
+        no-repeat !important;
+}
+
+.ma-shell{
+    min-height:100vh;
+}

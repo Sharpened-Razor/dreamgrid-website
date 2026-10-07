@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "date": "2026-10-07",
+  "asset": "DreamGrid-Website-Portable-20261007.zip",
+  "sha256": "0A5CD15D054DCA758EA8BDC8DCA752854C83E0124B507EE1562F5358CB670FB3",
+  "bytes": 115064729,
+  "payloadFiles": 1272,
+  "requirements": [
+    "ASCII Windows installation path",
+    "DIVA OFF",
+    "OTHER enabled",
+    "Folder = Other"
+  ]
+}

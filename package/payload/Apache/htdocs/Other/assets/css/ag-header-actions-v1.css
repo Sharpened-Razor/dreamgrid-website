@@ -1,0 +1,221 @@
+/*
+============================================================
+ AUSTRALIA SHARED HEADER ACTION SYSTEM V1
+============================================================
+
+ Used for primary page-navigation controls:
+
+ BACK
+ BACK TO DASHBOARD
+ ADMIN HOME
+ LOGOUT
+
+ Standard:
+ - far-right end of the page header
+ - same size
+ - same gold colour
+ - same font
+ - same vertical alignment
+============================================================
+*/
+
+
+.ag-header-actions{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:flex-end !important;
+
+    gap:12px !important;
+
+    margin-left:auto !important;
+
+    flex:0 0 auto !important;
+}
+
+
+/*
+============================================================
+ MASTER HEADER BUTTON
+============================================================
+*/
+
+.ag-header-end-button{
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    flex:0 0 auto !important;
+
+    width:190px !important;
+
+    min-width:190px !important;
+
+    max-width:190px !important;
+
+    height:50px !important;
+
+    min-height:50px !important;
+
+    max-height:50px !important;
+
+    padding:0 18px !important;
+
+    margin:0 !important;
+
+    box-sizing:border-box !important;
+
+    border:
+        1px solid
+        #e5b73d !important;
+
+    border-radius:
+        10px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffd367 0%,
+            #e5a925 56%,
+            #c48613 100%
+        ) !important;
+
+    color:
+        #17120a !important;
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.48),
+
+        0 4px 12px
+        rgba(0,0,0,.42) !important;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        900 !important;
+
+    line-height:
+        1 !important;
+
+    letter-spacing:
+        .025em !important;
+
+    text-align:
+        center !important;
+
+    text-decoration:
+        none !important;
+
+    text-transform:
+        uppercase !important;
+
+    text-shadow:
+        none !important;
+
+    white-space:
+        nowrap !important;
+
+    cursor:
+        pointer !important;
+}
+
+
+.ag-header-end-button:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe596 0%,
+            #efbd3e 56%,
+            #d29118 100%
+        ) !important;
+
+    color:
+        #111 !important;
+
+    filter:none !important;
+
+    text-decoration:none !important;
+}
+
+
+.ag-header-end-button:focus{
+
+    outline:
+        2px solid
+        rgba(255,214,92,.55) !important;
+
+    outline-offset:
+        2px !important;
+}
+
+
+/*
+============================================================
+ HEADER POSITIONING HELPERS
+============================================================
+*/
+
+.ag-standard-header{
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:space-between !important;
+
+    gap:28px !important;
+}
+
+
+.ag-standard-header > .ag-header-actions{
+
+    align-self:center !important;
+}
+
+
+/*
+============================================================
+ MOBILE
+============================================================
+*/
+
+@media(max-width:760px){
+
+    .ag-standard-header{
+
+        flex-direction:column !important;
+
+        align-items:stretch !important;
+    }
+
+
+    .ag-header-actions{
+
+        width:100% !important;
+
+        margin-left:0 !important;
+
+        justify-content:flex-end !important;
+    }
+
+
+    .ag-header-end-button{
+
+        width:100% !important;
+
+        max-width:none !important;
+    }
+}

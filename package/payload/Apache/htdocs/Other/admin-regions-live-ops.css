@@ -1,0 +1,1821 @@
+/*
+ ============================================================
+ AUSTRALIA CONTROL CENTER
+ REGION MANAGER LIVE OPERATIONS V1
+ ============================================================
+*/
+
+
+.rm-live-ops{
+
+    margin:
+        8px 0 12px 0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(212,164,47,.46);
+
+    border-radius:
+        8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13,20,21,.99),
+            rgba(5,9,10,.99)
+        );
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.28);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.rm-live-head{
+
+    min-height:
+        47px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        12px;
+
+    padding:
+        8px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+
+    background:
+        linear-gradient(
+            180deg,
+            #192122,
+            #101617
+        );
+}
+
+
+.rm-live-kicker{
+
+    color:
+        #d6a739;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .14em;
+}
+
+
+.rm-live-title{
+
+    margin-top:
+        2px;
+
+    color:
+        #f0ca5c;
+
+    font-size:
+        12px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .04em;
+}
+
+
+.rm-live-head-right{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+}
+
+
+.rm-live-clock{
+
+    color:
+        #5ddcff;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        8px;
+
+    white-space:
+        nowrap;
+}
+
+
+.rm-live-indicator{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        #61dda7;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+}
+
+
+.rm-live-indicator::before{
+
+    content:
+        "";
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #51e09e;
+
+    box-shadow:
+        0 0 10px
+        rgba(81,224,158,.9);
+}
+
+
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+
+.rm-live-summary{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(6,minmax(0,1fr));
+
+    gap:
+        6px;
+
+    padding:
+        8px;
+}
+
+
+.rm-summary-card{
+
+    min-width:
+        0;
+
+    padding:
+        8px 9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.055);
+
+    border-radius:
+        6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #111819,
+            #080d0e
+        );
+}
+
+
+.rm-summary-label{
+
+    color:
+        #93792b;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.rm-summary-value{
+
+    margin-top:
+        5px;
+
+    color:
+        #eaf8fa;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        16px;
+
+    font-weight:
+        700;
+}
+
+
+.rm-summary-value.green{
+
+    color:
+        #5fe2a6;
+}
+
+
+.rm-summary-value.cyan{
+
+    color:
+        #58dcff;
+}
+
+
+.rm-summary-value.gold{
+
+    color:
+        #e9ba47;
+}
+
+
+.rm-summary-value.red{
+
+    color:
+        #ed7777;
+}
+
+
+/* ============================================================
+   TOOLBAR
+   ============================================================ */
+
+.rm-live-toolbar{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    padding:
+        0 8px 9px 8px;
+}
+
+
+.rm-search{
+
+    flex:
+        1 1 340px;
+
+    max-width:
+        520px;
+
+    height:
+        32px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid
+        rgba(76,145,165,.28);
+
+    border-radius:
+        5px;
+
+    outline:
+        none;
+
+    background:
+        #071012;
+
+    color:
+        #dcebed;
+
+    font-family:
+        inherit;
+
+    font-size:
+        8px;
+}
+
+
+.rm-search:focus{
+
+    border-color:
+        rgba(67,210,245,.60);
+
+    box-shadow:
+        0 0 9px
+        rgba(67,210,245,.08);
+}
+
+
+.rm-filter{
+
+    height:
+        32px;
+
+    padding:
+        0 10px;
+
+    border:
+        1px solid
+        rgba(209,164,50,.28);
+
+    border-radius:
+        5px;
+
+    background:
+        #0c1213;
+
+    color:
+        #a9b5b8;
+
+    cursor:
+        pointer;
+
+    font-size:
+        7px;
+
+    font-weight:
+        900;
+}
+
+
+.rm-filter.active{
+
+    color:
+        #efc75a;
+
+    border-color:
+        rgba(225,180,62,.58);
+
+    background:
+        #29220e;
+}
+
+
+/* ============================================================
+   REGION GRID
+   ============================================================ */
+
+.rm-card-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        8px;
+
+    padding:
+        0 8px 9px 8px;
+}
+
+
+/* ============================================================
+   REGION CARD
+   ============================================================ */
+
+.rm-region-card{
+
+    position:
+        relative;
+
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(73,109,119,.23);
+
+    border-radius:
+        7px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #101718,
+            #070b0c
+        );
+
+    transition:
+
+        border-color .18s ease,
+        box-shadow .18s ease,
+        transform .18s ease;
+}
+
+
+.rm-region-card:hover{
+
+    border-color:
+        rgba(68,197,231,.40);
+
+    box-shadow:
+        0 0 15px
+        rgba(51,188,222,.06);
+}
+
+
+.rm-region-card.running{
+
+    border-color:
+        rgba(70,183,139,.30);
+}
+
+
+.rm-region-card.stopped{
+
+    border-color:
+        rgba(214,163,48,.25);
+}
+
+
+.rm-region-card.disabled{
+
+    opacity:
+        .66;
+}
+
+
+.rm-region-card.alert{
+
+    border-color:
+        rgba(239,92,92,.70);
+
+    box-shadow:
+        0 0 12px
+        rgba(239,92,92,.08);
+}
+
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+
+.rm-card-head{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        7px;
+
+    padding:
+        8px 9px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.045);
+}
+
+
+.rm-card-name{
+
+    min-width:
+        0;
+
+    overflow:
+        hidden;
+
+    color:
+        #edf9fb;
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.rm-state{
+
+    flex:
+        0 0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        #77878b;
+
+    font-size:
+        6px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .05em;
+}
+
+
+.rm-state::before{
+
+    content:
+        "";
+
+    width:
+        7px;
+
+    height:
+        7px;
+
+    border-radius:
+        50%;
+
+    background:
+        #667174;
+}
+
+
+.rm-region-card.running
+.rm-state{
+
+    color:
+        #61d9a4;
+}
+
+
+.rm-region-card.running
+.rm-state::before{
+
+    background:
+        #50dfa0;
+
+    box-shadow:
+        0 0 8px
+        rgba(80,223,160,.8);
+}
+
+
+.rm-region-card.stopped
+.rm-state{
+
+    color:
+        #e5b94e;
+}
+
+
+.rm-region-card.stopped
+.rm-state::before{
+
+    background:
+        #dfa934;
+
+    box-shadow:
+        0 0 7px
+        rgba(223,169,52,.55);
+}
+
+
+.rm-region-card.alert
+.rm-state::before{
+
+    background:
+        #ef5c5c;
+
+    box-shadow:
+        0 0 9px
+        rgba(239,92,92,.85);
+}
+
+
+/* ============================================================
+   PERFORMANCE METRICS
+   ============================================================ */
+
+.rm-card-metrics{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        1px;
+
+    background:
+        rgba(255,255,255,.035);
+}
+
+
+.rm-metric{
+
+    min-width:
+        0;
+
+    padding:
+        7px 5px;
+
+    background:
+        #080d0e;
+
+    text-align:
+        center;
+}
+
+
+.rm-metric-label{
+
+    color:
+        #6f7f83;
+
+    font-size:
+        5px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .05em;
+}
+
+
+.rm-metric-value{
+
+    margin-top:
+        4px;
+
+    overflow:
+        hidden;
+
+    color:
+        #dbe9ec;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+.rm-metric-value.cyan{
+
+    color:
+        #56dcff;
+}
+
+
+.rm-metric-value.green{
+
+    color:
+        #5ce2a4;
+}
+
+
+.rm-metric-value.gold{
+
+    color:
+        #e8b946;
+}
+
+
+/* ============================================================
+   MINI BARS
+   ============================================================ */
+
+.rm-bars{
+
+    padding:
+        7px 8px 3px 8px;
+}
+
+
+.rm-bar-row{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        55px 1fr 42px;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    min-height:
+        15px;
+}
+
+
+.rm-bar-label{
+
+    color:
+        #66777b;
+
+    font-size:
+        5px;
+
+    font-weight:
+        900;
+}
+
+
+.rm-bar-track{
+
+    height:
+        5px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(58,146,172,.18);
+
+    border-radius:
+        4px;
+
+    background:
+        #041014;
+}
+
+
+.rm-bar-fill{
+
+    width:
+        0;
+
+    height:
+        100%;
+
+    border-radius:
+        4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #147fa0,
+            #42d8ff
+        );
+
+    transition:
+        width .45s ease;
+}
+
+
+.rm-bar-row.physics
+.rm-bar-fill{
+
+    background:
+        linear-gradient(
+            90deg,
+            #168879,
+            #47dfca
+        );
+}
+
+
+.rm-bar-row.cpu
+.rm-bar-fill{
+
+    background:
+        linear-gradient(
+            90deg,
+            #17739b,
+            #58d7ff
+        );
+}
+
+
+.rm-bar-value{
+
+    color:
+        #8d9da1;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        6px;
+
+    text-align:
+        right;
+}
+
+
+/* ============================================================
+   PROCESS INFO
+   ============================================================ */
+
+.rm-process-line{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        4px;
+
+    padding:
+        6px 8px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.035);
+}
+
+
+.rm-process-item{
+
+    min-width:
+        0;
+}
+
+
+.rm-process-label{
+
+    color:
+        #5f6e72;
+
+    font-size:
+        5px;
+
+    font-weight:
+        900;
+}
+
+
+.rm-process-value{
+
+    margin-top:
+        2px;
+
+    overflow:
+        hidden;
+
+    color:
+        #aab8bb;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        6px;
+
+    text-overflow:
+        ellipsis;
+
+    white-space:
+        nowrap;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.rm-card-actions{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:
+        4px;
+
+    padding:
+        7px 8px 8px 8px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.04);
+}
+
+
+.rm-action{
+
+    min-width:
+        0;
+
+    height:
+        26px;
+
+    padding:
+        0 5px;
+
+    border:
+        1px solid
+        rgba(76,122,136,.24);
+
+    border-radius:
+        4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #131b1c,
+            #090e0f
+        );
+
+    color:
+        #89999d;
+
+    cursor:
+        pointer;
+
+    font-family:
+        inherit;
+
+    font-size:
+        5px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .035em;
+}
+
+
+.rm-action:hover:not(:disabled){
+
+    color:
+        #e5f7fa;
+
+    border-color:
+        rgba(64,201,236,.48);
+}
+
+
+.rm-action.start{
+
+    color:
+        #68dca8;
+}
+
+
+.rm-action.stop{
+
+    color:
+        #ec8b8b;
+}
+
+
+.rm-action.restart{
+
+    color:
+        #e5bb52;
+}
+
+
+.rm-action.stats{
+
+    color:
+        #68d4ef;
+}
+
+
+.rm-action:disabled{
+
+    opacity:
+        .26;
+
+    cursor:
+        default;
+}
+
+
+/* ============================================================
+   CARD FOOTER
+   ============================================================ */
+
+.rm-card-footer{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        8px;
+
+    padding:
+        5px 8px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.035);
+
+    color:
+        #536267;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        5px;
+}
+
+
+.rm-card-live{
+
+    color:
+        #53cfe9;
+}
+
+
+/* ============================================================
+   EMPTY FILTER RESULT
+   ============================================================ */
+
+.rm-empty{
+
+    display:
+        none;
+
+    padding:
+        25px;
+
+    color:
+        #657478;
+
+    text-align:
+        center;
+
+    font-size:
+        8px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:1700px){
+
+    .rm-card-grid{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+}
+
+
+@media(max-width:1250px){
+
+    .rm-card-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .rm-live-summary{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+}
+
+
+@media(max-width:750px){
+
+    .rm-card-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .rm-live-summary{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .rm-live-toolbar{
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+    }
+
+
+    .rm-search{
+
+        max-width:
+            none;
+
+        flex:
+            none;
+    }
+}
+
+/* REGION MANAGER CANONICAL PAGE LAYOUT START */
+
+/*
+ ============================================================
+ REGION MANAGER PAGE WIDTH
+
+ This is the only active Region Manager width/layout rule.
+ It lives in the existing Live Operations stylesheet.
+ ============================================================
+*/
+
+
+#ag-region-manager-page{
+
+    display:
+        block !important;
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    min-width:
+        0 !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    overflow-x:
+        hidden !important;
+}
+
+
+#ag-region-manager-page > .ag-shell{
+
+    box-sizing:
+        border-box !important;
+
+    position:
+        relative !important;
+
+    left:
+        auto !important;
+
+    right:
+        auto !important;
+
+    transform:
+        none !important;
+
+    width:
+        calc(100% - 16px) !important;
+
+    max-width:
+        none !important;
+
+    min-width:
+        0 !important;
+
+    margin:
+        8px !important;
+
+    padding:
+        12px !important;
+}
+
+
+#ag-region-manager-page .dg-statusline,
+#ag-region-manager-page .dg-toolbar,
+#ag-region-manager-page .dg-search-row,
+#ag-region-manager-page .dg-table-frame,
+#ag-region-manager-page #rm-live-ops{
+
+    box-sizing:
+        border-box !important;
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    margin-left:
+        0 !important;
+
+    margin-right:
+        0 !important;
+}
+
+
+#ag-region-manager-page .rm-card-grid{
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr)) !important;
+}
+
+
+#ag-region-manager-page .rm-live-summary{
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    grid-template-columns:
+        repeat(6,minmax(0,1fr)) !important;
+}
+
+
+#ag-region-manager-page .dg-table-frame{
+
+    overflow-x:
+        auto !important;
+}
+
+
+#ag-region-manager-page #dgRegionTable{
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+}
+
+
+@media(max-width:1650px){
+
+    #ag-region-manager-page .rm-card-grid{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr)) !important;
+    }
+}
+
+
+@media(max-width:1200px){
+
+    #ag-region-manager-page .rm-card-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr)) !important;
+    }
+
+
+    #ag-region-manager-page .rm-live-summary{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr)) !important;
+    }
+}
+
+
+@media(max-width:760px){
+
+    #ag-region-manager-page > .ag-shell{
+
+        width:
+            calc(100% - 8px) !important;
+
+        margin:
+            4px !important;
+
+        padding:
+            7px !important;
+    }
+
+
+    #ag-region-manager-page .rm-card-grid{
+
+        grid-template-columns:
+            1fr !important;
+    }
+
+
+    #ag-region-manager-page .rm-live-summary{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr)) !important;
+    }
+}
+
+
+/* REGION MANAGER CANONICAL PAGE LAYOUT END */
+
+
+
+/* ============================================================
+   AUSTRALIA REGION MANAGER OAR POPUP V3
+   ============================================================ */
+
+.rm-oar-v3-backdrop{
+    position:fixed;
+    inset:0;
+    z-index:2147483000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:24px;
+
+    background:rgba(0,0,0,.78);
+
+    backdrop-filter:blur(3px);
+}
+
+
+.rm-oar-v3-dialog{
+    position:relative;
+
+    width:min(520px,calc(100vw - 48px));
+
+    overflow:hidden;
+
+    border:1px solid #8c6a26;
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #12140f 0%,
+            #090b08 48%,
+            #070907 100%
+        );
+
+    color:#dedbd2;
+
+    box-shadow:
+        0 28px 90px rgba(0,0,0,.86),
+        0 0 0 1px rgba(225,179,59,.08),
+        inset 0 1px 0 rgba(255,241,177,.07);
+}
+
+
+.rm-oar-v3-goldline{
+    height:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5b3b06,
+            #b17b13,
+            #f0ca62,
+            #b17b13,
+            #5b3b06
+        );
+
+    box-shadow:
+        0 0 12px rgba(225,179,59,.28);
+}
+
+
+.rm-oar-v3-header{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:22px 24px 17px;
+}
+
+
+.rm-oar-v3-badge{
+    width:52px;
+    height:52px;
+
+    flex:0 0 52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid #b17b13;
+    border-radius:6px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #30270f,
+            #151207
+        );
+
+    color:#f0ca62;
+
+    font-size:14px;
+    font-weight:900;
+
+    letter-spacing:.08em;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,241,177,.10),
+        0 4px 12px rgba(0,0,0,.35);
+}
+
+
+.rm-oar-v3-kicker{
+    margin-bottom:5px;
+
+    color:#9d8d60;
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.18em;
+}
+
+
+.rm-oar-v3-title{
+    color:#f0ca62;
+
+    font-size:20px;
+    font-weight:900;
+
+    letter-spacing:.035em;
+}
+
+
+.rm-oar-v3-divider{
+    height:1px;
+
+    margin:0 24px 19px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #5b4820 15%,
+            #8c6a26 50%,
+            #5b4820 85%,
+            transparent
+        );
+}
+
+
+.rm-oar-v3-label{
+    margin:0 24px 5px;
+
+    color:#8e897c;
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+
+.rm-oar-v3-region{
+    margin:0 24px;
+
+    padding:12px 14px;
+
+    border:1px solid #5b4820;
+    border-radius:5px;
+
+    background:#080a08;
+
+    color:#ffffff;
+
+    font-size:15px;
+    font-weight:800;
+
+    box-shadow:
+        inset 0 1px 4px rgba(0,0,0,.55);
+}
+
+
+.rm-oar-v3-message{
+    margin:18px 24px 0;
+
+    color:#c8c4ba;
+
+    font-size:13px;
+
+    line-height:1.55;
+
+    overflow-wrap:anywhere;
+}
+
+
+.rm-oar-v3-status{
+    margin:17px 24px 0;
+
+    padding:11px 13px;
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    border:1px solid #6e5723;
+    border-radius:5px;
+
+    background:#0d0e0b;
+
+    color:#f0ca62;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.08em;
+}
+
+
+.rm-oar-v3-actions{
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+    padding:22px 24px 24px;
+}
+
+
+.rm-oar-v3-button{
+    min-width:116px;
+    min-height:38px;
+
+    padding:0 18px;
+
+    border-radius:5px;
+
+    cursor:pointer;
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.045em;
+}
+
+
+.rm-oar-v3-button.cancel{
+    border:1px solid #5b4820;
+
+    background:
+        linear-gradient(
+            180deg,
+            #18170f,
+            #0d0e0b
+        );
+
+    color:#dedbd2;
+}
+
+
+.rm-oar-v3-button.cancel:hover{
+    border-color:#8c6a26;
+
+    color:#fff4cf;
+
+    background:
+        linear-gradient(
+            180deg,
+            #252016,
+            #10120f
+        );
+}
+
+
+.rm-oar-v3-button.save,
+.rm-oar-v3-button.close{
+    border:1px solid #e0b448;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e1b33b 0%,
+            #b17b13 52%,
+            #825306 100%
+        );
+
+    color:#171006;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,241,177,.50),
+        0 3px 8px rgba(0,0,0,.36);
+}
+
+
+.rm-oar-v3-button.save:hover,
+.rm-oar-v3-button.close:hover{
+    border-color:#f0ca62;
+
+    background:
+        linear-gradient(
+            180deg,
+            #edc654 0%,
+            #c28a1c 52%,
+            #935f09 100%
+        );
+}
+
+
+.rm-oar-v3-button:focus{
+    outline:1px solid #f0ca62;
+    outline-offset:2px;
+}
+
+
+.rm-oar-v3-spinner{
+    width:16px;
+    height:16px;
+
+    flex:0 0 16px;
+
+    border:
+        2px solid rgba(225,179,59,.20);
+
+    border-top-color:#e1b33b;
+    border-radius:50%;
+
+    animation:
+        rmOarV3Spin .75s linear infinite;
+}
+
+
+@keyframes rmOarV3Spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+.rm-oar-v3-dialog.success{
+    border-color:#3c8152;
+}
+
+
+.rm-oar-v3-dialog.success .rm-oar-v3-goldline{
+    background:
+        linear-gradient(
+            90deg,
+            #17371f,
+            #55d57c,
+            #a0efb6,
+            #55d57c,
+            #17371f
+        );
+}
+
+
+.rm-oar-v3-dialog.success .rm-oar-v3-title,
+.rm-oar-v3-dialog.success .rm-oar-v3-status{
+    color:#69df8d;
+}
+
+
+.rm-oar-v3-dialog.success .rm-oar-v3-status{
+    border-color:#315f3e;
+    background:#09130c;
+}
+
+
+.rm-oar-v3-dialog.error{
+    border-color:#8a3f3f;
+}
+
+
+.rm-oar-v3-dialog.error .rm-oar-v3-goldline{
+    background:
+        linear-gradient(
+            90deg,
+            #481919,
+            #d45858,
+            #f18a8a,
+            #d45858,
+            #481919
+        );
+}
+
+
+.rm-oar-v3-dialog.error .rm-oar-v3-title,
+.rm-oar-v3-dialog.error .rm-oar-v3-status{
+    color:#ed7777;
+}
+
+
+.rm-oar-v3-dialog.error .rm-oar-v3-status{
+    border-color:#6e3333;
+    background:#180909;
+}
+
+
+.rm-oar-v3-result{
+    width:20px;
+    height:20px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:13px;
+    font-weight:900;
+}
+
+
+/* END AUSTRALIA REGION MANAGER OAR POPUP V3 */
+
+/* AUSTRALIA OAR HIDDEN BUTTON FIX V31 */
+.rm-oar-v3-dialog [hidden]{display:none !important;}
+/* END AUSTRALIA OAR HIDDEN BUTTON FIX V31 */

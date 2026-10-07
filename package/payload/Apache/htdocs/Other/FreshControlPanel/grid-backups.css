@@ -1,0 +1,421 @@
+/* FRESH GRID BACKUPS V1 */
+
+.agcp-backup-strip{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    margin-bottom:8px;
+
+    overflow:hidden;
+
+    border:1px solid var(--gold-line);
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10140d 0%,
+            #080a07 100%
+        );
+}
+
+.agcp-backup-strip-item{
+    min-width:0;
+
+    padding:9px 11px;
+
+    border-right:1px solid #30332b;
+}
+
+.agcp-backup-strip-item:last-child{
+    border-right:0;
+}
+
+.agcp-backup-strip-item span{
+    display:block;
+
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+
+    letter-spacing:.06em;
+}
+
+.agcp-backup-strip-item strong{
+    display:block;
+
+    margin-top:5px;
+
+    color:#d4d7d0;
+
+    font-size:8px;
+    font-weight:900;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-backup-operation-body{
+    padding:9px;
+}
+
+.agcp-backup-operation-copy{
+    color:#7b8178;
+
+    font-size:7px;
+    line-height:1.45;
+}
+
+.agcp-backup-progress-line{
+    display:flex;
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-top:9px;
+
+    color:#848a81;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-backup-progress-track{
+    height:7px;
+
+    margin-top:6px;
+
+    overflow:hidden;
+
+    border:1px solid #34382f;
+    border-radius:999px;
+
+    background:#050705;
+}
+
+.agcp-backup-progress-bar{
+    width:0;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #81651a 0%,
+            #d2a82f 100%
+        );
+
+    transition:width .2s ease;
+}
+
+.agcp-backup-tools{
+    display:grid;
+
+    grid-template-columns:
+        minmax(220px,1fr)
+        170px
+        170px;
+
+    gap:7px;
+
+    margin-bottom:8px;
+
+    padding:8px;
+
+    border:1px solid var(--gold-line);
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10140d 0%,
+            #080a07 100%
+        );
+}
+
+.agcp-backup-field{
+    display:flex;
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.agcp-backup-field label{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-backup-field input,
+.agcp-backup-field select{
+    min-height:30px;
+
+    padding:5px 8px;
+
+    border:1px solid #393d34;
+    border-radius:3px;
+
+    outline:none;
+
+    background:#060806;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+}
+
+.agcp-backup-field input:focus,
+.agcp-backup-field select:focus{
+    border-color:#7d641d;
+}
+
+.agcp-backup-head,
+.agcp-backup-row{
+    display:grid;
+
+    grid-template-columns:
+        25px
+        minmax(140px,1.25fr)
+        72px
+        125px
+        65px
+        48px
+        72px
+        58px
+        150px;
+
+    align-items:center;
+
+    gap:7px;
+}
+
+.agcp-backup-head{
+    min-height:29px;
+
+    padding:5px 8px;
+
+    border-bottom:1px solid #302f26;
+
+    color:#747a72;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-backup-list{
+    display:grid;
+
+    gap:4px;
+
+    padding:8px;
+}
+
+.agcp-backup-row{
+    min-height:39px;
+
+    padding:5px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-backup-row:hover{
+    border-color:#59491c;
+}
+
+.agcp-backup-row.selected{
+    border-color:#755e1c;
+
+    background:
+        linear-gradient(
+            90deg,
+            #18160b 0%,
+            #0b0e09 35%
+        );
+}
+
+.agcp-backup-row.running{
+    border-left:3px solid #bd982c;
+}
+
+.agcp-backup-row.success{
+    border-left:3px solid #4a8b5f;
+}
+
+.agcp-backup-row.failed{
+    border-left:3px solid #9b5050;
+}
+
+.agcp-backup-name{
+    min-width:0;
+
+    color:#d7dad3;
+
+    font-size:8px;
+    font-weight:900;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.agcp-backup-owner{
+    margin-top:2px;
+
+    color:#626961;
+
+    font-size:6px;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.agcp-backup-data{
+    min-width:0;
+
+    color:#7e847b;
+
+    font-size:7px;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.agcp-backup-row-actions{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:4px;
+}
+
+.agcp-backup-mini{
+    min-height:25px;
+
+    padding:4px 7px;
+
+    border:1px solid #3b4036;
+    border-radius:3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1a1e18 0%,
+            #0a0c0a 100%
+        );
+
+    color:#b9bdb6;
+
+    font-size:6px;
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.agcp-backup-mini.gold{
+    border-color:#725a18;
+    color:#d8b23e;
+}
+
+.agcp-backup-mini:disabled{
+    opacity:.35;
+    cursor:not-allowed;
+}
+
+.agcp-backup-session-list{
+    display:grid;
+
+    gap:5px;
+
+    padding:8px;
+}
+
+.agcp-backup-session-row{
+    display:grid;
+
+    grid-template-columns:
+        65px
+        minmax(120px,.8fr)
+        minmax(180px,1fr)
+        75px;
+
+    gap:8px;
+
+    padding:7px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+
+    color:#747b72;
+
+    font-size:7px;
+}
+
+.agcp-backup-session-row.good{
+    border-left:3px solid #4a8b5f;
+}
+
+.agcp-backup-session-row.bad{
+    border-left:3px solid #9b5050;
+}
+
+.agcp-backup-session-result{
+    font-weight:900;
+}
+
+@media(max-width:1200px){
+
+    .agcp-backup-head,
+    .agcp-backup-row{
+        grid-template-columns:
+            25px
+            minmax(130px,1fr)
+            70px
+            110px
+            55px
+            45px
+            65px
+            130px;
+    }
+
+    .agcp-backup-head span:nth-child(8),
+    .agcp-backup-row > :nth-child(8){
+        display:none;
+    }
+}
+
+@media(max-width:900px){
+
+    .agcp-backup-strip{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .agcp-backup-tools{
+        grid-template-columns:1fr;
+    }
+
+    .agcp-backup-head{
+        display:none;
+    }
+
+    .agcp-backup-row{
+        grid-template-columns:
+            25px
+            minmax(120px,1fr)
+            70px
+            120px;
+    }
+
+    .agcp-backup-row > :nth-child(5),
+    .agcp-backup-row > :nth-child(6),
+    .agcp-backup-row > :nth-child(7),
+    .agcp-backup-row > :nth-child(8){
+        display:none;
+    }
+}

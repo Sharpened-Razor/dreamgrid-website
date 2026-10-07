@@ -1,0 +1,1 @@
+Unless explicity mentioned otherwise the sound contained in this directory and below this directory is free software; you can redistribute it and/or modify it. License is CC-0 from the Worldforge Project.

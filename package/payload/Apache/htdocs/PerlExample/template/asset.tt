@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<title>User List</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+        <style type="text/css">
+            
+            tr.header
+            {
+                font-weight:bold;
+            }
+            tr.alt
+            {
+                background-color: #cccccc;
+            }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $('.striped tr:even').addClass('alt');
+            });
+        </script>
+</head>
+<body>
+<p>| <a href="/">Home</a>
+| <a href="/VR">360 View</a>
+| <a href="/Video">Video</a>
+| <a href="/Audio">Audio</a>
+| <a href="/PerlExample">Perl Examples</a>
+| <a href="/Stats">Stats</a>
+| <a href="http://outworldz.com/Search" >Search</a>
+| <a href="http://outworldz.com/DestinationGuide" >Destinations</a>
+|</p>
+
+
+<p>[% welcome %]</p>
+</body>
+</html>

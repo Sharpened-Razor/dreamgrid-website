@@ -1,0 +1,130 @@
+
+/* ============================================================
+   AUSTRALIA GRID - MASTER PERFECT BACKGROUND V1
+   ============================================================ */
+
+html{
+
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+
+    min-height:100% !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow-x:hidden !important;
+
+    background:#000 !important;
+}
+
+
+body{
+
+    width:100% !important;
+    min-width:0 !important;
+    max-width:100% !important;
+
+    min-height:100vh !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow-x:hidden !important;
+
+    background-color:#000 !important;
+
+    background-image:
+        url("/Other/assets/images/Site-background.png")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    /*
+       COVER =
+       fills the browser completely
+       preserves image proportions
+       no black side bars
+       no distorted stretching
+    */
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+/* ============================================================
+   FRONT PAGE USES ITS OWN IMAGE
+   ============================================================ */
+
+body.australia-home-page,
+body.ag-frontpage{
+
+    background-image:
+        url("/Other/assets/images/Frontpage-background.png")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+/* ============================================================
+   DO NOT LET PAGE SHELLS CREATE A SECOND BACKGROUND
+   ============================================================ */
+
+body > .dashboard-shell,
+body > .ag-shell,
+body > .ag-frontpage-shell{
+
+    background-color:
+        transparent !important;
+
+    background-image:
+        none !important;
+}
+
+
+/* ============================================================
+   PHONE / TABLET
+   ============================================================ */
+
+@media(max-width:900px){
+
+    body,
+    body.australia-home-page,
+    body.ag-frontpage{
+
+        background-position:
+            center center !important;
+
+        background-size:
+            cover !important;
+
+        background-attachment:
+            scroll !important;
+    }
+}
+
+
+/* ============================================================
+   END AUSTRALIA GRID - MASTER PERFECT BACKGROUND V1
+   ============================================================ */
+

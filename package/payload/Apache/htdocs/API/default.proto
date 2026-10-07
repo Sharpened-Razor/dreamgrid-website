@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+
+    <script type="text/javascript" src="/API/login/login.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/API/login/login.css" />
+    <script type="text/javascript" src="/API/login/Tableclick.js"></script>
+    <style>
+        body {
+             background: #222222 ;
+        }
+
+        #playing {
+            color: #eeeeee;
+        }
+
+        a {
+            color: #0060B6;
+            text-decoration: underline;
+            font-family: Calibri;
+        }
+
+        p {
+            background-color: #1F1A25;
+        }
+
+        #openLoginBtn {
+            font-size: 16px;
+        }
+
+        #result {
+            color: #eeeeee;
+            font-family: Calibri;
+        }
+        #greet {
+            font-family: Calibri;
+        }
+
+        #box {
+            width: 1024px; /* Required: The div must have a set width */
+            margin-left: auto; /* Pushes the div to the center */
+            margin-right: auto;
+        }
+
+
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        td {
+            font-size: 12px;
+        }
+    </style>
+
+    <script type="text/javascript" src="/assets/vendor/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/API/flexgrid/css/flexigrid.css" />
+    <script type="text/javascript" src="/API/flexgrid/js/flexigrid.js"></script>
+    <script type="text/javascript">
+        var serverUrl = "[URL]/API/";
+
+        var pwd;
+        var avatarName;
+
+
+        function sendCommand(command) {
+            $("#result").text("");
+            
+            if (!pwd) {
+                $("#result").text("Please Login.");
+                return;
+            }
+            var params = { command: command, password: pwd };
+            params.RegionName = $("#RegionName").val();        
+            params.avatar = avatarName;
+
+            $.ajax({
+                url: serverUrl,
+                method: "GET",
+                data: params,
+                success: function (response) {
+                    $("#result").text(command + ": " + response);
+                },
+                error: function (xhr, status, error) {
+                    $("#result").text(command + " failed: " + status);
+                }
+            });
+        }
+
+
+
+        $(document).ready(function () {
+
+            $("a").click(function () {
+                top.window.location.href = $(this).attr("href");
+                $("#playing").html('<p>&nbsp;Opening...</p>');
+                return true;
+            })
+
+            $("#flex1").flexigrid({
+                url: '[URL]/API/?Command=RegionList',
+                dataType: 'json',
+                method: 'GET',
+                colModel: [
+                    { display: 'On/Off', name: 'Enabled', width: 30, sortable: true, align: 'left' },
+                    { display: 'Hop', name: 'Hop', width: 40, sortable: true, align: 'center' },
+                    { display: 'Status', name: 'Status', width: 30, sortable: false, align: 'center' },
+                    { display: 'Name', name: 'RegionName', width: 200, sortable: true, align: 'left' },
+                    { display: 'RAM', name: 'Ram', width: 60, sortable: true, align: 'left' },
+                    { display: 'Avatars', name: 'AvatarCount', width: 40, sortable: true, align: 'left' },
+                    { display: 'SmartStart', name: 'SmartStart', width: 85, sortable: true, align: 'left' },
+                    { display: 'Map', name: 'Map', width: 150, sortable: false, align: 'center' },
+                    { display: 'Size', name: 'Size', width: 30, sortable: true, align: 'left' },
+                    { display: 'OSW', name: 'OpensimWorld', width: 30, sortable: true, align: 'left' },
+                    { display: 'EstateName', name: 'EstateName', width: 60, sortable: true, align: 'left' },
+                    { display: 'EstateOwner', name: 'EstateOwner', width: 80, sortable: true, align: 'left' },
+                    { display: 'PrimCount', name: 'PrimCount', width: 60, sortable: true, align: 'left' }
+                ],
+
+                searchitems: [
+                    { display: 'Enabled', name: 'Enabled', isdefault: false },
+                    { display: 'Name', name: 'RegionName', isdefault: true },
+                    { display: 'Status', name: 'Status', isdefault: false },
+                    { display: 'Ram', name: 'Ram', isdefault: false },
+                    { display: 'PrimCount', name: 'PrimCount', isdefault: false },
+                    { display: 'OSW', name: 'OpensimWorld', isdefault: false },
+                    { display: 'EstateName', name: 'EstateName', isdefault: false },
+                    { display: 'EstateOwner', name: 'EstateOwner', isdefault: false }
+
+                ],
+                sortname: 'RegionName',
+                sortorder: 'asc',
+                usepager: true,
+                title: 'Click to Teleport. Click header to sort. Search button is at the bottom left.',
+                useRp: true,
+                rp: 100,
+                showTableToggleBtn: false,
+                width: 1024,
+                height: 400
+            });
+
+            $(document).on("click", ".hop", function (event) {
+                event.preventDefault();
+                $("#playing").html('<p>&nbsp;Teleporting...</p>');
+                var url = $(this).attr('href');
+                window.location.href = url;
+            });
+
+            // Bind click directly to #flex1 tbody - the only reliable way since
+            // flexigrid destroys and recreates rows on every reload
+            $('#flex1').on('click', 'input[type="checkbox"]', function (event) {
+                var checkbox = $(this);
+                var isEnabled = checkbox.is(':checked');
+                var regionName = checkbox.closest('tr').find("td[abbr='RegionName'] div").text().trim();
+
+                if (!pwd) {
+                    $("#result").text("Please Login.");
+                    // Revert the checkbox to its previous state
+                    $(this).prop("checked", !isEnabled);
+                    return;
+                }
+
+                var params = { command: "Enable", password: pwd };
+                params.RegionName = regionName;
+                params.avatar = avatarName;
+                params.Value = isEnabled;
+
+                $.ajax({
+                    url: serverUrl,
+                    method: "GET",
+                    data: params,
+                    success: function (response) {
+                        $("#result").text("Enable=" + isEnabled + ": " + response);
+                    },
+                    error: function (xhr, status, error) {
+                        $("#result").text("Enable failed: " + status);
+                        // Revert checkbox on failure
+                        $(this).prop("checked", !isEnabled);
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+
+        <!-- Trigger Button -->
+        <button id="openLoginBtn">Login</button>
+
+        <!-- Popup Overlay and Container -->
+        <div id="loginModal" class="modal-overlay">
+            <div class="modal-box">
+                <span id="closeLoginBtn" class="close-symbol">&times;</span>
+
+                <h2>Account Login</h2>
+                <form id="authForm">
+                    <div class="input-group">
+                        <label for="avatar">Avatar Name</label>
+                        <input type="text" id="avatar" required placeholder="First Last">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userPassword">Password</label>
+                        <input type="password" id="userPassword" required placeholder="Enter password">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign In</button>
+                </form>
+            </div>
+
+        </div>
+        <div id="result">&nbsp;</div>
+        <form name="Button" id="me" onsubmit="return false;">
+            <table>
+                <tr>
+                    <td><button value="StartGrid" onclick="sendCommand(this.value)">Start Grid</button></td>
+                    <td><button value="StartMysql" onclick="sendCommand(this.value)">Start Mysql</button></td>
+                    <td><button value="StartRobust" onclick="sendCommand(this.value)">Start Robust</button></td>
+                    <td><button value="StartIcecast" onclick="sendCommand(this.value)">Start Icecast</button></td>
+                    <td><button value="StartRegion" onclick="sendCommand(this.value)">Start Region</button></td>
+                    <td><button value="Freeze" onclick="sendCommand(this.value)">Freeze</button></td>
+                </tr>
+                <tr>
+                    <td><button value="StopGrid" onclick="sendCommand(this.value)">Stop Grid</button></td>
+                    <td><button value="StopMysql" onclick="sendCommand(this.value)">Stop Mysql</button></td>
+                    <td><button value="StopRobust" onclick="sendCommand(this.value)">Stop Robust</button></td>
+                    <td><button value="StopIcecast" onclick="sendCommand(this.value)">Stop Icecast</button></td>
+                    <td><button value="StopRegion" onclick="sendCommand(this.value)">Stop Region</button></td>
+                    <td><button value="Thaw" onclick="sendCommand(this.value)">Thaw</button></td>
+                </tr>
+                <tr>
+                    <td><button value="RestartAll" onclick="sendCommand(this.value)">Restart All</button></td>
+                    <td><button value="SaveIAR" onclick="sendCommand(this.value)">Save IAR</button></td>
+                    <td></td>
+                    <td></td>
+                    <td><button value="RestartRegion" onclick="sendCommand(this.value)">Restart</button></td>
+                    <td><button value="SaveOAR" onclick="sendCommand(this.value)">Save OAR</button></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td><button value="Backup" onclick="sendCommand(this.value)">Backup All</button></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <input type="hidden" name="RegionName" id="RegionName" />
+            <p></p>
+        </form>
+
+        <div id="greet">
+            <div id="playing">Region List</div>
+            <div id="flex1"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

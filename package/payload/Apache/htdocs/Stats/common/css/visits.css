@@ -1,0 +1,57 @@
+.boxtopl{
+	border: 1px solid #2b2b2b;
+	padding: 5px 5px 10px; 5px;
+	-webkit-border-top-right-radius: 10px; /* for Safari */;
+	-webkit-border-top-left-radius: 10px; /* for Safari */;
+	-moz-border-radius-topright: 10px; /* for Firefox */;
+	-moz-border-radius-topleft: 10px; /* for Firefox */;
+	text-transform:	capitalize;
+	background-color: #333;
+	font-family: Verdana,Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	float: none;
+	position: relative;
+	font-weight: bold;
+	background-image: url('/images/buttons/line-chart.png') ;
+	background-repeat: no-repeat;
+	background-position: right;
+
+
+}
+.boxtopr{
+	border: 1px solid #2b2b2b;
+	padding: 5px 5px 10px; 5px;
+	
+	-webkit-border-top-right-radius: 10px; /* for Safari */;
+	-webkit-border-top-left-radius: 10px; /* for Safari */;
+	-moz-border-radius-topright: 10px; /* for Firefox */;
+	-moz-border-radius-topleft: 10px; /* for Firefox */;
+	text-transform:	capitalize;
+	background-color: #333;
+	font-family: Verdana,Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	float: none;
+	position: relative;
+	font-weight: bold;
+	background-image: url('/images/buttons/certificate_new.png') ;
+	
+	background-repeat: no-repeat;
+	background-position: right;
+
+
+}
+
+.boxbottom {
+	border: 1px solid #2b2b2b;
+	padding: 5px ;
+	font-size: .8em;
+	font-family: Verdana,Arial, Helvetica, sans-serif;
+	-webkit-border-bottom-right-radius: 10px; /* for Safari */;
+	-webkit-border-bottom-left-radius: 10px; /* for Safari */;
+	-moz-border-radius-bottomright: 10px; /* for Firefox */;
+	-moz-border-radius-bottomleft: 10px; /* for Firefox */;
+}

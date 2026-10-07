@@ -1,0 +1,117 @@
+.cae-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.cae-card{
+    min-width:0;
+    padding:17px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121510,
+            #080b09
+        );
+
+    border:1px solid #625021;
+    border-radius:6px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(110,109,98,.27),
+        0 3px 8px rgba(0,0,0,.55);
+}
+
+.cae-card-title{
+    color:#d7ad4b;
+    font-size:14px;
+    font-weight:600;
+}
+
+.cae-card-note{
+    margin:5px 0 15px;
+    color:#7e837d;
+    font-size:9px;
+}
+
+.cae-card label{
+    display:block;
+    margin:12px 0 5px;
+    color:#cda544;
+    font-size:9px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.cae-card input[type="email"],
+.cae-card input[type="password"]{
+    width:100%;
+    height:38px;
+    padding:0 11px;
+
+    background:#050806;
+    color:#ece8df;
+
+    border:1px solid #484b44;
+    border-radius:5px;
+
+    box-shadow:
+        inset 0 2px 5px rgba(0,0,0,.6);
+
+    outline:none;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size:11px;
+}
+
+.cae-card input:focus{
+    border-color:#9d7628;
+}
+
+.cae-button-row{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:16px;
+}
+
+.cae-alert{
+    margin:0 0 12px;
+    padding:11px 13px;
+    border-radius:5px;
+    font-size:10px;
+    font-weight:600;
+}
+
+.cae-alert.success{
+    color:#82dc91;
+    background:#09120b;
+    border:1px solid #315c36;
+}
+
+.cae-alert.error{
+    color:#e79087;
+    background:#160b0a;
+    border:1px solid #653029;
+}
+
+.cae-footer{
+    display:flex;
+    justify-content:flex-end;
+
+    margin-top:12px;
+    padding-top:12px;
+
+    border-top:1px solid #31352d;
+}
+
+@media(max-width:900px){
+
+    .cae-grid{
+        grid-template-columns:1fr;
+    }
+}

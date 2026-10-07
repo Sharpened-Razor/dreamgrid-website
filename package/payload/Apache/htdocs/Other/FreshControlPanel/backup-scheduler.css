@@ -1,0 +1,286 @@
+/* FRESH BACKUP SCHEDULER V1 */
+
+.agcp-schedule-settings{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:7px;
+
+    padding:9px;
+}
+
+.agcp-schedule-field{
+    display:flex;
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.agcp-schedule-field label{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-schedule-field input,
+.agcp-schedule-field select,
+.agcp-schedule-region-tools input{
+    min-height:30px;
+
+    padding:5px 8px;
+
+    border:1px solid #393d34;
+    border-radius:3px;
+
+    outline:none;
+
+    background:#060806;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+}
+
+.agcp-schedule-field input:focus,
+.agcp-schedule-field select:focus,
+.agcp-schedule-region-tools input:focus{
+    border-color:#7d641d;
+}
+
+.agcp-schedule-days{
+    display:grid;
+
+    grid-template-columns:
+        repeat(7,minmax(0,1fr));
+
+    gap:5px;
+
+    padding:0 9px 9px;
+}
+
+.agcp-schedule-days label{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:5px;
+
+    min-height:31px;
+
+    border:1px solid #34382f;
+    border-radius:3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171b15 0%,
+            #090b09 100%
+        );
+
+    color:#90968d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-schedule-day{
+    accent-color:#b8952b;
+}
+
+.agcp-schedule-days label.disabled{
+    opacity:.35;
+}
+
+.agcp-schedule-region-tools{
+    padding:8px;
+
+    border-bottom:1px solid #302f26;
+}
+
+.agcp-schedule-region-tools input{
+    width:min(420px,100%);
+}
+
+.agcp-schedule-region-head,
+.agcp-schedule-region-row{
+    display:grid;
+
+    grid-template-columns:
+        25px
+        minmax(160px,1.3fr)
+        80px
+        minmax(120px,1fr)
+        65px
+        70px;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.agcp-schedule-region-head{
+    min-height:29px;
+
+    padding:5px 8px;
+
+    border-bottom:1px solid #302f26;
+
+    color:#747a72;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-schedule-region-list{
+    display:grid;
+
+    gap:4px;
+
+    padding:8px;
+}
+
+.agcp-schedule-region-row{
+    min-height:36px;
+
+    padding:5px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-schedule-region-row:hover{
+    border-color:#59491c;
+}
+
+.agcp-schedule-region-row.selected{
+    border-color:#755e1c;
+
+    background:
+        linear-gradient(
+            90deg,
+            #18160b 0%,
+            #0b0e09 35%
+        );
+}
+
+.agcp-schedule-region-row.missing{
+    border-left:3px solid #9b5050;
+}
+
+.agcp-schedule-region-name{
+    min-width:0;
+
+    color:#d7dad3;
+
+    font-size:8px;
+    font-weight:900;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.agcp-schedule-region-owner,
+.agcp-schedule-region-data{
+    min-width:0;
+
+    color:#747b72;
+
+    font-size:7px;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.agcp-schedule-runner{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:5px;
+
+    padding:8px;
+}
+
+.agcp-schedule-runner-item{
+    min-width:0;
+
+    padding:7px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-schedule-runner-item span{
+    display:block;
+
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-schedule-runner-item strong{
+    display:block;
+
+    margin-top:4px;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+
+    overflow-wrap:anywhere;
+}
+
+@media(max-width:1000px){
+
+    .agcp-schedule-settings{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .agcp-schedule-days{
+        grid-template-columns:
+            repeat(4,minmax(0,1fr));
+    }
+
+    .agcp-schedule-runner{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:760px){
+
+    .agcp-schedule-settings,
+    .agcp-schedule-days,
+    .agcp-schedule-runner{
+        grid-template-columns:1fr;
+    }
+
+    .agcp-schedule-region-head{
+        display:none;
+    }
+
+    .agcp-schedule-region-row{
+        grid-template-columns:
+            25px
+            minmax(120px,1fr)
+            75px;
+    }
+
+    .agcp-schedule-region-owner,
+    .agcp-schedule-region-data{
+        display:none;
+    }
+}

@@ -1,0 +1,1204 @@
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:#d8ddd8;
+
+    background:
+        linear-gradient(
+            rgba(4,8,7,.39),
+            rgba(4,8,7,.39)
+        ),
+        url("/Other/site-design-image.php?slot=admin-control-center-background")
+        center top /
+        cover
+        fixed
+        no-repeat;
+
+    background-color:#050907;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+img{
+    display:block;
+}
+
+.mg-shell{
+    width:100%;
+
+    min-height:100vh;
+
+    padding:14px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.mg-hero{
+    display:grid;
+
+    grid-template-columns:
+        auto
+        minmax(0,1fr)
+        auto;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px 18px;
+
+    border:
+        1px solid
+        rgba(211,162,48,.38);
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18,24,21,.98),
+            rgba(6,10,8,.97)
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.28);
+}
+
+.mg-hero-icon,
+.mg-summary-icon{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(215,165,49,.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1c1b14,
+            #080b09
+        );
+}
+
+.mg-hero-icon{
+    width:52px;
+    height:52px;
+
+    border-radius:8px;
+}
+
+.mg-hero-icon img{
+    width:30px;
+    height:30px;
+}
+
+.mg-kicker{
+    color:#b68b32;
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:1.7px;
+}
+
+.mg-hero h1{
+    margin:3px 0 2px;
+
+    color:#f1c257;
+
+    font-size:23px;
+    font-weight:900;
+}
+
+.mg-hero p{
+    margin:0;
+
+    color:#89968f;
+
+    font-size:11px;
+}
+
+.mg-ready{
+    padding:8px 10px;
+
+    border:
+        1px solid
+        rgba(75,137,92,.30);
+
+    border-radius:5px;
+
+    color:#8ee09f;
+
+    background:#0b1510;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.mg-summary-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:10px;
+
+    margin-top:11px;
+}
+
+.mg-summary-card{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-height:68px;
+
+    padding:10px 12px;
+
+    border:
+        1px solid
+        rgba(202,154,44,.30);
+
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(16,22,19,.97),
+            rgba(7,11,9,.97)
+        );
+}
+
+.mg-summary-icon{
+    width:38px;
+    height:38px;
+
+    flex:0 0 auto;
+
+    border-radius:6px;
+}
+
+.mg-summary-icon img{
+    width:21px;
+    height:21px;
+}
+
+.mg-summary-card span{
+    display:block;
+
+    color:#7e8983;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.mg-summary-card strong{
+    display:block;
+
+    margin-top:3px;
+
+    color:#efba3c;
+
+    font-size:22px;
+    font-weight:900;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.mg-toolbar{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        auto;
+
+    gap:10px;
+
+    margin-top:11px;
+}
+
+.mg-search{
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    min-height:44px;
+
+    padding:5px 6px 5px 10px;
+
+    border:
+        1px solid
+        rgba(154,132,80,.26);
+
+    border-radius:7px;
+
+    background:#080d0b;
+}
+
+.mg-search > img{
+    width:18px;
+    height:18px;
+
+    opacity:.78;
+}
+
+.mg-search input{
+    min-width:0;
+
+    flex:1;
+
+    height:32px;
+
+    border:0;
+    outline:0;
+
+    color:#d9ded9;
+
+    background:transparent;
+
+    font-size:10px;
+}
+
+.mg-search button,
+.mg-clear,
+.mg-create,
+.mg-manage-button{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    min-height:32px;
+
+    padding:7px 11px;
+
+    border:
+        1px solid
+        rgba(215,165,50,.42);
+
+    border-radius:5px;
+
+    color:#e9b94e;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2b2519,
+            #14120d
+        );
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:.5px;
+
+    text-decoration:none;
+}
+
+.mg-search button{
+    cursor:pointer;
+}
+
+.mg-clear{
+    color:#aab2ad;
+
+    border-color:
+        rgba(148,157,151,.20);
+
+    background:#111614;
+}
+
+.mg-create{
+    min-width:144px;
+
+    min-height:44px;
+}
+
+.mg-create img{
+    width:18px;
+    height:18px;
+}
+
+.mg-create,
+.mg-manage-button{
+    cursor:pointer;
+}
+
+.mg-create:hover,
+.mg-manage-button:hover{
+    border-color:
+        rgba(235,182,58,.70);
+
+    color:#ffd36b;
+
+    background:
+        linear-gradient(
+            180deg,
+            #3a301e,
+            #1c180f
+        );
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.mg-main-grid{
+    display:grid;
+
+    grid-template-columns:
+        minmax(285px,360px)
+        minmax(0,1fr);
+
+    gap:11px;
+
+    margin-top:11px;
+}
+
+.mg-group-list-panel,
+.mg-detail-panel{
+    border:
+        1px solid
+        rgba(205,157,46,.28);
+
+    border-radius:8px;
+
+    background:
+        rgba(5,10,8,.94);
+
+    overflow:hidden;
+}
+
+.mg-panel-heading{
+    padding:11px 12px;
+
+    border-bottom:
+        1px solid
+        rgba(193,150,49,.22);
+
+    background:
+        linear-gradient(
+            180deg,
+            #171c19,
+            #0b100e
+        );
+}
+
+.mg-panel-heading span,
+.mg-section-heading span{
+    display:block;
+
+    color:#857a5b;
+
+    font-size:8px;
+    font-weight:900;
+
+    letter-spacing:1px;
+}
+
+.mg-panel-heading strong{
+    display:block;
+
+    margin-top:3px;
+
+    color:#ddad42;
+
+    font-size:10px;
+}
+
+.mg-group-list{
+    max-height:
+        calc(100vh - 250px);
+
+    padding:8px;
+
+    overflow:auto;
+}
+
+
+/* =========================================================
+   GROUP CARDS
+   ========================================================= */
+
+.mg-group-card{
+    display:block;
+
+    margin-bottom:7px;
+
+    padding:11px;
+
+    border:
+        1px solid
+        rgba(136,148,141,.19);
+
+    border-radius:6px;
+
+    color:inherit;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17,23,20,.98),
+            rgba(9,13,11,.98)
+        );
+
+    text-decoration:none;
+
+    transition:
+        border-color .15s ease,
+        background .15s ease;
+}
+
+.mg-group-card:hover,
+.mg-group-card.selected{
+    border-color:
+        rgba(224,173,52,.50);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(40,34,20,.96),
+            rgba(12,16,13,.98)
+        );
+}
+
+.mg-group-card-top{
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:8px;
+}
+
+.mg-group-name{
+    min-width:0;
+
+    color:#ecede9;
+
+    font-size:10px;
+    font-weight:900;
+
+    overflow-wrap:anywhere;
+}
+
+.mg-type-badge{
+    flex:0 0 auto;
+
+    padding:3px 5px;
+
+    border-radius:10px;
+
+    font-size:7px;
+    font-weight:900;
+
+    white-space:nowrap;
+}
+
+.mg-type-badge.local{
+    border:
+        1px solid
+        rgba(81,181,102,.35);
+
+    color:#8ce5a1;
+
+    background:#0b1a11;
+}
+
+.mg-type-badge.hg{
+    border:
+        1px solid
+        rgba(77,132,187,.38);
+
+    color:#8db8e4;
+
+    background:#0b1420;
+}
+
+.mg-group-stats{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:8px;
+
+    color:#89948e;
+
+    font-size:8px;
+}
+
+.mg-group-stats strong{
+    color:#d5d9d5;
+}
+
+.mg-founder{
+    margin-top:5px;
+
+    color:#78847e;
+
+    font-size:8px;
+
+    overflow-wrap:anywhere;
+}
+
+
+/* =========================================================
+   DETAIL PANEL
+   ========================================================= */
+
+.mg-detail-panel{
+    padding:11px;
+}
+
+.mg-select-message{
+    min-height:205px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    border:
+        1px solid
+        rgba(196,151,47,.21);
+
+    border-radius:7px;
+
+    color:#77847d;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,18,16,.95),
+            rgba(5,9,7,.95)
+        );
+
+    text-align:center;
+}
+
+.mg-select-message img{
+    width:32px;
+    height:32px;
+
+    opacity:.75;
+}
+
+.mg-select-message strong{
+    color:#d1a343;
+
+    font-size:11px;
+}
+
+.mg-select-message span{
+    font-size:9px;
+}
+
+.mg-detail-hero{
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:14px;
+
+    padding:14px;
+
+    border:
+        1px solid
+        rgba(210,160,45,.31);
+
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,28,21,.98),
+            rgba(8,12,10,.98)
+        );
+}
+
+.mg-detail-title-row{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:3px;
+}
+
+.mg-detail-title-row h2{
+    margin:0;
+
+    color:#f0ece3;
+
+    font-size:18px;
+}
+
+.mg-uuid{
+    margin-top:4px;
+
+    color:#77817c;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:8px;
+
+    overflow-wrap:anywhere;
+}
+
+.mg-detail-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:8px;
+
+    margin-top:10px;
+}
+
+.mg-detail-grid article{
+    padding:10px;
+
+    border:
+        1px solid
+        rgba(156,137,91,.18);
+
+    border-radius:6px;
+
+    background:#0a0f0d;
+}
+
+.mg-detail-grid article.wide{
+    grid-column:
+        span 2;
+}
+
+.mg-detail-grid article > span{
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#7e8983;
+
+    font-size:7px;
+    font-weight:900;
+
+    letter-spacing:.8px;
+}
+
+.mg-detail-grid article > strong{
+    display:block;
+
+    color:#d9ddd8;
+
+    font-size:9px;
+}
+
+.mg-charter{
+    color:#b4bbb6;
+
+    font-size:9px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   DETAIL SECTIONS
+   ========================================================= */
+
+.mg-section{
+    margin-top:10px;
+
+    padding:12px;
+
+    border:
+        1px solid
+        rgba(189,145,42,.23);
+
+    border-radius:7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(14,19,16,.98),
+            rgba(7,11,9,.98)
+        );
+}
+
+.mg-section-heading{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    padding-bottom:9px;
+
+    border-bottom:
+        1px solid
+        rgba(177,139,49,.17);
+}
+
+.mg-section-heading h3{
+    margin:2px 0 0;
+
+    color:#e7e4dd;
+
+    font-size:13px;
+}
+
+.mg-section-heading > strong{
+    min-width:28px;
+
+    padding:4px 6px;
+
+    border:
+        1px solid
+        rgba(207,159,45,.29);
+
+    border-radius:5px;
+
+    color:#e0ab3c;
+
+    background:#17150e;
+
+    text-align:center;
+
+    font-size:9px;
+}
+
+.mg-empty{
+    padding:20px 10px;
+
+    color:#78847d;
+
+    text-align:center;
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.mg-table-wrap{
+    margin-top:8px;
+
+    overflow:auto;
+}
+
+table{
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+th{
+    padding:8px 7px;
+
+    border-bottom:
+        1px solid
+        rgba(191,150,51,.22);
+
+    color:#9b8b65;
+
+    text-align:left;
+
+    font-size:7px;
+    font-weight:900;
+
+    letter-spacing:.8px;
+}
+
+td{
+    padding:8px 7px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055);
+
+    color:#c7cdc8;
+
+    font-size:8px;
+
+    vertical-align:top;
+}
+
+tbody tr:last-child td{
+    border-bottom:0;
+}
+
+
+/* =========================================================
+   ROLES
+   ========================================================= */
+
+.mg-role-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:8px;
+
+    margin-top:8px;
+}
+
+.mg-role-card{
+    padding:10px;
+
+    border:
+        1px solid
+        rgba(145,135,105,.18);
+
+    border-radius:6px;
+
+    background:#090e0c;
+}
+
+.mg-role-title{
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:space-between;
+
+    gap:8px;
+}
+
+.mg-role-title strong{
+    color:#ddd9ce;
+
+    font-size:9px;
+}
+
+.mg-role-title span{
+    color:#c39739;
+
+    font-size:8px;
+}
+
+.mg-role-card p{
+    margin:7px 0 0;
+
+    color:#8c9791;
+
+    font-size:8px;
+
+    line-height:1.45;
+}
+
+
+/* =========================================================
+   NOTICES
+   ========================================================= */
+
+.mg-notices{
+    margin-top:8px;
+}
+
+.mg-notice-card{
+    padding:10px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
+}
+
+.mg-notice-card:last-child{
+    border-bottom:0;
+}
+
+.mg-notice-top{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:8px;
+}
+
+.mg-notice-top strong{
+    color:#e0ddd5;
+
+    font-size:9px;
+}
+
+.mg-attachment{
+    padding:3px 5px;
+
+    border:
+        1px solid
+        rgba(215,164,47,.30);
+
+    border-radius:4px;
+
+    color:#d6a23b;
+
+    background:#17140d;
+
+    font-size:7px;
+    font-weight:900;
+}
+
+.mg-notice-meta{
+    margin-top:4px;
+
+    color:#7c8982;
+
+    font-size:8px;
+}
+
+.mg-notice-meta span{
+    margin:0 5px;
+}
+
+.mg-notice-message{
+    margin-top:7px;
+
+    color:#adb6b0;
+
+    font-size:8px;
+
+    line-height:1.5;
+}
+
+.mg-notice-attachment{
+    margin-top:6px;
+
+    color:#c19437;
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.mg-success{
+    margin-top:10px;
+
+    padding:10px 12px;
+
+    border:
+        1px solid
+        rgba(70,164,92,.32);
+
+    border-radius:6px;
+
+    color:#91dca1;
+
+    background:#09140d;
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1050px){
+
+    .mg-summary-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .mg-main-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mg-group-list{
+        max-height:390px;
+    }
+
+}
+
+@media(max-width:760px){
+
+    .mg-hero{
+        grid-template-columns:
+            auto
+            minmax(0,1fr);
+    }
+
+    .mg-ready{
+        grid-column:
+            1 / -1;
+
+        width:max-content;
+    }
+
+    .mg-toolbar{
+        grid-template-columns:1fr;
+    }
+
+    .mg-create{
+        width:100%;
+    }
+
+    .mg-detail-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:520px){
+
+    .mg-shell{
+        padding:8px;
+    }
+
+    .mg-summary-grid,
+    .mg-detail-grid,
+    .mg-role-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mg-detail-grid article.wide{
+        grid-column:auto;
+    }
+
+    .mg-search{
+        flex-wrap:wrap;
+    }
+
+    .mg-search input{
+        flex-basis:
+            calc(100% - 30px);
+    }
+
+}
+
+/*
+ * ==========================================================
+ * AUSTRALIA MANAGE GROUPS BALANCED COLUMNS V4
+ *
+ * - Full-height group directory before selection
+ * - Left and right columns match when details grow
+ * - Only group records scroll inside left card
+ * ==========================================================
+ */
+
+.mg-main-grid{
+    align-items:stretch !important;
+
+    min-height:
+        calc(100vh - 330px) !important;
+}
+
+
+.mg-group-list-panel{
+    display:flex !important;
+    flex-direction:column !important;
+
+    align-self:stretch !important;
+
+    height:auto !important;
+    min-height:0 !important;
+
+    overflow:hidden !important;
+}
+
+
+.mg-group-list{
+    flex:1 1 auto !important;
+
+    height:auto !important;
+    min-height:0 !important;
+    max-height:none !important;
+
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+
+    scrollbar-gutter:stable;
+}
+
+
+.mg-detail-panel{
+    align-self:stretch !important;
+
+    min-height:
+        calc(100vh - 330px) !important;
+}
+
+
+@media(max-width:1050px){
+
+    .mg-main-grid{
+        min-height:0 !important;
+    }
+
+    .mg-group-list-panel{
+        min-height:420px !important;
+    }
+
+    .mg-group-list{
+        max-height:420px !important;
+    }
+
+    .mg-detail-panel{
+        min-height:300px !important;
+    }
+
+}

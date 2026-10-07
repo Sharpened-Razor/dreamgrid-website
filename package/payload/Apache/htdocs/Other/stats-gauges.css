@@ -1,0 +1,1362 @@
+/*
+ ============================================================
+ AUSTRALIA CONTROL CENTER
+ STATS LIVE GAUGES V2
+ ============================================================
+*/
+
+.stats-gauges-panel{
+    margin-top:8px;
+    overflow:hidden;
+    border:1px solid rgba(215,168,51,.48);
+    border-radius:7px;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(18,25,26,.99),
+            rgba(6,10,11,.99)
+        );
+    box-shadow:
+        0 9px 28px rgba(0,0,0,.32);
+}
+
+.stats-gauges-head{
+    min-height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:7px 12px;
+    border-bottom:1px solid rgba(255,255,255,.055);
+    background:
+        linear-gradient(
+            180deg,
+            #192021,
+            #111617
+        );
+}
+
+.stats-gauges-kicker{
+    color:#d8a93c;
+    font-size:7px;
+    font-weight:900;
+    letter-spacing:.14em;
+}
+
+.stats-gauges-title{
+    margin-top:2px;
+    color:#f0c75b;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.055em;
+}
+
+.stats-gauges-live{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#82defb;
+    font-size:7px;
+    font-weight:900;
+    letter-spacing:.08em;
+}
+
+.stats-gauges-live::before{
+    content:"";
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#35d2ff;
+    box-shadow:0 0 9px rgba(53,210,255,.9);
+}
+
+
+/* ============================================================
+   GRID
+   ============================================================ */
+
+.stats-gauge-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:8px;
+    padding:9px;
+}
+
+.stats-gauge-card{
+    --gauge-color:#30d6ff;
+    --gauge-dark:#087b9e;
+    --gauge-progress:0deg;
+    --needle-angle:-180deg;
+
+    position:relative;
+    min-width:0;
+    min-height:160px;
+    overflow:hidden;
+
+    padding:8px 9px 9px;
+
+    border:1px solid rgba(77,145,170,.25);
+    border-radius:8px;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(38,130,163,.11),
+            transparent 49%
+        ),
+        linear-gradient(
+            180deg,
+            #101719,
+            #070b0c
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025),
+        0 4px 14px rgba(0,0,0,.20);
+}
+
+.stats-gauge-card::after{
+    content:"";
+    position:absolute;
+    left:15%;
+    right:15%;
+    bottom:-28px;
+    height:43px;
+    border-radius:50%;
+    background:var(--gauge-color);
+    opacity:.09;
+    filter:blur(22px);
+    pointer-events:none;
+}
+
+.stats-gauge-label{
+    color:#d8aa3f;
+    text-align:center;
+    font-size:7px;
+    font-weight:900;
+    letter-spacing:.12em;
+}
+
+
+/* ============================================================
+   DIAL
+   ============================================================ */
+
+.stats-gauge-stage{
+    position:relative;
+    width:132px;
+    height:76px;
+    margin:6px auto 0;
+    overflow:hidden;
+}
+
+.stats-gauge-arc{
+    position:absolute;
+    left:4px;
+    top:2px;
+
+    width:124px;
+    height:124px;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            from 270deg,
+            var(--gauge-color) 0deg,
+            var(--gauge-color) var(--gauge-progress),
+            rgba(78,101,108,.22) var(--gauge-progress),
+            rgba(78,101,108,.22) 180deg,
+            transparent 180deg,
+            transparent 360deg
+        );
+
+    -webkit-mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 11px),
+            #000 calc(100% - 10px)
+        );
+
+    mask:
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - 11px),
+            #000 calc(100% - 10px)
+        );
+
+    filter:
+        drop-shadow(0 0 5px var(--gauge-color));
+}
+
+.stats-gauge-ticks{
+    position:absolute;
+    left:13px;
+    right:13px;
+    bottom:3px;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#67767b;
+
+    font-family:Consolas,"Courier New",monospace;
+    font-size:6px;
+}
+
+.stats-gauge-needle{
+    position:absolute;
+
+    left:50%;
+    bottom:10px;
+
+    width:48px;
+    height:2px;
+
+    border-radius:3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff0b6,
+            var(--gauge-color)
+        );
+
+    box-shadow:
+        0 0 5px var(--gauge-color);
+
+    transform-origin:0 50%;
+
+    transform:
+        rotate(var(--needle-angle));
+
+    transition:
+        transform .65s cubic-bezier(.2,.7,.2,1);
+}
+
+.stats-gauge-hub{
+    position:absolute;
+
+    left:calc(50% - 6px);
+    bottom:5px;
+
+    width:12px;
+    height:12px;
+
+    border:2px solid #d6dcde;
+    border-radius:50%;
+
+    background:#111719;
+
+    box-shadow:
+        0 0 8px var(--gauge-color);
+}
+
+
+/* ============================================================
+   READING
+   ============================================================ */
+
+.stats-gauge-reading{
+    margin-top:1px;
+
+    display:flex;
+    align-items:baseline;
+    justify-content:center;
+    gap:3px;
+
+    font-family:Consolas,"Courier New",monospace;
+}
+
+.stats-gauge-reading strong{
+    color:#effcff;
+    font-size:19px;
+    line-height:1;
+    text-shadow:0 0 7px var(--gauge-color);
+}
+
+.stats-gauge-reading span{
+    color:#89969b;
+    font-size:8px;
+}
+
+.stats-gauge-state{
+    min-height:15px;
+    margin-top:3px;
+
+    color:#77868b;
+
+    text-align:center;
+
+    font-size:7px;
+    font-weight:900;
+    letter-spacing:.075em;
+}
+
+
+/* ============================================================
+   REGIONS-STYLE METER
+   ============================================================ */
+
+.stats-gauge-meter{
+    position:relative;
+
+    height:7px;
+
+    margin-top:6px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(65,145,185,.28);
+
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7,24,33,.95),
+            rgba(10,31,42,.95)
+        );
+
+    box-shadow:
+        inset 0 1px 2px rgba(0,0,0,.68);
+}
+
+.stats-gauge-meter::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(117,190,215,.12) calc(25% - 1px),
+            rgba(117,190,215,.12) 25%
+        );
+}
+
+.stats-gauge-meter-fill{
+    position:relative;
+    z-index:1;
+
+    display:block;
+
+    width:0;
+    height:100%;
+
+    border-radius:4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gauge-dark),
+            var(--gauge-color)
+        );
+
+    box-shadow:
+        0 0 9px var(--gauge-color);
+
+    transition:
+        width .65s ease;
+}
+
+
+/* ============================================================
+   COLOURS
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="cpu"]{
+    --gauge-color:#28d7ff;
+    --gauge-dark:#087ca5;
+}
+
+.stats-gauge-card[data-gauge="ram"]{
+    --gauge-color:#57e394;
+    --gauge-dark:#14864b;
+}
+
+.stats-gauge-card[data-gauge="sim"]{
+    --gauge-color:#36d8ff;
+    --gauge-dark:#087da5;
+}
+
+.stats-gauge-card[data-gauge="physics"]{
+    --gauge-color:#32ddce;
+    --gauge-dark:#087f78;
+}
+
+.stats-gauge-card[data-gauge="frame"]{
+    --gauge-color:#efbb3d;
+    --gauge-dark:#986608;
+}
+
+.stats-gauge-card[data-gauge="disk"]{
+    --gauge-color:#d9ab39;
+    --gauge-dark:#80600d;
+}
+
+
+/* ============================================================
+   HEALTH OVERRIDES
+   ============================================================ */
+
+.stats-gauge-card.gauge-good
+.stats-gauge-state{
+    color:#6dd9a7;
+}
+
+.stats-gauge-card.gauge-warn{
+    --gauge-color:#efbd42;
+    --gauge-dark:#95620b;
+}
+
+.stats-gauge-card.gauge-warn
+.stats-gauge-state{
+    color:#efca64;
+}
+
+.stats-gauge-card.gauge-bad{
+    --gauge-color:#ee7070;
+    --gauge-dark:#8c2626;
+}
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-state{
+    color:#f09595;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media(max-width:1500px){
+
+    .stats-gauge-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+}
+
+@media(max-width:820px){
+
+    .stats-gauge-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+}
+
+@media(max-width:520px){
+
+    .stats-gauge-grid{
+        grid-template-columns:1fr;
+    }
+}
+/* AUSTRALIA GAUGE HEAT SYSTEM START */
+
+
+/* ============================================================
+   SMOOTH COLOUR TRANSITIONS
+   ============================================================ */
+
+.stats-gauge-card{
+
+    transition:
+        border-color .45s ease,
+        box-shadow .45s ease,
+        background .45s ease;
+}
+
+
+.stats-gauge-arc,
+.stats-gauge-needle,
+.stats-gauge-meter-fill,
+.stats-gauge-reading strong{
+
+    transition:
+        color .45s ease,
+        background .45s ease,
+        box-shadow .45s ease,
+        filter .45s ease,
+        text-shadow .45s ease;
+}
+
+
+/* ============================================================
+   NORMAL / HEALTHY
+   ============================================================ */
+
+.stats-gauge-card.gauge-good{
+
+    border-color:
+        rgba(65,205,245,.30);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025),
+        0 4px 14px rgba(0,0,0,.22),
+        0 0 12px rgba(44,203,244,.05);
+}
+
+
+/* ============================================================
+   WARNING / GETTING HOT
+   ============================================================ */
+
+.stats-gauge-card.gauge-warn{
+
+    --gauge-color:
+        #ffb52d !important;
+
+    --gauge-dark:
+        #a95f00 !important;
+
+    border-color:
+        rgba(255,176,38,.72) !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255,158,0,.15),
+            transparent 52%
+        ),
+        linear-gradient(
+            180deg,
+            #18170f,
+            #0c0b08
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,220,120,.06),
+        0 0 16px rgba(255,166,24,.16),
+        0 5px 18px rgba(0,0,0,.28) !important;
+}
+
+
+.stats-gauge-card.gauge-warn
+.stats-gauge-reading strong{
+
+    color:
+        #ffd782 !important;
+
+    text-shadow:
+        0 0 10px rgba(255,181,45,.80) !important;
+}
+
+
+.stats-gauge-card.gauge-warn
+.stats-gauge-state{
+
+    color:
+        #ffc85e !important;
+}
+
+
+.stats-gauge-card.gauge-warn
+.stats-gauge-arc{
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,181,45,.85)
+        ) !important;
+}
+
+
+/* ============================================================
+   CRITICAL / HOT
+   ============================================================ */
+
+.stats-gauge-card.gauge-bad{
+
+    --gauge-color:
+        #ff4f4f !important;
+
+    --gauge-dark:
+        #981d1d !important;
+
+    border-color:
+        rgba(255,76,76,.90) !important;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255,60,60,.18),
+            transparent 53%
+        ),
+        linear-gradient(
+            180deg,
+            #1a1010,
+            #0b0808
+        ) !important;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,150,150,.07),
+        0 0 20px rgba(255,60,60,.23),
+        0 5px 18px rgba(0,0,0,.32) !important;
+
+    animation:
+        statsGaugeCriticalPulse
+        1.35s
+        ease-in-out
+        infinite;
+}
+
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-reading strong{
+
+    color:
+        #ff9696 !important;
+
+    text-shadow:
+        0 0 12px rgba(255,64,64,.95) !important;
+}
+
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-state{
+
+    color:
+        #ff7d7d !important;
+}
+
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-arc{
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(255,63,63,.95)
+        ) !important;
+}
+
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-needle{
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffe3e3,
+            #ff4141
+        ) !important;
+
+    box-shadow:
+        0 0 9px
+        rgba(255,60,60,.95) !important;
+}
+
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-meter{
+
+    border-color:
+        rgba(255,76,76,.58) !important;
+}
+
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-meter-fill{
+
+    background:
+        linear-gradient(
+            90deg,
+            #8c1818,
+            #ff4a4a
+        ) !important;
+
+    box-shadow:
+        0 0 11px
+        rgba(255,60,60,.92) !important;
+}
+
+
+/* ============================================================
+   CRITICAL PULSE
+   ============================================================ */
+
+@keyframes statsGaugeCriticalPulse{
+
+    0%,
+    100%{
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,150,150,.07),
+            0 0 12px rgba(255,60,60,.16),
+            0 5px 18px rgba(0,0,0,.32);
+    }
+
+
+    50%{
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,170,170,.10),
+            0 0 26px rgba(255,55,55,.42),
+            0 5px 18px rgba(0,0,0,.32);
+    }
+}
+
+
+/* ============================================================
+   DO NOT PULSE WHEN USER REQUESTS REDUCED MOTION
+   ============================================================ */
+
+@media(prefers-reduced-motion:reduce){
+
+    .stats-gauge-card.gauge-bad{
+
+        animation:
+            none !important;
+    }
+}
+
+
+/* AUSTRALIA GAUGE HEAT SYSTEM END */
+/* AUSTRALIA GAUGE NEEDLE FIX START */
+
+
+/*
+ * Restore the transform animation that was overridden
+ * by the heat-colour transition rules.
+ */
+
+.stats-gauge-needle{
+
+    transition:
+        transform .65s cubic-bezier(.2,.7,.2,1),
+        background .45s ease,
+        box-shadow .45s ease !important;
+
+    will-change:
+        transform;
+
+    z-index:
+        5;
+}
+
+
+.stats-gauge-hub{
+
+    z-index:
+        6;
+}
+
+
+.stats-gauge-arc{
+
+    z-index:
+        1;
+}
+
+
+.stats-gauge-ticks{
+
+    z-index:
+        3;
+}
+
+
+/*
+ * Keep critical needle colour while still allowing
+ * its transform angle to animate.
+ */
+
+.stats-gauge-card.gauge-bad
+.stats-gauge-needle{
+
+    transition:
+        transform .65s cubic-bezier(.2,.7,.2,1),
+        background .45s ease,
+        box-shadow .45s ease !important;
+}
+
+
+/*
+ * Warning needle gets orange while remaining animated.
+ */
+
+.stats-gauge-card.gauge-warn
+.stats-gauge-needle{
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff1bd,
+            #ffb52d
+        ) !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(255,181,45,.92) !important;
+
+    transition:
+        transform .65s cubic-bezier(.2,.7,.2,1),
+        background .45s ease,
+        box-shadow .45s ease !important;
+}
+
+
+/* AUSTRALIA GAUGE NEEDLE FIX END */
+/* AUSTRALIA INSTRUMENT DIAL POLISH V1 START */
+
+
+/* ============================================================
+   DEFAULT ZONE CONFIGURATION
+
+   LOW ------------------------------ HIGH
+
+   GOOD          WARNING          DANGER
+   ============================================================ */
+
+.stats-gauge-card{
+
+    --zone-one:
+        #32d7a5;
+
+    --zone-two:
+        #f0b638;
+
+    --zone-three:
+        #ef5b5b;
+
+    --zone-stop-one:
+        126deg;
+
+    --zone-stop-two:
+        162deg;
+}
+
+
+/* ============================================================
+   CPU
+   GOOD      0 - 70%
+   WARNING  70 - 90%
+   DANGER   90 - 100%
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="cpu"]{
+
+    --zone-one:
+        #28d7c7;
+
+    --zone-two:
+        #f1b83e;
+
+    --zone-three:
+        #ef5b5b;
+
+    --zone-stop-one:
+        126deg;
+
+    --zone-stop-two:
+        162deg;
+}
+
+
+/* ============================================================
+   MEMORY
+   GOOD      0 - 75%
+   WARNING  75 - 90%
+   DANGER   90 - 100%
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="ram"]{
+
+    --zone-one:
+        #55df8c;
+
+    --zone-two:
+        #efb73e;
+
+    --zone-three:
+        #ef5c5c;
+
+    --zone-stop-one:
+        135deg;
+
+    --zone-stop-two:
+        162deg;
+}
+
+
+/* ============================================================
+   SIM FPS
+
+   LOW FPS IS BAD
+
+   DANGER      0 - 30 FPS
+   WARNING    30 - 45 FPS
+   GOOD       45 - 55 FPS
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="sim"]{
+
+    --zone-one:
+        #ef5a5a;
+
+    --zone-two:
+        #efb73e;
+
+    --zone-three:
+        #35d6ff;
+
+    --zone-stop-one:
+        98deg;
+
+    --zone-stop-two:
+        147deg;
+}
+
+
+/* ============================================================
+   PHYSICS FPS
+
+   LOW FPS IS BAD
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="physics"]{
+
+    --zone-one:
+        #ef5a5a;
+
+    --zone-two:
+        #efb73e;
+
+    --zone-three:
+        #32dcc9;
+
+    --zone-stop-one:
+        98deg;
+
+    --zone-stop-two:
+        147deg;
+}
+
+
+/* ============================================================
+   FRAME TIME
+
+   GOOD       0 - 20ms
+   WARNING   20 - 25ms
+   DANGER    25 - 30ms+
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="frame"]{
+
+    --zone-one:
+        #45d99a;
+
+    --zone-two:
+        #f0ba40;
+
+    --zone-three:
+        #ef5b5b;
+
+    --zone-stop-one:
+        120deg;
+
+    --zone-stop-two:
+        150deg;
+}
+
+
+/* ============================================================
+   DRIVE
+
+   GOOD      0 - 75%
+   WARNING  75 - 90%
+   DANGER   90 - 100%
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="disk"]{
+
+    --zone-one:
+        #d4b442;
+
+    --zone-two:
+        #ef9732;
+
+    --zone-three:
+        #ef5757;
+
+    --zone-stop-one:
+        135deg;
+
+    --zone-stop-two:
+        162deg;
+}
+
+
+/* ============================================================
+   OUTER SAFE / WARNING / DANGER RING
+   ============================================================ */
+
+.stats-gauge-stage::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        -2px;
+
+    width:
+        132px;
+
+    height:
+        132px;
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+
+        conic-gradient(
+            from 270deg,
+
+            var(--zone-one)
+                0deg,
+
+            var(--zone-one)
+                var(--zone-stop-one),
+
+            var(--zone-two)
+                var(--zone-stop-one),
+
+            var(--zone-two)
+                var(--zone-stop-two),
+
+            var(--zone-three)
+                var(--zone-stop-two),
+
+            var(--zone-three)
+                180deg,
+
+            transparent
+                180deg,
+
+            transparent
+                360deg
+        );
+
+    -webkit-mask:
+
+        radial-gradient(
+            farthest-side,
+
+            transparent
+                calc(100% - 5px),
+
+            #000
+                calc(100% - 4px)
+        );
+
+    mask:
+
+        radial-gradient(
+            farthest-side,
+
+            transparent
+                calc(100% - 5px),
+
+            #000
+                calc(100% - 4px)
+        );
+
+    opacity:
+        .68;
+
+    filter:
+        drop-shadow(
+            0 0 4px
+            rgba(58,210,245,.16)
+        );
+}
+
+
+/* ============================================================
+   DIAL TICK MARKS
+
+   Fine tick every 9 degrees.
+   Major tick every 45 degrees.
+   ============================================================ */
+
+.stats-gauge-stage::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        1px;
+
+    top:
+        -1px;
+
+    width:
+        130px;
+
+    height:
+        130px;
+
+    z-index:
+        3;
+
+    pointer-events:
+        none;
+
+    border-radius:
+        50%;
+
+    background:
+
+        repeating-conic-gradient(
+            from 270deg,
+
+            rgba(210,235,242,.72)
+                0deg,
+
+            rgba(210,235,242,.72)
+                1deg,
+
+            transparent
+                1deg,
+
+            transparent
+                9deg
+        ),
+
+        repeating-conic-gradient(
+            from 270deg,
+
+            rgba(245,201,82,.98)
+                0deg,
+
+            rgba(245,201,82,.98)
+                2deg,
+
+            transparent
+                2deg,
+
+            transparent
+                45deg
+        );
+
+    -webkit-mask:
+
+        radial-gradient(
+            farthest-side,
+
+            transparent
+                calc(100% - 9px),
+
+            #000
+                calc(100% - 8px),
+
+            #000
+                calc(100% - 3px),
+
+            transparent
+                calc(100% - 2px)
+        );
+
+    mask:
+
+        radial-gradient(
+            farthest-side,
+
+            transparent
+                calc(100% - 9px),
+
+            #000
+                calc(100% - 8px),
+
+            #000
+                calc(100% - 3px),
+
+            transparent
+                calc(100% - 2px)
+        );
+
+    opacity:
+        .78;
+}
+
+
+/* ============================================================
+   ARC SITS ABOVE ZONES
+   ============================================================ */
+
+.stats-gauge-arc{
+
+    z-index:
+        2;
+}
+
+
+/* ============================================================
+   LIVE V5 NEEDLE SITS ABOVE EVERYTHING
+   ============================================================ */
+
+.stats-live-v5-needle{
+
+    z-index:
+        8 !important;
+}
+
+
+.stats-gauge-hub{
+
+    z-index:
+        10 !important;
+}
+
+
+/* ============================================================
+   GLASS / INSTRUMENT FACE EFFECT
+   ============================================================ */
+
+.stats-gauge-stage{
+
+    border-radius:
+        66px 66px 0 0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 70%,
+
+            rgba(39,183,224,.055),
+
+            transparent
+                55%
+        );
+}
+
+
+/* ============================================================
+   CARD DEPTH
+   ============================================================ */
+
+.stats-gauge-card{
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.035),
+
+        inset 0 -12px 22px
+        rgba(0,0,0,.18),
+
+        0 5px 17px
+        rgba(0,0,0,.24);
+}
+
+
+/* ============================================================
+   SLIGHT INNER DIAL GLOW
+   ============================================================ */
+
+.stats-gauge-hub{
+
+    background:
+
+        radial-gradient(
+            circle,
+
+            #253238
+                0%,
+
+            #11191b
+                55%,
+
+            #050809
+                100%
+        );
+}
+
+
+/* ============================================================
+   VALUE DISPLAY
+   ============================================================ */
+
+.stats-gauge-reading strong{
+
+    letter-spacing:
+        -.03em;
+}
+
+
+/* ============================================================
+   LIVE CARD EFFECT
+   ============================================================ */
+
+.stats-gauge-card.v5-live{
+
+    border-color:
+        rgba(75,176,207,.30);
+}
+
+
+.stats-gauge-card.v5-live:hover{
+
+    border-color:
+        rgba(93,205,236,.52);
+
+    box-shadow:
+
+        inset 0 1px 0
+        rgba(255,255,255,.04),
+
+        0 0 14px
+        rgba(48,190,225,.09),
+
+        0 6px 18px
+        rgba(0,0,0,.28);
+}
+
+
+/* ============================================================
+   WARNING CARD
+   ============================================================ */
+
+.stats-gauge-card.gauge-warn{
+
+    border-color:
+        rgba(240,181,55,.60) !important;
+}
+
+
+/* ============================================================
+   CRITICAL CARD
+   ============================================================ */
+
+.stats-gauge-card.gauge-bad{
+
+    border-color:
+        rgba(239,82,82,.82) !important;
+}
+
+
+/* AUSTRALIA INSTRUMENT DIAL POLISH V1 END */

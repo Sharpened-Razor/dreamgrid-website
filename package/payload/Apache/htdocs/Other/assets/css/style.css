@@ -1,0 +1,326 @@
+*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;}body{font-family:Arial,'Lucida Grande',Verdana,sans-serif;color:#f5f5f5;text-align:left;background:#090b0d url(/Other/assets/images/Site-background.png) center top/cover fixed no-repeat;}body:before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.55) 55%,rgba(0,0,0,.82));z-index:-1}a{color:#fff}#header{width:min(1180px,94%);height:auto;min-height:150px;margin:0 auto;padding:32px 0 20px;background:transparent}.textlogo{color:#f4b323;text-shadow:0 2px 0 #5b3500,0 5px 12px #000}p.textlogo{font:700 20px Georgia,serif;padding:0;text-align:left}.white{color:#fff}.nowrap{white-space:nowrap}#slogan{padding:8px 0 0;text-align:left;font:700 18px Arial;color:#fff;text-shadow:0 2px 6px #000}#page{width:min(1180px,94%);margin:0 auto;display:flex;gap:28px;align-items:flex-start}#content{float:none;flex:1;min-width:0;width:auto;padding:0}#right-nav{float:none;order:2;width:300px;padding:0;text-align:left;background:rgba(8,12,16,.78);border:1px solid rgba(255,255,255,.22);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.5);backdrop-filter:blur(10px);overflow:hidden}.box-top,.box-bottom{display:none}.box{font:16px Arial;background:rgba(8,12,16,.72);color:#e6e6e6;text-align:left;padding:32px;border:1px solid rgba(255,255,255,.22);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.5);backdrop-filter:blur(10px);min-height:430px}.box h1,.box h2,.box h3,.box h4,.box h5{font-family:Georgia,serif;color:#fff;text-align:left;text-shadow:0 3px 10px #000;margin-bottom:18px}.box h1{font-size:42px}.box p{padding:8px 0;line-height:1.6}.box a{color:#ffd36a;text-decoration:none}.box a:hover{text-decoration:underline}.box li{list-style-position:inside}.nav-headline{font:700 20px Georgia,serif;color:#fff;padding:22px 22px 10px;text-transform:uppercase;letter-spacing:.06em}#main-menu ul{list-style:none;padding:0 14px 14px}#main-menu li a{display:block;color:#fff;font:700 14px Arial;text-decoration:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px;margin:7px 0;line-height:normal;transition:.18s}#main-menu li a:hover{background:rgba(244,179,35,.18);border-color:rgba(244,179,35,.55);color:#fff;text-decoration:none}.right-nav-divider{width:auto;height:1px;margin:0 18px;padding:0;background:rgba(255,255,255,.16)}#subscribe{text-align:left;padding:0 22px 22px}#subscribe form{margin-bottom:10px}.inputstyle{display:block;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.28);border-radius:9px;width:100%;height:42px;color:#fff;font-size:14px;padding:0 12px;margin:8px 0}.inputstyle:focus{outline:2px solid #f4b323;outline-offset:1px}.button{background:linear-gradient(#f0b733,#a96605);border:1px solid #ffd46e;border-radius:9px;width:100%;height:40px;color:#171006;font:bold 13px Arial;cursor:pointer;margin:5px 0;text-transform:uppercase;box-shadow:inset 0 1px rgba(255,255,255,.45),0 4px 12px rgba(0,0,0,.35)}.button:hover{filter:brightness(1.08)}#posts{color:#ddd;padding:0 22px 18px}#posts ul{list-style:none;padding:0}#posts li a{color:#ddd;font:14px Arial;text-decoration:none;line-height:1.8}#posts li a:hover{color:#ffd36a;background:transparent}.bodytext{color:#fff;font-size:14px;padding:5px 10px}.imagefloat{float:left;margin:5px 15px;border:1px solid rgba(255,255,255,.2)}table.entries{margin-right:auto;border-collapse:collapse;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25)}.entries th,.entries td{border:1px solid rgba(255,255,255,.18);padding:6px}.entries th{border-bottom:2px solid rgba(255,255,255,.35)}#footer{clear:both;width:min(1180px,94%);height:auto;min-height:120px;margin:28px auto 0;padding:20px 0 40px;color:#ccc}#footer-pad{width:auto;padding:20px;text-align:center;margin:0;background:rgba(0,0,0,.42);border-radius:14px}#footer p{font:14px Arial;color:#ccc}#footer a{color:#ffd36a}.logo{border:0}.line,.line2{background:rgba(255,255,255,.15);width:100%;height:1px;margin:12px auto}.clearboth{clear:both}@media(max-width:800px){body{background-attachment:scroll}#header{min-height:110px;padding-top:22px}#page{display:block}#right-nav{width:100%;margin-bottom:22px}#content{width:100%}.box{padding:22px;min-height:0}.box h1{font-size:32px}#footer{margin-top:20px}}
+
+
+/* ============================================================
+   AUSTRALIA GRID WEBSITE UI V66
+   Presentation only. DreamGrid routes/actions remain native.
+   ============================================================ */
+
+.australia-menu-panel,
+.australia-login-card,
+.australia-user-card{
+  background:transparent;
+}
+
+.australia-main-menu ul{
+  list-style:none;
+  padding:0 14px 15px!important;
+  margin:0;
+}
+
+.australia-main-menu li{
+  list-style:none;
+}
+
+.australia-main-menu li a{
+  display:flex!important;
+  align-items:center;
+  gap:11px;
+  min-height:54px;
+  margin:8px 0!important;
+  padding:9px 11px!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:10px!important;
+  background:rgba(255,255,255,.055)!important;
+  color:#fff!important;
+  text-decoration:none!important;
+  transition:.16s ease;
+}
+
+.australia-main-menu li a:hover{
+  border-color:rgba(244,179,35,.62)!important;
+  background:rgba(244,179,35,.14)!important;
+  transform:translateX(2px);
+}
+
+.menu-icon{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:8px;
+  border:1px solid rgba(244,179,35,.28);
+  background:rgba(244,179,35,.08);
+  color:#f4b323;
+  font-size:17px;
+  font-weight:900;
+}
+
+.menu-copy{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+.menu-copy strong{
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.045em;
+}
+
+.menu-copy small{
+  color:#8e989e;
+  font-size:10px;
+  line-height:1.2;
+}
+
+.field-label{
+  display:block;
+  margin:10px 0 3px;
+  color:#c9ced1;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:.035em;
+}
+
+.secondary-button{
+  background:rgba(255,255,255,.07)!important;
+  color:#ddd!important;
+  border-color:rgba(255,255,255,.18)!important;
+  box-shadow:none!important;
+}
+
+.user-avatar-wrap{
+  display:flex;
+  justify-content:center;
+  padding:20px 20px 4px;
+}
+
+.user-avatar-wrap img{
+  border-radius:12px;
+  border:1px solid rgba(244,179,35,.36);
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+.australia-user-name{
+  text-align:center!important;
+  padding-top:10px!important;
+}
+
+.logout-link{
+  border-color:rgba(215,92,101,.30)!important;
+}
+
+.logout-link .menu-icon{
+  color:#ff9aa1;
+  border-color:rgba(215,92,101,.32);
+  background:rgba(215,92,101,.08);
+}
+
+/* HOME-only stats */
+.content-heading{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.eyebrow{
+  color:#e5a72b;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.16em;
+  margin-bottom:3px;
+}
+
+.content-divider{
+  height:1px;
+  margin:15px 0 18px;
+  background:rgba(255,255,255,.09);
+}
+
+.grid-stats-cards{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:0 0 20px;
+}
+
+.stat-card{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-height:94px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:11px;
+  background:rgba(10,14,17,.78);
+}
+
+.stat-card-wide{
+  grid-column:span 3;
+}
+
+.stat-icon{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  color:#f2b63b;
+  background:rgba(242,182,59,.07);
+  border:1px solid rgba(242,182,59,.18);
+}
+
+.stat-icon svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+}
+
+.stat-copy{
+  min-width:0;
+}
+
+.stat-label{
+  color:#a8b0b5;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+.stat-value{
+  margin:2px 0;
+  color:#f1b83d;
+  font-size:27px;
+  font-weight:900;
+  line-height:1;
+}
+
+.stat-sub{
+  color:#707b82;
+  font-size:10px;
+}
+
+#dreamgrid-dynamic-content{
+  display:block;
+  padding:0!important;
+  margin:0!important;
+}
+
+/* Forms/tables loaded by native DreamGrid pages */
+#dreamgrid-dynamic-content form{
+  margin:12px 0;
+}
+
+#dreamgrid-dynamic-content input,
+#dreamgrid-dynamic-content select,
+#dreamgrid-dynamic-content textarea{
+  max-width:100%;
+}
+
+@media(max-width:900px){
+  .grid-stats-cards{grid-template-columns:1fr}
+  .stat-card-wide{grid-column:span 1}
+}
+
+
+/* AUSTRALIA PERFECT BACKGROUND OVERRIDE V1 START */
+
+html,
+body{
+
+    width:100% !important;
+    max-width:100% !important;
+
+    margin-left:0 !important;
+    margin-right:0 !important;
+
+    overflow-x:hidden !important;
+}
+
+
+body{
+
+    min-height:100vh !important;
+
+    background-color:#000 !important;
+
+    background-image:
+        url("/Other/assets/images/Site-background.png")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+body.australia-home-page,
+body.ag-frontpage{
+
+    background-image:
+        url("/Other/site-design-image.php?slot=frontpage-background")
+        !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-size:
+        cover !important;
+
+    background-position:
+        center center !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+body > .dashboard-shell,
+body > .ag-shell,
+body > .ag-frontpage-shell{
+
+    background-color:
+        transparent !important;
+
+    background-image:
+        none !important;
+}
+
+
+@media(max-width:900px){
+
+    body,
+    body.australia-home-page,
+    body.ag-frontpage{
+
+        background-size:
+            cover !important;
+
+        background-position:
+            center center !important;
+
+        background-attachment:
+            scroll !important;
+    }
+}
+
+/* AUSTRALIA PERFECT BACKGROUND OVERRIDE V1 END */
+
+

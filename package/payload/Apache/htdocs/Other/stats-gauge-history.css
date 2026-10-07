@@ -1,0 +1,250 @@
+/*
+ ============================================================
+ AUSTRALIA CONTROL CENTER
+ LIVE GAUGE HISTORY V1
+ ============================================================
+*/
+
+
+.stats-history-wrap{
+
+    margin-top:
+        6px;
+
+    padding-top:
+        6px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.045);
+}
+
+
+.stats-history-header{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        4px;
+}
+
+
+.stats-history-title{
+
+    color:
+        #66777c;
+
+    font-size:
+        5px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .11em;
+}
+
+
+.stats-history-minmax{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        6px;
+}
+
+
+.stats-history-min{
+
+    color:
+        #75cce7;
+}
+
+
+.stats-history-max{
+
+    color:
+        #e6b84c;
+}
+
+
+.stats-history-min strong,
+.stats-history-max strong{
+
+    color:
+        #dbe8eb;
+
+    font-weight:
+        700;
+}
+
+
+.stats-history-canvas-box{
+
+    position:
+        relative;
+
+    height:
+        30px;
+
+    overflow:
+        hidden;
+
+    border:
+        1px solid
+        rgba(66,142,166,.17);
+
+    border-radius:
+        4px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(5,15,19,.88),
+            rgba(3,9,11,.96)
+        );
+}
+
+
+.stats-history-canvas-box::before{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent 49%,
+            rgba(96,154,173,.09) 50%,
+            transparent 51%
+        ),
+
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(25% - 1px),
+            rgba(96,154,173,.07) calc(25% - 1px),
+            rgba(96,154,173,.07) 25%
+        );
+}
+
+
+.stats-history-canvas{
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        30px;
+}
+
+
+/* ============================================================
+   CARD HEIGHT INCREASE FOR HISTORY
+   ============================================================ */
+
+.stats-gauge-card{
+
+    min-height:
+        205px !important;
+}
+
+
+/* ============================================================
+   LIVE TRACE GLOW PER GAUGE
+   ============================================================ */
+
+.stats-gauge-card[data-gauge="cpu"]
+.stats-history-canvas-box{
+
+    box-shadow:
+        inset 0 0 9px
+        rgba(40,215,255,.025);
+}
+
+
+.stats-gauge-card[data-gauge="ram"]
+.stats-history-canvas-box{
+
+    box-shadow:
+        inset 0 0 9px
+        rgba(87,227,148,.025);
+}
+
+
+.stats-gauge-card[data-gauge="sim"]
+.stats-history-canvas-box{
+
+    box-shadow:
+        inset 0 0 9px
+        rgba(54,216,255,.03);
+}
+
+
+.stats-gauge-card[data-gauge="physics"]
+.stats-history-canvas-box{
+
+    box-shadow:
+        inset 0 0 9px
+        rgba(50,221,206,.03);
+}
+
+
+.stats-gauge-card[data-gauge="frame"]
+.stats-history-canvas-box{
+
+    box-shadow:
+        inset 0 0 9px
+        rgba(239,187,61,.03);
+}
+
+
+.stats-gauge-card[data-gauge="disk"]
+.stats-history-canvas-box{
+
+    box-shadow:
+        inset 0 0 9px
+        rgba(217,171,57,.03);
+}

@@ -1,0 +1,34 @@
+{
+  "payloadHashesVerified": 1272,
+  "repositoryFilesScanned": 1296,
+  "privateOrMachineSpecificCandidates": 0,
+  "changedBinaries": [
+    {
+      "path": "Apache/htdocs/Other/private/map3d-tools/sculpt/SculptGeometry.dll",
+      "onlyCodeViewFilenameChanged": true,
+      "differentBytes": 113
+    },
+    {
+      "path": "Apache/htdocs/Other/private/map3d-tools/sculpt/SculptGeometry.exe",
+      "onlyCodeViewFilenameChanged": true,
+      "differentBytes": 84
+    },
+    {
+      "path": "Apache/htdocs/Other/private/map3d-tools/texture/TextureDecode.dll",
+      "onlyCodeViewFilenameChanged": true,
+      "differentBytes": 111
+    },
+    {
+      "path": "Apache/htdocs/Other/private/map3d-tools/texture/TextureDecode.exe",
+      "onlyCodeViewFilenameChanged": true,
+      "differentBytes": 84
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll",
+      "onlyCodeViewFilenameChanged": true,
+      "differentBytes": 156
+    }
+  ],
+  "scope": "Approved release payload and curated public documentation/screenshots only; no private test reports, archive manifests or live state copied.",
+  "failed": 0
+}

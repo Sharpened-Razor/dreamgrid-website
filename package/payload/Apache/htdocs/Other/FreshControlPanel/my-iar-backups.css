@@ -1,0 +1,307 @@
+/* FRESH MY IAR BACKUPS */
+
+.agcp-my-iar-slots{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:8px;
+
+    margin-bottom:8px;
+}
+
+.agcp-my-iar-slot{
+    min-width:0;
+
+    overflow:hidden;
+
+    border:1px solid var(--gold-line);
+    border-radius:5px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10140d 0%,
+            #080a07 100%
+        );
+}
+
+.agcp-my-iar-slot.empty{
+    min-height:185px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#626961;
+
+    font-size:8px;
+    font-weight:900;
+
+    text-align:center;
+}
+
+.agcp-my-iar-slot-head{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:10px;
+
+    min-height:43px;
+
+    padding:8px 10px;
+
+    border-bottom:1px solid #38331d;
+
+    background:
+        linear-gradient(
+            180deg,
+            #12160f 0%,
+            #0a0d08 100%
+        );
+}
+
+.agcp-my-iar-slot-head span{
+    color:#927927;
+
+    font-size:6px;
+    font-weight:900;
+
+    letter-spacing:.08em;
+}
+
+.agcp-my-iar-slot-body{
+    padding:10px;
+}
+
+.agcp-my-iar-name{
+    color:#d7dad3;
+
+    font-size:9px;
+    font-weight:900;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-my-iar-meta{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:5px;
+
+    margin-top:9px;
+}
+
+.agcp-my-iar-meta-row{
+    min-width:0;
+
+    padding:7px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-my-iar-meta-row span{
+    display:block;
+
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-my-iar-meta-row strong{
+    display:block;
+
+    margin-top:4px;
+
+    color:#b9beb6;
+
+    font-size:7px;
+
+    overflow-wrap:anywhere;
+}
+
+.agcp-my-iar-actions{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+
+    margin-top:10px;
+}
+
+.agcp-my-iar-download{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:29px;
+
+    padding:5px 10px;
+
+    border:1px solid #85681a;
+    border-radius:3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #211d0e 0%,
+            #0c0d09 100%
+        );
+
+    color:#ddb642;
+
+    font-size:7px;
+    font-weight:900;
+
+    text-decoration:none;
+}
+
+.agcp-my-iar-action{
+    min-height:29px;
+
+    padding:5px 9px;
+
+    border:1px solid #3c4037;
+    border-radius:3px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #1c201a 0%,
+            #0b0d0b 100%
+        );
+
+    color:#c3c7bf;
+
+    font-size:7px;
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+.agcp-my-iar-action:hover{
+    border-color:#80671d;
+    color:#e4bd46;
+}
+
+.agcp-my-iar-action.danger{
+    border-color:#704343;
+    color:#df8a8a;
+}
+
+.agcp-my-iar-upload{
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        auto;
+
+    align-items:end;
+
+    gap:8px;
+
+    padding:10px;
+}
+
+.agcp-my-iar-file-field{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+.agcp-my-iar-file-field label{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-my-iar-file-field input{
+    min-height:32px;
+
+    padding:5px 8px;
+
+    border:1px solid #393d34;
+    border-radius:3px;
+
+    background:#060806;
+
+    color:#cbd0c8;
+
+    font-size:7px;
+}
+
+.agcp-my-iar-job-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:5px;
+
+    padding:8px;
+}
+
+.agcp-my-iar-job-row{
+    display:grid;
+
+    grid-template-columns:
+        100px minmax(0,1fr);
+
+    gap:8px;
+
+    padding:7px 8px;
+
+    border:1px solid #292d26;
+    border-radius:3px;
+
+    background:#0b0e09;
+}
+
+.agcp-my-iar-job-row span{
+    color:#70766d;
+
+    font-size:6px;
+    font-weight:900;
+}
+
+.agcp-my-iar-job-row strong{
+    color:#c8ccc5;
+
+    font-size:7px;
+
+    overflow-wrap:anywhere;
+}
+
+@media(max-width:850px){
+
+    .agcp-my-iar-slots,
+    .agcp-my-iar-job-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    .agcp-my-iar-upload{
+        grid-template-columns:1fr;
+    }
+
+    .agcp-my-iar-meta{
+        grid-template-columns:1fr;
+    }
+}

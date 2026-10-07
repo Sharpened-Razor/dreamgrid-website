@@ -1,0 +1,214 @@
+/* =========================================================
+   AUSTRALIA GRID - GLOBAL GLOW ICON SYSTEM
+   Master style based on Region Controls
+   ========================================================= */
+
+.ag-glow-icon{
+    width:30px;
+    min-width:30px;
+    height:30px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#dbe7ee;
+
+    filter:
+    drop-shadow(0 0 .5px currentColor)
+    drop-shadow(0 0 1px currentColor);
+
+    transition:
+        filter .16s ease,
+        opacity .16s ease,
+        transform .16s ease;
+}
+
+.ag-glow-icon svg{
+    width:24px;
+    height:24px;
+
+    display:block;
+
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+button:not(:disabled):hover .ag-glow-icon,
+a:hover .ag-glow-icon,
+.ag-glow-button:not(:disabled):hover .ag-glow-icon{
+    filter:
+    drop-shadow(0 0 1px currentColor)
+    drop-shadow(0 0 2px currentColor);
+}
+
+button:not(:disabled):active .ag-glow-icon,
+.ag-glow-button:not(:disabled):active .ag-glow-icon{
+    transform:scale(.94);
+}
+
+button:disabled .ag-glow-icon,
+.ag-glow-button:disabled .ag-glow-icon{
+    opacity:.85;
+    filter:
+        drop-shadow(0 0 3px currentColor);
+}
+
+
+/* =========================================================
+   SEMANTIC ICON COLOURS
+   ========================================================= */
+
+.ag-icon-console{
+    color:#42a5f5;
+}
+
+.ag-icon-statistics,
+.ag-icon-info{
+    color:#35d1e8;
+}
+
+.ag-icon-start,
+.ag-icon-enable,
+.ag-icon-add{
+    color:#4ee378;
+}
+
+.ag-icon-load,
+.ag-icon-import{
+    color:#b77cff;
+}
+
+.ag-icon-restart,
+.ag-icon-refresh{
+    color:#ffad42;
+}
+
+.ag-icon-save,
+.ag-icon-export,
+.ag-icon-backup{
+    color:#d57cff;
+}
+
+.ag-icon-stop,
+.ag-icon-delete,
+.ag-icon-danger{
+    color:#ff5c64;
+}
+
+.ag-icon-log,
+.ag-icon-details{
+    color:#ffd34e;
+}
+
+.ag-icon-teleport{
+    color:#b378ff;
+}
+
+.ag-icon-map{
+    color:#39d2c3;
+}
+
+.ag-icon-edit,
+.ag-icon-settings{
+    color:#ff9d43;
+}
+
+.ag-icon-alert,
+.ag-icon-email,
+.ag-icon-message{
+    color:#ff718f;
+}
+
+.ag-icon-freeze{
+    color:#55d7ff;
+}
+
+.ag-icon-thaw{
+    color:#ffba45;
+}
+
+.ag-icon-users,
+.ag-icon-avatars,
+.ag-icon-groups{
+    color:#6fc7ff;
+}
+
+.ag-icon-home{
+    color:#8ee6ff;
+}
+
+.ag-icon-tools{
+    color:#f0c85a;
+}
+
+.ag-icon-pause{
+    color:#f4d35e;
+}
+
+.ag-icon-restore{
+    color:#76e6b5;
+}
+
+
+/* =========================================================
+   OPTIONAL GLOBAL GLOW BUTTON
+   Pages can opt into this without changing their layout.
+   ========================================================= */
+
+.ag-glow-button{
+    display:grid;
+    grid-template-columns:32px minmax(0,1fr);
+    column-gap:10px;
+    align-items:center;
+
+    text-align:left;
+}
+
+.ag-glow-button .ag-glow-label{
+    min-width:0;
+}
+
+
+/* =========================================================
+   DREAMGRID REGION CONTROL COMPATIBILITY
+   Lets existing controls migrate without changing appearance.
+   ========================================================= */
+
+.dg-control-icon{
+    filter:
+    drop-shadow(0 0 .5px currentColor)
+    drop-shadow(0 0 1px currentColor);
+}
+
+.dg-control-btn:not(:disabled):hover .dg-control-icon{
+    filter:
+    drop-shadow(0 0 1px currentColor)
+    drop-shadow(0 0 2px currentColor);
+}
+
+/* Existing Region Controls semantic aliases */
+
+.dg-ci-console{color:#42a5f5;}
+.dg-ci-statistics{color:#35d1e8;}
+.dg-ci-start{color:#4ee378;}
+.dg-ci-load{color:#b77cff;}
+.dg-ci-restart{color:#ffad42;}
+.dg-ci-save{color:#d57cff;}
+.dg-ci-stop{color:#ff5c64;}
+.dg-ci-log{color:#ffd34e;}
+.dg-ci-teleport{color:#b378ff;}
+.dg-ci-map{color:#39d2c3;}
+.dg-ci-edit{color:#ff9d43;}
+.dg-ci-alert{color:#ff718f;}
+.dg-ci-freeze{color:#55d7ff;}
+.dg-ci-thaw{color:#ffba45;}
+
+/* =========================================================
+   END AUSTRALIA GRID GLOBAL GLOW ICON SYSTEM
+   ========================================================= */
+
+

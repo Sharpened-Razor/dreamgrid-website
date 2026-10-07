@@ -1,0 +1,1980 @@
+:root{
+    --cc-black:#050706;
+    --cc-panel:#0a0c0b;
+    --cc-panel2:#111310;
+    --cc-panel3:#171914;
+
+    --cc-gold:#a87b25;
+    --cc-gold-bright:#e2b64f;
+    --cc-gold-soft:#74602d;
+
+    --cc-border:#665427;
+    --cc-metal:#55564e;
+
+    --cc-text:#dedbd2;
+    --cc-muted:#8f918b;
+
+    --cc-teal:#36a4ae;
+    --cc-green:#75ce72;
+    --cc-red:#ba5555;
+
+    --cc-radius:6px;
+
+    --cc-font:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+    margin:0;
+    min-height:100%;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    color:var(--cc-text);
+
+    font-family:var(--cc-font);
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.18),
+            rgba(0,0,0,.56)
+        ),
+        url("/Other/site-design-image.php?slot=admin-control-center-background")
+        var(--ag-site-admin-control-center-background-position, center top) / var(--ag-site-admin-control-center-background-size, cover)
+        fixed
+        no-repeat;
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   WHOLE CONTROL CENTER
+   ========================================================= */
+
+.cc-shell{
+
+    height:100vh;
+
+    padding:14px;
+
+    display:grid;
+
+    grid-template-columns:
+        280px
+        minmax(0,1fr);
+
+    gap:14px;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+   ========================================================= */
+
+.cc-sidebar{
+
+    min-height:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #141612,
+            #070907
+        );
+
+    border:
+        1px solid var(--cc-gold);
+
+    border-radius:8px;
+
+    box-shadow:
+        inset 0 0 0 1px #292316,
+        0 8px 20px rgba(0,0,0,.72);
+
+    overflow-y:auto;
+
+    scrollbar-width:thin;
+    scrollbar-color:#5c502e #080a08;
+}
+
+
+.cc-sidebar::-webkit-scrollbar{
+    width:8px;
+}
+
+
+.cc-sidebar::-webkit-scrollbar-track{
+    background:#080a08;
+}
+
+
+.cc-sidebar::-webkit-scrollbar-thumb{
+    background:#5c502e;
+    border-radius:5px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.cc-brand{
+
+    min-height:72px;
+
+    display:grid;
+
+    grid-template-columns:
+        44px
+        minmax(0,1fr);
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:
+        4px
+        7px
+        11px;
+
+    margin-bottom:8px;
+
+    border-bottom:
+        1px solid #4a3d20;
+}
+
+
+.cc-brand-icon{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:var(--cc-gold-bright);
+}
+
+
+.cc-brand-icon svg{
+
+    width:34px;
+    height:34px;
+}
+
+
+.cc-grid-name{
+
+    color:#efe5ca;
+
+    font-size:15px;
+    font-weight:600;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+
+.cc-brand-sub{
+
+    margin-top:2px;
+
+    color:#a78135;
+
+    font-size:9px;
+    font-weight:600;
+
+    letter-spacing:.09em;
+}
+
+
+/* =========================================================
+   MENU HEADINGS
+   ========================================================= */
+
+.cc-menu-section{
+
+    margin-top:7px;
+}
+
+
+.cc-menu-heading{
+
+    padding:
+        5px
+        8px
+        5px;
+
+    margin-bottom:3px;
+
+    color:#deb558;
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    border-bottom:
+        1px solid #39321f;
+}
+
+
+/* =========================================================
+   MENU BUTTONS
+   ========================================================= */
+
+.cc-nav-button{
+
+    position:relative;
+
+    width:100%;
+
+    height:39px;
+
+    display:grid;
+
+    grid-template-columns:
+        29px
+        minmax(0,1fr);
+
+    align-items:center;
+
+    gap:7px;
+
+    margin-bottom:4px;
+
+    padding:
+        4px
+        8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #292a25 0,
+            #20211d 7px,
+            #111310 8px,
+            #0d0f0d 100%
+        );
+
+    border:
+        1px solid #484a44;
+
+    border-radius:5px;
+
+    box-shadow:
+        inset 0 1px 0 #64645d,
+        0 1px 2px rgba(0,0,0,.9);
+
+    color:#d7d7d1;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    font-family:var(--cc-font);
+    font-size:10px;
+    font-weight:600;
+
+    text-align:left;
+
+    transition:
+        border-color .12s ease,
+        color .12s ease,
+        background .12s ease;
+}
+
+
+.cc-nav-button:hover{
+
+    border-color:#8c6b29;
+
+    color:#f4e6bd;
+
+    background:
+        linear-gradient(
+            180deg,
+            #34342e 0,
+            #29291f 7px,
+            #181711 8px,
+            #11110e 100%
+        );
+}
+
+
+.cc-nav-button.active{
+
+    border-color:#c18f2c;
+
+    color:#ffe3a0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #4a402d 0,
+            #4a402d 7px,
+            #211b10 8px,
+            #15110b 100%
+        );
+
+    box-shadow:
+        inset 0 0 0 1px #59451a,
+        inset 0 1px 0 #81704b;
+}
+
+
+.cc-nav-icon{
+
+    width:24px;
+    height:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#bfc7c5;
+}
+
+
+.cc-nav-button.active
+.cc-nav-icon{
+
+    color:#e5b84e;
+}
+
+
+.cc-nav-icon svg{
+
+    width:21px;
+    height:21px;
+}
+
+
+.cc-nav-label{
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.cc-sidebar-bottom{
+
+    margin-top:auto;
+
+    padding-top:10px;
+}
+
+
+.cc-user-card{
+
+    margin-bottom:6px;
+
+    padding:8px 9px;
+
+    background:#080a08;
+
+    border:
+        1px solid #4c4023;
+
+    border-radius:5px;
+}
+
+
+.cc-user-role{
+
+    color:#c99f43;
+
+    font-size:9px;
+    font-weight:700;
+}
+
+
+.cc-user-name{
+
+    margin-top:3px;
+
+    color:#e5e1d8;
+
+    font-size:10px;
+}
+
+
+.cc-user-level{
+
+    margin-top:2px;
+
+    color:#7f837e;
+
+    font-size:8px;
+}
+
+
+.cc-logout{
+
+    height:37px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #37201e,
+            #17100f
+        );
+
+    border:
+        1px solid #813d39;
+
+    border-radius:5px;
+
+    color:#e0b4ae;
+
+    text-decoration:none;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+
+.cc-logout:hover{
+
+    border-color:#bb6259;
+
+    color:#ffd6d0;
+}
+
+
+/* =========================================================
+   RIGHT WORKSPACE
+   ========================================================= */
+
+.cc-workspace{
+
+    min-width:0;
+    min-height:0;
+
+    display:grid;
+
+    grid-template-rows:
+        68px
+        minmax(0,1fr)
+        31px;
+
+    gap:8px;
+}
+
+
+/* =========================================================
+   WORKSPACE HEADER
+   ========================================================= */
+
+.cc-workspace-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        9px
+        15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171914,
+            #0b0d0b
+        );
+
+    border:
+        1px solid var(--cc-gold);
+
+    border-radius:7px;
+
+    box-shadow:
+        inset 0 1px 0 #3e3d34,
+        0 4px 10px rgba(0,0,0,.65);
+}
+
+
+.cc-header-kicker{
+
+    color:#8d7540;
+
+    font-size:8px;
+    font-weight:700;
+
+    letter-spacing:.14em;
+}
+
+
+.cc-workspace-title{
+
+    margin-top:2px;
+
+    color:#e2b751;
+
+    font-size:21px;
+    line-height:1;
+
+    font-weight:600;
+}
+
+
+.cc-header-state{
+
+    min-width:112px;
+
+    padding:
+        7px
+        12px;
+
+    background:#090b09;
+
+    border:
+        1px solid #58491f;
+
+    border-radius:5px;
+
+    text-align:center;
+}
+
+
+.cc-header-state strong{
+
+    display:block;
+
+    color:#79ce72;
+
+    font-size:9px;
+}
+
+
+.cc-header-state span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:#7e827c;
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   CONTENT WINDOW
+   ========================================================= */
+
+.cc-content{
+
+    position:relative;
+
+    min-height:0;
+
+    background:#060806;
+
+    border:
+        1px solid #786127;
+
+    border-radius:7px;
+
+    box-shadow:
+        inset 0 0 0 1px #1e201c,
+        0 5px 12px rgba(0,0,0,.65);
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   DEFAULT ADMIN FRONT CONTENT
+   ========================================================= */
+
+.cc-home{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:auto;
+
+    padding:16px;
+}
+
+
+.cc-home.hidden{
+    display:none;
+}
+
+
+.cc-welcome{
+
+    padding:
+        17px
+        18px;
+
+    margin-bottom:12px;
+
+    background:#0b0d0b;
+
+    border:
+        1px solid #5b4a22;
+
+    border-radius:6px;
+}
+
+
+.cc-welcome-label{
+
+    color:#7f817b;
+
+    font-size:9px;
+
+    letter-spacing:.1em;
+}
+
+
+.cc-welcome h1{
+
+    margin:
+        4px
+        0
+        4px;
+
+    color:#e6bd5c;
+
+    font-size:24px;
+
+    font-weight:600;
+}
+
+
+.cc-welcome p{
+
+    margin:0;
+
+    color:#888c87;
+
+    font-size:10px;
+}
+
+
+.cc-stat-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(0,1fr)
+        );
+
+    gap:9px;
+
+    margin-bottom:10px;
+}
+
+
+.cc-stat{
+
+    min-height:116px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#090b09;
+
+    border:
+        1px solid #635020;
+
+    border-radius:5px;
+}
+
+
+.cc-stat-icon{
+
+    width:34px;
+    height:34px;
+
+    margin-bottom:6px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#caa344;
+}
+
+
+.cc-stat-icon svg{
+
+    width:30px;
+    height:30px;
+}
+
+
+.cc-stat-label{
+
+    color:#7f817c;
+
+    font-size:8px;
+
+    letter-spacing:.08em;
+}
+
+
+.cc-stat-value{
+
+    margin-top:4px;
+
+    color:#d7b657;
+
+    font-size:12px;
+    font-weight:600;
+
+    text-align:center;
+}
+
+
+.cc-bars{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:8px;
+
+    margin-bottom:10px;
+}
+
+
+.cc-bar{
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #46463f 0,
+            #34342e 5px,
+            #151713 6px,
+            #0c0e0c 100%
+        );
+
+    border:
+        1px solid #5c4c26;
+
+    border-radius:4px;
+
+    color:#c9c8c1;
+
+    font-size:8px;
+    font-weight:600;
+}
+
+
+.cc-lower-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.4fr)
+        minmax(260px,.8fr);
+
+    gap:10px;
+}
+
+
+.cc-panel{
+
+    min-height:235px;
+
+    padding:13px;
+
+    background:#090b09;
+
+    border:
+        1px solid #5d4b22;
+
+    border-radius:5px;
+}
+
+
+.cc-panel-title{
+
+    margin-bottom:10px;
+
+    color:#dab04d;
+
+    font-size:12px;
+    font-weight:600;
+}
+
+
+.cc-console{
+
+    min-height:180px;
+
+    padding:12px;
+
+    background:#020302;
+
+    border:
+        1px solid #393c35;
+
+    border-radius:4px;
+
+    color:#70cb71;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:9px;
+}
+
+
+.cc-console-line{
+
+    margin-bottom:6px;
+}
+
+
+.cc-info-row{
+
+    display:grid;
+
+    grid-template-columns:
+        110px
+        minmax(0,1fr);
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+    padding:
+        7px
+        8px;
+
+    background:#060806;
+
+    border:
+        1px solid #353832;
+
+    border-radius:4px;
+}
+
+
+.cc-info-key{
+
+    color:#747872;
+
+    font-size:8px;
+}
+
+
+.cc-info-value{
+
+    color:#c9a84d;
+
+    font-size:9px;
+    font-weight:600;
+}
+
+
+/* =========================================================
+   EMBEDDED PAGE
+   ========================================================= */
+
+.cc-frame{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border:0;
+
+    background:#080a08;
+
+    display:none;
+}
+
+
+.cc-frame.visible{
+
+    display:block;
+}
+
+
+/* =========================================================
+   BOTTOM STATUS BAR
+   ========================================================= */
+
+.cc-status{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        0
+        11px;
+
+    background:#07131a;
+
+    border:
+        1px solid #1f526b;
+
+    border-radius:5px;
+
+    color:#83aab8;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:8px;
+}
+
+
+.cc-status-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+}
+
+
+.cc-status-dot{
+
+    width:7px;
+    height:7px;
+
+    background:#78d069;
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 5px rgba(120,208,105,.65);
+}
+
+
+@media(max-width:1050px){
+
+    .cc-shell{
+        grid-template-columns:
+            240px
+            minmax(0,1fr);
+    }
+
+    .cc-stat-grid{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+}
+
+/* =========================================================
+   CONTROL CENTER V2
+   COMPACT FULL SIDEBAR + VISIBLE PAGE BACKGROUND
+   ========================================================= */
+
+
+/* LEFT SIDE MUST FIT AS ONE COMPLETE CONTROL MENU */
+
+.cc-shell{
+    grid-template-columns:
+        218px minmax(0,1fr);
+}
+
+
+.cc-sidebar{
+
+    padding:
+        7px;
+
+    overflow:hidden;
+}
+
+
+.cc-brand{
+
+    min-height:
+        46px;
+
+    height:
+        46px;
+
+    grid-template-columns:
+        32px minmax(0,1fr);
+
+    gap:
+        7px;
+
+    padding:
+        2px 5px 6px;
+
+    margin-bottom:
+        3px;
+}
+
+
+.cc-brand-icon{
+
+    width:
+        29px;
+
+    height:
+        29px;
+}
+
+
+.cc-brand-icon svg{
+
+    width:
+        25px;
+
+    height:
+        25px;
+}
+
+
+.cc-grid-name{
+
+    font-size:
+        11px;
+}
+
+
+.cc-brand-sub{
+
+    margin-top:
+        1px;
+
+    font-size:
+        7px;
+}
+
+
+/* THREE DISTINCT MENU GROUPS */
+
+.cc-menu-section{
+
+    margin-top:
+        2px;
+}
+
+
+.cc-menu-heading{
+
+    height:
+        18px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:
+        0 5px;
+
+    margin:
+        1px 0 2px;
+
+    font-size:
+        8px;
+
+    letter-spacing:
+        .08em;
+}
+
+
+/* SMALLER BUTTONS SO THE WHOLE MENU FITS */
+
+.cc-nav-button{
+
+    height:
+        27px;
+
+    min-height:
+        27px;
+
+    grid-template-columns:
+        22px minmax(0,1fr);
+
+    gap:
+        4px;
+
+    margin-bottom:
+        2px;
+
+    padding:
+        2px 6px;
+
+    border-radius:
+        4px;
+
+    font-size:
+        7.5px;
+}
+
+
+.cc-nav-icon{
+
+    width:
+        18px;
+
+    height:
+        18px;
+}
+
+
+.cc-nav-icon svg{
+
+    width:
+        16px;
+
+    height:
+        16px;
+}
+
+
+/* USER CARD DOES NOT NEED TO TAKE UP MENU SPACE.
+   LOGOUT IS THE ONLY EXIT CONTROL. */
+
+.cc-user-card{
+
+    display:none;
+}
+
+
+.cc-sidebar-bottom{
+
+    margin-top:
+        auto;
+
+    padding-top:
+        4px;
+}
+
+
+.cc-logout{
+
+    height:
+        28px;
+
+    font-size:
+        8px;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   LET THE TEAL PAGE BACKGROUND SHOW THROUGH
+   ========================================================= */
+
+.cc-content{
+
+    background:
+        rgba(
+            2,
+            5,
+            5,
+            .22
+        );
+
+    backdrop-filter:
+        none;
+}
+
+
+.cc-frame{
+
+    background:
+        transparent;
+}
+
+
+/* Outer workspace stays sharp and gold */
+
+.cc-workspace-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #141711,
+            #080b09
+        );
+}
+
+
+.cc-content{
+
+    border-color:
+        #816420;
+
+    box-shadow:
+        inset 0 0 0 1px
+            rgba(17,24,22,.72),
+        0 5px 12px
+            rgba(0,0,0,.55);
+}
+
+
+/* Keep actual cards/panels solid */
+
+.cc-welcome,
+.cc-stat,
+.cc-panel,
+.cc-info-row{
+
+    backdrop-filter:none;
+}
+
+
+/* =========================================================
+   KEEP SIDEBAR PROPORTIONS COMPACT AT NORMAL DESKTOP WIDTHS
+   ========================================================= */
+
+@media(min-width:1400px){
+
+    .cc-shell{
+
+        grid-template-columns:
+            218px minmax(0,1fr);
+    }
+}
+
+
+/* =========================================================
+   CONTROL CENTER SIDEBAR V3
+   SLIGHTLY LARGER BUTTONS + LOGIN CARD
+   ========================================================= */
+
+
+/* Give the navigation a little more breathing room */
+
+.cc-shell{
+
+    grid-template-columns:
+        232px minmax(0,1fr);
+}
+
+
+/* Slightly wider sidebar */
+
+.cc-sidebar{
+
+    padding:
+        8px;
+}
+
+
+/* Brand remains compact */
+
+.cc-brand{
+
+    min-height:
+        50px;
+
+    height:
+        50px;
+
+    grid-template-columns:
+        34px minmax(0,1fr);
+
+    gap:
+        8px;
+
+    padding:
+        3px 6px 7px;
+
+    margin-bottom:
+        4px;
+}
+
+
+.cc-brand-icon{
+
+    width:
+        31px;
+
+    height:
+        31px;
+}
+
+
+.cc-brand-icon svg{
+
+    width:
+        27px;
+
+    height:
+        27px;
+}
+
+
+.cc-grid-name{
+
+    font-size:
+        11.5px;
+}
+
+
+.cc-brand-sub{
+
+    font-size:
+        7.5px;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.cc-menu-heading{
+
+    height:
+        19px;
+
+    padding:
+        0 6px;
+
+    margin:
+        2px 0 3px;
+
+    font-size:
+        8.2px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   A LITTLE BIGGER - NOT OVERSIZED
+   ========================================================= */
+
+.cc-nav-button{
+
+    height:
+        31px;
+
+    min-height:
+        31px;
+
+    grid-template-columns:
+        24px minmax(0,1fr);
+
+    gap:
+        5px;
+
+    margin-bottom:
+        2px;
+
+    padding:
+        3px 7px;
+
+    font-size:
+        8px;
+}
+
+
+.cc-nav-icon{
+
+    width:
+        20px;
+
+    height:
+        20px;
+}
+
+
+.cc-nav-icon svg{
+
+    width:
+        18px;
+
+    height:
+        18px;
+}
+
+
+/* =========================================================
+   LOGIN INFORMATION
+   ========================================================= */
+
+.cc-sidebar-bottom{
+
+    margin-top:
+        auto;
+
+    padding-top:
+        6px;
+}
+
+
+.cc-user-card{
+
+    display:block;
+
+    margin:
+        0 0 5px;
+
+    padding:
+        7px 9px;
+
+    min-height:
+        52px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121410,
+            #080a08
+        );
+
+    border:
+        1px solid #6f5725;
+
+    border-radius:
+        5px;
+
+    box-shadow:
+        inset 0 1px 0 #302d23;
+}
+
+
+.cc-user-role{
+
+    color:
+        #dbae49;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .08em;
+}
+
+
+.cc-user-name{
+
+    margin-top:
+        3px;
+
+    color:
+        #eee8da;
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
+}
+
+
+.cc-user-level{
+
+    margin-top:
+        2px;
+
+    color:
+        #8e918a;
+
+    font-size:
+        7.5px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        .05em;
+}
+
+
+/* Logout stays directly beneath login information */
+
+.cc-logout{
+
+    height:
+        30px;
+
+    min-height:
+        30px;
+
+    font-size:
+        8px;
+}
+
+
+/* Maintain the same proportions on large monitors */
+
+@media(min-width:1400px){
+
+    .cc-shell{
+
+        grid-template-columns:
+            232px minmax(0,1fr);
+    }
+}
+
+
+/* =========================================================
+   CONTROL CENTER SIDEBAR V4
+   LARGER MENU BUTTONS
+   ========================================================= */
+
+.cc-shell{
+
+    grid-template-columns:
+        250px minmax(0,1fr);
+}
+
+
+.cc-sidebar{
+
+    padding:
+        9px;
+}
+
+
+/* BRAND */
+
+.cc-brand{
+
+    min-height:
+        54px;
+
+    height:
+        54px;
+
+    grid-template-columns:
+        38px minmax(0,1fr);
+
+    gap:
+        9px;
+
+    padding:
+        4px 7px 8px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.cc-brand-icon{
+
+    width:
+        34px;
+
+    height:
+        34px;
+}
+
+
+.cc-brand-icon svg{
+
+    width:
+        30px;
+
+    height:
+        30px;
+}
+
+
+.cc-grid-name{
+
+    font-size:
+        12px;
+}
+
+
+.cc-brand-sub{
+
+    font-size:
+        8px;
+}
+
+
+/* SECTION HEADINGS */
+
+.cc-menu-heading{
+
+    height:
+        21px;
+
+    padding:
+        0 7px;
+
+    margin:
+        2px 0 4px;
+
+    font-size:
+        8.8px;
+}
+
+
+/* BIGGER BUTTONS */
+
+.cc-nav-button{
+
+    height:
+        36px;
+
+    min-height:
+        36px;
+
+    grid-template-columns:
+        28px minmax(0,1fr);
+
+    gap:
+        6px;
+
+    margin-bottom:
+        3px;
+
+    padding:
+        4px 8px;
+
+    font-size:
+        8.8px;
+}
+
+
+.cc-nav-icon{
+
+    width:
+        23px;
+
+    height:
+        23px;
+}
+
+
+.cc-nav-icon svg{
+
+    width:
+        21px;
+
+    height:
+        21px;
+}
+
+
+/* LOGIN CARD SLIGHTLY LARGER TOO */
+
+.cc-user-card{
+
+    min-height:
+        58px;
+
+    padding:
+        8px 10px;
+}
+
+
+.cc-user-role{
+
+    font-size:
+        8.5px;
+}
+
+
+.cc-user-name{
+
+    font-size:
+        10.5px;
+}
+
+
+.cc-user-level{
+
+    font-size:
+        8px;
+}
+
+
+.cc-logout{
+
+    height:
+        33px;
+
+    min-height:
+        33px;
+
+    font-size:
+        8.5px;
+}
+
+
+/* HOLD SAME SIZE ON LARGE MONITORS */
+
+@media(min-width:1400px){
+
+    .cc-shell{
+
+        grid-template-columns:
+            250px minmax(0,1fr);
+    }
+}
+
+
+/* =========================================================
+   CONTROL CENTER SIDEBAR V5
+   KEEP LOGOUT FULLY INSIDE SIDEBAR
+   ========================================================= */
+
+
+/*
+ * KEEP THE BUTTON SIZE.
+ * Only reduce wasted spacing between controls.
+ */
+
+.cc-sidebar{
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    padding-bottom:8px;
+}
+
+
+/* Brand slightly tighter vertically */
+
+.cc-brand{
+
+    margin-bottom:3px;
+}
+
+
+/* Keep headings clear but remove wasted height */
+
+.cc-menu-section{
+
+    margin-top:1px;
+}
+
+
+.cc-menu-heading{
+
+    height:20px;
+
+    margin:
+        1px 0 2px;
+}
+
+
+/*
+ * BUTTONS REMAIN 36px HIGH.
+ * Only reduce the gap underneath each button.
+ */
+
+.cc-nav-button{
+
+    height:36px;
+
+    min-height:36px;
+
+    margin-bottom:2px;
+}
+
+
+/* Bottom area must remain part of normal sidebar flow */
+
+.cc-sidebar-bottom{
+
+    position:static !important;
+
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+
+    width:100%;
+
+    flex:0 0 auto;
+
+    margin-top:4px;
+
+    padding:
+        3px 0 2px;
+}
+
+
+/* Admin login information stays inside */
+
+.cc-user-card{
+
+    position:static !important;
+
+    width:100%;
+
+    margin:
+        0 0 5px;
+
+    box-sizing:border-box;
+}
+
+
+/* Logout stays completely inside the gold sidebar */
+
+.cc-logout{
+
+    position:static !important;
+
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+
+    display:flex;
+
+    width:100%;
+
+    height:33px;
+
+    min-height:33px;
+
+    margin:0;
+
+    box-sizing:border-box;
+
+    flex-shrink:0;
+}
+
+
+/*
+ * Make sure none of the major sidebar blocks
+ * get squeezed out of the parent.
+ */
+
+.cc-brand,
+.cc-menu-section,
+.cc-sidebar-bottom{
+
+    flex-shrink:0;
+}
+
+
+/* =========================================================
+   CONTROL CENTER SIDEBAR V6
+   SLIGHTLY TALLER BUTTONS - FILL FRAME
+   ========================================================= */
+
+.cc-sidebar{
+
+    padding-bottom:4px;
+}
+
+
+/* Menu buttons just slightly larger */
+
+.cc-nav-button{
+
+    height:37px;
+
+    min-height:37px;
+}
+
+
+/* Keep the spacing tight */
+
+.cc-menu-heading{
+
+    margin:
+        1px 0 2px;
+}
+
+
+/* Bottom login/logout area */
+
+.cc-sidebar-bottom{
+
+    margin-top:3px;
+
+    padding:
+        2px 0 0;
+}
+
+
+.cc-user-card{
+
+    margin-bottom:5px;
+}
+
+
+.cc-logout{
+
+    height:34px;
+
+    min-height:34px;
+
+    margin-bottom:0;
+}
+
+

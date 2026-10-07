@@ -1,0 +1,1108 @@
+:root{
+
+    --cp-bg:#070a08;
+    --cp-panel:#0a0d0a;
+    --cp-panel-top:#151813;
+
+    --cp-gold:#9d7525;
+    --cp-gold2:#d5a83e;
+    --cp-gold3:#edc45d;
+
+    --cp-border:#625021;
+
+    --cp-text:#e2dfd7;
+    --cp-muted:#888d86;
+
+    --cp-green:#75d181;
+    --cp-red:#d66c62;
+
+    --cp-font:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+
+*{
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+
+    margin:0;
+
+    min-height:100%;
+
+    background:
+        transparent !important;
+
+    font-family:
+        var(--cp-font);
+
+    color:
+        var(--cp-text);
+}
+
+
+body{
+
+    padding:
+        18px;
+}
+
+
+/* =========================================================
+   CLEAN PANEL PAGE
+   ========================================================= */
+
+.cp-page{
+
+    width:
+        100%;
+
+    max-width:
+        none;
+
+    margin:
+        0;
+}
+
+
+/* =========================================================
+   SMALL PANEL INTRO
+   ========================================================= */
+
+.cp-intro{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:
+        20px;
+
+    min-height:
+        64px;
+
+    padding:
+        12px 16px;
+
+    margin-bottom:
+        12px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121510,
+            #090b09
+        );
+
+    border:
+        1px solid var(--cp-border);
+
+    border-radius:
+        6px;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(110,108,94,.27),
+        0 3px 7px
+            rgba(0,0,0,.48);
+}
+
+
+.cp-intro-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:
+        11px;
+}
+
+
+.cp-intro-icon{
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:
+        var(--cp-gold2);
+}
+
+
+.cp-intro-icon svg{
+
+    width:
+        30px;
+
+    height:
+        30px;
+}
+
+
+.cp-intro-kicker{
+
+    color:
+        #987b3b;
+
+    font-size:
+        8px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .1em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.cp-intro-title{
+
+    margin-top:
+        2px;
+
+    color:
+        #e7c15e;
+
+    font-size:
+        16px;
+
+    font-weight:
+        600;
+}
+
+
+.cp-intro-note{
+
+    color:
+        #777c76;
+
+    font-size:
+        9px;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+   ========================================================= */
+
+.cp-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        12px;
+}
+
+
+.cp-card{
+
+    position:relative;
+
+    min-height:
+        104px;
+
+    display:grid;
+
+    grid-template-columns:
+        40px
+        minmax(0,1fr);
+
+    align-items:center;
+
+    gap:
+        12px;
+
+    padding:
+        15px 17px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121510,
+            #080b09
+        );
+
+    border:
+        1px solid var(--cp-border);
+
+    border-radius:
+        6px;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(110,109,98,.27),
+        0 3px 8px
+            rgba(0,0,0,.55);
+}
+
+
+.cp-card:before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:
+        12px;
+
+    right:
+        12px;
+
+    height:
+        5px;
+
+    border-radius:
+        0 0 4px 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #46483f,
+            #626257,
+            #46483f
+        );
+
+    opacity:
+        .55;
+}
+
+
+.cp-card-icon{
+
+    width:
+        38px;
+
+    height:
+        38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:
+        #c4a149;
+}
+
+
+.cp-card-icon svg{
+
+    width:
+        31px;
+
+    height:
+        31px;
+}
+
+
+.cp-label{
+
+    color:
+        #d4aa46;
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .055em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.cp-value{
+
+    margin-top:
+        7px;
+
+    color:
+        #ece8df;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.2;
+
+    word-break:
+        break-word;
+}
+
+
+.cp-value.green{
+
+    color:
+        var(--cp-green);
+}
+
+
+.cp-value.muted{
+
+    color:
+        #a09e95;
+}
+
+
+/* =========================================================
+   LOWER ACTION BAR
+   ========================================================= */
+
+.cp-actions{
+
+    min-height:
+        70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:
+        18px;
+
+    margin-top:
+        12px;
+
+    padding:
+        12px 16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10130f,
+            #080a08
+        );
+
+    border:
+        1px solid var(--cp-border);
+
+    border-radius:
+        6px;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(108,104,89,.22),
+        0 3px 7px
+            rgba(0,0,0,.5);
+}
+
+
+.cp-actions-text{
+
+    color:
+        #7f847d;
+
+    font-size:
+        9px;
+
+    line-height:
+        1.5;
+}
+
+
+/* =========================================================
+   CONTROL BUTTON
+   ========================================================= */
+
+.cp-button{
+
+    flex:
+        0 0 auto;
+
+    min-width:
+        160px;
+
+    height:
+        38px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:
+        8px;
+
+    padding:
+        0 18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e3b744 0%,
+            #b67e15 52%,
+            #825406 100%
+        );
+
+    border:
+        1px solid #e7bc4b;
+
+    border-radius:
+        5px;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(255,244,185,.58),
+        0 2px 5px
+            rgba(0,0,0,.72);
+
+    color:
+        #171006;
+
+    font-family:
+        var(--cp-font);
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+
+    text-transform:
+        uppercase;
+
+    cursor:pointer;
+}
+
+
+.cp-button:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #f0c95a,
+            #c78e1e 52%,
+            #965f08
+        );
+
+    border-color:
+        #f0ca62;
+}
+
+
+.cp-button-icon{
+
+    width:
+        20px;
+
+    height:
+        20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+
+.cp-button-icon svg{
+
+    width:
+        18px;
+
+    height:
+        18px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .cp-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .cp-actions{
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+    }
+
+
+    .cp-button{
+
+        width:
+            100%;
+    }
+}
+
+/* =========================================================
+   CONTROL PANEL BUTTON V2
+   SAME STYLE AS LEFT SIDEBAR BUTTONS
+   ========================================================= */
+
+.cp-button{
+
+    position:relative !important;
+
+    min-width:170px !important;
+
+    height:37px !important;
+
+    padding:
+        4px 13px !important;
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:8px !important;
+
+
+    background:
+        linear-gradient(
+            180deg,
+            #292a25 0,
+            #20211d 7px,
+            #111310 8px,
+            #0d0f0d 100%
+        ) !important;
+
+
+    border:
+        1px solid #484a44 !important;
+
+    border-radius:
+        5px !important;
+
+
+    box-shadow:
+        inset 0 1px 0 #64645d,
+        0 1px 2px rgba(0,0,0,.9) !important;
+
+
+    color:
+        #d7d7d1 !important;
+
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        600 !important;
+
+    text-decoration:
+        none !important;
+
+    text-transform:
+        uppercase !important;
+}
+
+
+/* metallic top strip just like sidebar buttons */
+
+.cp-button:before{
+
+    content:"";
+
+    position:absolute;
+
+    left:10px;
+
+    right:10px;
+
+    top:4px;
+
+    height:4px;
+
+    border-radius:
+        3px;
+
+
+    background:
+        linear-gradient(
+            90deg,
+            #49483f,
+            #68665a,
+            #49483f
+        );
+
+    opacity:.7;
+
+    pointer-events:none;
+}
+
+
+/* icon stays above metallic strip */
+
+.cp-button-icon{
+
+    position:relative;
+
+    z-index:2;
+
+    width:21px !important;
+
+    height:21px !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    color:
+        #c4c9c7 !important;
+}
+
+
+.cp-button-icon svg{
+
+    width:19px !important;
+
+    height:19px !important;
+}
+
+
+.cp-button span{
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* same gold hover treatment */
+
+.cp-button:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #34342e 0,
+            #29291f 7px,
+            #181711 8px,
+            #11110e 100%
+        ) !important;
+
+    border-color:
+        #9d7628 !important;
+
+    color:
+        #f4e6bd !important;
+}
+
+
+/* clicked / keyboard focus */
+
+.cp-button:focus,
+.cp-button:active{
+
+    border-color:
+        #c18f2c !important;
+
+    color:
+        #ffe3a0 !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #4a402d 0,
+            #4a402d 7px,
+            #211b10 8px,
+            #15110b 100%
+        ) !important;
+
+    outline:none !important;
+
+    box-shadow:
+        inset 0 0 0 1px #59451a,
+        inset 0 1px 0 #81704b !important;
+}
+
+
+/* =========================================================
+   CLEAN EDIT ACCOUNT V1
+   ========================================================= */
+
+.cp-edit-page{
+
+    background:
+        transparent !important;
+}
+
+
+.cp-edit-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:
+        12px;
+}
+
+
+.cp-edit-card{
+
+    min-width:0;
+
+    padding:
+        17px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121510,
+            #080b09
+        );
+
+    border:
+        1px solid #625021;
+
+    border-radius:
+        6px;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(110,109,98,.27),
+        0 3px 8px
+            rgba(0,0,0,.55);
+}
+
+
+/* REMOVE OLD FORM CARD APPEARANCE */
+
+.cp-edit-card form{
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    background:
+        transparent !important;
+
+    border:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* FORM HEADINGS */
+
+.cp-edit-card h1,
+.cp-edit-card h2,
+.cp-edit-card h3,
+.cp-edit-card h4{
+
+    margin:
+        0 0 12px !important;
+
+    color:
+        #dbae49 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        14px !important;
+
+    font-weight:
+        600 !important;
+}
+
+
+/* LABELS */
+
+.cp-edit-card label{
+
+    display:block;
+
+    margin:
+        10px 0 5px;
+
+    color:
+        #cfa543 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        700 !important;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* INPUTS */
+
+.cp-edit-card input[type="text"],
+.cp-edit-card input[type="email"],
+.cp-edit-card input[type="password"],
+.cp-edit-card select,
+.cp-edit-card textarea{
+
+    width:
+        100% !important;
+
+    height:
+        38px;
+
+    margin:
+        0 0 8px !important;
+
+    padding:
+        0 11px !important;
+
+    background:
+        #050806 !important;
+
+    color:
+        #ece8df !important;
+
+    border:
+        1px solid #4b4e46 !important;
+
+    border-radius:
+        5px !important;
+
+    box-shadow:
+        inset 0 2px 5px
+            rgba(0,0,0,.6) !important;
+
+    outline:
+        none !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        11px !important;
+}
+
+
+.cp-edit-card textarea{
+
+    min-height:
+        90px;
+
+    height:
+        auto;
+
+    padding:
+        10px 11px !important;
+}
+
+
+.cp-edit-card input:focus,
+.cp-edit-card select:focus,
+.cp-edit-card textarea:focus{
+
+    border-color:
+        #a07828 !important;
+}
+
+
+/* TEXT / NOTES */
+
+.cp-edit-card p,
+.cp-edit-card small{
+
+    color:
+        #878b85 !important;
+
+    font-size:
+        9px !important;
+
+    line-height:
+        1.5 !important;
+}
+
+
+/* =========================================================
+   ALL FORM BUTTONS MATCH SIDEBAR
+   ========================================================= */
+
+.cp-edit-card button,
+.cp-edit-card input[type="submit"],
+.cp-edit-card input[type="button"],
+.cp-edit-card .button,
+.cp-edit-card a.button{
+
+    position:
+        relative !important;
+
+    min-width:
+        150px;
+
+    height:
+        37px;
+
+    margin-top:
+        10px;
+
+    padding:
+        4px 14px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #292a25 0,
+            #20211d 7px,
+            #111310 8px,
+            #0d0f0d 100%
+        ) !important;
+
+    border:
+        1px solid #484a44 !important;
+
+    border-radius:
+        5px !important;
+
+    box-shadow:
+        inset 0 1px 0 #64645d,
+        0 1px 2px
+            rgba(0,0,0,.9) !important;
+
+    color:
+        #d7d7d1 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        600 !important;
+
+    text-decoration:
+        none !important;
+
+    text-transform:
+        uppercase !important;
+
+    cursor:
+        pointer;
+}
+
+
+.cp-edit-card button:hover,
+.cp-edit-card input[type="submit"]:hover,
+.cp-edit-card input[type="button"]:hover,
+.cp-edit-card .button:hover,
+.cp-edit-card a.button:hover{
+
+    border-color:
+        #9d7628 !important;
+
+    color:
+        #f4e6bd !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #34342e 0,
+            #29291f 7px,
+            #181711 8px,
+            #11110e 100%
+        ) !important;
+}
+
+
+/* Hide old standalone navigation controls */
+
+.cp-edit-card a[href*="admin-dashboard"],
+.cp-edit-card a[href*="admin-home"],
+.cp-edit-card a[href*="user-home"]{
+
+    display:
+        none !important;
+}
+
+
+@media(max-width:900px){
+
+    .cp-edit-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+}
+
+
+

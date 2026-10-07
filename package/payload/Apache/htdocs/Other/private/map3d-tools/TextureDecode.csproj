@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0-windows</TargetFramework><PlatformTarget>x64</PlatformTarget>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems><NuGetAudit>false</NuGetAudit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="TextureDecode.cs" />
+    <Reference Include="OpenMetaverse"><HintPath>$(OpenSimBin)/OpenMetaverse.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="System.Drawing.Common"><HintPath>$(OpenSimBin)/System.Drawing.Common.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

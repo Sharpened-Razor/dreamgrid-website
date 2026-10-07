@@ -1,0 +1,1931 @@
+/*
+ * ============================================================
+ * MESSENGER V2 - ISOLATED WINDOWS
+ *
+ * Legacy OpenSim Friends + Message UI remains in DOM only
+ * as backend machinery.
+ *
+ * New UI uses:
+ *   #agV2FriendsWindow
+ *   #agV2ChatWindow
+ * ============================================================
+ */
+
+
+/*
+ * Hide ALL old visual popup systems.
+ */
+
+html body #ausFriendsBackdrop,
+html body #ausFriendsPanel,
+html body #ausFriendOverlay {
+
+    display:none !important;
+
+    visibility:hidden !important;
+
+    opacity:0 !important;
+
+    pointer-events:none !important;
+}
+
+
+html body.friends-popup-open {
+
+    overflow:auto !important;
+}
+
+
+/*
+ * Transparent positioning area only.
+ * This is NOT a visible Messenger box.
+ */
+
+html body #agV2MessengerArea {
+
+    position:relative !important;
+
+    box-sizing:border-box !important;
+
+    width:100% !important;
+
+    min-height:650px !important;
+
+    margin:
+        18px 0
+        24px 0
+        !important;
+
+    padding:0 !important;
+
+    border:0 !important;
+
+    background:transparent !important;
+
+    box-shadow:none !important;
+
+    overflow:visible !important;
+}
+
+
+/*
+ * ============================================================
+ * SHARED WINDOW
+ * ============================================================
+ */
+
+html body
+#agV2MessengerArea
+.ag-v2-real-window {
+
+    position:absolute !important;
+
+    box-sizing:border-box !important;
+
+    margin:0 !important;
+
+    border:
+        1px solid
+        rgba(222,170,39,.95)
+        !important;
+
+    border-radius:
+        10px
+        !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(22,31,38,.98),
+            rgba(5,11,16,.98)
+        )
+        !important;
+
+    box-shadow:
+        0 14px 34px
+        rgba(0,0,0,.46),
+        inset 0 1px 0
+        rgba(255,255,255,.06)
+        !important;
+
+    overflow:hidden !important;
+
+    resize:both !important;
+}
+
+
+/*
+ * ============================================================
+ * TITLE BAR
+ * ============================================================
+ */
+
+html body
+#agV2MessengerArea
+.ag-v2-real-titlebar {
+
+    box-sizing:border-box !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:space-between !important;
+
+    gap:10px !important;
+
+    height:58px !important;
+
+    padding:
+        9px 11px
+        !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(54,64,72,.99),
+            rgba(15,22,28,.99)
+        )
+        !important;
+
+    border-bottom:
+        1px solid
+        rgba(222,170,39,.52)
+        !important;
+
+    cursor:move !important;
+
+    user-select:none !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-real-title {
+
+    min-width:0 !important;
+
+    color:#ffc84c !important;
+
+    font-size:18px !important;
+
+    font-weight:900 !important;
+
+    overflow:hidden !important;
+
+    text-overflow:ellipsis !important;
+
+    white-space:nowrap !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-window-actions {
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    gap:7px !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-small-button {
+
+    appearance:none !important;
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    box-sizing:border-box !important;
+
+    height:32px !important;
+
+    min-width:82px !important;
+
+    padding:
+        0 10px
+        !important;
+
+    margin:0 !important;
+
+    border:
+        1px solid
+        rgba(255,230,138,.86)
+        !important;
+
+    border-radius:
+        6px
+        !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffea95,
+            #e8b62d 52%,
+            #a86b05
+        )
+        !important;
+
+    color:#070707 !important;
+
+    font-size:10px !important;
+
+    font-weight:900 !important;
+
+    cursor:pointer !important;
+}
+
+
+/*
+ * ============================================================
+ * FRIENDS WINDOW
+ * ============================================================
+ */
+
+html body #agV2FriendsWindow {
+
+    left:0 !important;
+
+    top:0 !important;
+
+    width:340px;
+
+    height:650px;
+
+    min-width:300px !important;
+
+    min-height:300px !important;
+}
+
+
+html body
+#agV2FriendsWindow.ag-v2-minimised {
+
+    height:58px !important;
+
+    min-height:58px !important;
+
+    max-height:58px !important;
+
+    resize:none !important;
+}
+
+
+html body
+#agV2FriendsWindow.ag-v2-minimised
+.ag-v2-friends-body {
+
+    display:none !important;
+}
+
+
+html body
+#agV2FriendsWindow
+.ag-v2-friends-body {
+
+    box-sizing:border-box !important;
+
+    height:
+        calc(100% - 58px)
+        !important;
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    min-height:0 !important;
+}
+
+
+html body
+#agV2FriendsWindow
+.ag-v2-friends-search-wrap {
+
+    box-sizing:border-box !important;
+
+    padding:
+        11px
+        !important;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.07)
+        !important;
+}
+
+
+html body
+#agV2FriendsSearch {
+
+    box-sizing:border-box !important;
+
+    width:100% !important;
+
+    height:40px !important;
+
+    padding:
+        0 11px
+        !important;
+
+    border:
+        1px solid
+        rgba(222,170,39,.48)
+        !important;
+
+    border-radius:
+        7px
+        !important;
+
+    background:
+        rgba(0,0,0,.60)
+        !important;
+
+    color:#fff !important;
+
+    outline:none !important;
+}
+
+
+html body
+#agV2FriendsList {
+
+    box-sizing:border-box !important;
+
+    flex:
+        1 1 auto
+        !important;
+
+    min-height:0 !important;
+
+    overflow-y:auto !important;
+
+    padding:
+        7px
+        !important;
+}
+
+
+html body
+.ag-v2-new-friend {
+
+    box-sizing:border-box !important;
+
+    display:block !important;
+
+    width:100% !important;
+
+    margin:
+        0 0 6px 0
+        !important;
+
+    padding:
+        12px
+        !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07)
+        !important;
+
+    border-radius:
+        7px
+        !important;
+
+    background:
+        rgba(255,255,255,.025)
+        !important;
+
+    color:#fff !important;
+
+    text-align:left !important;
+
+    cursor:pointer !important;
+}
+
+
+html body
+.ag-v2-new-friend:hover {
+
+    border-color:
+        rgba(222,170,39,.40)
+        !important;
+
+    background:
+        rgba(222,170,39,.11)
+        !important;
+}
+
+
+html body
+.ag-v2-new-friend-name {
+
+    display:block !important;
+
+    color:#fff !important;
+
+    font-size:14px !important;
+
+    font-weight:800 !important;
+}
+
+
+html body
+.ag-v2-new-friend-sub {
+
+    display:block !important;
+
+    margin-top:3px !important;
+
+    color:
+        rgba(255,255,255,.45)
+        !important;
+
+    font-size:10px !important;
+}
+
+
+/*
+ * ============================================================
+ * CHAT WINDOW
+ * ============================================================
+ */
+
+html body #agV2ChatWindow {
+
+    left:360px;
+
+    top:0;
+
+    width:
+        calc(100% - 360px);
+
+    height:650px;
+
+    min-width:450px !important;
+
+    min-height:360px !important;
+
+    display:none;
+}
+
+
+html body
+#agV2ChatWindow.ag-v2-chat-open {
+
+    display:block !important;
+}
+
+
+html body
+#agV2ChatWindow.ag-v2-minimised {
+
+    height:58px !important;
+
+    min-height:58px !important;
+
+    max-height:58px !important;
+
+    resize:none !important;
+}
+
+
+html body
+#agV2ChatWindow.ag-v2-minimised
+.ag-v2-chat-body {
+
+    display:none !important;
+}
+
+
+html body
+#agV2ChatWindow
+.ag-v2-chat-body {
+
+    box-sizing:border-box !important;
+
+    height:
+        calc(100% - 58px)
+        !important;
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    min-height:0 !important;
+}
+
+
+html body
+#agV2ChatHistory {
+
+    box-sizing:border-box !important;
+
+    flex:
+        1 1 auto
+        !important;
+
+    min-height:0 !important;
+
+    overflow-y:auto !important;
+
+    padding:
+        16px
+        !important;
+}
+
+
+html body
+#agV2ChatEmpty {
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    width:100% !important;
+
+    height:100% !important;
+
+    color:
+        rgba(255,255,255,.43)
+        !important;
+
+    font-size:13px !important;
+}
+
+
+/*
+ * Composer
+ */
+
+html body
+#agV2Composer {
+
+    box-sizing:border-box !important;
+
+    flex:
+        0 0 auto
+        !important;
+
+    display:grid !important;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        110px
+        !important;
+
+    gap:9px !important;
+
+    padding:
+        10px
+        !important;
+
+    border-top:
+        1px solid
+        rgba(222,170,39,.34)
+        !important;
+
+    background:
+        rgba(0,0,0,.34)
+        !important;
+}
+
+
+html body
+#agV2Message {
+
+    box-sizing:border-box !important;
+
+    width:100% !important;
+
+    min-height:70px !important;
+
+    max-height:145px !important;
+
+    padding:
+        10px
+        !important;
+
+    resize:vertical !important;
+
+    border:
+        1px solid
+        rgba(222,170,39,.55)
+        !important;
+
+    border-radius:
+        7px
+        !important;
+
+    background:
+        rgba(0,0,0,.68)
+        !important;
+
+    color:#fff !important;
+
+    font-size:14px !important;
+
+    outline:none !important;
+}
+
+
+html body
+#agV2Send {
+
+    box-sizing:border-box !important;
+
+    width:110px !important;
+
+    border:
+        1px solid
+        rgba(255,230,138,.85)
+        !important;
+
+    border-radius:
+        7px
+        !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffeb97,
+            #e5b329 52%,
+            #a56804
+        )
+        !important;
+
+    color:#070707 !important;
+
+    font-size:12px !important;
+
+    font-weight:900 !important;
+
+    cursor:pointer !important;
+}
+
+
+@media(max-width:1000px){
+
+    html body #agV2MessengerArea {
+
+        min-height:1070px !important;
+    }
+
+
+    html body #agV2FriendsWindow {
+
+        left:0 !important;
+
+        top:0 !important;
+
+        width:100% !important;
+
+        height:500px !important;
+
+        resize:none !important;
+    }
+
+
+    html body #agV2ChatWindow {
+
+        left:0 !important;
+
+        top:520px !important;
+
+        width:100% !important;
+
+        height:530px !important;
+
+        resize:none !important;
+    }
+}
+/* MESSENGER WINDOW SETTINGS UI V2 START */
+
+/*
+ * Wallpaper layers sit behind all Messenger content.
+ */
+
+html body
+#agV2MessengerArea
+.ag-v2-real-window {
+
+    --ag-v2-darkness: .50;
+    --ag-v2-surface-alpha: .88;
+    --ag-v2-font-size: 15px;
+
+    isolation:isolate !important;
+
+    background:#050b10 !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-window-wallpaper {
+
+    position:absolute !important;
+
+    z-index:0 !important;
+
+    inset:-12px !important;
+
+    pointer-events:none !important;
+
+    background-repeat:no-repeat !important;
+
+    background-position:center center;
+
+    background-size:cover;
+
+    filter:
+        blur(0px);
+
+    transform:
+        scale(1.035);
+
+    transform-origin:center center;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-window-shade {
+
+    position:absolute !important;
+
+    z-index:1 !important;
+
+    inset:0 !important;
+
+    pointer-events:none !important;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            var(--ag-v2-darkness)
+        )
+        !important;
+}
+
+
+/*
+ * Existing titlebars and bodies stay above wallpaper.
+ */
+
+html body
+#agV2MessengerArea
+.ag-v2-real-titlebar {
+
+    position:relative !important;
+
+    z-index:10 !important;
+
+    background:
+        rgba(
+            19,
+            27,
+            33,
+            var(--ag-v2-surface-alpha)
+        )
+        !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-friends-body,
+
+html body
+#agV2MessengerArea
+.ag-v2-chat-body {
+
+    position:relative !important;
+
+    z-index:5 !important;
+
+    background:
+        rgba(
+            4,
+            10,
+            14,
+            calc(
+                var(--ag-v2-surface-alpha) * .76
+            )
+        )
+        !important;
+}
+
+
+/*
+ * Font-size preference.
+ */
+
+html body
+#agV2FriendsWindow
+.ag-v2-new-friend-name,
+
+html body
+#agV2ChatWindow
+#agV2ChatHistory,
+
+html body
+#agV2ChatWindow
+#agV2Message {
+
+    font-size:
+        var(--ag-v2-font-size)
+        !important;
+}
+
+
+/*
+ * ============================================================
+ * SETTINGS DRAWER
+ * ============================================================
+ */
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-drawer {
+
+    position:absolute !important;
+
+    z-index:100 !important;
+
+    left:0 !important;
+
+    right:0 !important;
+
+    top:58px !important;
+
+    bottom:0 !important;
+
+    display:none !important;
+
+    box-sizing:border-box !important;
+
+    padding:
+        16px
+        !important;
+
+    overflow-y:auto !important;
+
+    background:
+        rgba(5,11,16,.97)
+        !important;
+
+    backdrop-filter:
+        blur(8px)
+        !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-drawer.show {
+
+    display:block !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-heading {
+
+    margin:
+        0 0 5px 0
+        !important;
+
+    color:#ffc84c !important;
+
+    font-size:17px !important;
+
+    font-weight:900 !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-subtitle {
+
+    margin:
+        0 0 16px 0
+        !important;
+
+    color:
+        rgba(255,255,255,.58)
+        !important;
+
+    font-size:11px !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-grid {
+
+    display:grid !important;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        )
+        !important;
+
+    gap:
+        13px
+        14px
+        !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-setting-field {
+
+    box-sizing:border-box !important;
+
+    min-width:0 !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-setting-field.ag-v2-setting-wide {
+
+    grid-column:
+        1 / -1
+        !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-setting-field label {
+
+    display:block !important;
+
+    margin:
+        0 0 6px 0
+        !important;
+
+    color:#e7c96d !important;
+
+    font-size:10px !important;
+
+    font-weight:900 !important;
+
+    text-transform:uppercase !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-setting-field select,
+
+html body
+#agV2MessengerArea
+.ag-v2-setting-field input[type="file"] {
+
+    box-sizing:border-box !important;
+
+    width:100% !important;
+
+    min-height:38px !important;
+
+    padding:
+        8px
+        !important;
+
+    border:
+        1px solid
+        rgba(222,170,39,.45)
+        !important;
+
+    border-radius:
+        6px
+        !important;
+
+    background:
+        rgba(0,0,0,.62)
+        !important;
+
+    color:#fff !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-range-row {
+
+    display:grid !important;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        52px
+        !important;
+
+    align-items:center !important;
+
+    gap:8px !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-range-row
+input[type="range"] {
+
+    width:100% !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-range-value {
+
+    color:#ffc84c !important;
+
+    font-size:11px !important;
+
+    font-weight:900 !important;
+
+    text-align:right !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-actions {
+
+    display:flex !important;
+
+    flex-wrap:wrap !important;
+
+    gap:8px !important;
+
+    margin-top:
+        16px
+        !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-action {
+
+    appearance:none !important;
+
+    min-height:36px !important;
+
+    padding:
+        0 13px
+        !important;
+
+    border:
+        1px solid
+        rgba(255,230,138,.82)
+        !important;
+
+    border-radius:
+        6px
+        !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffea95,
+            #e8b62d 52%,
+            #a86b05
+        )
+        !important;
+
+    color:#070707 !important;
+
+    font-size:10px !important;
+
+    font-weight:900 !important;
+
+    cursor:pointer !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-status {
+
+    min-height:18px !important;
+
+    margin-top:
+        10px
+        !important;
+
+    color:#a9dba9 !important;
+
+    font-size:11px !important;
+}
+
+
+html body
+#agV2MessengerArea
+.ag-v2-settings-status.error {
+
+    color:#ff9b9b !important;
+}
+
+
+@media(max-width:700px){
+
+    html body
+    #agV2MessengerArea
+    .ag-v2-settings-grid {
+
+        grid-template-columns:
+            1fr
+            !important;
+    }
+
+}
+
+/* MESSENGER WINDOW SETTINGS UI V2 END */
+
+/* SETTINGS TOP CLOSE V1 */
+
+.ag-v2-settings-top{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:12px !important;
+    margin-bottom:10px !important;
+}
+
+.ag-v2-settings-top .ag-v2-settings-heading{
+    margin:0 !important;
+}
+
+.ag-v2-settings-top-close{
+    flex:0 0 auto !important;
+    padding:7px 14px !important;
+    border:1px solid rgba(255,230,138,.82) !important;
+    border-radius:6px !important;
+    background:linear-gradient(180deg,#ffea95,#e8b62d 52%,#a86b05) !important;
+    color:#080808 !important;
+    font-size:10px !important;
+    font-weight:900 !important;
+    cursor:pointer !important;
+}
+
+/* SETTINGS TOP CLOSE V1 END */
+
+/* FRIENDS GLASS CLEANUP */
+html body #agV2FriendsWindow .ag-v2-friends-body {
+    background:transparent !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-friends-search-wrap {
+    background:rgba(4,8,12,.18) !important;
+    backdrop-filter:blur(2px);
+}
+
+html body #agV2FriendsWindow #agV2FriendsSearch {
+    background:rgba(3,7,10,.42) !important;
+}
+
+html body #agV2FriendsWindow #agV2FriendsList {
+    background:transparent !important;
+    padding:8px !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend {
+    position:relative !important;
+    margin:0 0 5px 0 !important;
+    padding:8px 10px !important;
+    min-height:34px !important;
+    background:rgba(4,9,13,.34) !important;
+    border:1px solid rgba(255,255,255,.10) !important;
+    border-radius:7px !important;
+    box-shadow:none !important;
+    backdrop-filter:blur(2px);
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend:hover {
+    background:rgba(222,170,39,.18) !important;
+    border-color:rgba(222,170,39,.45) !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend-name {
+    display:block !important;
+    position:static !important;
+    padding-right:0 !important;
+    margin:0 !important;
+    line-height:1.25 !important;
+    text-shadow:0 1px 3px rgba(0,0,0,.95);
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend-sub {
+    display:block !important;
+    position:static !important;
+    right:auto !important;
+    top:auto !important;
+    transform:none !important;
+    margin:4px 0 0 0 !important;
+    opacity:.70 !important;
+    visibility:visible !important;
+    line-height:1.25 !important;
+    transition:none !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend:hover .ag-v2-new-friend-sub {
+    opacity:.85 !important;
+}
+
+/* ============================================================
+   FRIEND LIST ALIGNMENT V1
+   No Sentinel icons inside friend rows.
+   Keep every name/grid line on the same left edge.
+   ============================================================ */
+
+html body #agV2FriendsWindow .ag-v2-new-friend {
+    display:block !important;
+    width:100% !important;
+    padding:8px 10px !important;
+    text-align:left !important;
+    text-indent:0 !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend > .ag-sentinel-auto-control-icon,
+html body #agV2FriendsWindow .ag-v2-new-friend > .ag-sentinel-direct-icon {
+    display:none !important;
+    width:0 !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend-name {
+    display:block !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    left:auto !important;
+    transform:none !important;
+    text-indent:0 !important;
+    text-align:left !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend-sub {
+    display:block !important;
+    width:100% !important;
+    margin:4px 0 0 0 !important;
+    padding:0 !important;
+    left:auto !important;
+    transform:none !important;
+    text-indent:0 !important;
+    text-align:left !important;
+}
+
+/* END FRIEND LIST ALIGNMENT V1 */
+
+/* ============================================================
+   FRIEND GRID INLINE V2
+   Friend name + grid on one horizontal line.
+   ============================================================ */
+
+html body #agV2FriendsWindow .ag-v2-new-friend {
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:baseline !important;
+    justify-content:flex-start !important;
+    gap:10px !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend-name {
+    display:inline-block !important;
+    flex:0 0 auto !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    line-height:1.2 !important;
+}
+
+html body #agV2FriendsWindow .ag-v2-new-friend-sub {
+    display:inline-block !important;
+    flex:1 1 auto !important;
+    width:auto !important;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    color:rgba(255,255,255,.48) !important;
+    font-size:11px !important;
+    font-weight:600 !important;
+    line-height:1.2 !important;
+    text-align:left !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+    white-space:nowrap !important;
+}
+
+/* END FRIEND GRID INLINE V2 */
+
+
+
+/* ==========================================================
+   AUSTRALIA CHAT EMOTES V2 START
+   ========================================================== */
+
+#agV2Composer {
+    position: relative !important;
+    grid-template-columns:
+        minmax(0,1fr)
+        auto
+        auto !important;
+}
+
+#agV2EmotesButton {
+    min-width:78px !important;
+    padding:0 12px !important;
+    border:1px solid rgba(214,164,59,.52) !important;
+    border-radius:4px !important;
+    background:linear-gradient(
+        180deg,
+        #252b2a 0%,
+        #101413 55%,
+        #080b0a 100%
+    ) !important;
+    color:#eef2f3 !important;
+    font-size:7px !important;
+    font-weight:900 !important;
+    letter-spacing:.04em !important;
+    cursor:pointer !important;
+}
+
+#agV2EmotesButton:hover,
+#agV2EmotesButton[aria-expanded="true"] {
+    border-color:#dfad3f !important;
+    background:linear-gradient(
+        180deg,
+        #303735,
+        #0d1110
+    ) !important;
+}
+
+#agV2EmotesPicker {
+    position:fixed !important;
+    z-index:40000 !important;
+    width:min(
+        520px,
+        calc(100vw - 24px)
+    ) !important;
+    max-height:min(
+        620px,
+        calc(100vh - 24px)
+    ) !important;
+    border:1px solid rgba(214,164,59,.50) !important;
+    border-radius:6px !important;
+    overflow:hidden !important;
+    background:linear-gradient(
+        180deg,
+        #171c1a,
+        #090d0c
+    ) !important;
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.78) !important;
+}
+
+#agV2EmotesPicker[hidden] {
+    display:none !important;
+}
+
+.ag-v2-emotes-head {
+    min-height:46px !important;
+    padding:8px 11px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.075) !important;
+    background:#121716 !important;
+}
+
+.ag-v2-emotes-title {
+    color:#eef2f3 !important;
+    font-size:10px !important;
+    font-weight:900 !important;
+    letter-spacing:.08em !important;
+}
+
+.ag-v2-emotes-count {
+    margin-top:3px !important;
+    color:#69767a !important;
+    font-size:7px !important;
+    font-weight:800 !important;
+}
+
+#agV2EmotesClose {
+    width:30px !important;
+    height:30px !important;
+    border:
+        1px solid
+        rgba(214,164,59,.34) !important;
+    border-radius:4px !important;
+    background:#0b100f !important;
+    color:#cbd2d5 !important;
+    font-size:17px !important;
+    cursor:pointer !important;
+}
+
+.ag-v2-emotes-search-wrap {
+    padding:8px !important;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055) !important;
+    background:#0b100f !important;
+}
+
+#agV2EmotesSearch {
+    width:100% !important;
+    height:34px !important;
+    padding:0 10px !important;
+    border:
+        1px solid
+        rgba(214,164,59,.27) !important;
+    border-radius:4px !important;
+    outline:none !important;
+    background:#050908 !important;
+    color:#e0e5e7 !important;
+    font-size:8px !important;
+}
+
+#agV2EmotesSearch:focus {
+    border-color:#c59735 !important;
+}
+
+.ag-v2-emotes-tabs {
+    padding:7px !important;
+    display:flex !important;
+    flex-wrap:wrap !important;
+    gap:4px !important;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.055) !important;
+    background:#0b100f !important;
+}
+
+.ag-v2-emotes-tab {
+    min-height:27px !important;
+    padding:0 8px !important;
+    border:
+        1px solid
+        rgba(214,164,59,.22) !important;
+    border-radius:4px !important;
+    background:#0d1211 !important;
+    color:#7c898d !important;
+    font-size:6.5px !important;
+    font-weight:900 !important;
+    cursor:pointer !important;
+}
+
+.ag-v2-emotes-tab:hover,
+.ag-v2-emotes-tab.active {
+    border-color:
+        rgba(214,164,59,.62) !important;
+    background:#171d1b !important;
+    color:#edf1f2 !important;
+}
+
+.ag-v2-emotes-grid {
+    padding:10px !important;
+    display:grid !important;
+    grid-template-columns:
+        repeat(
+            9,
+            minmax(0,1fr)
+        ) !important;
+    gap:6px !important;
+    max-height:350px !important;
+    overflow-y:auto !important;
+    background:#080c0b !important;
+}
+
+.ag-v2-emote {
+    min-width:0 !important;
+    min-height:42px !important;
+    padding:4px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border:
+        1px solid
+        rgba(255,255,255,.07) !important;
+    border-radius:5px !important;
+    background:#0d1211 !important;
+    font-family:
+        "Segoe UI Emoji",
+        "Apple Color Emoji",
+        sans-serif !important;
+    font-size:23px !important;
+    line-height:1 !important;
+    cursor:pointer !important;
+}
+
+.ag-v2-emote:hover {
+    border-color:
+        rgba(214,164,59,.60) !important;
+    background:#171d1b !important;
+    transform:
+        translateY(-1px) !important;
+}
+
+.ag-v2-emotes-empty {
+    grid-column:1 / -1 !important;
+    padding:30px !important;
+    color:#6e797d !important;
+    text-align:center !important;
+    font-size:8px !important;
+    font-weight:900 !important;
+}
+
+@media(max-width:700px) {
+
+    #agV2Composer {
+        grid-template-columns:
+            1fr
+            1fr !important;
+    }
+
+    #agV2Message {
+        grid-column:
+            1 / -1 !important;
+    }
+
+    #agV2EmotesButton,
+    #agV2Send {
+        width:100% !important;
+        min-height:34px !important;
+    }
+
+    .ag-v2-emotes-grid {
+        grid-template-columns:
+            repeat(
+                6,
+                minmax(0,1fr)
+            ) !important;
+    }
+}
+
+/* ==========================================================
+   AUSTRALIA CHAT EMOTES V2 END
+   ========================================================== */
+
+
+
+/* ==========================================================
+   AUSTRALIA LARGE EMOTES V1 START
+   ========================================================== */
+
+#agV2EmotesPicker {
+    width: min(800px, calc(100vw - 30px)) !important;
+    max-height: min(820px, calc(100vh - 30px)) !important;
+}
+
+.ag-v2-emotes-head {
+    min-height: 58px !important;
+    padding: 11px 14px !important;
+}
+
+.ag-v2-emotes-title {
+    font-size: 14px !important;
+}
+
+.ag-v2-emotes-count {
+    font-size: 10px !important;
+}
+
+.ag-v2-emotes-search-wrap {
+    padding: 11px !important;
+}
+
+#agV2EmotesSearch {
+    height: 42px !important;
+    padding: 0 13px !important;
+    font-size: 11px !important;
+}
+
+.ag-v2-emotes-tabs {
+    padding: 10px !important;
+    gap: 7px !important;
+}
+
+.ag-v2-emotes-tab {
+    min-height: 36px !important;
+    padding: 0 13px !important;
+    font-size: 9px !important;
+}
+
+.ag-v2-emotes-grid {
+    grid-template-columns:
+        repeat(6, minmax(0,1fr)) !important;
+
+    gap: 9px !important;
+    padding: 14px !important;
+
+    max-height: 520px !important;
+}
+
+.ag-v2-emote {
+    min-height: 72px !important;
+    padding: 7px !important;
+
+    border-radius: 7px !important;
+
+    font-family:
+        "Segoe UI Emoji",
+        "Apple Color Emoji",
+        "Noto Color Emoji",
+        sans-serif !important;
+
+    font-size: 38px !important;
+    line-height: 1 !important;
+}
+
+#agV2EmotesClose {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 21px !important;
+}
+
+@media (max-width: 900px) {
+
+    #agV2EmotesPicker {
+        width: min(680px, calc(100vw - 20px)) !important;
+    }
+
+    .ag-v2-emotes-grid {
+        grid-template-columns:
+            repeat(5, minmax(0,1fr)) !important;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .ag-v2-emotes-grid {
+        grid-template-columns:
+            repeat(4, minmax(0,1fr)) !important;
+    }
+
+    .ag-v2-emote {
+        min-height: 62px !important;
+        font-size: 34px !important;
+    }
+}
+
+/* ==========================================================
+   AUSTRALIA LARGE EMOTES V1 END
+   ========================================================== */
+
+
+/* ==========================================================
+   AUSTRALIA EMOTE GRID FIX V2 START
+   ========================================================== */
+
+
+/* KEEP THE PICKER INSIDE THE SCREEN */
+
+#agV2EmotesPicker {
+
+    width:
+        min(
+            520px,
+            calc(100vw - 24px)
+        ) !important;
+
+    max-height:
+        min(
+            620px,
+            calc(100vh - 24px)
+        ) !important;
+}
+
+
+/* RESTORE NORMAL HEADER SIZE */
+
+.ag-v2-emotes-head {
+
+    min-height:
+        46px !important;
+
+    padding:
+        8px 11px !important;
+}
+
+
+.ag-v2-emotes-title {
+
+    font-size:
+        10px !important;
+}
+
+
+.ag-v2-emotes-count {
+
+    font-size:
+        7px !important;
+}
+
+
+/* NORMAL SEARCH BOX */
+
+.ag-v2-emotes-search-wrap {
+
+    padding:
+        8px !important;
+}
+
+
+#agV2EmotesSearch {
+
+    height:
+        34px !important;
+
+    padding:
+        0 10px !important;
+
+    font-size:
+        8px !important;
+}
+
+
+/* NORMAL CATEGORY BUTTONS */
+
+.ag-v2-emotes-tabs {
+
+    padding:
+        7px !important;
+
+    gap:
+        5px !important;
+}
+
+
+.ag-v2-emotes-tab {
+
+    min-height:
+        28px !important;
+
+    padding:
+        0 9px !important;
+
+    font-size:
+        7px !important;
+}
+
+
+/* ==========================================================
+   IMPORTANT PART
+   ONLY 5 EMOTES ACROSS
+   ========================================================== */
+
+#agV2EmotesPicker .ag-v2-emotes-grid {
+
+    grid-template-columns:
+        repeat(
+            5,
+            minmax(0,1fr)
+        ) !important;
+
+    gap:
+        7px !important;
+
+    padding:
+        10px !important;
+
+    /*
+     * More rows appear vertically.
+     * Existing scrollbar handles the rest.
+     */
+
+    max-height:
+        390px !important;
+
+    overflow-y:
+        auto !important;
+
+    overflow-x:
+        hidden !important;
+}
+
+
+/* ==========================================================
+   LARGE EMOTE CELLS
+   ========================================================== */
+
+#agV2EmotesPicker button.ag-v2-emote {
+
+    min-width:
+        0 !important;
+
+    width:
+        100% !important;
+
+    min-height:
+        62px !important;
+
+    height:
+        62px !important;
+
+    padding:
+        4px !important;
+
+    font-size:
+        34px !important;
+
+    line-height:
+        1 !important;
+
+    text-indent:
+        0 !important;
+
+    white-space:
+        nowrap !important;
+
+    overflow:
+        hidden !important;
+
+    display:
+        flex !important;
+
+    align-items:
+        center !important;
+
+    justify-content:
+        center !important;
+
+    font-family:
+        "Segoe UI Emoji",
+        "Apple Color Emoji",
+        "Noto Color Emoji",
+        sans-serif !important;
+}
+
+
+/* NORMAL CLOSE BUTTON */
+
+#agV2EmotesClose {
+
+    width:
+        30px !important;
+
+    height:
+        30px !important;
+
+    font-size:
+        17px !important;
+}
+
+
+/* SMALLER SCREENS */
+
+@media(max-width:600px) {
+
+    #agV2EmotesPicker .ag-v2-emotes-grid {
+
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0,1fr)
+            ) !important;
+    }
+
+
+    #agV2EmotesPicker button.ag-v2-emote {
+
+        min-height:
+            58px !important;
+
+        height:
+            58px !important;
+
+        font-size:
+            31px !important;
+    }
+}
+
+
+/* ==========================================================
+   AUSTRALIA EMOTE GRID FIX V2 END
+   ========================================================== */

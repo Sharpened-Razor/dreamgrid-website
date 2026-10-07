@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DREAMGRID BLUE ROTATE 180 V1 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+    <defs>
+        <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#2abaff"/>
+            <stop offset="0.52" stop-color="#0b98e8"/>
+            <stop offset="1" stop-color="#0074bd"/>
+        </linearGradient>
+
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="1.4"
+                flood-color="#002b46"
+                flood-opacity="0.9"/>
+        </filter>
+    </defs>
+
+    <path
+        d="
+            M50 22
+            C45 12 35 7 25 9
+            C14 11 7 20 7 31
+            C7 44 17 55 30 56
+            C41 57 51 50 55 40
+            L45 36
+            C42 43 36 47 29 46
+            C22 45 17 39 17 32
+            C17 24 22 19 29 18
+            C35 17 41 20 44 25
+            L36 28
+            L57 34
+            L57 13
+            Z
+        "
+        fill="url(#blue)"
+        stroke="#54c9ff"
+        stroke-width="2"
+        stroke-linejoin="round"
+        filter="url(#shadow)"/>
+
+</svg>

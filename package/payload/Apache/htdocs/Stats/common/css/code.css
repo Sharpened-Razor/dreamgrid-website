@@ -1,0 +1,38 @@
+
+
+body { font-size: 60% }
+pre {
+    font-family: "Courier New", Courier, monospace;
+    font-size: small;
+    margin-top: 20px;
+    background-color: #f3f3f3;
+    border-color: #CCCCCC;
+    border-style: solid;
+    border: 1px dashed #2F6FAB;
+    color: black;
+    line-height: 1.1em;
+    padding: 1em;
+    width: 880px;
+    white-space: pre-wrap; /* CSS-3                  */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999    */
+    white-space: -pre-wrap; /* Opera 4-6              */
+    white-space: -o-pre-wrap; /* Opera 7                */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+.comments { width: 980px }
+pre a { text-decoration: underline }
+.odd { background-color: #eeeeee }
+.videotitle {
+    text-transform: uppercase;
+    background-color: #333;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    float: none;
+    padding: 4px 10px 2px 5px;
+    position: relative;
+    font-weight: bold;
+    width: 780px;
+}
+

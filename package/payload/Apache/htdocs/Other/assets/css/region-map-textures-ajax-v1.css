@@ -1,0 +1,162 @@
+/*
+ * AUSTRALIA REGION MAP TEXTURES AJAX V1
+ */
+
+.rmt-card.rmt-ajax-busy{
+    position:relative;
+}
+
+.rmt-card.rmt-ajax-busy::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:20;
+    pointer-events:none;
+    border-radius:inherit;
+    background:rgba(0,0,0,.18);
+}
+
+.rmt-card-message{
+    margin:0 0 14px;
+    padding:10px 12px;
+    border-radius:7px;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.45;
+}
+
+.rmt-card-message.success{
+    border:1px solid rgba(184,147,59,.65);
+    color:#e8cf88;
+    background:rgba(93,72,20,.22);
+}
+
+.rmt-card-message.error{
+    border:1px solid rgba(178,76,62,.72);
+    color:#ffd1cb;
+    background:rgba(99,24,19,.26);
+}
+
+.rmt-security-overlay[hidden]{
+    display:none !important;
+}
+
+.rmt-security-overlay{
+    position:fixed;
+    inset:0;
+    z-index:2147483000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(3px);
+}
+
+.rmt-security-dialog{
+    width:min(560px, calc(100vw - 40px));
+    overflow:hidden;
+    border:1px solid #9d7525;
+    border-radius:12px;
+    background:
+        linear-gradient(
+            180deg,
+            #151813 0%,
+            #080d10 38%,
+            #020304 100%
+        );
+    box-shadow:
+        0 24px 80px rgba(0,0,0,.78),
+        0 0 0 1px rgba(237,196,93,.08) inset;
+}
+
+.rmt-security-head{
+    padding:18px 20px 15px;
+    border-bottom:1px solid #625021;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(44,47,39,.97),
+            rgba(15,18,15,.97)
+        );
+}
+
+.rmt-security-kicker{
+    margin:0 0 5px;
+    color:#d5a83e;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+.rmt-security-title{
+    margin:0;
+    color:#edc45d;
+    font-size:20px;
+    font-weight:900;
+}
+
+.rmt-security-body{
+    padding:20px;
+    color:#e2dfd7;
+    font-size:14px;
+    line-height:1.55;
+}
+
+.rmt-security-region{
+    margin:0 0 15px;
+    padding:12px 14px;
+    border:1px solid rgba(213,168,62,.34);
+    border-radius:8px;
+    background:rgba(157,117,37,.10);
+}
+
+.rmt-security-region strong{
+    color:#edc45d;
+}
+
+.rmt-security-text{
+    margin:0 0 10px;
+}
+
+.rmt-security-note{
+    margin:0;
+    color:#aeb3ad;
+    font-size:13px;
+}
+
+.rmt-security-actions{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    padding:15px 20px 19px;
+    border-top:1px solid rgba(98,80,33,.75);
+}
+
+.rmt-security-button{
+    min-width:130px;
+    padding:10px 16px;
+    border-radius:7px;
+    font:inherit;
+    font-size:12px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+.rmt-security-cancel{
+    border:1px solid #566063;
+    color:#e2dfd7;
+    background:linear-gradient(180deg,#30383a,#14191a);
+}
+
+.rmt-security-confirm{
+    border:1px solid #edc45d;
+    color:#171006;
+    background:linear-gradient(180deg,#f0cb64,#ae7c17);
+}
+
+.rmt-security-button:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+}

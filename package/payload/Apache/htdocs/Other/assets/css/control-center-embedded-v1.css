@@ -1,0 +1,509 @@
+html{
+    background:#070907 !important;
+}
+
+
+body{
+
+    background:#070907 !important;
+
+    background-image:none !important;
+
+    margin:0 !important;
+
+    padding:14px !important;
+
+    color:#dedbd2 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+}
+
+
+/* Remove old page-level chrome inside control centre */
+
+.site-header,
+.dashboard-header,
+.admin-header,
+.page-header,
+.account-header,
+.profile-header,
+.inventory-header,
+.regions-header,
+.messages-header,
+.map-header,
+.control-header,
+.site-footer,
+.dashboard-actions,
+.top-actions,
+.header-actions{
+    display:none !important;
+}
+
+
+/* Main page area can use full right-hand workspace */
+
+main,
+.main,
+.container,
+.page-shell,
+.dashboard-shell,
+.admin-shell,
+.console-shell,
+.account-shell,
+.profile-shell,
+.inventory-shell,
+.regions-shell{
+
+    max-width:none !important;
+
+    width:100% !important;
+
+    margin:0 !important;
+}
+
+
+/* Shared control look */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+a.button,
+.card-button,
+.action-button{
+
+    border-radius:5px !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+}
+
+
+input,
+select,
+textarea{
+
+    background:#080a08 !important;
+
+    color:#dedbd2 !important;
+
+    border:
+        1px solid #56574f !important;
+}
+
+
+table{
+
+    background:#080a08 !important;
+
+    color:#dedbd2 !important;
+}
+
+
+dialog,
+.modal,
+.popup,
+.modal-content,
+.dialog-box{
+
+    background:#10120f !important;
+
+    color:#dedbd2 !important;
+
+    border:
+        1px solid #8c6a26 !important;
+
+    border-radius:6px !important;
+}
+
+/* =========================================================
+   CONTROL CENTER EMBEDDED PAGE V2
+   ========================================================= */
+
+html,
+body{
+
+    background:
+        transparent !important;
+
+    background-image:
+        none !important;
+}
+
+
+/*
+ * Individual functional panels remain opaque.
+ * Only unused page space becomes transparent.
+ */
+
+main,
+.main,
+.container,
+.page-shell,
+.dashboard-shell,
+.admin-shell,
+.console-shell,
+.account-shell,
+.profile-shell,
+.inventory-shell,
+.regions-shell{
+
+    background-color:
+        transparent !important;
+}
+
+
+/* SOLID WORK PANELS */
+
+article,
+.card,
+.panel,
+.account-card,
+.profile-card,
+.inventory-card,
+.regions-card,
+.console-panel,
+.dashboard-card{
+
+    backdrop-filter:
+        none !important;
+}
+
+
+/* =========================================================
+   CONTROL CENTER - ACCOUNT VIEW V1
+   ========================================================= */
+
+body.cc-account-view{
+
+    padding:
+        12px !important;
+
+    margin:
+        0 !important;
+
+    min-height:
+        100% !important;
+
+    background:
+        transparent !important;
+
+    color:
+        #dedbd2 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+}
+
+
+/* REMOVE OLD LARGE PAGE FRAME */
+
+body.cc-account-view main,
+body.cc-account-view .account-shell,
+body.cc-account-view .panel,
+body.cc-account-view .page-shell{
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    min-height:
+        0 !important;
+
+    margin:
+        0 !important;
+
+    padding:
+        0 !important;
+
+    background:
+        transparent !important;
+
+    background-image:
+        none !important;
+
+    border:
+        0 !important;
+
+    border-radius:
+        0 !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* FOUR ACCOUNT INFORMATION CARDS */
+
+body.cc-account-view
+.cc-account-field{
+
+    min-height:
+        78px !important;
+
+    padding:
+        14px 16px !important;
+
+    display:flex !important;
+
+    flex-direction:
+        column !important;
+
+    justify-content:
+        center !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #121612,
+            #080b09
+        ) !important;
+
+    border:
+        1px solid #6e5723 !important;
+
+    border-radius:
+        6px !important;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(115,115,102,.32),
+        0 3px 7px
+            rgba(0,0,0,.52) !important;
+}
+
+
+/* LABEL */
+
+body.cc-account-view
+.cc-account-field-label{
+
+    color:
+        #d9ae48 !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        700 !important;
+
+    letter-spacing:
+        .035em !important;
+
+    line-height:
+        1.2 !important;
+
+    text-transform:
+        uppercase !important;
+}
+
+
+/* VALUE */
+
+body.cc-account-view
+.cc-account-field-value{
+
+    margin-top:
+        7px !important;
+
+    color:
+        #e5e3dc !important;
+
+    font-size:
+        13px !important;
+
+    font-weight:
+        600 !important;
+
+    line-height:
+        1.2 !important;
+}
+
+
+/* ACTIVE VALUE */
+
+body.cc-account-view
+.cc-account-active-value{
+
+    color:
+        #72cf83 !important;
+}
+
+
+/* INFORMATION MESSAGE */
+
+body.cc-account-view
+.cc-account-notice{
+
+    margin:
+        12px 0 0 !important;
+
+    padding:
+        10px 13px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #18170f,
+            #0d0e0b
+        ) !important;
+
+    border:
+        1px solid #5b4820 !important;
+
+    border-radius:
+        5px !important;
+
+    color:
+        #aaa186 !important;
+
+    font-size:
+        9px !important;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(105,92,61,.18) !important;
+}
+
+
+/* EDIT ACCOUNT BUTTON AREA */
+
+body.cc-account-view
+.cc-account-edit-wrap{
+
+    margin-top:
+        14px !important;
+
+    padding-top:
+        13px !important;
+
+    display:flex !important;
+
+    justify-content:
+        center !important;
+
+    border-top:
+        1px solid #252820 !important;
+}
+
+
+/* EDIT ACCOUNT BUTTON */
+
+body.cc-account-view
+.cc-account-edit-button{
+
+    min-width:
+        155px !important;
+
+    height:
+        36px !important;
+
+    display:inline-flex !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    gap:
+        7px !important;
+
+    padding:
+        0 16px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #e1b33b 0%,
+            #b17b13 52%,
+            #825306 100%
+        ) !important;
+
+    border:
+        1px solid #e0b448 !important;
+
+    border-radius:
+        5px !important;
+
+    box-shadow:
+        inset 0 1px 0
+            rgba(255,241,177,.55),
+        0 2px 5px
+            rgba(0,0,0,.7) !important;
+
+    color:
+        #171006 !important;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+
+    font-size:
+        9px !important;
+
+    font-weight:
+        700 !important;
+
+    text-decoration:
+        none !important;
+
+    text-transform:
+        uppercase !important;
+}
+
+
+body.cc-account-view
+.cc-account-edit-button:hover{
+
+    background:
+        linear-gradient(
+            180deg,
+            #edc654,
+            #c28a1c 52%,
+            #935f09
+        ) !important;
+
+    border-color:
+        #f0ca62 !important;
+}
+
+
+/* ACCOUNT GRID CREATED BY THE SHELL */
+
+body.cc-account-view
+.cc-account-grid-v1{
+
+    display:grid !important;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        ) !important;
+
+    gap:
+        10px !important;
+
+    width:
+        100% !important;
+}
+
+
+@media(max-width:850px){
+
+    body.cc-account-view
+    .cc-account-grid-v1{
+
+        grid-template-columns:
+            1fr !important;
+    }
+}

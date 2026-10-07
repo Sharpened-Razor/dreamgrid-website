@@ -1,0 +1,89 @@
+<html>
+<meta license="AGPL 3.0 by Outworldz, LLC">    
+<head>
+<meta charset="utf-8">
+<meta license="AGPL 3.0 by Outworldz, LLC">
+<title>Opensimulator Search Classified Ad by Outworldz.com</title>
+
+<script type="text/javascript">
+    function maxLength(el) {    
+        if (!('maxLength' in el)) {
+            var max = el.attributes.maxLength.value;
+            el.onkeypress = function () {
+                if (this.value.length >= max) return false;
+                return true;
+            };
+        }
+    }
+    maxLength(document.getElementById("text"));
+</script>
+<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    
+<form action="Classifieds.php" method="post">
+
+<table >
+    <tr>
+        <td>Name of Ad</td>
+        <td><textarea id="name" name="name" maxlength="255"  rows="5" cols="30"></textarea></textarea></td>
+    </tr>
+    <tr>
+        <td>Rating</td>
+        <td><select name="rating">
+            <option value="4">G Rated</option>
+            <option value="8">Mature</option>
+            <option value="64">Adult</option>
+            <option value="4">Special Attraction</option>
+            <option value="5">New Products</option>
+            <option value="6">Employment</option>
+            <option value="7">Wanted</option>
+            <option value="8">Service</option>
+            <option value="9">Personal</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td><select name="category">
+            <option value="1">Shopping</option>
+            <option value="2">Land Rental</option>
+            <option value="3">Property Rental</option>
+            <option value="4">Special Attraction</option>
+            <option value="5">New Products</option>
+            <option value="6">Employment</option>
+            <option value="7">Wanted</option>
+            <option value="8">Service</option>
+            <option value="9">Personal</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Description:</td>
+        <td><textarea name="description" rows="10" cols="30"></textarea></td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td><input type ="text" name="price" value="0" size="5"></td>
+    </tr>
+    <tr>
+        <td>Snapshot UUID</td>
+        <td><input type ="text" name="snapshotuuid" value="" size="36"></td>
+    </tr>
+    <tr>
+        <td>Region Name</td>
+        <td><input type ="text" name = "simname"></td>
+    </tr>
+    <tr>
+        <td></td><td><input type="submit" name="Submit" value="Post Classified Ad"></td>
+    </tr>
+</table>
+
+
+</form>
+
+<a rel="license" href="https://www.gnu.org/licenses/agpl-3.0.en.html">AGPL 3.0</a>
+
+</body
+</html>

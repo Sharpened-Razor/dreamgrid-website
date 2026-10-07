@@ -1,0 +1,725 @@
+﻿
+pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 12px;
+	font-family: Courier;
+	vertical-align: baseline;
+	white-space: pre-wrap; /* CSS-3                  */;
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999    */;
+	white-space: -pre-wrap; /* Opera 4-6              */;
+	white-space: -o-pre-wrap; /* Opera 7                */;
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+blockquote {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+h6 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+h5 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+h4 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+h2 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+h1 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+iframe {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+object {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+applet {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+span {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+div {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: 'Trebuchet MS', Arial, Sans-Serif;
+	vertical-align: baseline;
+
+}
+html {
+
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+ul {
+}
+ol {
+	list-style: none;
+}
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+td {
+	text-align: left;
+	font-weight: normal;
+}
+th {
+	text-align: left;
+	font-weight: bold;
+	width: 800px;
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	float: none;
+	padding: 4px 10px 2px 5px;
+	position: relative;
+}
+caption {
+	text-align: left;
+	font-weight: normal;
+}
+h6 {
+	font-weight: bolder;
+}
+h5 {
+	font-weight: bolder;
+}
+h4 {
+	font-weight: bolder;
+}
+h3 {
+	font-weight: bolder;
+}
+h2 {
+	font-weight: bolder;
+}
+h1 {
+	font-weight: bolder;
+}
+link {
+	text-decoration: underline;
+}
+/* 2. General Elements
+
+-----------------------------------------------------------------------------------------------
+===============================================================================================*/
+body {
+  padding-top: 50px;
+	font-family: Verdana,Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 1.5;	
+	color: #000000;
+	padding-bottom: 5px;
+}
+
+p {
+	/* font: normal normal normal 100% serif;*/
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+
+}
+p.one {
+	border-style: solid;
+	border-width: 1px;
+	padding: 1em;
+}
+p.two {
+	border-style: solid;
+	border-width: 1px;
+	padding: 1em;
+}
+hr {
+	display: none;
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+address {
+	font-style: normal;
+}
+select {
+	font: 1em Arial, Helvetica, sans-serif;
+}
+textarea {
+	font: 1em Arial, Helvetica, sans-serif;
+}
+input {
+	font: 1em Arial, Helvetica, sans-serif;
+}
+a {
+	color: #5973CC;
+	text-decoration: underline;
+	outline: none;
+}
+a:hover {
+	color: #0A3558;
+	text-decoration: underline;
+}
+a:visited {
+}
+a:active {
+}
+/* 3. LAYOUT
+-----------------------------------------------------------------------------------------------
+===============================================================================================*/
+#accesibility {
+	position: absolute;
+	left: -999em;
+}
+
+.clearer {
+	clear: both;
+}
+.social {
+	height: 100px;
+}
+
+.logo {
+	width: 980px;
+	background-image: url(/images/logo2.png) ;
+	background-repeat: no-repeat;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 350px;
+}
+
+div.top_border {
+	color: black;
+	font-size: medium;
+	position: relative;
+	overflow: hidden;
+	width: 960px;
+	margin: 0 auto;
+	display: block;
+	height: 20px;
+	border-style: solid;
+	border-width: 2px;
+	border-bottom: 0;
+	-webkit-border-top-right-radius: 20px; /* for Safari */;
+	-webkit-border-top-left-radius: 20px; /* for Safari */;
+	-moz-border-radius-topright: 20px; /* for Firefox */;
+	-moz-border-radius-topleft: 20px; /* for Firefox */;
+	border-top-left-radius: 20px; /* for W3c */;
+	border-top-right-radius: 20px; /* for W3c */;
+
+	background-color: #ffffff;
+}
+
+div.bordered {
+	border-style: solid;
+	border-width: 2px;
+	border-bottom: 0;
+	border-top: 0;
+
+}
+div.body-new {
+	color: black;
+	font-size: medium;
+
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 2px;
+	border-bottom: 0;
+
+	background-color: #ffffff;
+}
+/* 3.1 Left and Right divs
+------------------------------------------------------------------------------------------------ */
+#left {
+	font-family: Arial, Helvetica, sans-serif;
+	width: 420px;
+	height: auto;
+	float: left;
+	padding: 20px 20px 20px 20px;
+	margin: 0px;
+}
+#right {
+	width: 420px;
+	height: auto;
+	float: left;
+	padding: 20px 20px 20px 20px;
+	margin: 0px;
+}
+#right p {
+	margin: 0px;
+}
+
+/* 3.1 HEADER
+------------------------------------------------------------------------------------------------ */
+#header {
+	width: 960px;
+	margin: 0 auto;
+	height:38px;
+}
+/* 3.1.1 MENU
+	-----------------------------------------*/
+#main_menu {
+	float: left;
+	display: inline;
+	margin-top: 20px;
+	width: 940px;
+	border-bottom: 1px solid #c7c7c7;
+}
+#main_menu li {
+	list-style: none;
+	float: left;
+}
+#main_menu li.first_element {
+	padding-left: 1px;
+	margin-left: 40px;
+	display: inline;
+	background: url("/Secondlife/Home/bg-menu_separator.gif") -1px bottom no-repeat;
+}
+#main_menu a {
+	float: left;
+	background: #ececec url("/Secondlife/Home/bg-menu_separator.gif") right bottom no-repeat;
+	color: #4b4b4b;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 6px 14px;
+	text-decoration: none;
+}
+#main_menu a:hover {
+	background: url("/Secondlife/Home/bg-menu_separator-hover.gif") right bottom no-repeat;
+}
+#main_menu a.selected {
+	background: url("/Secondlife/Home/bg-menu_separator-active.gif") right bottom no-repeat;
+	position: relative;
+	top: 1px;
+	padding-bottom: 7px;
+	padding-top: 5px;
+}
+#submenu {
+	clear: both;
+	background: #e4edf5;
+	border-bottom: 1px solid #c7c7c7;
+	overflow: hidden;
+	text-align: left;
+	width: 955px;
+	padding-left: 75px;
+}
+#submenu ul {
+	list-style: none;
+	float: left;
+}
+#submenu li {
+	float: left;
+}
+#submenu li a {
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.849em;
+	color: #757575;
+	text-decoration: none;
+	float: left;
+	padding: 4px 10px 2px 5px;
+	position: relative;
+}
+#submenu.many li a {
+	padding: 4px 7px 2px;
+}
+#submenu li a:hover {
+	color: #5381a4;
+}
+#submenu li a.selected {
+	color: #5381a4;
+	background: url(/Secondlife/Home/icn-submenu-hover.gif) center bottom no-repeat;
+}
+body.homepage #submenu {
+	display: none;
+}
+
+/* 3.6 FOOTER
+------------------------------------------------------------------------------------------------ */
+#footer {
+	background: #131720;
+	padding: 20px 0 17px;
+	color: #bababa;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+	/*width: 980px;*/
+}
+/* 3.7 Classes
+------------------------------------------------------------------------------------------------ */
+.list ul {
+	list-style-type: disc;
+	list-style-image: url(/Secondlife/images/awaybul2.gif);
+	list-style-position: outside;
+	margin-left: 0;
+	padding-left: 2em;
+	text-indent: .5em;
+}
+
+
+.videotitle {
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #eee;
+	text-decoration: none;
+	float: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	padding: 4px 5px 2px 5px;
+	position: relative;
+	font-weight: bold;
+    text-transform: capitalize;
+    clear: both;
+}
+
+
+.shorttitle {
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	float: none;
+    margin-top: 20px;
+
+	padding: 4px 5px 2px 5px;
+	position: relative;
+	font-weight: bold;
+    text-transform: capitalize;
+}
+
+span.figure-footer {
+	background: url("/images/phaze2bottom.jpg") left top no-repeat;
+	position: relative;
+	overflow: hidden;
+	width: 980px;
+	margin: 0 auto;
+	display: block;
+	height: 0px;		/* !!! */
+}
+
+pre {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1em;
+	background-color: #EEEEEE;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border: 1px dashed #2F6FAB;
+	color: black;
+	line-height: 1.1em;
+	padding: 1em;
+}
+th {
+	text-align: left;
+	font-weight: bold;
+	width: 800px;
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	color: #fff;
+	text-decoration: none;
+	float: none;
+	padding: 4px 10px 2px 5px;
+	position: relative;
+}
+
+ul.topnav {
+	list-style: none;
+	padding: 0 20px;
+	margin: 0;
+	float: left;
+	width: 980px;
+	background: #222;
+	font-size: 14px;
+	background: url(/menu/topnav_bg.gif) repeat-x;
+}
+ul.topnav li {
+	float: left;
+	margin: 0;
+	padding: 0 15px 0 0;
+	position: relative; /*--Declare X and Y axis base--*/
+}
+ul.topnav li a {
+	padding: 10px 5px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+ul.topnav li a:hover {
+	background: url(/menu/topnav_hover.gif) no-repeat center top;
+}
+ul.topnav li span {
+	/*--Drop down trigger styles--*/
+	width: 17px;
+	height: 35px;
+	float: left;
+	background: url(/menu/subnav_btn.gif) no-repeat center top;
+}
+ul.topnav li span.subhover {
+	background-position: center bottom;
+	cursor: pointer;
+}
+/*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+	list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/;
+	left: 0;
+	top: 35px;
+	background: #333;
+	margin: 0;
+	padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border: 1px solid #111;
+}
+ul.topnav li ul.subnav li {
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #252525;
+/*--Create bevel effect--*/	border-bottom: 1px solid #444;
+/*--Create bevel effect--*/	clear: both;
+	width: 170px;
+}
+html ul.topnav li ul.subnav li a {
+	float: left;
+	width: 145px;
+	background: #333 url(/menu/dropdown_linkbg.gif) no-repeat 10px center;
+	padding-left: 20px;
+}
+html ul.topnav li ul.subnav li a:hover {
+	/*--Hover effect for subnav links--*/
+	background: #222 url(/menu/dropdown_linkbg.gif) no-repeat 10px center;
+}
+
+.insl {
+	padding-top: 10px;
+}
+.middle
+{
+	vertical-align: middle;
+}
+
+img.shadow {
+	background: url(/images/shadow-1000x1000.gif) no-repeat right bottom;
+	padding: 5px 10px 10px 5px;
+}
+
+#delete {
+
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+}
+
+
+
+/*
+
+  * { outline: 2px dotted red }
+  * * { outline: 2px dotted green }
+  * * * { outline: 2px dotted orange }
+  * * * * { outline: 2px dotted blue }
+  * * * * * { outline: 1px solid red }
+  * * * * * * { outline: 1px solid green }
+  * * * * * * * { outline: 1px solid orange }
+  * * * * * * * * { outline: 1px solid blue }
+*/
+
+/* USER STUFF */
+
+
+
+.center {
+	margin: 0 auto;
+}
+
+.spacer {
+	height:30px;
+}
+
+
+.special {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.list {
+	list-style-type: disc;
+	list-style-image: url(/images/buttons/black.gif);
+	list-style-position: outside;
+
+	margin-left: 0;
+	padding-left: 2em;
+	text-indent: .5em;
+}
+
+/* float images with margin */
+.floatRightImage {
+	float: right;
+	margin: 10px;
+	padding: 10px;
+}
+
+.floatLeftImage {
+	float: left;
+	margin: 10px;
+	padding: 10px;
+}
+
+.border {
+	border:thin black solid;
+}
+
+.notes {
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+
+	float: right;
+	margin: 10px;
+	padding: 10px;
+	width:405px;
+	border:thin black solid;
+}
+
+

@@ -1,0 +1,457 @@
+/*
+ * ============================================================
+ * AUSTRALIA GRID CUSTOM MODAL SYSTEM V2
+ * CHARCOAL / GOLD
+ * ============================================================
+ */
+
+.au-modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:2147483500;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:24px;
+
+    background:
+        rgba(0,0,0,.76);
+
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
+
+    animation:
+        auModalFade .14s ease-out;
+}
+
+
+.au-modal-overlay[hidden]{
+    display:none !important;
+}
+
+
+.au-modal-card{
+    position:relative;
+
+    width:
+        min(
+            560px,
+            calc(100vw - 34px)
+        );
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        #5b4820;
+
+    border-radius:
+        10px;
+
+    background:
+        #080a08;
+
+    color:
+        #dedbd2;
+
+    box-shadow:
+        0 22px 55px
+        rgba(0,0,0,.78);
+
+    animation:
+        auModalPop .16s ease-out;
+}
+
+
+.au-modal-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+        #8c6a26;
+
+    pointer-events:none;
+}
+
+
+.au-modal-header{
+    position:relative;
+    z-index:1;
+
+    padding:
+        22px 25px 16px;
+
+    border-bottom:
+        1px solid
+        #40371f;
+
+    background:
+        #0d0f0c;
+}
+
+
+.au-modal-kicker{
+    margin-bottom:6px;
+
+    color:
+        #d9ae48;
+
+    font-size:
+        9px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .15em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.au-modal-title{
+    margin:0;
+
+    color:
+        #f0ca62;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        23px;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.15;
+}
+
+
+.au-modal-body{
+    position:relative;
+    z-index:1;
+
+    padding:
+        21px 25px;
+
+    background:
+        #080a08;
+
+    color:
+        #dedbd2;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.65;
+
+    white-space:
+        pre-line;
+}
+
+
+.au-modal-highlight{
+    margin-top:
+        15px;
+
+    padding:
+        13px 14px;
+
+    border:
+        1px solid
+        #40371f;
+
+    border-radius:
+        7px;
+
+    background:
+        #10120f;
+
+    color:
+        #d9ae48;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.55;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+.au-modal-warning{
+    margin-top:
+        15px;
+
+    padding:
+        13px 14px;
+
+    border:
+        1px solid
+        #5b4820;
+
+    border-left:
+        4px solid
+        #9f3c42;
+
+    border-radius:
+        6px;
+
+    background:
+        #120c0c;
+
+    color:
+        #e3c7c7;
+
+    font-size:
+        11px;
+
+    line-height:
+        1.55;
+}
+
+
+.au-modal-input{
+    width:
+        100%;
+
+    min-height:
+        42px;
+
+    margin-top:
+        12px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid
+        #40371f;
+
+    border-radius:
+        6px;
+
+    outline:
+        none;
+
+    background:
+        #10120f;
+
+    color:
+        #dedbd2;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    box-shadow:
+        none;
+}
+
+
+.au-modal-input:focus{
+    border-color:
+        #8c6a26;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(140,106,38,.18);
+}
+
+
+.au-modal-actions{
+    position:relative;
+    z-index:1;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        10px;
+
+    padding:
+        0 25px 24px;
+
+    background:
+        #080a08;
+}
+
+
+.au-modal-button{
+    min-height:
+        42px;
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        7px;
+
+    cursor:
+        pointer;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        .03em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.au-modal-cancel{
+    border:
+        1px solid
+        #40371f;
+
+    background:
+        #10120f;
+
+    color:
+        #dedbd2;
+}
+
+
+.au-modal-cancel:hover{
+    border-color:
+        #5b4820;
+
+    background:
+        #18170f;
+
+    color:
+        #f0ca62;
+}
+
+
+.au-modal-confirm{
+    border:
+        1px solid
+        #8c6a26;
+
+    background:
+        #18170f;
+
+    color:
+        #f0ca62;
+}
+
+
+.au-modal-confirm:hover{
+    border-color:
+        #d9ae48;
+
+    background:
+        #201d11;
+
+    color:
+        #f0ca62;
+}
+
+
+.au-modal-danger{
+    border:
+        1px solid
+        #9f3c42;
+
+    background:
+        #160d0e;
+
+    color:
+        #efc6c8;
+}
+
+
+.au-modal-danger:hover{
+    border-color:
+        #c45b61;
+
+    background:
+        #201011;
+
+    color:
+        #ffffff;
+}
+
+
+@keyframes auModalFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+
+@keyframes auModalPop{
+
+    from{
+        opacity:0;
+
+        transform:
+            translateY(8px)
+            scale(.982);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@media(max-width:600px){
+
+    .au-modal-actions{
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .au-modal-card{
+        width:
+            calc(100vw - 20px);
+    }
+}

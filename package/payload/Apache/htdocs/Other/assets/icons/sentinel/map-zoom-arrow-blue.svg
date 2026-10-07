@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DREAMGRID BLUE ZOOM ARROW V1 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+    <defs>
+        <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#28b8ff"/>
+            <stop offset="0.52" stop-color="#0b98e8"/>
+            <stop offset="1" stop-color="#0074bd"/>
+        </linearGradient>
+
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow
+                dx="0"
+                dy="2"
+                stdDeviation="1.4"
+                flood-color="#002b46"
+                flood-opacity="0.9"/>
+        </filter>
+    </defs>
+
+    <path
+        d="M32 5 L55 29 L43 29 L43 58 L21 58 L21 29 L9 29 Z"
+        fill="url(#blue)"
+        stroke="#54c9ff"
+        stroke-width="2"
+        stroke-linejoin="round"
+        filter="url(#shadow)"/>
+
+</svg>

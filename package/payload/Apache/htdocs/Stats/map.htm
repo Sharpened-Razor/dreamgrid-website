@@ -1,0 +1,489 @@
+<html>
+<head>
+    <!--  author - Fred Beckhusen -->
+    <!-- Highcharts released under Creative Commons Attribution-NonCommercial 3.0 -->
+
+    <meta name="description" content="Stats for your Opensimulator sim" />
+    <title>Stats for your sim</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <meta name="author" content="Fred Beckhusen" />
+    
+    <link rel="shortcut icon" type="image/x-ico" href="/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/master.css" />
+    <link rel="stylesheet" media="screen, projection" href="/stats/common/css/liquidscreen.css" type="text/css" />
+    <link rel="stylesheet" media="print" href="/stats/common/css/liquidprint.css" type="text/css" />
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="/assets/vendor/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/assets/vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="/assets/vendor/jquery-ui-1.12.1/jquery-ui.css"/>
+    <!-- tooltips -->
+    <link rel="stylesheet" type="text/css" media="all" href="/stats/common/css/tipTip.css" />
+    <script src="/stats/common/js/jquery.tipTip.js" type="text/javascript"></script>
+    <style>
+
+        div.form {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        #chart {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1024px;
+            height: 1024px;
+            margin: 0 auto;
+        }
+
+        #container {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1024px;
+            height: 1024px;
+            margin: 0 auto;
+        }
+
+        #status {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #stats {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #daily {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #people {
+            width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script src="/stats/common/js/highcharts.js"></script>
+	<script src="/stats/common/js/accessibility.js"></script>
+    <!-- Highcharts released under Creative Commons Attribution-NonCommercial 3.0 -->
+    <link type="text/css" href="/stats/timepicker/jquery.ui.timepicker.css" rel="Stylesheet" />
+    <script type="text/javascript" src="/stats/timepicker/jquery.ui.timepicker.js"></script>
+    <script src="/flexgrid/js/flexigrid.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="/flexgrid/css/flexigrid.css" />
+    <script type="text/javascript">
+
+		var scale = 1.5;
+		var chartheight = 650 * scale;
+		var chartwidth = 650 * scale;
+		var imagewidth = 568 * scale;
+		var imageheight = 568 * scale;
+		var marginleft = 50;
+		var mapleft = 46;
+		var maptop = 68;
+
+		function gup(name) {
+		    const urlParams = new URLSearchParams(window.location.search);
+		    return  urlParams.get(name);
+		}
+
+		function addMonths(date, months) {
+		    var d = date.getDate();
+		    date.setMonth(date.getMonth() + months);
+		    if (date.getDate() != d) {
+		        date.setDate(0);
+		    }
+		    return date;
+		}
+
+		var chart;
+		var chart2;
+		var chart3;
+		var title;
+		var start;
+		var person;
+
+		$(document).ready(function () {
+
+		type = 'Objects';
+
+		var what = gup("q");
+		if (what && what.length > 0) {
+		sim = (what);
+		} else {
+		sim = 'Welcome';
+		}
+
+		var start;
+		what = gup("Start");
+		if (what && what.length > 0) {
+		start = (what);
+		}
+
+		var end;
+		what = gup("End");
+		if (what && what.length > 0) {
+		end = (what);
+		}
+
+		what = gup("person");
+		if (what && what.length > 0) {
+		person = (what);
+		} else {
+		person = '';
+		}
+
+		$("#datepicker1").datepicker();
+		$("#datepicker2").datepicker();
+		$("#timepicker1").timepicker({
+		showPeriodLabels: false,
+		});
+		$("#timepicker2").timepicker({
+		showPeriodLabels: false,
+		});
+		url = '/stats/simvisit.plx';
+		var postData = { q: sim, Start: start, End: end, person: person, r: Math.random() };
+
+            $.post(url, postData, function (tsv, stat, xhr) {
+
+                $("#status").append(tsv.text);
+
+                $("#datepicker1").val(tsv.start);
+                $("#datepicker2").val(tsv.end);
+
+                $("#mySelect").val(tsv.sim);
+
+                allVisits = [];
+                var html = '<table>';
+                html += '<tr><th>Name</th><th>Time Spent</th></tr>';
+                title = tsv.title;
+                var xsize = tsv.xsize;
+                var ysize = tsv.ysize;
+
+                var mapimage = tsv.map;
+
+                jQuery.each(tsv.data, function (name, line) {
+                    var point = {};
+                    var red;
+                    var blue;
+                    var green;
+                    red = Math.floor(Math.random(1) * 255);
+                    green = Math.floor(Math.random(1) * 255);
+                    blue = Math.floor(Math.random(1) * 255);
+
+                     var color = 'rgba(' + red + ',' + green + ',' + blue + ', 1.0)';
+
+                    point.color = color;
+                    point.data = [];
+
+                    var aname = decodeURIComponent(line.name);
+                    var apoint = line.vectors;
+                    var visit = line.visits;
+                    var ctr = 1;
+                    jQuery.each(apoint, function (i, lines) {
+                        var y = lines.Y;
+                        var x = lines.X;
+                        var z = lines.Z;
+
+                        var list = {
+                            x: x,
+                            y: y,
+                            name: aname + ' (' + visit + ' min) ' + '<' + x + ',' + y + ',' + z + '>, #' + ctr
+                        };
+
+                        point.data.push(list);
+
+                        ctr++;
+                    });
+
+                    allVisits.push(point);
+
+                    html += '<tr>';
+
+                    url = '<a href="/stats/Map.htm?person=' + aname + '&q=' + sim + '&Start=' + start + '&End=' + end + '">' + aname + '</a>';
+
+                    html += '<td>' + url + '</td>';
+                    html += '<td>' + visit + '</td>';
+                    html += '</tr>';
+                });
+
+                html += '</table>';
+
+                $('#people').append(html);
+    
+                $("#people").flexigrid({
+                    width: 1024,
+                    height: 500
+                });
+
+                var options = {
+                    chart: {
+                        type: 'scatter',
+                        renderTo: 'chart',
+                        //marginLeft: marginleft,
+                        defaultSeriesType: 'scatter',
+                        zoomType: 'xy',
+                        height: chartheight,
+                        width: chartwidth,
+                        events: {
+                            load: function () {
+                                this.renderer.image(mapimage, mapleft, maptop, imagewidth, imageheight).add();
+                            }
+                        }
+                    },
+                    series: {
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    title: {
+                        text: ''
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        gridLineColor: '#ffffff',
+                        gridLineWidth: 0,
+                        max: xsize,
+                        min: 0,
+                        title: {
+                            enabled: true,
+                            text: 'X (0-' + xsize + ')'
+                        },
+                        startOnTick: true,
+                        endOnTick: false,
+                        showLastLabel: true
+                    },
+                    yAxis: {
+                        gridLineColor: '#ffffff',
+                        gridLineWidth: 0,
+                        max: ysize,
+                        min: 0,
+                        title: {
+                            enabled: false,
+                            text: 'Y (0-' + ysize + ')'
+                        },
+                        startOnTick: true,
+                        endOnTick: false,
+                        showLastLabel: true
+                    },
+                    tooltip: {
+                        formatter: function () {
+                            return '<b>' + this.point.name + '</b>';
+                        }
+                    },
+                    plotOptions: {
+                        scatter: {
+                            marker: {
+                                radius: 6,
+                                states: {
+                                    hover: {
+                                        enabled: true,
+                                        lineColor: 'rgb(255,255,255)'
+                                    }
+                                }
+                            },
+                            states: {
+                                hover: {
+                                    marker: {
+                                        enabled: true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                };
+
+                var options2 = {
+                    chart: {
+                        renderTo: 'stats',
+                        type: 'column',
+                        height: 250,
+                        width: 900
+                    },
+                    title: {
+                        text: 'Time in Sim'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        categories: []
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Total time in Minutes'
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        backgroundColor: '#FFFFFF',
+                        align: 'left',
+                        verticalAlign: 'top',
+                        x: 100,
+                        y: 70,
+                        floating: true,
+                        shadow: true
+                    },
+                    tooltip: {
+                        formatter: function () {
+                            return '' +
+                                this.x + ': ' + this.y;
+                        }
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+                    series: []
+
+                };
+
+                var options3 = {
+                    chart: {
+                        renderTo: 'daily',
+                        type: 'column',
+                        height: 250,
+                        width: 900
+                    },
+                    title: {
+                        text: 'Visitors by Day'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        categories: []
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Visitors by Day'
+                        }
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        backgroundColor: '#FFFFFF',
+                        align: 'left',
+                        verticalAlign: 'top',
+                        x: 100,
+                        y: 70,
+                        floating: true,
+                        shadow: true
+                    },
+                    tooltip: {
+                        formatter: function () {
+                            return '' +
+                                this.x + ': ' + this.y;
+                        }
+                    },
+                    plotOptions: {
+                        column: {
+                            pointPadding: 0.2,
+                            borderWidth: 0
+                        }
+                    },
+                    series: []
+
+                };
+
+                // visits by time
+                options.title.text = unescape(tsv.sim) + ' ' + title;
+                options.subtitle.text = 'Visitors: ' + tsv.visits + ',  Time spent: ' + tsv.time + ' minutes' + ' From: ' + tsv.start + ' To: ' + tsv.end;
+                options.series = allVisits;
+
+                console.log(options);
+
+                chart = new Highcharts.Chart(options);
+
+                var points = {
+                    name: 'Time in Sim',
+                    data: []
+                };
+
+                jQuery.each(tsv.timespent, function (i, line) {
+                    var Xname = line.date;
+                    var value = line.count;
+                    points.data.push(value);
+
+                    options2.xAxis.categories.push(Xname);
+
+                });
+
+                options2.series.push(points);
+                options2.subtitle.text = 'Visitors: ' + tsv.visits + ',  Time spent: ' + tsv.time + ' minutes' + ' From: ' + tsv.start + ' To: ' + tsv.end;
+                chart2 = new Highcharts.Chart(options2);
+
+                // chart 3 - daily visits
+                points = {
+                    name: 'Unique Visitors',
+                    data: []
+                };
+
+                jQuery.each(tsv.daily, function (i, line) {
+                    var Xname = line.date;
+                    var value = line.count;
+                    points.data.push(value);
+
+                    options3.xAxis.categories.push(Xname);
+                });
+
+                options3.series.push(points);
+                options3.subtitle.text = 'Visitors: ' + tsv.visits + ',  Time spent: ' + tsv.time + ' minutes' + ' From: ' + tsv.start + ' To: ' + tsv.end;
+                chart3 = new Highcharts.Chart(options3);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="form">
+
+        <button onclick="history.back()">Go Back</button><br />
+        <form action="/stats/Map.htm">
+            <table>
+                <tr>
+                    <td>Start Date: <br/><input id="datepicker1" name="Start" type="text" value=""/></td>
+                    <td>
+                        End Date: <br/><input id="datepicker2" type="text" name="End" value=""/>
+                        <input type="hidden" name="q" id="mySelect"/>
+                    </td>
+                    <td> <br/><input id="submit" type="submit" value="Search"/> <input type="button" value="Back" onclick="window.location.href = '/Stats/';" /> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="container">
+        <div id="chart">
+            <img style="margin-top: 250px; display: block;margin-left: auto;margin-right: auto" src="images/spinner.gif" width="100"/>
+        </div>
+        <br clear="all"/>
+        <div id="daily"></div>
+        <br clear="all"/>
+        <div id="stats"></div>
+        <br clear="all"/>
+        <div id="people"></div>
+    </div>
+</body>
+</html>
