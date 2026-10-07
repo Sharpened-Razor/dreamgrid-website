@@ -14,15 +14,6 @@ Full Unicode paths are unsupported. Real SMTP, optional TLS and final destinatio
 
 The publication copy removes optional compiler build-folder metadata and excludes installation-specific region-state and custom-branding files. No live data, credentials, certificates, backups or source-machine configuration is included.
 
-## Complete illustrated documentation
+## Screenshot correction
 
-- [Installation guide with native DreamGrid settings](https://sharpened-razor.github.io/dreamgrid-website/installation.html)
-- [Usage guide with illustrated workflows](https://sharpened-razor.github.io/dreamgrid-website/usage.html)
-- [Searchable gallery — 220 captioned screenshots](https://sharpened-razor.github.io/dreamgrid-website/gallery.html)
-- [Capture coverage and older-route/service limitations](https://sharpened-razor.github.io/dreamgrid-website/coverage.html)
-
-**Installing does not automatically open the webpage.** Start DreamGrid normally, then enter `http://YOUR-GRID-DOMAIN/Other/` in your browser. Use your actual scheme and include a nonstandard web port when applicable. The illustrated guide documents login, Control Center, User Dashboard and Page Designer URLs.
-
-Settings screenshots show DIVA OFF, OTHER enabled, Folder = Other, Apache/web port selection, hostname location, viewer splash URL and running service status. Native examples are labelled as examples from the AUSTRALIA grid; sensitive fields/logs are covered. Website screenshots use synthetic accounts and content.
-
-The documentation sweep records several older standalone route failures and demo-dependent map limitations explicitly. It is not a claim that every legacy route or optional external service works. This is a documentation update only; **the v1.0.0 ZIP and SHA-256 have not changed**.
+The previous screenshot set has been withdrawn after loading, identity and duplication problems were reported. Replacement images are not yet published. The text installation and usage instructions remain available. The v1.0.0 portable ZIP/checksum are unchanged.

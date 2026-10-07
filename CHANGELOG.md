@@ -1,5 +1,9 @@
 # Changelog
 
+## Screenshot set withdrawn — 2026-10-07
+
+The previous gallery and screenshot verification claim have been withdrawn. Replacement captures require explicit readiness/identity checks, a manifest and duplicate review before publication. The portable installer ZIP is unchanged.
+
 ## Documentation update — 2026-10-07
 
 - Adds full illustrated installation and usage guides, a captioned screenshot gallery and searchable GitHub Pages gallery.

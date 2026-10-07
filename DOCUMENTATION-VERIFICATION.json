@@ -1,8 +1,4 @@
 {
-  "date": "2026-10-07",
-  "screenshotCount": 220,
-  "repositoryFilesScanned": 1523,
-  "payloadHashesVerified": 1272,
-  "checks": 5517,
-  "failures": []
+  "status": "Previous screenshot verification withdrawn after user review",
+  "replacementSetPublished": false
 }

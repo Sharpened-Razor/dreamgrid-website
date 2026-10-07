@@ -1,3 +1,5 @@
+> **Screenshot set withdrawn on 7 October 2026.** The previous captures failed identity/loading and duplication review. Replacement images will remain unpublished until the entire set is checked against a capture manifest.
+
 # DreamGrid Website
 
 A portable website add-on for an existing, configured Windows DreamGrid installation, with a visual Page Designer, Control Center and User Dashboard.
@@ -12,7 +14,7 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 - [SHA-256 checksum](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.sha256)
 - [Full installation and rollback instructions](INSTALLATION.md)
 - [Illustrated usage guide](USAGE.md)
-- [Complete captioned screenshot gallery](SCREENSHOTS.md)
+- [screenshot review status](SCREENSHOTS.md)
 - [Screenshot coverage and known limitations](SCREENSHOT-COVERAGE.md)
 - [Required components](REQUIREMENTS.md)
 - [Verification results and limits](VERIFICATION.md)
@@ -42,11 +44,7 @@ Start DreamGrid normally afterward. Use the release ZIP for installation; GitHub
 
 The illustrated guides show exactly where to check Apache, DIVA/OTHER, the folder, hostname and viewer splash URL. The [GitHub Pages documentation](https://sharpened-razor.github.io/dreamgrid-website/installation.html) also provides a searchable screenshot gallery.
 
-![Required native Apache website settings](docs/screenshots/settings/dreamgrid-apache-other.png)
-
 Required: Enable Apache, DIVA OFF, OTHER enabled, Folder = Other. Port 80 and PHP 8 in the image are example selections from the AUSTRALIA grid; read your installation's settings.
-
-![Actual browser address bar and public website example](docs/screenshots/installation/australia-example-browser-url.png)
 
 **Example from the AUSTRALIA grid:** `http://australia.outworldz.net/Other/`. Use your own configured domain and web port.
 
@@ -58,10 +56,6 @@ Required: Enable Apache, DIVA OFF, OTHER enabled, Folder = Other. Port 80 and PH
 - Drafts, publishing, revisions, explicit conversion of existing pages, import/export and template import.
 - Forms, publishing/link checks, interactions, SEO/site tools and built-in tutorials.
 - Dynamic destination discovery, prerequisite checks, per-file hashes, Desktop backups and rollback.
-
-![Visual Page Designer with synthetic demo content](docs/screenshots/visual-builder.png)
-
-![Built-in tutorials using synthetic demo content](docs/screenshots/built-in-tutorials.png)
 
 Website screenshots use synthetic accounts/content in an isolated demo installation. Native setting screenshots and the public browser example are labelled as examples from the AUSTRALIA grid; credential and personal fields are covered in documentation copies. No live account or private user page is shown.
 

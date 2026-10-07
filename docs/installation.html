@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INSTALLATION — DreamGrid Website</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">DreamGrid Website</a><nav aria-label="Documentation"><a href="installation.html">Install</a><a href="usage.html">Use</a><a href="gallery.html">Gallery</a><a href="coverage.html">Coverage</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website">GitHub</a></nav></header><main class="guide" id="main"><h1 id="illustrated-installation-guide">Illustrated installation guide</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INSTALLATION — DreamGrid Website</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">DreamGrid Website</a><nav aria-label="Documentation"><a href="installation.html">Install</a><a href="usage.html">Use</a><a href="gallery.html">Gallery</a><a href="coverage.html">Coverage</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website">GitHub</a></nav></header><main class="guide" id="main"><aside class="requirements"><strong>Screenshot set withdrawn.</strong><p>The previous captures failed review. Images have been removed while a replacement set is checked for loading, identity, privacy and duplication.</p></aside><h1 id="illustrated-installation-guide">Illustrated installation guide</h1>
 <p>This website is an add-on for an <strong>existing Windows DreamGrid installation</strong>. Install DreamGrid, configure your grid and create your regions first. The website uses that installation&#39;s name, services, domains and ports. It does not create regions or replace your grid data.</p>
 <p><strong>Required: ASCII Windows installation path · DIVA OFF · OTHER enabled · Folder = Other.</strong></p>
 <p><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.0/DreamGrid-Website-Portable-20261007.zip">Download the verified ZIP</a> · <a href="usage.html">Usage guide</a> · <a href="gallery.html">Complete screenshot gallery</a></p>
@@ -7,11 +7,11 @@
 <p>Every folder in the Windows installation path must use ASCII characters. Spaces, different folders and different drive letters are supported. Full Unicode paths are unsupported: the bundled legacy Perl stack did not pass the complete Unicode regression. Do not rely on a mapped drive to claim Unicode compatibility.</p>
 <h2 id="2-find-the-dreamgrid-settings">2. Find the DreamGrid settings</h2>
 <p>Open <strong>DreamGrid → Setup → Settings</strong>. The screenshots show the native DreamGrid interface used for this release; labels can differ across native versions.</p>
-<p><img loading="lazy" src="screenshots/settings/dreamgrid-settings-menu.png" alt="DreamGrid Settings menu"></p>
+<p></p>
 <p><em>Open Apache Webserver for website selection and port settings; open Hypergrid DNS Name for the public hostname. Web Control Panel contains the viewer splash-page URL.</em></p>
 <h2 id="3-enable-apache-and-select-other">3. Enable Apache and select OTHER</h2>
 <p>Open <strong>Apache Webserver / Apache Settings</strong>. Check <strong>Enable Apache Web server</strong>, turn <strong>Enable Diva Page OFF</strong>, select <strong>Enable Other</strong>, and set its folder textbox to <strong>Other</strong>. Save the settings. The installer checks the selection and stops if it is wrong; it does not change it silently.</p>
-<p><img loading="lazy" src="screenshots/settings/dreamgrid-apache-other.png" alt="Apache settings with DIVA off, Other selected and Other folder"></p>
+<p></p>
 <p><em>Required selection: DIVA OFF, OTHER enabled, Folder = Other. The web port of 80 and PHP 8 selection shown are examples from the AUSTRALIA grid.</em></p>
 <table>
 <thead>
@@ -59,10 +59,10 @@
 </tbody></table>
 <h2 id="4-find-the-public-domain-and-website-url">4. Find the public domain and website URL</h2>
 <p>Open <strong>Setup → Settings → Hypergrid DNS Name</strong>. The DNS Name field is where the grid&#39;s hostname can be checked. Use your actual configured public host, without copying the example grid&#39;s name. Ensure your DNS, router/firewall and selected Apache port allow visitors to reach your server; the website installer does not configure network forwarding.</p>
-<p><img loading="lazy" src="screenshots/settings/dreamgrid-dns-name-redacted.png" alt="Hypergrid DNS Name setting with password covered"></p>
+<p></p>
 <p><em>Example from the AUSTRALIA grid. The hostname is australia.outworldz.net. The Dynamic DNS password is covered in this documentation copy; no DreamGrid setting was edited. Optional Grid Name and Inventory Suitcase are native grid settings, not extra website prerequisites.</em></p>
 <p>Open <strong>Web Control Panel</strong> to inspect the <strong>Splash Screen URL</strong>. This is the URL shown as the viewer&#39;s welcome/splash page. It should point to your intended website if you want the viewer to show it. It does not start Apache or create a DNS record. The left-hand legacy DIVA administrator fields are not website login fields and are not needed for OTHER.</p>
-<p><img loading="lazy" src="screenshots/settings/dreamgrid-web-panel-url-redacted.png" alt="Web Control Panel showing the splash screen website URL"></p>
+<p></p>
 <p><em>Example from the AUSTRALIA grid. Splash Screen URL points to <a href="http://australia.outworldz.net/Other/">http://australia.outworldz.net/Other/</a>. Personal and credential fields are covered. DIVA Wifi Enabled is unchecked.</em></p>
 <p>For your installation, use <strong><a href="http://YOUR-GRID-DOMAIN/Other/">http://YOUR-GRID-DOMAIN/Other/</a></strong>. If the HTTP web port is not the standard port, use <strong><a href="http://YOUR-GRID-DOMAIN:YOUR-WEB-PORT/Other/">http://YOUR-GRID-DOMAIN:YOUR-WEB-PORT/Other/</a></strong>. If you configured HTTPS successfully, use <strong><a href="https://YOUR-GRID-DOMAIN/Other/">https://YOUR-GRID-DOMAIN/Other/</a></strong> or include your nonstandard HTTPS port. The Hypergrid service port is a different service; it is not automatically the Apache web port.</p>
 <h2 id="5-download-verify-and-extract">5. Download, verify and extract</h2>
@@ -81,18 +81,18 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 .\Install-DreamGridWebsite.ps1 -Root $gridRoot
 </code></pre>
 <p>Enter the existing DreamGrid data folder when prompted, not the extracted package folder. The prerequisite check validates the selection and required runtimes. Resolve reported problems and run the check again; do not bypass it. If Windows blocks a trusted downloaded script, use Windows&#39; normal unblock controls.</p>
-<p><img loading="lazy" src="screenshots/installation/installer-success.png" alt="Sanitized successful installer result"></p>
+<p></p>
 <p><em>Actual result from an isolated installation test, displayed with installation/archive paths replaced by placeholders. The file count varies when existing images are preserved. Success means installed hashes were verified; it does not mean services were started.</em></p>
 <p>The installer validates payload hashes, archives replaced files to a dated Desktop folder, generates destination-local website startup metadata and verifies installed hashes. It preserves the native Apache/PHP templates and does not start services. Saved pages, user databases, regions, inventories and matching destination images are preserved. Keep the Desktop archive and its manifest for rollback.</p>
 <h2 id="7-start-dreamgrid-normally">7. Start DreamGrid normally</h2>
 <p>Use DreamGrid&#39;s normal Start workflow after installation. Apache and the services required by the website must be running. Native DreamGrid regenerates its Apache/PHP configuration in the normal way; the website integrates with that startup instead of depending on a one-time manual configuration edit.</p>
 <h2 id="8-open-the-website-yourself">8. Open the website yourself</h2>
-<p><img loading="lazy" src="screenshots/settings/dreamgrid-running-redacted.png" alt="DreamGrid running with Apache enabled"></p>
+<p></p>
 <p><em>Example from the AUSTRALIA grid. Green checks show MySQL, Robust and Apache running. The main action reads Stop because it is already running; use the normal Start control when stopped. Runtime log is covered in this documentation copy. The 8002 value in the title is the example Hypergrid service port, not the web port.</em></p>
 <p><strong>Installation does not automatically open a webpage.</strong> Open your browser, type your installation&#39;s URL in the address bar, and press Enter:</p>
 <pre><code class="language-text">http://YOUR-GRID-DOMAIN/Other/
 </code></pre>
-<p><img loading="lazy" src="screenshots/installation/australia-example-browser-url.png" alt="Browser address bar and successfully opened public website"></p>
+<p></p>
 <p><em>Example from the AUSTRALIA grid: <a href="http://australia.outworldz.net/Other/">http://australia.outworldz.net/Other/</a>. This is an example only; use your own grid domain and web port.</em></p>
 <table>
 <thead>
@@ -125,15 +125,15 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 <p>The examples assume standard HTTP. Substitute your actual scheme and include a nonstandard web port when necessary. The admin pages require an authorized administrator session; typing an admin URL does not grant administrator access.</p>
 <h2 id="9-check-the-installed-site">9. Check the installed site</h2>
 <p>Open the public site, login, your account/dashboard and, for an administrator, the Control Center and Page Designer. Check existing custom pages, navigation, images and maps. Refresh previously open map pages so they get the installation-specific map token. Test optional mail delivery and HTTPS using your own destination configuration. Read the <a href="usage.html">illustrated usage guide</a> and <a href="gallery.html">gallery</a> for each screen.</p>
-<p><img loading="lazy" src="screenshots/details/public-home.png" alt="Public website home page with safe demo content"></p>
+<p></p>
 <p><em>The public home screen in the isolated Demo Grid. The real browser example above shows the address bar; this demo contains no live account data.</em></p>
-<p><img loading="lazy" src="screenshots/details/login-page.png" alt="Website login screen"></p>
+<p></p>
 <p><em>Enter an existing grid account in the website login screen. Password inputs are empty in all documentation images.</em></p>
-<p><img loading="lazy" src="screenshots/pages/other-admin-home.png" alt="Admin Control Center home"></p>
+<p></p>
 <p><em>Administrative navigation after login with an authorized account. All account data shown is synthetic.</em></p>
-<p><img loading="lazy" src="screenshots/pages/other-freshuserdashboardexact-user-dashboard.png" alt="User Dashboard home"></p>
+<p></p>
 <p><em>The resident dashboard provides account and user tools.</em></p>
-<p><img loading="lazy" src="screenshots/builder/builder-canvas.png" alt="Page Designer visual canvas"></p>
+<p></p>
 <p><em>The visual Page Designer is opened from the Control Center or its direct admin URL.</em></p>
 <h2 id="10-if-the-webpage-does-not-open">10. If the webpage does not open</h2>
 <table>
