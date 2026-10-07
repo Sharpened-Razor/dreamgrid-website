@@ -1,5 +1,3 @@
-> **Screenshot set withdrawn on 7 October 2026.** The previous captures failed identity/loading and duplication review. Replacement images will remain unpublished until the entire set is checked against a capture manifest.
-
 # DreamGrid Website
 
 A portable website add-on for an existing, configured Windows DreamGrid installation, with a visual Page Designer, Control Center and User Dashboard.
@@ -14,7 +12,7 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 - [SHA-256 checksum](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.sha256)
 - [Full installation and rollback instructions](INSTALLATION.md)
 - [Illustrated usage guide](USAGE.md)
-- [screenshot review status](SCREENSHOTS.md)
+- [Live screenshot gallery](SCREENSHOTS.md)
 - [Screenshot coverage and known limitations](SCREENSHOT-COVERAGE.md)
 - [Required components](REQUIREMENTS.md)
 - [Verification results and limits](VERIFICATION.md)
@@ -42,11 +40,11 @@ Start DreamGrid normally afterward. Use the release ZIP for installation; GitHub
 | User Dashboard | `http://YOUR-GRID-DOMAIN/Other/FreshUserDashboardExact/user-dashboard.php` |
 | Page Designer | `http://YOUR-GRID-DOMAIN/Other/admin-page-designer.php` |
 
-The illustrated guides show exactly where to check Apache, DIVA/OTHER, the folder, hostname and viewer splash URL. The [GitHub Pages documentation](https://sharpened-razor.github.io/dreamgrid-website/installation.html) also provides a searchable screenshot gallery.
+The installation guide explains prerequisite settings and portable URLs. The live screenshot gallery covers the approved website pages.
 
-Required: Enable Apache, DIVA OFF, OTHER enabled, Folder = Other. Port 80 and PHP 8 in the image are example selections from the AUSTRALIA grid; read your installation's settings.
+Use the prerequisite settings and runtime requirements in the installation guide.
 
-**Example from the AUSTRALIA grid:** `http://australia.outworldz.net/Other/`. Use your own configured domain and web port.
+Use your own configured website domain, scheme and web port.
 
 ## Included
 
@@ -57,7 +55,7 @@ Required: Enable Apache, DIVA OFF, OTHER enabled, Folder = Other. Port 80 and PH
 - Forms, publishing/link checks, interactions, SEO/site tools and built-in tutorials.
 - Dynamic destination discovery, prerequisite checks, per-file hashes, Desktop backups and rollback.
 
-Website screenshots use synthetic accounts/content in an isolated demo installation. Native setting screenshots and the public browser example are labelled as examples from the AUSTRALIA grid; credential and personal fields are covered in documentation copies. No live account or private user page is shown.
+These are fresh captures of the current live website after the DreamGrid 7.2115 update. Personal names, email addresses and private identifiers use capture-only labels. No stored account data, map widgets or failed textures were changed for the images. Grid identity and content shown are examples from the live destination; configure your own installation.
 
 ## Path and runtime requirements
 
@@ -75,7 +73,7 @@ Saved pages, uploaded images, private content, databases, regions, inventories, 
 
 Current portable add-on release: **1.0.1**, verified 7 October 2026. The two local Robust health probes are corrected; 132 targeted regression checks passed. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
 
-The rejected screenshot set remains withdrawn. Replacement images will be captured from the current live main pages and published only after user approval.
+Approved plan: 34 entries. Verified fresh live images: 32. Withheld 3D images: 2. The full 34-image set is not complete. ADMIN-3D-Map.png and USER-3D-Map.png are withheld because the live 3D scene has unresolved grid-content texture failures. No incomplete 3D image, old capture or substitute texture is presented. Texture repair is outside this website/documentation task.
 
 Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain destination checks. This is not a complete penetration test or a guarantee for every DreamGrid version.
 

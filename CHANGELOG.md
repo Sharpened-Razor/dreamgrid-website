@@ -1,5 +1,11 @@
 # Changelog
 
+## Live website documentation — 2026-10-08
+
+Published 32 verified current-live captures from the approved 34-entry list. Both 3D images remain withheld with an explicit live-grid content blocker. Corrected page identity, privacy labels, current Stats response, and obsolete demo-grid claims. The portable installer version and binaries are unchanged.
+
+
+
 ## 1.0.1 — 2026-10-07
 
 - Fixes both local Robust health probes using shared dynamic local-service discovery and configured ports.

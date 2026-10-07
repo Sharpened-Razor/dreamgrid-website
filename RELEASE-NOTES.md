@@ -8,4 +8,4 @@ Only stats-api.php and health-diagnostics-api.php changed in the website payload
 
 Install DreamGrid and configure your grid/regions first. Stop DreamGrid before installing this add-on. Follow [installation instructions](https://github.com/Sharpened-Razor/dreamgrid-website/blob/main/INSTALLATION.md). The installer preserves existing content and media, verifies hashes, and creates dated backups with rollback records.
 
-The rejected screenshot gallery remains withdrawn. Replacement current-live screenshots will be published only after review and user approval. No live data, credentials, certificates, backups or source-machine configuration is included.
+Approved plan: 34 entries. Verified fresh live images: 32. Withheld 3D images: 2. The full 34-image set is not complete. ADMIN-3D-Map.png and USER-3D-Map.png are withheld because the live 3D scene has unresolved grid-content texture failures. No incomplete 3D image, old capture or substitute texture is presented. Texture repair is outside this website/documentation task.

@@ -1,12 +1,10 @@
-> **Screenshot set withdrawn on 7 October 2026.** The previous captures failed identity/loading and duplication review. Replacement images will remain unpublished until the entire set is checked against a capture manifest.
-
 # installation guide
 
 This website is an add-on for an **existing Windows DreamGrid installation**. Install DreamGrid, configure your grid and create your regions first. The website uses that installation's name, services, domains and ports. It does not create regions or replace your grid data.
 
 **Required: ASCII Windows installation path · DIVA OFF · OTHER enabled · Folder = Other.**
 
-[Download the verified ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip) · [Usage guide](USAGE.md) · [screenshot review status](SCREENSHOTS.md)
+[Download the verified ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip) · [Usage guide](USAGE.md) · [Live screenshot gallery](SCREENSHOTS.md)
 
 ## 1. Prepare the existing grid
 
@@ -16,7 +14,7 @@ Every folder in the Windows installation path must use ASCII characters. Spaces,
 
 ## 2. Find the DreamGrid settings
 
-Open **DreamGrid → Setup → Settings**. The screenshots show the native DreamGrid interface used for this release; labels can differ across native versions.
+Open **DreamGrid → Setup → Settings**. Native labels can differ across DreamGrid versions. The approved screenshot list covers website pages, so no native settings screenshot is included.
 
 ## 3. Enable Apache and select OTHER
 
@@ -30,7 +28,7 @@ Open **Apache Webserver / Apache Settings**. Check **Enable Apache Web server**,
 | Folder = Other | Makes DreamGrid serve the supplied Other website. Keep the spelling Other. |
 | Web Port | The HTTP port visitors use. Read your installation's value; do not assume the example value. |
 | PHP selection | Selects the native PHP runtime used by Apache. The release was tested with PHP 7 and PHP 8. Keep required native dependencies. |
-| Freeze Apache Conf file | Prevents native regeneration. This add-on supports DreamGrid's normal regeneration; the reference screenshot leaves this unchecked. Do not freeze or hand-edit configuration merely to install the add-on. |
+| Freeze Apache Conf file | Prevents native regeneration. This add-on supports DreamGrid's normal regeneration; use the existing native configuration. Do not freeze or hand-edit configuration merely to install the add-on. |
 | SSL 443 | Opens native TLS setup. HTTPS works only when your destination has a valid certificate and corresponding Apache configuration. It is not enabled by installing the website. |
 | Automatic Site Map | Native DreamGrid's sitemap facility. Keep your existing choice unless you have a reason to change it. It does not select DIVA or OTHER. |
 
@@ -117,7 +115,7 @@ Open the public site, login, your account/dashboard and, for an administrator, t
 
 ## Runtime details, relocation, rollback and verification limits
 
-The following reference details remain applicable to the illustrated steps above.
+The following reference details remain applicable to the installation steps above.
 
 ## Required destination environment
 

@@ -1,18 +1,14 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>INSTALLATION — DreamGrid Website</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">DreamGrid Website</a><nav aria-label="Documentation"><a href="installation.html">Install</a><a href="usage.html">Use</a><a href="gallery.html">Gallery</a><a href="coverage.html">Coverage</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website">GitHub</a></nav></header><main class="guide" id="main"><aside class="requirements"><strong>Screenshot set withdrawn.</strong><p>The previous captures failed review. Images have been removed while a replacement set is checked for loading, identity, privacy and duplication.</p></aside><h1 id="illustrated-installation-guide">Illustrated installation guide</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Installation guide — DreamGrid Website</title><link rel="stylesheet" href="style.css"></head><body><a class="skip" href="#main">Skip to content</a><header><a class="brand" href="index.html">DreamGrid Website</a><nav aria-label="Documentation"><a href="installation.html">Install</a><a href="usage.html">Use</a><a href="gallery.html">Gallery</a><a href="coverage.html">Coverage</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website">GitHub</a></nav></header><main class="guide" id="main"><h1>installation guide</h1>
 <p>This website is an add-on for an <strong>existing Windows DreamGrid installation</strong>. Install DreamGrid, configure your grid and create your regions first. The website uses that installation&#39;s name, services, domains and ports. It does not create regions or replace your grid data.</p>
 <p><strong>Required: ASCII Windows installation path · DIVA OFF · OTHER enabled · Folder = Other.</strong></p>
-<p><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip">Download the verified ZIP</a> · <a href="usage.html">Usage guide</a> · <a href="gallery.html">Complete screenshot gallery</a></p>
-<h2 id="1-prepare-the-existing-grid">1. Prepare the existing grid</h2>
+<p><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip">Download the verified ZIP</a> · <a href="usage.html">Usage guide</a> · <a href="gallery.html">Live screenshot gallery</a></p>
+<h2>1. Prepare the existing grid</h2>
 <p>Use DreamGrid&#39;s normal setup to create the grid and regions and confirm they work before adding the website. Keep the native internal folder layout. The folder selected during installation must contain that installation&#39;s <strong>Settings.ini</strong>, Apache and Opensim directories. Choose your own folder; the source grid&#39;s installation path is not a requirement.</p>
 <p>Every folder in the Windows installation path must use ASCII characters. Spaces, different folders and different drive letters are supported. Full Unicode paths are unsupported: the bundled legacy Perl stack did not pass the complete Unicode regression. Do not rely on a mapped drive to claim Unicode compatibility.</p>
-<h2 id="2-find-the-dreamgrid-settings">2. Find the DreamGrid settings</h2>
-<p>Open <strong>DreamGrid → Setup → Settings</strong>. The screenshots show the native DreamGrid interface used for this release; labels can differ across native versions.</p>
-<p></p>
-<p><em>Open Apache Webserver for website selection and port settings; open Hypergrid DNS Name for the public hostname. Web Control Panel contains the viewer splash-page URL.</em></p>
-<h2 id="3-enable-apache-and-select-other">3. Enable Apache and select OTHER</h2>
+<h2>2. Find the DreamGrid settings</h2>
+<p>Open <strong>DreamGrid → Setup → Settings</strong>. Native labels can differ across DreamGrid versions. The approved screenshot list covers website pages, so no native settings screenshot is included.</p>
+<h2>3. Enable Apache and select OTHER</h2>
 <p>Open <strong>Apache Webserver / Apache Settings</strong>. Check <strong>Enable Apache Web server</strong>, turn <strong>Enable Diva Page OFF</strong>, select <strong>Enable Other</strong>, and set its folder textbox to <strong>Other</strong>. Save the settings. The installer checks the selection and stops if it is wrong; it does not change it silently.</p>
-<p></p>
-<p><em>Required selection: DIVA OFF, OTHER enabled, Folder = Other. The web port of 80 and PHP 8 selection shown are examples from the AUSTRALIA grid.</em></p>
 <table>
 <thead>
 <tr>
@@ -46,7 +42,7 @@
 </tr>
 <tr>
 <td>Freeze Apache Conf file</td>
-<td>Prevents native regeneration. This add-on supports DreamGrid&#39;s normal regeneration; the reference screenshot leaves this unchecked. Do not freeze or hand-edit configuration merely to install the add-on.</td>
+<td>Prevents native regeneration. This add-on supports DreamGrid&#39;s normal regeneration; use the existing native configuration. Do not freeze or hand-edit configuration merely to install the add-on.</td>
 </tr>
 <tr>
 <td>SSL 443</td>
@@ -57,15 +53,11 @@
 <td>Native DreamGrid&#39;s sitemap facility. Keep your existing choice unless you have a reason to change it. It does not select DIVA or OTHER.</td>
 </tr>
 </tbody></table>
-<h2 id="4-find-the-public-domain-and-website-url">4. Find the public domain and website URL</h2>
+<h2>4. Find the public domain and website URL</h2>
 <p>Open <strong>Setup → Settings → Hypergrid DNS Name</strong>. The DNS Name field is where the grid&#39;s hostname can be checked. Use your actual configured public host, without copying the example grid&#39;s name. Ensure your DNS, router/firewall and selected Apache port allow visitors to reach your server; the website installer does not configure network forwarding.</p>
-<p></p>
-<p><em>Example from the AUSTRALIA grid. The hostname is australia.outworldz.net. The Dynamic DNS password is covered in this documentation copy; no DreamGrid setting was edited. Optional Grid Name and Inventory Suitcase are native grid settings, not extra website prerequisites.</em></p>
 <p>Open <strong>Web Control Panel</strong> to inspect the <strong>Splash Screen URL</strong>. This is the URL shown as the viewer&#39;s welcome/splash page. It should point to your intended website if you want the viewer to show it. It does not start Apache or create a DNS record. The left-hand legacy DIVA administrator fields are not website login fields and are not needed for OTHER.</p>
-<p></p>
-<p><em>Example from the AUSTRALIA grid. Splash Screen URL points to <a href="http://australia.outworldz.net/Other/">http://australia.outworldz.net/Other/</a>. Personal and credential fields are covered. DIVA Wifi Enabled is unchecked.</em></p>
 <p>For your installation, use <strong><a href="http://YOUR-GRID-DOMAIN/Other/">http://YOUR-GRID-DOMAIN/Other/</a></strong>. If the HTTP web port is not the standard port, use <strong><a href="http://YOUR-GRID-DOMAIN:YOUR-WEB-PORT/Other/">http://YOUR-GRID-DOMAIN:YOUR-WEB-PORT/Other/</a></strong>. If you configured HTTPS successfully, use <strong><a href="https://YOUR-GRID-DOMAIN/Other/">https://YOUR-GRID-DOMAIN/Other/</a></strong> or include your nonstandard HTTPS port. The Hypergrid service port is a different service; it is not automatically the Apache web port.</p>
-<h2 id="5-download-verify-and-extract">5. Download, verify and extract</h2>
+<h2>5. Download, verify and extract</h2>
 <p>Download the portable ZIP and its SHA-256 file from the release. GitHub&#39;s automatic source-code archives are repository snapshots, not the verified installer ZIP. In PowerShell 7, choose the downloaded file and calculate its checksum:</p>
 <pre><code class="language-powershell">$zip = Read-Host &#39;Full path of downloaded portable ZIP&#39;
 Get-FileHash -LiteralPath $zip -Algorithm SHA256
@@ -74,26 +66,20 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 <pre><code class="language-text">FB60A7E8EADA3A286435CD338B66316493426AA4996DD4D98B6FC132A6DAB651
 </code></pre>
 <p>Extract the complete ZIP into a separate folder. Keep manifest.json, the scripts and payload together. Do not flatten the payload or copy the whole ZIP into Apache&#39;s public web root. The installer places the files into their matching locations in the existing grid and preserves destination media.</p>
-<h2 id="6-stop-the-destination-and-run-the-installer">6. Stop the destination and run the installer</h2>
+<h2>6. Stop the destination and run the installer</h2>
 <p>Save the prerequisite selections, then stop DreamGrid and Apache normally. Open <strong>PowerShell 7</strong> in the extracted package folder. Use an administrator terminal where your destination requires it. Run:</p>
 <pre><code class="language-powershell">$gridRoot = Read-Host &#39;Existing DreamGrid data folder containing Settings.ini&#39;
 .\Test-DreamGridWebsitePrerequisites.ps1 -Root $gridRoot
 .\Install-DreamGridWebsite.ps1 -Root $gridRoot
 </code></pre>
 <p>Enter the existing DreamGrid data folder when prompted, not the extracted package folder. The prerequisite check validates the selection and required runtimes. Resolve reported problems and run the check again; do not bypass it. If Windows blocks a trusted downloaded script, use Windows&#39; normal unblock controls.</p>
-<p></p>
-<p><em>Actual result from an isolated installation test, displayed with installation/archive paths replaced by placeholders. The file count varies when existing images are preserved. Success means installed hashes were verified; it does not mean services were started.</em></p>
 <p>The installer validates payload hashes, archives replaced files to a dated Desktop folder, generates destination-local website startup metadata and verifies installed hashes. It preserves the native Apache/PHP templates and does not start services. Saved pages, user databases, regions, inventories and matching destination images are preserved. Keep the Desktop archive and its manifest for rollback.</p>
-<h2 id="7-start-dreamgrid-normally">7. Start DreamGrid normally</h2>
+<h2>7. Start DreamGrid normally</h2>
 <p>Use DreamGrid&#39;s normal Start workflow after installation. Apache and the services required by the website must be running. Native DreamGrid regenerates its Apache/PHP configuration in the normal way; the website integrates with that startup instead of depending on a one-time manual configuration edit.</p>
-<h2 id="8-open-the-website-yourself">8. Open the website yourself</h2>
-<p></p>
-<p><em>Example from the AUSTRALIA grid. Green checks show MySQL, Robust and Apache running. The main action reads Stop because it is already running; use the normal Start control when stopped. Runtime log is covered in this documentation copy. The 8002 value in the title is the example Hypergrid service port, not the web port.</em></p>
+<h2>8. Open the website yourself</h2>
 <p><strong>Installation does not automatically open a webpage.</strong> Open your browser, type your installation&#39;s URL in the address bar, and press Enter:</p>
 <pre><code class="language-text">http://YOUR-GRID-DOMAIN/Other/
 </code></pre>
-<p></p>
-<p><em>Example from the AUSTRALIA grid: <a href="http://australia.outworldz.net/Other/">http://australia.outworldz.net/Other/</a>. This is an example only; use your own grid domain and web port.</em></p>
 <table>
 <thead>
 <tr>
@@ -123,19 +109,9 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 </tr>
 </tbody></table>
 <p>The examples assume standard HTTP. Substitute your actual scheme and include a nonstandard web port when necessary. The admin pages require an authorized administrator session; typing an admin URL does not grant administrator access.</p>
-<h2 id="9-check-the-installed-site">9. Check the installed site</h2>
+<h2>9. Check the installed site</h2>
 <p>Open the public site, login, your account/dashboard and, for an administrator, the Control Center and Page Designer. Check existing custom pages, navigation, images and maps. Refresh previously open map pages so they get the installation-specific map token. Test optional mail delivery and HTTPS using your own destination configuration. Read the <a href="usage.html">illustrated usage guide</a> and <a href="gallery.html">gallery</a> for each screen.</p>
-<p></p>
-<p><em>The public home screen in the isolated Demo Grid. The real browser example above shows the address bar; this demo contains no live account data.</em></p>
-<p></p>
-<p><em>Enter an existing grid account in the website login screen. Password inputs are empty in all documentation images.</em></p>
-<p></p>
-<p><em>Administrative navigation after login with an authorized account. All account data shown is synthetic.</em></p>
-<p></p>
-<p><em>The resident dashboard provides account and user tools.</em></p>
-<p></p>
-<p><em>The visual Page Designer is opened from the Control Center or its direct admin URL.</em></p>
-<h2 id="10-if-the-webpage-does-not-open">10. If the webpage does not open</h2>
+<h2>10. If the webpage does not open</h2>
 <table>
 <thead>
 <tr>
@@ -188,9 +164,9 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 <td>Refresh the browser. Check the selected website folder and installed hash report before making manual edits.</td>
 </tr>
 </tbody></table>
-<h2 id="runtime-details-relocation-rollback-and-verification-limits">Runtime details, relocation, rollback and verification limits</h2>
-<p>The following reference details remain applicable to the illustrated steps above.</p>
-<h2 id="required-destination-environment">Required destination environment</h2>
+<h2>Runtime details, relocation, rollback and verification limits</h2>
+<p>The following reference details remain applicable to the installation steps above.</p>
+<h2>Required destination environment</h2>
 <ul>
 <li>Existing native DreamGrid Apache/PHP runtime and configured Robust/MySQL services.</li>
 <li>PowerShell 7 (<code>pwsh</code>) for installation and the existing website workers. Use sufficient Windows permissions for the destination and service inspection; an administrator PowerShell is appropriate for a protected installation.</li>
@@ -200,7 +176,7 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 <li>Destination SMTP and TLS configuration, if those optional facilities are used. No credentials, certificates or source-machine configuration are supplied.</li>
 </ul>
 <p>The installer checks the native runtime, PHP 7 search dependency, Perl, .NET 8 and the required native map DLLs. It refuses a running destination; it does not stop or start services automatically.</p>
-<h2 id="install">Install</h2>
+<h2>Install</h2>
 <p>Extract the complete package into a separate folder. Keep <code>manifest.json</code>, the installation scripts and <code>payload</code> together. Open PowerShell 7 in that folder:</p>
 <pre><code class="language-powershell">$gridRoot = Read-Host &#39;Existing DreamGrid data folder containing Settings.ini&#39;
 .\Test-DreamGridWebsitePrerequisites.ps1 -Root $gridRoot
@@ -210,14 +186,14 @@ Get-FileHash -LiteralPath $zip -Algorithm SHA256
 <p>The installer verifies every payload hash before deployment. It backs up replaced files in a dated <strong>DreamGrid-Website-Install</strong> folder on the current user&#39;s Desktop, preserves their folder structure, and records original/archive paths, filename, SHA-256 and reason in <code>manifest.json</code>. It then verifies installed hashes. Existing images at matching asset paths are preserved.</p>
 <p>The installer generates only destination-local website metadata and, when absent, a random private bridge key and an available loopback bridge port. It preserves existing bridge credentials and other native runtime properties. Its automatic bridge registration is the only change to the existing native <code>Start.runtimeconfig.json</code>; native Apache/PHP templates are left alone.</p>
 <p>Start DreamGrid normally after installation. Its normal startup regenerates its own Apache/PHP configuration. Then check the public site, login, Control Center, User Dashboard, Page Designer, maps and any existing custom pages. Refresh previously open map pages so they receive the installation-specific map token.</p>
-<h2 id="saved-content-and-rollback">Saved content and rollback</h2>
+<h2>Saved content and rollback</h2>
 <p>The package does not include or overwrite <code>_WEB_PAGE_DESIGNER</code>, <code>_WEB_PRIVATE</code>, database files, regions, OARs, IARs, inventories, simulator data, uploaded custom branding or messenger backgrounds. Existing saved pages remain in their current format; conversion is an explicit builder action.</p>
 <p>To roll back, stop the destination DreamGrid and Apache, keep this package&#39;s scripts together, and run:</p>
 <pre><code class="language-powershell">$backup = Read-Host &#39;Full path of the dated Desktop installation archive&#39;
 .\Restore-DreamGridWebsite.ps1 -ArchiveDirectory $backup
 </code></pre>
 <p>Rollback validates backup hashes and destination paths. It preserves the current files in a further archive before restoring originals, and moves newly installed files into that archive. It does not permanently delete files.</p>
-<h2 id="verification-limits">Verification limits</h2>
+<h2>Verification limits</h2>
 <p>Automated PHP 7/8 tests cover native configuration regeneration, sessions/access, routes/assets, builder editing and persistence, publishing, forms with a local inbox/mock mail transport, templates/import/export, interactions/SEO models, search, map helpers and private-file protection. Relocated ASCII paths and an alternate drive letter were tested.</p>
 <p>The final live smoke uses short-lived signed sessions for existing accounts without changing accounts or passwords. Live password login was not attempted; password login/logout was tested against an isolated synthetic database. No live test pages, form submissions, imports or publishing writes were introduced. Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain installation-specific checks. These are not a claim of a complete penetration test or support for every DreamGrid version.</p>
-</main><footer><span>Version 1.0.1 · Documentation updated 7 October 2026</span><a href="installation.html">ASCII path · DIVA OFF · OTHER enabled · Folder Other</a><a href="https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.1">Download & checksum</a></footer></body></html>
+</main><footer>Live documentation updated 8 October 2026 · Installer v1.0.1</footer></body></html>

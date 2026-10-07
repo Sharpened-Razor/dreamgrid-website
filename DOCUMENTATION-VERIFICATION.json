@@ -1,4 +1,415 @@
 {
-  "status": "Previous screenshot verification withdrawn after user review",
-  "replacementSetPublished": false
+  "status": "32 verified live captures; two 3D captures explicitly withheld",
+  "approvedCount": 34,
+  "publishedImageCount": 32,
+  "fullSetComplete": false,
+  "documentationDate": "2026-10-08",
+  "source": "current live post-update website",
+  "exactDuplicates": 0,
+  "nearDuplicateReview": "passed: distinct page/session/navigation content",
+  "privacy": "capture-only personal labels; no stored data edits",
+  "labels": [
+    {
+      "label": "HELP CENTRE",
+      "workspace": "Control Center",
+      "inner": "Help Centre"
+    },
+    {
+      "label": "CREATE REGION",
+      "workspace": "Create Region",
+      "inner": "REGIONS"
+    },
+    {
+      "label": "ALL REGIONS",
+      "workspace": "All Regions",
+      "inner": "Regions / Grid Performance & Region Control"
+    },
+    {
+      "label": "HELP TUTORIAL PICTURES",
+      "workspace": "Help Tutorial Pictures",
+      "inner": "Help Centre Pictures"
+    }
+  ],
+  "withheld": [
+    {
+      "filename": "ADMIN-3D-Map.png",
+      "reason": "Current live-grid 3D scene has unresolved texture failures; no screenshot captured."
+    },
+    {
+      "filename": "USER-3D-Map.png",
+      "reason": "Current live-grid 3D scene has unresolved texture failures; no screenshot captured."
+    }
+  ],
+  "files": [
+    {
+      "filename": "PUBLIC-Home-Login.png",
+      "represents": "Public home and member login page",
+      "route": "/Other/",
+      "menu": null,
+      "status": "verified-live",
+      "image": "screenshots/PUBLIC-Home-Login.png",
+      "sha256": "722eba4418509507c4c6d61247ac1a8e8f5ca791f20ea8aba1f8fd5fa2c9d4c7",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Dashboard.png",
+      "represents": "ADMIN dashboard landing page",
+      "route": "/Other/admin-home.php",
+      "menu": null,
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Dashboard.png",
+      "sha256": "3fa8f79c2d5ac65f25bd01458c0d0919e1264c530bd98bf94a944f004049730b",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Account.png",
+      "represents": "ADMIN — Account settings",
+      "route": "/Other/panel-account.php",
+      "menu": "ACCOUNT",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Account.png",
+      "sha256": "b6ac9018852ec728633595f64d11174a3cbfcaf15519909fa225e3c182360c26",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Profile.png",
+      "represents": "ADMIN — Resident profile",
+      "route": "/Other/panel-profile.php",
+      "menu": "PROFILE",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Profile.png",
+      "sha256": "78ea9fc2d17c0ece2c6d807204ff806d9a0739171bcff4abbf4a3ecf3452fde4",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Regions.png",
+      "represents": "ADMIN — Regions available to this role",
+      "route": "/Other/panel-regions.php?from=admin",
+      "menu": "REGIONS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Regions.png",
+      "sha256": "21c584fcb3ad77b3777c5e082df2f1ed8ea891cfd897e8a586e01397567602b0",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Inventory.png",
+      "represents": "ADMIN — Inventory browser",
+      "route": "/Other/panel-inventory.php?from=admin",
+      "menu": "INVENTORY",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Inventory.png",
+      "sha256": "754404d8040aa50ce6999f78d2449ecf8680ef8f4e3cb554f45b45a9554a0d02",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-IAR-Backups.png",
+      "represents": "ADMIN — Inventory archive backups",
+      "route": "/Other/user-iar-backups.php?from=admin",
+      "menu": "IAR BACKUPS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-IAR-Backups.png",
+      "sha256": "e986fe9c1bc9b67e7db8e25bdfe5fd422c03c33e9982f2a1855e1a6ae5a0d796",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Offline-Messages.png",
+      "represents": "ADMIN — Offline message interface",
+      "route": "/Other/admin-offline-messages.php?v=20260918-emotes-filtered-v4",
+      "menu": "OFFLINE MESSAGES",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Offline-Messages.png",
+      "sha256": "336a9a7acb2204cc54d1516fc9d6e8d316b3ca721322e7775ccad772997ff002",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Map.png",
+      "represents": "ADMIN — Live FARM SHOP 2D map, loaded texture and avatar widget",
+      "route": "/Other/grid-map.php?from=admin&ccfit=2",
+      "menu": "MAP",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Map.png",
+      "sha256": "27ed4571a9af833fac1f07768e0ac6aed431e4ec06480efc6b1f2f305823536f",
+      "width": 2014,
+      "height": 1244
+    },
+    {
+      "filename": "ADMIN-3D-Map.png",
+      "represents": "ADMIN — Live FARM SHOP 3D terrain, objects, textures and materials; capture withheld: current live-grid texture blocker",
+      "menu": "3D MAP",
+      "route": "/Other/grid-map-3d.php?from=admin",
+      "status": "withheld",
+      "reason": "Current live-grid 3D scene has unresolved texture failures; no screenshot captured.",
+      "image": null
+    },
+    {
+      "filename": "ADMIN-Linked-Regions.png",
+      "represents": "ADMIN — Linked region destinations",
+      "route": "/Other/user-linked-regions.php?from=admin",
+      "menu": "LINKED REGIONS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Linked-Regions.png",
+      "sha256": "a90e0720e7170331fb9c67ad4f2bae2efff27e59acde964a50bee9fd10386724",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Help-Centre.png",
+      "represents": "ADMIN — Help Centre landing page",
+      "route": "/Other/panel-help-centre.php?from=admin",
+      "menu": "HELP CENTRE",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Help-Centre.png",
+      "sha256": "06c652c121629f37280884bec09c55efead2a35a1820d06222a0c5884665974b",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Manage-Accounts.png",
+      "represents": "ADMIN — Administrative account management",
+      "route": "/Other/admin-accounts-clean.php",
+      "menu": "MANAGE ACCOUNTS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Manage-Accounts.png",
+      "sha256": "c794d73eff20880e2ec57cf2e758350f8eba87c263e8d73fc71f10051e0087a3",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Manage-Groups.png",
+      "represents": "ADMIN — Administrative group management",
+      "route": "/Other/admin-groups-clean.php",
+      "menu": "MANAGE GROUPS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Manage-Groups.png",
+      "sha256": "b441245a209584251a5a564599e93a12ca65b3b91d0edd456cdc40c80cd576b6",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Console.png",
+      "represents": "ADMIN — Grid console interface",
+      "route": "/Other/admin-console.php",
+      "menu": "CONSOLE",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Console.png",
+      "sha256": "50ecf0d26343424366193676a0975143a55323b4c65160be0e481d27d2a4f22a",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Control-Panel.png",
+      "represents": "ADMIN — Grid control panel",
+      "route": "/Other/control-panel-home.php",
+      "menu": "CONTROL PANEL",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Control-Panel.png",
+      "sha256": "b7d129cfec0fb58575bfb475978dac83d15286b7d64c6bedc12720287a477856",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Stats.png",
+      "represents": "ADMIN — Live grid health and statistics",
+      "route": "/Other/stats.php",
+      "menu": "STATS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Stats.png",
+      "sha256": "4933396ba59b1556f3f6b8322708f63e97ec6564ca539eeaef615692a79007da",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-All-Regions.png",
+      "represents": "ADMIN — Grid-wide region performance and control",
+      "route": "/Other/admin-all-regions.php",
+      "menu": "ALL REGIONS",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-All-Regions.png",
+      "sha256": "27e7b9d6b5061f2875a99f09b82a18ed7fe8767b969a10c635dcd4716a9e0c35",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Region-Manager.png",
+      "represents": "ADMIN — Region management interface",
+      "route": "/Other/admin-regions.php",
+      "menu": "REGION MANAGER",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Region-Manager.png",
+      "sha256": "ea307a2491a7e182d02e7824752db65c1b3c6737c14cd78fdcf9bdd24c042af8",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Create-Region.png",
+      "represents": "ADMIN — Create-region form",
+      "route": "/Other/admin-create-region.php",
+      "menu": "CREATE REGION",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Create-Region.png",
+      "sha256": "19037f7c76a4aa1783bae05505f2e91c80b1613d559a1f91dab720cc105f98b0",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Region-Map-Textures.png",
+      "represents": "ADMIN — Region map texture management",
+      "route": "/Other/admin-region-map-textures.php",
+      "menu": "REGION MAP TEXTURES",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Region-Map-Textures.png",
+      "sha256": "df439ba17e248aa183d2ac5b64ab16f32fd9cbd53e0049f796c871a0ef76bf9b",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Page-Designer.png",
+      "represents": "ADMIN — Page Designer main canvas",
+      "route": "/Other/admin-page-designer.php",
+      "menu": "PAGE DESIGNER",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Page-Designer.png",
+      "sha256": "6d08dbeb6be3a51c0217f3976e3af2a0eac7bf054c76922247a84841663f20e1",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Site-And-Page-Design.png",
+      "represents": "ADMIN — Site and page design settings",
+      "route": "/Other/admin-site-design.php",
+      "menu": "SITE & PAGE DESIGN",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Site-And-Page-Design.png",
+      "sha256": "8ef36463f9820f59b526da3364ca74f6188b182556f62909d11a83162ed57e3e",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "ADMIN-Help-Tutorial-Pictures.png",
+      "represents": "ADMIN — Help Centre tutorial picture management",
+      "route": "/Other/admin-help-pictures.php",
+      "menu": "HELP TUTORIAL PICTURES",
+      "status": "verified-live",
+      "image": "screenshots/ADMIN-Help-Tutorial-Pictures.png",
+      "sha256": "c00711a008490fafea8c92008bb3cdc904edf44396516e0184a266c26f3bb2de",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Dashboard.png",
+      "represents": "USER dashboard landing page",
+      "route": "/Other/FreshUserDashboardExact/user-dashboard.php",
+      "menu": null,
+      "status": "verified-live",
+      "image": "screenshots/USER-Dashboard.png",
+      "sha256": "8c50925fe7debeb96d6790fb95e97e8bb1c4c353124cfecbf098b6bb564d82f8",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Account.png",
+      "represents": "USER — Account settings",
+      "route": "/Other/FreshUserDashboardExact/UserPages/account.php",
+      "menu": "ACCOUNT",
+      "status": "verified-live",
+      "image": "screenshots/USER-Account.png",
+      "sha256": "10659f83f5aceca8ba0348057610f0d309e566ace38acb5b9fc896ea49f04b4a",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Profile.png",
+      "represents": "USER — Resident profile",
+      "route": "/Other/FreshUserDashboardExact/UserPages/profile.php",
+      "menu": "PROFILE",
+      "status": "verified-live",
+      "image": "screenshots/USER-Profile.png",
+      "sha256": "4a913ce8c01671320e7c017ac46e884b703740badded0e283b1bafaac30687e3",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Regions.png",
+      "represents": "USER — Regions available to this role",
+      "route": "/Other/FreshUserDashboardExact/UserPages/regions.php",
+      "menu": "REGIONS",
+      "status": "verified-live",
+      "image": "screenshots/USER-Regions.png",
+      "sha256": "7b700e5c82c2060440f25a764f6e965ff9aff8aab1a16f70b42978a16cd8810f",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Inventory.png",
+      "represents": "USER — Inventory browser",
+      "route": "/Other/FreshUserDashboardExact/UserPages/inventory.php",
+      "menu": "INVENTORY",
+      "status": "verified-live",
+      "image": "screenshots/USER-Inventory.png",
+      "sha256": "6da9c6e2bab8dcfe611c2898430727c45f024a472aa405aea59ef9dae9aa104c",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-IAR-Backups.png",
+      "represents": "USER — Inventory archive backups",
+      "route": "/Other/FreshUserDashboardExact/UserPages/iar-backups.php",
+      "menu": "IAR BACKUPS",
+      "status": "verified-live",
+      "image": "screenshots/USER-IAR-Backups.png",
+      "sha256": "49ce3c2bd5fabf101c6bd79f914262a9396ff97267a98fd88b3b8166a83b7703",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Offline-Messages.png",
+      "represents": "USER — Offline message interface",
+      "route": "/Other/FreshUserDashboardExact/UserPages/offline-messages.php?v=20260918-emotes-filtered-v4",
+      "menu": "OFFLINE MESSAGES",
+      "status": "verified-live",
+      "image": "screenshots/USER-Offline-Messages.png",
+      "sha256": "55652ad2a06dd25d395e5dde7d2f0955fa00390fe152aaee23d506024aa4f537",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-Map.png",
+      "represents": "USER — Live FARM SHOP 2D map, loaded texture and avatar widget",
+      "route": "/Other/FreshUserDashboardExact/UserPages/map.php?ccfit=2&v=20260918-user-layers-v9c",
+      "menu": "MAP",
+      "status": "verified-live",
+      "image": "screenshots/USER-Map.png",
+      "sha256": "f36dc48b58bd92bb85232cd6076daedfc03cb22eea3b3b0a3c186b0042e3d363",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "filename": "USER-3D-Map.png",
+      "represents": "USER — Live FARM SHOP 3D terrain, objects, textures and materials; capture withheld: current live-grid texture blocker",
+      "menu": "3D MAP",
+      "route": "/Other/FreshUserDashboardExact/UserPages/map-3d.php?from=user&v=20260918-user-3d-v1",
+      "status": "withheld",
+      "reason": "Current live-grid 3D scene has unresolved texture failures; no screenshot captured.",
+      "image": null
+    },
+    {
+      "filename": "USER-Help-Centre.png",
+      "represents": "USER — Help Centre landing page",
+      "route": "/Other/FreshUserDashboardExact/UserPages/help-centre.php?v=20260918-user-help-v1",
+      "menu": "HELP CENTRE",
+      "status": "verified-live",
+      "image": "screenshots/USER-Help-Centre.png",
+      "sha256": "7ccc182aaa704aeedf302922bf68da060ab87f34697dfc2ae9eba5ef63566f85",
+      "width": 1280,
+      "height": 720
+    }
+  ]
 }
