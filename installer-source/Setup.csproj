@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>DreamGrid-Website-Setup</AssemblyName>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <DebugType>none</DebugType>
+    <Version>1.0.2</Version>
+    <Title>DreamGrid Website Setup</Title>
+    <Product>DreamGrid Website</Product>
+    <Company>Sharpened-Razor</Company>
+    <Description>DreamGrid Website installer with verified backups, content preservation and restore.</Description>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../DreamGrid-Website-Portable-v1.0.2.zip" LogicalName="payload.zip" />
+  </ItemGroup>
+</Project>

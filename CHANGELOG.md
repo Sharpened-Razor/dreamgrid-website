@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.2 — 2026-10-08
+
+- Adds unsigned, self-contained Windows x64 GUI setup as the recommended download, with discovery, Browse, Install / upgrade and Restore backup.
+- Uses built-in Windows PowerShell 5.1 internally; retains Advanced / Manual ZIP/scripts.
+- Corrects Custom Texture infrastructure and generic default artwork; packages 1,276 verified payload files while preserving existing custom/user content.
+- Retains validated backups, deployment rollback and manual restore. Manual GUI Browse verification passed.
+- Publishes exact EXE/ZIP SHA-256 checksums. Existing gallery/screenshots remain unchanged.
+
 ## Live website documentation — 2026-10-08
 
 Published 32 verified current-live captures from the approved 34-entry list. Both 3D images remain withheld with an explicit live-grid content blocker. Corrected page identity, privacy labels, current Stats response, and obsolete demo-grid claims. The portable installer version and binaries are unchanged.

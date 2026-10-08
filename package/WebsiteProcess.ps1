@@ -1,3 +1,5 @@
+﻿[AppContext]::SetSwitch('Switch.System.IO.UseLegacyPathHandling',$false)
+[AppContext]::SetSwitch('Switch.System.IO.BlockLongPaths',$false)
 function Get-WebsiteProcessPath($Process){
     if($Process.ExecutablePath){return $Process.ExecutablePath}
     # CIM omits elevated executable paths for an unelevated caller. Limited
@@ -30,4 +32,22 @@ public static class DreamGridWebsiteProcess {
         $current=$processes|Where-Object ProcessId -eq $current.ParentProcessId|Select-Object -First 1
     }
     return $null
+}
+
+function Get-WebsiteRelativePath([string]$Parent,[string]$Child){
+    $baseUri=[Uri]($Parent.TrimEnd('\')+'\')
+    return [Uri]::UnescapeDataString($baseUri.MakeRelativeUri([Uri]$Child).ToString()).Replace('/','\')
+}
+
+function Get-WebsiteFullPath([string]$Path){
+    if(-not ('DreamGridWebsitePath' -as [type])){
+        Add-Type -TypeDefinition @'
+using System;using System.Text;using System.Runtime.InteropServices;
+public static class DreamGridWebsitePath {
+ [DllImport("kernel32.dll",CharSet=CharSet.Unicode,SetLastError=true)]static extern uint GetFullPathName(string path,uint size,StringBuilder output,IntPtr filePart);
+ public static string Full(string path){if(String.IsNullOrWhiteSpace(path))throw new ArgumentException("Empty path");if(path.Length>=248 && path.Length>2 && path[1]==':' && !path.StartsWith(@"\\?\"))path=@"\\?\"+path;var output=new StringBuilder(32768);var length=GetFullPathName(path,32768,output,IntPtr.Zero);if(length==0||length>=32768)throw new System.IO.IOException("Could not normalize Windows path");var full=output.ToString();return full.StartsWith(@"\\?\")?full.Substring(4):full;}
+}
+'@
+    }
+    return [DreamGridWebsitePath]::Full($Path)
 }

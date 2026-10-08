@@ -1,0 +1,28 @@
+{
+  "payloadFiles": 1276,
+  "manifestEntries": 1276,
+  "missing": [],
+  "hashMismatches": [],
+  "hashes": {
+    "DreamGrid-Website-Setup.exe": "850728c818437e262351aea23839c80e3f61ea02dc23381c8cbbadb10f747666",
+    "DreamGrid-Website-Portable-v1.0.2.zip": "aeb331caea3ed90e005c0ce83a15fdb04cd9a711d05d16bd6796bd3c7e789403"
+  },
+  "unsigned": true,
+  "version": "1.0.2",
+  "manualBrowse": {
+    "passed": true,
+    "validFolder": "Installed and hash verified",
+    "invalidFolder": "Rejected: Settings.ini absent; no deployment",
+    "returningValidFolder": "Installed and hash verified",
+    "isolatedInstallation": true,
+    "liveGridChanged": false,
+    "finalMetadataOnlyRebuild": "Manifest release version aligned to 1.0.2; GUI and installation engine unchanged"
+  },
+  "previousTargetedTests": {
+    "cleanInstall": 12,
+    "preservation": 7,
+    "installer": 8,
+    "failed": 0
+  },
+  "galleryScreenshotsChanged": false
+}

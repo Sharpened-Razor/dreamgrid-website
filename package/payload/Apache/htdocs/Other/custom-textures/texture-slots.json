@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "frontpage",
+      "label": "FRONT PAGE",
+      "folder": "frontpage",
+      "slots": [
+        {
+          "key": "Frontpage-texture",
+          "label": "Front Page",
+          "description": "Main front/welcome page custom texture."
+        }
+      ]
+    },
+    {
+      "id": "pages",
+      "label": "PAGE TEXTURES",
+      "folder": "pages",
+      "slots": [
+        {
+          "key": "AdminHome-texture",
+          "label": "Admin Home",
+          "description": "Admin home page texture."
+        },
+        {
+          "key": "AdminDashboard-texture",
+          "label": "Admin Dashboard",
+          "description": "Admin dashboard texture."
+        },
+        {
+          "key": "UserHome-texture",
+          "label": "User Home",
+          "description": "User home page texture."
+        },
+        {
+          "key": "UserDashboard-texture",
+          "label": "User Dashboard",
+          "description": "User dashboard texture."
+        },
+        {
+          "key": "Login-texture",
+          "label": "Login",
+          "description": "Login page texture."
+        },
+        {
+          "key": "Accounts-texture",
+          "label": "Accounts",
+          "description": "Manage Accounts page texture."
+        },
+        {
+          "key": "Groups-texture",
+          "label": "Groups",
+          "description": "Manage Groups page texture."
+        },
+        {
+          "key": "Regions-texture",
+          "label": "Regions",
+          "description": "Manage Regions page texture."
+        },
+        {
+          "key": "Messages-texture",
+          "label": "Messages",
+          "description": "Messages page texture."
+        },
+        {
+          "key": "GridMap-texture",
+          "label": "Grid Map",
+          "description": "Grid Map page texture."
+        },
+        {
+          "key": "ControlPanel-texture",
+          "label": "Control Panel",
+          "description": "Control Panel page texture."
+        },
+        {
+          "key": "Health-texture",
+          "label": "Health",
+          "description": "Health/Diagnostics page texture."
+        },
+        {
+          "key": "Help-texture",
+          "label": "Help",
+          "description": "Help page texture."
+        }
+      ]
+    },
+    {
+      "id": "map-tiles",
+      "label": "MAP TILE TEXTURES",
+      "folder": "map-tiles",
+      "slots": [
+        {
+          "key": "Map1-texture",
+          "label": "Map Tile 1",
+          "description": "Custom texture for map tile 1."
+        },
+        {
+          "key": "Map2-texture",
+          "label": "Map Tile 2",
+          "description": "Custom texture for map tile 2."
+        },
+        {
+          "key": "Map3-texture",
+          "label": "Map Tile 3",
+          "description": "Custom texture for map tile 3."
+        },
+        {
+          "key": "Map4-texture",
+          "label": "Map Tile 4",
+          "description": "Custom texture for map tile 4."
+        },
+        {
+          "key": "Map5-texture",
+          "label": "Map Tile 5",
+          "description": "Custom texture for map tile 5."
+        },
+        {
+          "key": "Map6-texture",
+          "label": "Map Tile 6",
+          "description": "Custom texture for map tile 6."
+        },
+        {
+          "key": "Map7-texture",
+          "label": "Map Tile 7",
+          "description": "Custom texture for map tile 7."
+        },
+        {
+          "key": "Map8-texture",
+          "label": "Map Tile 8",
+          "description": "Custom texture for map tile 8."
+        },
+        {
+          "key": "Map9-texture",
+          "label": "Map Tile 9",
+          "description": "Custom texture for map tile 9."
+        },
+        {
+          "key": "Map10-texture",
+          "label": "Map Tile 10",
+          "description": "Custom texture for map tile 10."
+        },
+        {
+          "key": "Map11-texture",
+          "label": "Map Tile 11",
+          "description": "Custom texture for map tile 11."
+        },
+        {
+          "key": "Map12-texture",
+          "label": "Map Tile 12",
+          "description": "Custom texture for map tile 12."
+        },
+        {
+          "key": "Map13-texture",
+          "label": "Map Tile 13",
+          "description": "Custom texture for map tile 13."
+        },
+        {
+          "key": "Map14-texture",
+          "label": "Map Tile 14",
+          "description": "Custom texture for map tile 14."
+        },
+        {
+          "key": "Map15-texture",
+          "label": "Map Tile 15",
+          "description": "Custom texture for map tile 15."
+        },
+        {
+          "key": "Map16-texture",
+          "label": "Map Tile 16",
+          "description": "Custom texture for map tile 16."
+        }
+      ]
+    }
+  ]
+}

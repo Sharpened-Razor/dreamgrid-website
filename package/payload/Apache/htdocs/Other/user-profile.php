@@ -1818,7 +1818,7 @@ body{
         ),
 
         url(
-            "/Other/custom/Branding/AUSTRALIA-BACKGROUND.png"
+            "/Other/assets/images/control-center-teal-bg.png"
         )
 
         center center /

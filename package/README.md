@@ -1,3 +1,9 @@
+# Normal installation: DreamGrid-Website-Setup.exe
+
+Run the self-contained Windows x64 setup EXE. It discovers an existing DreamGrid installation and offers Browse, Install/upgrade and Restore backup. No manual .ps1 execution is required. Review the readable Desktop log for the verified backup archive and result. Release 1.0.2. The EXE is unsigned; published SHA-256 checksums identify the exact release files.
+
+The advanced script instructions below are retained for diagnostics. The internal installer/restore engine runs on Windows PowerShell 5.1.
+
 # DreamGrid website add-on — installation
 
 Verified on 7 October 2026. This is a website add-on for an existing, configured DreamGrid installation. It does not install DreamGrid, create regions, replace simulator configuration or migrate saved pages.
@@ -24,7 +30,7 @@ If moving an existing DreamGrid installation, stop it first. After following Dre
 ## Required destination environment
 
 - Existing native DreamGrid Apache/PHP runtime and configured Robust/MySQL services.
-- PowerShell 7 (`pwsh`) for installation and the existing website workers. Use sufficient Windows permissions for the destination and service inspection; an administrator PowerShell is appropriate for a protected installation.
+- Windows PowerShell 5.1, supplied with Windows, is used internally by the setup EXE. PowerShell 7 is not required to install. Existing optional website workers retain their own runtime prerequisites. Use sufficient Windows permissions for the destination and service inspection; an administrator PowerShell is appropriate for a protected installation.
 - Native PHP 7 plus its XML-RPC extension, retained for the legacy search adapter even when Apache uses PHP 8.
 - The existing Perl dependency, with `perl.exe` available through PATH for native CGI.
 - .NET 8 runtime for the existing 3D-map helper executables, in addition to the runtime required by DreamGrid itself. Retain DreamGrid's native OpenSim meshing, drawing and JPEG2000 DLLs.
@@ -34,7 +40,7 @@ The installer checks the native runtime, PHP 7 search dependency, Perl, .NET 8 a
 
 ## Install
 
-Extract the complete package into a separate folder. Keep `manifest.json`, the installation scripts and `payload` together. Open PowerShell 7 in that folder:
+Extract the complete package into a separate folder. Keep `manifest.json`, the installation scripts and `payload` together. For Advanced / Manual Installation, open Windows PowerShell 5.1 or PowerShell 7 in that folder:
 
 ```powershell
 $gridRoot = Read-Host 'Existing DreamGrid data folder containing Settings.ini'
@@ -44,7 +50,7 @@ $gridRoot = Read-Host 'Existing DreamGrid data folder containing Settings.ini'
 
 If Windows blocks scripts downloaded from a source you trust, unblock the extracted package using Windows' normal file/script controls. Do not change DreamGrid configuration to bypass a failed prerequisite check.
 
-The installer verifies every payload hash before deployment. It backs up replaced files in a dated **DreamGrid-Website-Install** folder on the current user's Desktop, preserves their folder structure, and records original/archive paths, filename, SHA-256 and reason in `manifest.json`. It then verifies installed hashes. Existing images at matching asset paths are preserved.
+The installer verifies every payload hash before deployment. It backs up replaced files in a dated **DreamGrid-Website-Install** folder on the current user's Desktop, stores backups with indexed filenames, and records original/archive paths, filename, SHA-256 and reason in `manifest.json`. It then verifies installed hashes. Existing images at matching asset paths are preserved.
 
 The installer generates only destination-local website metadata and, when absent, a random private bridge key and an available loopback bridge port. It preserves existing bridge credentials and other native runtime properties. Its automatic bridge registration is the only change to the existing native `Start.runtimeconfig.json`; native Apache/PHP templates are left alone.
 
@@ -68,4 +74,5 @@ Rollback validates backup hashes and destination paths. It preserves the current
 Automated PHP 7/8 tests cover native configuration regeneration, sessions/access, routes/assets, builder editing and persistence, publishing, forms with a local inbox/mock mail transport, templates/import/export, interactions/SEO models, search, map helpers and private-file protection. Relocated ASCII paths and an alternate drive letter were tested.
 
 The final live smoke uses short-lived signed sessions for existing accounts without changing accounts or passwords. Live password login was not attempted; password login/logout was tested against an isolated synthetic database. No live test pages, form submissions, imports or publishing writes were introduced. Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain installation-specific checks. These are not a claim of a complete penetration test or support for every DreamGrid version.
+
 

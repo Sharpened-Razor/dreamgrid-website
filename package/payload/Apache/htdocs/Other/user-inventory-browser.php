@@ -1092,7 +1092,7 @@ body{
             rgba(0,0,0,.70)
         ),
         url(
-            "/Other/custom/Branding/AUSTRALIA-BACKGROUND.png"
+            "/Other/assets/images/control-center-teal-bg.png"
         )
         center center /
         cover fixed no-repeat;
@@ -1850,7 +1850,7 @@ body{
             rgba(2,6,9,.96)
         ),
         url(
-            "/Other/custom/Branding/AUSTRALIA-BACKGROUND.png"
+            "/Other/assets/images/control-center-teal-bg.png"
         ) !important;
     background-position:center top !important;
     background-size:cover !important;

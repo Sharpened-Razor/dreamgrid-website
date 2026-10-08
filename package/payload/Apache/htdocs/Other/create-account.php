@@ -661,7 +661,7 @@ body{
             rgba(3,8,10,.62)
         ),
         url(
-            "/Other/custom/Branding/AUSTRALIA-BACKGROUND.png"
+            "/Other/assets/images/control-center-teal-bg.png"
         )
         center center /
         cover fixed

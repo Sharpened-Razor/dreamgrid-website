@@ -11,7 +11,7 @@ The release is a website add-on. The payload manifest is the exact distributable
 - Legacy Search, MetroMap adapter and native CGI-facing website pages. MetroMap reads native regenerated centre coordinates; search discovers the destination schema and uses native PHP 7 for XML-RPC compatibility when needed.
 - Private 3D-map executables, runtime descriptors and rebuild source. HTTP access to private/source files is denied.
 - `_WEB_CONTROL` website email/environment helpers, native bridge assembly/source and private legacy XML-RPC handler.
-- Installer, read-only prerequisite checker, process ownership helper, rollback script and SHA-256 payload manifest.
+- Self-contained Windows x64 setup EXE (bundled runtime; internal Windows PowerShell 5.1), read-only prerequisite checker, process ownership helper, rollback script and SHA-256 payload manifest.
 
 Legacy asset filenames, CSS/DOM/cache identifiers and saved-format identifiers are retained for compatibility. They do not select the configured grid name, domain, port or installation path. Public grid labels use native configuration. Default artwork remains part of the existing website theme.
 
@@ -21,7 +21,7 @@ Legacy asset filenames, CSS/DOM/cache identifiers and saved-format identifiers a
 - Settings.ini and Robust/OpenSim configuration, databases, regions, inventories and assets.
 - Apache binaries/modules, native configuration and templates, PHP runtimes/extensions, MySQL and the configured service environment.
 - OpenSim managed/native DLLs used by meshing and texture tools.
-- Destination Perl, .NET and PowerShell prerequisites; destination SMTP/TLS configuration and certificates where applicable.
+- Destination Perl and .NET website prerequisites; existing optional workers retain their own PowerShell requirements; destination SMTP/TLS configuration and certificates where applicable.
 
 These are not copied from the development installation into the website package. Native Apache/PHP regeneration was exercised from a relocated path under both PHP selections and again after website installation.
 

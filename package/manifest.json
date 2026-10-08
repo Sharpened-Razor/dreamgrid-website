@@ -3,6 +3,46 @@
   "requireOriginalHashes": false,
   "files": [
     {
+      "path": "_WEB_CONTROL/DreamGrid.EmailSender.ps1",
+      "sha256": "160F731B724A9BACCC3A641C04E078CB2591BEF880F1223FCC346CE38D359609",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.EmailSettings.ps1",
+      "sha256": "784458F0CE828F13619467C2CD0ED5308C2D154DB5F79D3AE899DFF1DCDBE972",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.cs",
+      "sha256": "0383E2844B9A12EABF00EAA008E787716548C67785EF9A6F2F74A70F07C33BAE",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll",
+      "sha256": "39FF0A7027FB219250B83CE1233F0637A168CCC6231FD0FAB509839EC86A25D3",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.WebsiteEnvironment.php",
+      "sha256": "152DD4EE815CA0FC81A00B5E5AB09CD46DE6B91AA3B260FEFC75408E78B255E8",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.WebsiteListener.ps1",
+      "sha256": "1DD745D414616714B75C14ACB580E09EB18B08EF5F727FE0DA4A34A9A542480B",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/search/query.php",
+      "sha256": "69D7E25A40370C01290342C7C83EFCB8CD21D24F8B900D7D64E140102F34238B",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/Test-DreamGridWebsitePrerequisites.ps1",
+      "sha256": "0932374B69209DC4907E21965D530A691B9A951C7B2EC08C49A8CE0B7A01BB1E",
+      "preserveExisting": false
+    },
+    {
       "path": "Apache/htdocs/.htaccess",
       "sha256": "C5D62BC1AC4474D91679F48624CEB4098D00CD3E8BA27373A919B6C0231A3ABF",
       "preserveExisting": false
@@ -1554,7 +1594,7 @@
     },
     {
       "path": "Apache/htdocs/Other/admin-tools.php",
-      "sha256": "E4CC5149276B986570E1A12A94D805B9D977EB00FDF28D714EE0CEDF2D00DDA3",
+      "sha256": "B286A52C577B62F2A84D2E5A2A41C0E1EDD40538939B0242E0846966E6FE385A",
       "preserveExisting": false
     },
     {
@@ -3389,7 +3429,7 @@
     },
     {
       "path": "Apache/htdocs/Other/assets/images/Frontpage-background.png",
-      "sha256": "F70B6B4032EBF88C3A9FEBAB974574D1862FC506BD905B6F9D120DF642C83754",
+      "sha256": "609B309481496A3412948ECA4F39AD920D367FC15E7723A9C65CBEAE58030A52",
       "preserveExisting": true
     },
     {
@@ -3574,7 +3614,7 @@
     },
     {
       "path": "Apache/htdocs/Other/avatar-profile.php",
-      "sha256": "7635E7D1F42FD09445D30B7B1E923FDC514E1E3EBE52BB58D320B08DA665FF58",
+      "sha256": "EB3F4B0ECFFD1339A9E9EFCAE37F31333B99D0A8453C99F998ADCBC6CFDA98C0",
       "preserveExisting": false
     },
     {
@@ -3914,7 +3954,7 @@
     },
     {
       "path": "Apache/htdocs/Other/create-account.php",
-      "sha256": "214736339AF6328EEEC26375AC5B96C2AC5BDE368899F1E20E18B7400AB52681",
+      "sha256": "1E98C7810D9319FB0FAAB63D9B752161EBE028FDC3E8A1E37CDBFD3D46D3AC3C",
       "preserveExisting": false
     },
     {
@@ -3938,6 +3978,26 @@
       "preserveExisting": false
     },
     {
+      "path": "Apache/htdocs/Other/custom-textures/frontpage/.keep",
+      "preserveExisting": false,
+      "sha256": "0CF5C92C9ADDE2B3662B85F28812B5D8503F2C60E3AB8161BAE035F2EF3ECD85"
+    },
+    {
+      "path": "Apache/htdocs/Other/custom-textures/map-tiles/.keep",
+      "preserveExisting": false,
+      "sha256": "0CF5C92C9ADDE2B3662B85F28812B5D8503F2C60E3AB8161BAE035F2EF3ECD85"
+    },
+    {
+      "path": "Apache/htdocs/Other/custom-textures/pages/.keep",
+      "preserveExisting": false,
+      "sha256": "0CF5C92C9ADDE2B3662B85F28812B5D8503F2C60E3AB8161BAE035F2EF3ECD85"
+    },
+    {
+      "path": "Apache/htdocs/Other/custom-textures/texture-slots.json",
+      "preserveExisting": true,
+      "sha256": "D78A7CB867C7592251BE94F93165B76A6F97AB3F0868E4C893330B77300A9F2F"
+    },
+    {
       "path": "Apache/htdocs/Other/dashboard-return.php",
       "sha256": "16293001FEE3658E2314CFE366A28A55F246DDEE8C1037D49176CBCB0E88E55E",
       "preserveExisting": false
@@ -3954,7 +4014,7 @@
     },
     {
       "path": "Apache/htdocs/Other/forgot-password.php",
-      "sha256": "28813859531394C52E0A05998409E9E2DBCBD7EB183FA29D3C2446D2B696AB4F",
+      "sha256": "98E00BFAFC03E2354D29C314C1AAE173A22ECC0E1BA6BB2C07F43D12CBA4EF7D",
       "preserveExisting": false
     },
     {
@@ -4139,7 +4199,7 @@
     },
     {
       "path": "Apache/htdocs/Other/FreshUserDashboardExact/UserPages/iar-backups.php",
-      "sha256": "4F621BB8922C66A4C81552FBEAB3161D0B6429B4FA9C735458E34462D9B9DF1B",
+      "sha256": "A263A885E3F9361EE2F728DE260B38C2CC70948991F3E6A5CF6D56F1DDAF07ED",
       "preserveExisting": false
     },
     {
@@ -4424,7 +4484,7 @@
     },
     {
       "path": "Apache/htdocs/Other/group-profile.php",
-      "sha256": "8AE678692BA2ED5F35A5B0A2DF94A3021A69C1006394FC687783560AB9BECC51",
+      "sha256": "173C659D2AC36EDDD845D8988845A5428A701FABCD1B11D5393ED523E1C5208F",
       "preserveExisting": false
     },
     {
@@ -5044,17 +5104,17 @@
     },
     {
       "path": "Apache/htdocs/Other/terms.php",
-      "sha256": "F3892D6D7BB56D7B319B2BB05DBAA3E4286D609FADB73EFB0781EFA971239189",
+      "sha256": "DBFEA90896EFCE31689B61311249BB5886275F38DD756772188B49B400FAF2B1",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/Other/user-account-edit.php",
-      "sha256": "7DE9B49AC1EC04665B6C6287FE13C46B24C4BB4911C2708687D21F4F670522E2",
+      "sha256": "6C0BC93561FDDF784EF16E149F56B82E9331EAC5DAC8B2EFBBD37E701388ED14",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/Other/user-account.php",
-      "sha256": "E74FCA95AC91586A266D4F6502EDE07CF16D89027FA2C85A7E9C569F8DEE0113",
+      "sha256": "4E906B40DC81AC175505F45D302765FC595CA0A823CBB2431855ECF31FC0F59C",
       "preserveExisting": false
     },
     {
@@ -5074,17 +5134,17 @@
     },
     {
       "path": "Apache/htdocs/Other/user-iar-backups.php",
-      "sha256": "9895EC90640E8B06A9D157A401008E7BE6E4C7F9F2399F6EA7ACD2854B06582C",
+      "sha256": "7754E3C25AC9741101643C359FD21B706271BDAD13C5A2908AA014BB2459DA3C",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/Other/user-inventory-browser.php",
-      "sha256": "AB14B6CDAB4E802724BE6B404F153D7806A361AA6DA6CB33E7E0BFD9C6ECE983",
+      "sha256": "3AB2B967C2C86A96AEDCD11A8ADA3FA776DE341A269C2FBDDAB9619F181F8710",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/Other/user-inventory.php",
-      "sha256": "FA53E827BDD42B746C1E757630865E566C41074398ABEBE05DC5060EF44EA40B",
+      "sha256": "5FE746CEAFB30655D997EBC3B3E0B9C57A8D403CE8DEEB32CFF5A0373203EDAF",
       "preserveExisting": false
     },
     {
@@ -5114,7 +5174,7 @@
     },
     {
       "path": "Apache/htdocs/Other/user-profile.php",
-      "sha256": "70C8581444109154326E37F3344475206C15C734D167F80A8EE5086FC47A4B5E",
+      "sha256": "ECA997F7AE6ECA8E4A5BB66264B369C56B99BB0C4064B97625A6A4B8BD69DCB8",
       "preserveExisting": false
     },
     {
@@ -5713,6 +5773,11 @@
       "preserveExisting": false
     },
     {
+      "path": "Apache/htdocs/Search/Search_json.php",
+      "sha256": "9CADE608F144E9EDC0E0C5B960156AF3D6583A5C755EE5C4ED6C62FB7B0F8858",
+      "preserveExisting": false
+    },
+    {
       "path": "Apache/htdocs/Search/SearchClassifieds.htm",
       "sha256": "9F7FEA232593A6071B545503C84D94A9F0DF5495FF4BA9C193801CC3AB010BD8",
       "preserveExisting": false
@@ -5765,11 +5830,6 @@
     {
       "path": "Apache/htdocs/Search/SearchRegions.php",
       "sha256": "41DFCE19817B442E4EA7CDB1EDA6C6522D4BCA03F6B802CB522261DEC36DA7F4",
-      "preserveExisting": false
-    },
-    {
-      "path": "Apache/htdocs/Search/Search_json.php",
-      "sha256": "9CADE608F144E9EDC0E0C5B960156AF3D6583A5C755EE5C4ED6C62FB7B0F8858",
       "preserveExisting": false
     },
     {
@@ -6321,47 +6381,12 @@
       "path": "Apache/htdocs/WordPress/default.htm",
       "sha256": "04C8F09400A8DD30A80D6B368D7741428F2175C51C7E5A406CD893D7CD35B30C",
       "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/DreamGrid.EmailSender.ps1",
-      "sha256": "160F731B724A9BACCC3A641C04E078CB2591BEF880F1223FCC346CE38D359609",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/DreamGrid.EmailSettings.ps1",
-      "sha256": "784458F0CE828F13619467C2CD0ED5308C2D154DB5F79D3AE899DFF1DCDBE972",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.cs",
-      "sha256": "0383E2844B9A12EABF00EAA008E787716548C67785EF9A6F2F74A70F07C33BAE",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll",
-      "sha256": "39FF0A7027FB219250B83CE1233F0637A168CCC6231FD0FAB509839EC86A25D3",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/DreamGrid.WebsiteEnvironment.php",
-      "sha256": "152DD4EE815CA0FC81A00B5E5AB09CD46DE6B91AA3B260FEFC75408E78B255E8",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/DreamGrid.WebsiteListener.ps1",
-      "sha256": "1DD745D414616714B75C14ACB580E09EB18B08EF5F727FE0DA4A34A9A542480B",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/search/query.php",
-      "sha256": "69D7E25A40370C01290342C7C83EFCB8CD21D24F8B900D7D64E140102F34238B",
-      "preserveExisting": false
-    },
-    {
-      "path": "_WEB_CONTROL/Test-DreamGridWebsitePrerequisites.ps1",
-      "sha256": "0932374B69209DC4907E21965D530A691B9A951C7B2EC08C49A8CE0B7A01BB1E",
-      "preserveExisting": false
     }
   ],
-  "version": "1.0.1"
+  "version": "1.0.2",
+  "emptyDirectories": [
+    "Apache/htdocs/Other/custom-textures/frontpage",
+    "Apache/htdocs/Other/custom-textures/pages",
+    "Apache/htdocs/Other/custom-textures/map-tiles"
+  ]
 }

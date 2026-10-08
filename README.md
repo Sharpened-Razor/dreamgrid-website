@@ -8,9 +8,38 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 
 ## Download and install
 
-- [Download v1.0.1 portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.zip)
-- [SHA-256 checksum](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.1/DreamGrid-Website-Portable-v1.0.1.sha256)
-- [Full installation and rollback instructions](INSTALLATION.md)
+**Recommended:** [Download DreamGrid-Website-Setup.exe — v1.0.2](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.2/DreamGrid-Website-Setup.exe) (Windows x64).
+
+DreamGrid-Website-Setup.exe is currently unsigned. Windows may display an Unknown Publisher or Microsoft Defender SmartScreen warning. The SHA-256 checksum is published below so the downloaded file can be verified.
+
+SHA-256 of the exact release files:
+
+```text
+850728c818437e262351aea23839c80e3f61ea02dc23381c8cbbadb10f747666  DreamGrid-Website-Setup.exe
+aeb331caea3ed90e005c0ce83a15fdb04cd9a711d05d16bd6796bd3c7e789403  DreamGrid-Website-Portable-v1.0.2.zip
+```
+
+[Release notes and downloads](https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.2) · [Checksums](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.2/SHA256SUMS.txt)
+
+1. DreamGrid must already be installed and configured.
+2. DIVA must be OFF.
+3. OTHER must be enabled/selected.
+4. Website folder must be **Other**.
+5. Download **DreamGrid-Website-Setup.exe**.
+6. Double-click it.
+7. Confirm the detected DreamGrid installation, or select it with **Browse**.
+8. Read the prerequisite guidance and stop the destination DreamGrid and Apache normally.
+9. Click **Install / upgrade**. The installer runs its checks before changing files.
+10. Wait for installation and hash validation to complete.
+11. Start DreamGrid normally, then open your configured website URL.
+
+The installer finds DreamGrid automatically, verifies prerequisites and package checksums, backs up replaced files, preserves custom/user content, installs the website, validates installed files and supports **Restore backup**. A failed deployment automatically rolls back and verifies the backed-up files. It saves a readable log and a dated backup archive on the Desktop. It does not stop or start DreamGrid automatically.
+
+The EXE includes its own .NET runtime and uses Windows PowerShell 5.1 internally; ordinary installation requires no PowerShell 7 or manual script execution. The destination website's native runtime requirements still apply.
+
+**Advanced / Manual Installation:** [Portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.2/DreamGrid-Website-Portable-v1.0.2.zip) and scripts remain available for manual installation and recovery. Keep the complete ZIP together; GitHub's automatic source archives are repository snapshots.
+
+- [Full installation and restore instructions](INSTALLATION.md)
 - [Illustrated usage guide](USAGE.md)
 - [Live screenshot gallery](SCREENSHOTS.md)
 - [Screenshot coverage and known limitations](SCREENSHOT-COVERAGE.md)
@@ -18,19 +47,7 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 - [Verification results and limits](VERIFICATION.md)
 - [Download website](https://sharpened-razor.github.io/dreamgrid-website/)
 
-In **DreamGrid > Setup > Settings > Apache Settings**, turn **DIVA OFF**, select/enable **OTHER**, and set its folder to **Other**. Save, then stop DreamGrid and Apache. The installer checks this setting and never changes it silently.
-
-Extract the complete release ZIP, open PowerShell 7 in the extracted folder containing the scripts, and run:
-
-```powershell
-$gridRoot = Read-Host 'Existing DreamGrid data folder containing Settings.ini'
-.\Test-DreamGridWebsitePrerequisites.ps1 -Root $gridRoot
-.\Install-DreamGridWebsite.ps1 -Root $gridRoot
-```
-
-Start DreamGrid normally afterward. Use the release ZIP for installation; GitHub's automatic source archives are repository snapshots, not the verified installer ZIP.
-
-**Installing does not automatically open the webpage.** Open your browser and enter `http://YOUR-GRID-DOMAIN/Other/`, using your actual domain, scheme and web port. A nonstandard HTTP port uses `http://YOUR-GRID-DOMAIN:YOUR-WEB-PORT/Other/`.
+**Installing does not automatically open the webpage.** Use your configured domain, scheme and web port, for example `http://YOUR-GRID-DOMAIN/Other/`.
 
 | Screen | Portable example URL |
 | --- | --- |
@@ -61,7 +78,7 @@ These are fresh captures of the current live website after the DreamGrid 7.2115 
 
 Use an **ASCII path throughout the complete Windows directory hierarchy**. Spaces and other drive letters are supported. Full Unicode paths are unsupported because the bundled legacy Perl stack failed those tests. Preserve DreamGrid's native internal folder layout.
 
-PowerShell 7, the existing native Apache/PHP environment, native PHP 7 XML-RPC support, Perl on PATH, .NET 8 and DreamGrid's native OpenSim map dependencies are required. See [installation instructions](INSTALLATION.md) for the complete details.
+The setup EXE uses built-in Windows PowerShell 5.1. Existing optional website workers retain their runtime requirements. The existing native Apache/PHP environment, native PHP 7 XML-RPC support, Perl on PATH, .NET 8 and DreamGrid's native OpenSim map dependencies are required. See [installation instructions](INSTALLATION.md) for the complete details.
 
 When relocating DreamGrid, stop it, follow its native relocation procedure, then rerun this website installer with the new root **before starting DreamGrid** to refresh its generated startup-hook registration. Native DreamGrid still owns and regenerates Apache/PHP configuration.
 
@@ -71,7 +88,7 @@ Saved pages, uploaded images, private content, databases, regions, inventories, 
 
 ## Version and verification
 
-Current portable add-on release: **1.0.1**, verified 7 October 2026. The two local Robust health probes are corrected; 132 targeted regression checks passed. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
+Current add-on release: **1.0.2**, released 8 October 2026. The corrected package has 1,276 payload files and 1,276 manifest entries, with zero missing files or hash mismatches. Custom Texture slot infrastructure and generic default artwork are included; personal uploaded images are excluded. The existing preservation and rollback checks passed, and the final GUI Browse check passed against valid, invalid and returning-valid selections. The two local Robust health probes are corrected; 132 targeted regression checks passed. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
 
 Approved plan: 34 entries. Verified fresh live images: 32. Withheld 3D images: 2. The full 34-image set is not complete. ADMIN-3D-Map.png and USER-3D-Map.png are withheld because the live 3D scene has unresolved grid-content texture failures. No incomplete 3D image, old capture or substitute texture is presented. Texture repair is outside this website/documentation task.
 

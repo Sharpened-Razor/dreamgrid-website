@@ -1,8 +1,9 @@
-#requires -Version 7.0
+﻿#requires -Version 5.1
 param(
     [Parameter(Mandatory)][string]$Root,
     [string]$PackageDirectory=$PSScriptRoot,
-    [string]$ArchiveParent=[Environment]::GetFolderPath('Desktop')
+    [string]$ArchiveParent=[Environment]::GetFolderPath('Desktop'),
+    [int]$SimulateFailureAfterFiles=0
 )
 $ErrorActionPreference='Stop'
 $Root=(Resolve-Path -LiteralPath $Root).Path
@@ -58,13 +59,13 @@ if($manifest.files.path -match '^Apache/htdocs/Other/private/map3d-tools/.*runti
 $parent=Split-Path $Root -Parent
 $runtime=Join-Path $parent 'Start.runtimeconfig.json'
 if(-not (Test-Path -LiteralPath $runtime)){throw 'The existing native DreamGrid Start.runtimeconfig.json was not found beside its data folder.'}
-$config=Get-Content -LiteralPath $runtime -Raw|ConvertFrom-Json -AsHashtable
+$config=Get-Content -LiteralPath $runtime -Raw|ConvertFrom-Json
 if(-not $config.runtimeOptions){throw 'Invalid native DreamGrid runtime configuration'}
-if(-not $config.runtimeOptions.configProperties){$config.runtimeOptions.configProperties=@{}}
+if(-not $config.runtimeOptions.configProperties){$config.runtimeOptions | Add-Member -NotePropertyName configProperties -NotePropertyValue ([pscustomobject]@{})}
 $hook=Join-Path $Root '_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll'
 if(-not ($files|Where-Object {$_.target -eq $hook}) -and -not (Test-Path -LiteralPath $hook)){throw 'Website bridge assembly is missing'}
 $hooks=@([string]$config.runtimeOptions.configProperties.STARTUP_HOOKS -split ';'|Where-Object {$_ -and [IO.Path]::GetFileName($_) -ne 'DreamGrid.NativeBridge.StartupHook.dll'})
-$config.runtimeOptions.configProperties.STARTUP_HOOKS=(@($hooks)+$hook) -join ';'
+$config.runtimeOptions.configProperties | Add-Member -NotePropertyName STARTUP_HOOKS -NotePropertyValue ((@($hooks)+$hook) -join ';') -Force
 # Refuse active destination services; isolated services in other roots are unrelated.
 foreach($process in Get-CimInstance Win32_Process){
     if($process.Name -match '^(Start|httpd|OpenSim|Robust)\.exe$'){
@@ -83,7 +84,7 @@ $records=[Collections.Generic.List[object]]::new()
 function Backup-Target([string]$target,[string]$relative,[string]$reason){
     if($records|Where-Object {$_.originalPath -eq $target}){return}
     $exists=Test-Path -LiteralPath $target
-    $archived=Join-Path $archive $relative
+    $archived=Join-Path $archive ('files/'+$records.Count.ToString('D5')+[IO.Path]::GetExtension($target))
     $sha=$null
     if($exists){
         New-Item -ItemType Directory -Path (Split-Path $archived -Parent) -Force|Out-Null
@@ -100,8 +101,8 @@ $generated=@(
 $key=Join-Path $Root '_WEB_CONTROL/DreamGrid.NativeBridge.key'
 $portFile=Join-Path $Root '_WEB_CONTROL/DreamGrid.NativeBridge.port'
 if(-not (Test-Path -LiteralPath $key)){
-    $bytes=[byte[]]::new(32);[Security.Cryptography.RandomNumberGenerator]::Fill($bytes)
-    $generated+=@{target=$key;relative='OutworldzFiles/_WEB_CONTROL/DreamGrid.NativeBridge.key';text=[Convert]::ToHexString($bytes);reason='New destination-only random bridge authentication key'}
+    $bytes=[byte[]]::new(32);$random=[Security.Cryptography.RandomNumberGenerator]::Create();try{$random.GetBytes($bytes)}finally{$random.Dispose()}
+    $generated+=@{target=$key;relative='OutworldzFiles/_WEB_CONTROL/DreamGrid.NativeBridge.key';text=([BitConverter]::ToString($bytes).Replace('-',''));reason='New destination-only random bridge authentication key'}
 }
 if(-not (Test-Path -LiteralPath $portFile)){
     $listener=[Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback,0);$listener.Start();$port=$listener.LocalEndpoint.Port;$listener.Stop()
@@ -118,12 +119,14 @@ foreach($item in $generated){
 try{
     foreach($file in $files){Backup-Target $file.target ('OutworldzFiles/'+$file.relative) 'Original website file before verified portability repair'}
     foreach($item in $generated){Backup-Target $item.target $item.relative $item.reason}
-    $records|ConvertTo-Json -Depth 8|Set-Content -LiteralPath (Join-Path $archive 'manifest.json') -Encoding utf8NoBOM
-    @{root=$Root;nativeParent=$parent;status='Backup completed before deployment'}|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $archive 'installation.json') -Encoding utf8NoBOM
+    $records|ConvertTo-Json -Depth 8|Set-Content -LiteralPath (Join-Path $archive 'manifest.json') -Encoding UTF8
+    @{root=$Root;nativeParent=$parent;status='Backup completed before deployment'}|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $archive 'installation.json') -Encoding UTF8
+    $deployedCount=0
     foreach($file in $files){
         New-Item -ItemType Directory -Path (Split-Path $file.target -Parent) -Force|Out-Null
         Copy-Item -LiteralPath $file.source -Destination $file.target -Force
         if((Get-FileHash -LiteralPath $file.target).Hash -ne $file.sha256){throw 'Installed payload verification failed'}
+        $deployedCount++;if($SimulateFailureAfterFiles -gt 0 -and $deployedCount -ge $SimulateFailureAfterFiles){throw 'Requested installer failure simulation'}
     }
     foreach($item in $generated){
         New-Item -ItemType Directory -Path (Split-Path $item.target -Parent) -Force|Out-Null
@@ -132,13 +135,19 @@ try{
     }
     [pscustomobject]@{status='Installed and hash verified';root=$Root;archive=$archive;installedFiles=$files.Count;nativeSettingsChanged=$false;nativeApachePhpTemplatesChanged=$false;servicesStarted=$false}
 }catch{
+    $failureIndex=0
     foreach($record in $records){
+        $failureIndex++
         if($record.previouslyExisted){Copy-Item -LiteralPath $record.archivedPath -Destination $record.originalPath -Force}
         elseif(Test-Path -LiteralPath $record.originalPath){
-            $failed=Join-Path $archive ('failed-new/'+[IO.Path]::GetRelativePath($parent,$record.originalPath))
+            $failed=Join-Path $archive ('failed-new/'+$failureIndex.ToString('D5')+[IO.Path]::GetExtension($record.originalPath))
             New-Item -ItemType Directory -Path (Split-Path $failed -Parent) -Force|Out-Null
             Move-Item -LiteralPath $record.originalPath -Destination $failed
         }
+    }
+    foreach($record in $records){
+        if($record.previouslyExisted -and (Get-FileHash -LiteralPath $record.originalPath).Hash -ne $record.sha256){throw 'Automatic rollback hash verification failed'}
+        if(-not $record.previouslyExisted -and (Test-Path -LiteralPath $record.originalPath)){throw 'Automatic rollback removal verification failed'}
     }
     throw
 }
