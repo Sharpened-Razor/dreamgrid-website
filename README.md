@@ -72,7 +72,7 @@ Use your own configured website domain, scheme and web port.
 - Forms, publishing/link checks, interactions, SEO/site tools and built-in tutorials.
 - Dynamic destination discovery, prerequisite checks, per-file hashes, Desktop backups and rollback.
 
-These are fresh captures of the current live website after the DreamGrid 7.2115 update. Personal names, email addresses and private identifiers use capture-only labels. No stored account data, map widgets or failed textures were changed for the images. Grid identity and content shown are examples from the live destination; configure your own installation.
+The original 32 images are verified captures of the live website after the DreamGrid 7.2115 update, with capture-only labels for private account details. The two 3D Map images are the originals supplied and approved by the grid owner. Grid identity and content shown are examples from the live destination; configure your own installation.
 
 ## Path and runtime requirements
 
@@ -90,7 +90,7 @@ Saved pages, uploaded images, private content, databases, regions, inventories, 
 
 Current add-on release: **1.0.2**, released 8 October 2026. The corrected package has 1,276 payload files and 1,276 manifest entries, with zero missing files or hash mismatches. Custom Texture slot infrastructure and generic default artwork are included; personal uploaded images are excluded. The existing preservation and rollback checks passed, and the final GUI Browse check passed against valid, invalid and returning-valid selections. The two local Robust health probes are corrected; 132 targeted regression checks passed. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
 
-Approved plan: 34 entries. Verified fresh live images: 32. Withheld 3D images: 2. The full 34-image set is not complete. ADMIN-3D-Map.png and USER-3D-Map.png are withheld because the live 3D scene has unresolved grid-content texture failures. No incomplete 3D image, old capture or substitute texture is presented. Texture repair is outside this website/documentation task.
+Approved plan: 34 entries. Published images: 34 — 32 verified live captures and two owner-supplied, approved 3D Map images. ADMIN-3D-Map.png and USER-3D-Map.png were supplied and explicitly approved for publication by the grid owner on 8 October 2026. Publishing these images does not certify that the previously documented live-grid texture failures have been resolved.
 
 Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain destination checks. This is not a complete penetration test or a guarantee for every DreamGrid version.
 

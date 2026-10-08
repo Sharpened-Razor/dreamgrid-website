@@ -1,10 +1,10 @@
 # Live website screenshots
 
-Approved plan: 34 entries. Verified fresh live images: 32. Withheld 3D images: 2. The full 34-image set is not complete.
+Approved plan: 34 entries. Published images: 34 — 32 verified live captures and two owner-supplied, approved 3D Map images.
 
-These are fresh captures of the current live website after the DreamGrid 7.2115 update. Personal names, email addresses and private identifiers use capture-only labels. No stored account data, map widgets or failed textures were changed for the images. Grid identity and content shown are examples from the live destination; configure your own installation.
+The original 32 images are verified captures of the live website after the DreamGrid 7.2115 update, with capture-only labels for private account details. The two 3D Map images are the originals supplied and approved by the grid owner. Grid identity and content shown are examples from the live destination; configure your own installation.
 
-ADMIN-3D-Map.png and USER-3D-Map.png are withheld because the live 3D scene has unresolved grid-content texture failures. No incomplete 3D image, old capture or substitute texture is presented. Texture repair is outside this website/documentation task.
+ADMIN-3D-Map.png and USER-3D-Map.png were supplied and explicitly approved for publication by the grid owner on 8 October 2026. Publishing these images does not certify that the previously documented live-grid texture failures have been resolved.
 
 [Coverage and approved labels](SCREENSHOT-COVERAGE.md) · [Searchable gallery](https://sharpened-razor.github.io/dreamgrid-website/gallery.html)
 
@@ -82,7 +82,13 @@ Route: `/Other/grid-map.php?from=admin&ccfit=2`
 
 ## ADMIN-3D-Map.png
 
-**Withheld.** Current live-grid 3D scene has unresolved texture failures; no screenshot captured.
+ADMIN — FARM SHOP 3D Map
+
+![ADMIN — FARM SHOP 3D Map](docs/screenshots/ADMIN-3D-Map.png)
+
+Owner-supplied image; approved for publication.
+
+Route: `/Other/grid-map-3d.php?from=admin`
 
 ## ADMIN-Linked-Regions.png
 
@@ -262,7 +268,13 @@ Route: `/Other/FreshUserDashboardExact/UserPages/map.php?ccfit=2&v=20260918-user
 
 ## USER-3D-Map.png
 
-**Withheld.** Current live-grid 3D scene has unresolved texture failures; no screenshot captured.
+USER — FARM SHOP 3D Map
+
+![USER — FARM SHOP 3D Map](docs/screenshots/USER-3D-Map.png)
+
+Owner-supplied image; approved for publication.
+
+Route: `/Other/FreshUserDashboardExact/UserPages/map-3d.php?from=user&v=20260918-user-3d-v1`
 
 ## USER-Help-Centre.png
 

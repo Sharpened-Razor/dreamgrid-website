@@ -1,8 +1,8 @@
 {
   "approvedCount": 34,
-  "count": 32,
-  "withheldCount": 2,
-  "complete": false,
+  "count": 34,
+  "withheldCount": 0,
+  "complete": true,
   "labels": [
     {
       "label": "HELP CENTRE",
@@ -127,12 +127,15 @@
     },
     {
       "filename": "ADMIN-3D-Map.png",
-      "represents": "ADMIN — Live FARM SHOP 3D terrain, objects, textures and materials; capture withheld: current live-grid texture blocker",
+      "represents": "ADMIN — FARM SHOP 3D Map",
       "menu": "3D MAP",
       "route": "/Other/grid-map-3d.php?from=admin",
-      "status": "withheld",
-      "reason": "Current live-grid 3D scene has unresolved texture failures; no screenshot captured.",
-      "image": null
+      "status": "user-approved",
+      "image": "screenshots/ADMIN-3D-Map.png",
+      "sha256": "062afdb7a9a75c8f4c2d746fcce344e699321dde38f3413dbfc00d418b285948",
+      "width": 3434,
+      "height": 1259,
+      "source": "Image supplied and approved for publication by the grid owner on 8 October 2026"
     },
     {
       "filename": "ADMIN-Linked-Regions.png",
@@ -378,12 +381,15 @@
     },
     {
       "filename": "USER-3D-Map.png",
-      "represents": "USER — Live FARM SHOP 3D terrain, objects, textures and materials; capture withheld: current live-grid texture blocker",
+      "represents": "USER — FARM SHOP 3D Map",
       "menu": "3D MAP",
       "route": "/Other/FreshUserDashboardExact/UserPages/map-3d.php?from=user&v=20260918-user-3d-v1",
-      "status": "withheld",
-      "reason": "Current live-grid 3D scene has unresolved texture failures; no screenshot captured.",
-      "image": null
+      "status": "user-approved",
+      "image": "screenshots/USER-3D-Map.png",
+      "sha256": "aff6141d73bcc023143e90a808ebcb70550ef5e8ed3b80251182ae36e5bb4be1",
+      "width": 3020,
+      "height": 1248,
+      "source": "Image supplied and approved for publication by the grid owner on 8 October 2026"
     },
     {
       "filename": "USER-Help-Centre.png",

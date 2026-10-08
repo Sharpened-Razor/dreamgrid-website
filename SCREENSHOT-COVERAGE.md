@@ -1,10 +1,10 @@
 # Screenshot coverage
 
-Approved plan: 34 entries. Verified fresh live images: 32. Withheld 3D images: 2. The full 34-image set is not complete.
+Approved plan: 34 entries. Published images: 34 — 32 verified live captures and two owner-supplied, approved 3D Map images.
 
-ADMIN-3D-Map.png and USER-3D-Map.png are withheld because the live 3D scene has unresolved grid-content texture failures. No incomplete 3D image, old capture or substitute texture is presented. Texture repair is outside this website/documentation task.
+ADMIN-3D-Map.png and USER-3D-Map.png were supplied and explicitly approved for publication by the grid owner on 8 October 2026. Publishing these images does not certify that the previously documented live-grid texture failures have been resolved.
 
-All 32 available files passed filename/page/content, loading-state, privacy and exact/near-duplicate review. Wrong-page Help Centre and Manage Groups captures were replaced from the live website. Both individually verified FARM SHOP 2D Map captures retain their approved hashes and show the loaded map and working avatar widget. ADMIN-Stats.png visibly shows Grid login service = RESPONDING. The avatar feed returned HTTP 200 with valid JSON.
+The original 32 files passed filename/page/content, loading-state, privacy and exact/near-duplicate review. Wrong-page Help Centre and Manage Groups captures were replaced from the live website. Both individually verified FARM SHOP 2D Map captures retain their approved hashes and show the loaded map and working avatar widget. ADMIN-Stats.png visibly shows Grid login service = RESPONDING. The avatar feed returned HTTP 200 with valid JSON.
 
 Near-duplicate candidates were reviewed individually. Shared ADMIN/USER panels retain separate role/navigation context; no accidental same-page duplicates remain. Exact duplicate files: 0.
 
@@ -30,7 +30,7 @@ Near-duplicate candidates were reviewed individually. Shared ADMIN/USER panels r
 | ADMIN-IAR-Backups.png | ADMIN — Inventory archive backups | Verified live |
 | ADMIN-Offline-Messages.png | ADMIN — Offline message interface | Verified live |
 | ADMIN-Map.png | ADMIN — Live FARM SHOP 2D map, loaded texture and avatar widget | Verified live |
-| ADMIN-3D-Map.png | ADMIN — Live FARM SHOP 3D terrain, objects, textures and materials; capture withheld: current live-grid texture blocker | Withheld: live-grid texture blocker |
+| ADMIN-3D-Map.png | ADMIN — FARM SHOP 3D Map | Owner-supplied; approved |
 | ADMIN-Linked-Regions.png | ADMIN — Linked region destinations | Verified live |
 | ADMIN-Help-Centre.png | ADMIN — Help Centre landing page | Verified live |
 | ADMIN-Manage-Accounts.png | ADMIN — Administrative account management | Verified live |
@@ -53,7 +53,7 @@ Near-duplicate candidates were reviewed individually. Shared ADMIN/USER panels r
 | USER-IAR-Backups.png | USER — Inventory archive backups | Verified live |
 | USER-Offline-Messages.png | USER — Offline message interface | Verified live |
 | USER-Map.png | USER — Live FARM SHOP 2D map, loaded texture and avatar widget | Verified live |
-| USER-3D-Map.png | USER — Live FARM SHOP 3D terrain, objects, textures and materials; capture withheld: current live-grid texture blocker | Withheld: live-grid texture blocker |
+| USER-3D-Map.png | USER — FARM SHOP 3D Map | Owner-supplied; approved |
 | USER-Help-Centre.png | USER — Help Centre landing page | Verified live |
 
-These are fresh captures of the current live website after the DreamGrid 7.2115 update. Personal names, email addresses and private identifiers use capture-only labels. No stored account data, map widgets or failed textures were changed for the images. Grid identity and content shown are examples from the live destination; configure your own installation.
+The original 32 images are verified captures of the live website after the DreamGrid 7.2115 update, with capture-only labels for private account details. The two 3D Map images are the originals supplied and approved by the grid owner. Grid identity and content shown are examples from the live destination; configure your own installation.
