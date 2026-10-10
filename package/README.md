@@ -1,12 +1,12 @@
 # Normal installation: DreamGrid-Website-Setup.exe
 
-Run the self-contained Windows x64 setup EXE. It discovers an existing DreamGrid installation and offers Browse, Install/upgrade and Restore backup. No manual .ps1 execution is required. Review the readable Desktop log for the verified backup archive and result. DreamGrid Website v1.0.3. The EXE is unsigned; published SHA-256 checksums identify the exact release files.
+Run the self-contained Windows x64 setup EXE. It discovers an existing DreamGrid installation and offers Browse, Install/upgrade and Restore backup. No manual .ps1 execution is required. Review the readable Desktop log for the verified backup archive and result. Local v1.0.3 qualification candidate; not a published release. The EXE is unsigned; published SHA-256 checksums identify the exact release files.
 
 The advanced script instructions below are retained for diagnostics. The internal installer/restore engine runs on Windows PowerShell 5.1.
 
 # DreamGrid website add-on — installation
 
-Qualified on DreamGrid 7.2114 / .NET 9.0.20; see SECURITY-AND-NATIVEBRIDGE.md. This is a website add-on for an existing, configured DreamGrid installation. It does not install DreamGrid, create regions, replace simulator configuration or migrate saved pages.
+Clean DreamGrid startup qualification is pending; see SECURITY-AND-NATIVEBRIDGE.md. This is a website add-on for an existing, configured DreamGrid installation. It does not install DreamGrid, create regions, replace simulator configuration or migrate saved pages.
 
 ## Destination and fresh installations
 
@@ -71,7 +71,3 @@ Automated PHP 7/8 tests cover native configuration regeneration, sessions/access
 The final live smoke uses short-lived signed sessions for existing accounts without changing accounts or passwords. Live password login was not attempted; password login/logout was tested against an isolated synthetic database. No live test pages, form submissions, imports or publishing writes were introduced. Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain installation-specific checks. These are not a claim of a complete penetration test or support for every DreamGrid version.
 
 
-
-Install and configure DreamGrid first. The website installer discovers the DreamGrid installation; select and confirm the destination or use Browse. Use an ASCII Windows installation path, turn DIVA off, and retain Folder = Other. Existing websites require OTHER selected. Fresh installations do not need OTHER enabled beforehand: choose the fresh-install option so the installer deploys and verifies website content before selecting CMS=Other / OtherCMS=Other and committing the approved startup hook. Stop DreamGrid, regions and Apache before installation or rollback.
-
-NativeBridge requires .NET 9 and is qualified on DreamGrid 7.2114 with .NET 9.0.20. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.

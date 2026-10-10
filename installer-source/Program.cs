@@ -11,7 +11,7 @@ namespace DreamGridWebsiteSetup;
 
 static class Program
 {
-    internal const string PayloadSha256 = "b254d3873631d9cbdb10d6973c9f967529173fc84f7ab70666375056b39bdcf8";
+    internal const string PayloadSha256 = "8b42c8d3020423e19f6e3c8f78e5c7b875d652f7e1a5effb5f679ffffc9ce4fb";
     [STAThread]
     static int Main(string[] args)
     {
@@ -109,7 +109,7 @@ sealed class Engine : IDisposable
     static string Quote(string text) => "'" + text.Replace("'", "''") + "'";
     public async Task<int> Run(Options options)
     {
-        Write("DreamGrid Website Setup 1.0.3 candidate — Sharpened-Razor/dreamgrid-website");
+        Write("DreamGrid Website Setup 1.0.4 candidate — Sharpened-Razor/dreamgrid-website");
         Write(TransportNotice.For(options.SiteUrl));
         Write("Windows x64; bundled .NET runtime; built-in Windows PowerShell 5.1 engine. No PowerShell 7 needed.");
         try
@@ -281,7 +281,7 @@ sealed class SetupWindow : Form
         var actions = new FlowLayoutPanel { AutoSize = true, Dock = DockStyle.Fill }; actions.Controls.Add(confirm); actions.Controls.Add(install); actions.Controls.Add(restore); actions.Controls.Add(configure); actions.Controls.Add(siteUrl); actions.Controls.Add(transport);
         layout.Controls.Add(actions, 0, 2); layout.SetColumnSpan(actions, 2);
         layout.Controls.Add(log, 0, 3); layout.SetColumnSpan(log, 2);
-        var footer = new Label { AutoSize = true, Text = "Version 1.0.3 candidate · Windows x64 · Unsigned · Readable log saved to Desktop" };
+        var footer = new Label { AutoSize = true, Text = "v1.0.4 candidate · Windows x64 · Unsigned · Readable log saved to Desktop" };
         layout.Controls.Add(footer, 0, 4); layout.SetColumnSpan(footer, 2); Controls.Add(layout);
         install.Enabled = configure.Enabled = false;
         root.TextChanged += (_, _) => { confirmedRoot = ""; install.Enabled = configure.Enabled = false; };

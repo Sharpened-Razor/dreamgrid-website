@@ -12,15 +12,15 @@
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
     <DebugType>none</DebugType>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Title>DreamGrid Website Setup</Title>
     <Product>DreamGrid Website</Product>
     <Company>Sharpened-Razor</Company>
     <Description>DreamGrid Website installer with verified backups, content preservation and restore.</Description>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <FileVersion>1.0.4.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <EmbeddedResource Include="../DreamGrid-Website-Portable-v1.0.3.zip" LogicalName="payload.zip" />
+    <EmbeddedResource Include="../DreamGrid-Website-Portable-v1.0.4.zip" LogicalName="payload.zip" />
   </ItemGroup>
 </Project>

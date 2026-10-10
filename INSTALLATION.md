@@ -1,10 +1,10 @@
-# Installation guide — v1.0.3
+# Installation guide — v1.0.4
 
 This is a website add-on for an existing, configured Windows DreamGrid installation. Keep its native internal layout. Select the data folder containing **Settings.ini**, **Apache** and **Opensim**.
 
 **Required: ASCII Windows path · DIVA OFF · existing sites use OTHER · fresh installs use staged flow · Folder = Other.**
 
-**Recommended:** [Download DreamGrid-Website-Setup.exe](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.3/DreamGrid-Website-Setup.exe). [Release notes](https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.3).
+**Recommended:** [Download DreamGrid-Website-Setup.exe](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.4/DreamGrid-Website-Setup.exe). [Release notes](https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.4).
 
 DreamGrid-Website-Setup.exe is currently unsigned. Windows may display an Unknown Publisher or Microsoft Defender SmartScreen warning. The SHA-256 checksum is published below so the downloaded file can be verified.
 
@@ -29,11 +29,11 @@ The EXE is self-contained for Windows x64 and uses the Windows PowerShell 5.1 en
 ## Release checksums
 
 ```text
-2F95AF499818E2A6FECE9861D58EB4FCB9F5F467E13187C4EDEA8A5705A89763  DreamGrid-Website-Setup.exe
-B254D3873631D9CBDB10D6973C9F967529173FC84F7AB70666375056B39BDCF8  DreamGrid-Website-Portable-v1.0.3.zip
+231DC51395AEF4AE3DF2FA042B9671811B8EE732312D7DB79DDD892C71A5FE69  DreamGrid-Website-Setup.exe
+8B42C8D3020423E19F6E3C8F78E5C7B875D652F7E1A5EFFB5F679FFFFC9CE4FB  DreamGrid-Website-Portable-v1.0.4.zip
 ```
 
-These hashes identify the exact downloadable files; they are not a digital signature. The ZIP is for **Advanced / Manual Installation**: [download it here](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.3/DreamGrid-Website-Portable-v1.0.3.zip). To verify either file, the optional built-in Windows PowerShell command is `Get-FileHash -LiteralPath 'PATH-TO-DOWNLOAD' -Algorithm SHA256`.
+These hashes identify the exact downloadable files; they are not a digital signature. The ZIP is for **Advanced / Manual Installation**: [download it here](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.4/DreamGrid-Website-Portable-v1.0.4.zip). To verify either file, the optional built-in Windows PowerShell command is `Get-FileHash -LiteralPath 'PATH-TO-DOWNLOAD' -Algorithm SHA256`.
 
 ## Open the website
 
@@ -140,10 +140,10 @@ Rollback validates backup hashes and destination paths. It preserves the current
 
 Automated PHP 7/8 tests cover native configuration regeneration, sessions/access, routes/assets, builder editing and persistence, publishing, forms with a local inbox/mock mail transport, templates/import/export, interactions/SEO models, search, map helpers and private-file protection. Relocated ASCII paths and an alternate drive letter were tested.
 
-The final live smoke uses short-lived signed sessions for existing accounts without changing accounts or passwords. Live password login was not attempted; password login/logout was tested against an isolated synthetic database. No live test pages, form submissions, imports or publishing writes were introduced. Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain installation-specific checks. These are not a claim of a complete penetration test or support for every DreamGrid version.
+For v1.0.4, the owner verified normal Member Login and the signed-in Admin/User pages on the live installation. Earlier automated security and feature tests retain their documented scope. Real SMTP delivery and optional production TLS remain installation-specific checks; this is not a complete penetration test.
 
-## v1.0.3 compatibility and fresh installations
+## v1.0.4 compatibility and fresh installations
 
 Install and configure DreamGrid first. The website installer discovers the DreamGrid installation; select and confirm the destination or use Browse. Use an ASCII Windows installation path, turn DIVA off, and retain Folder = Other. Existing websites require OTHER selected. Fresh installations do not need OTHER enabled beforehand: choose the fresh-install option so the installer deploys and verifies website content before selecting CMS=Other / OtherCMS=Other and committing the approved startup hook. Stop DreamGrid, regions and Apache before installation or rollback.
 
-NativeBridge requires .NET 9 and is qualified on DreamGrid 7.2114 with .NET 9.0.20. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.
+NativeBridge requires .NET 9. v1.0.4 was fully exercised on DreamGrid 7.2115 / .NET 9.0.20. DreamGrid 7.2114 compatibility was retained through native API inspection and focused bridge regression tests; a complete new 7.2114 installation/destructive-operation cycle was not repeated for v1.0.4. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.

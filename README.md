@@ -8,18 +8,18 @@ Install and configure DreamGrid and your regions first. This package adapts to t
 
 ## Download and install
 
-**Recommended:** [Download DreamGrid-Website-Setup.exe — v1.0.3](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.3/DreamGrid-Website-Setup.exe) (Windows x64).
+**Recommended:** [Download DreamGrid-Website-Setup.exe — v1.0.4](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.4/DreamGrid-Website-Setup.exe) (Windows x64).
 
 DreamGrid-Website-Setup.exe is currently unsigned. Windows may display an Unknown Publisher or Microsoft Defender SmartScreen warning. The SHA-256 checksum is published below so the downloaded file can be verified.
 
 SHA-256 of the exact release files:
 
 ```text
-2F95AF499818E2A6FECE9861D58EB4FCB9F5F467E13187C4EDEA8A5705A89763  DreamGrid-Website-Setup.exe
-B254D3873631D9CBDB10D6973C9F967529173FC84F7AB70666375056B39BDCF8  DreamGrid-Website-Portable-v1.0.3.zip
+231DC51395AEF4AE3DF2FA042B9671811B8EE732312D7DB79DDD892C71A5FE69  DreamGrid-Website-Setup.exe
+8B42C8D3020423E19F6E3C8F78E5C7B875D652F7E1A5EFFB5F679FFFFC9CE4FB  DreamGrid-Website-Portable-v1.0.4.zip
 ```
 
-[Release notes and downloads](https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.3) · [Checksums](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.3/SHA256SUMS.txt)
+[Release notes and downloads](https://github.com/Sharpened-Razor/dreamgrid-website/releases/tag/v1.0.4) · [Checksums](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.4/SHA256SUMS.txt)
 
 1. DreamGrid must already be installed and configured.
 2. DIVA must be OFF.
@@ -37,7 +37,7 @@ The installer finds DreamGrid automatically, verifies prerequisites and package 
 
 The EXE includes its own .NET runtime and uses Windows PowerShell 5.1 internally; ordinary installation requires no PowerShell 7 or manual script execution. The destination website's native runtime requirements still apply.
 
-**Advanced / Manual Installation:** [Portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.3/DreamGrid-Website-Portable-v1.0.3.zip) and scripts remain available for manual installation and recovery. Keep the complete ZIP together; GitHub's automatic source archives are repository snapshots.
+**Advanced / Manual Installation:** [Portable ZIP](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.4/DreamGrid-Website-Portable-v1.0.4.zip) and scripts remain available for manual installation and recovery. Keep the complete ZIP together; GitHub's automatic source archives are repository snapshots.
 
 - [Full installation and restore instructions](INSTALLATION.md)
 - [Illustrated usage guide](USAGE.md)
@@ -88,7 +88,7 @@ Saved pages, uploaded images, private content, databases, regions, inventories, 
 
 ## Version and verification
 
-Current add-on release: **1.0.2**, released 8 October 2026. The corrected package has 1,276 payload files and 1,276 manifest entries, with zero missing files or hash mismatches. Custom Texture slot infrastructure and generic default artwork are included; personal uploaded images are excluded. The existing preservation and rollback checks passed, and the final GUI Browse check passed against valid, invalid and returning-valid selections. The two local Robust health probes are corrected; 132 targeted regression checks passed. Automated acceptance includes 1,628 builder assertions, 182 live smoke checks and seven live search checks. See [changelog](CHANGELOG.md) and [verification](VERIFICATION.md).
+Current add-on release: **1.0.4**, released 10 October 2026. Adds safe NativeBridge dispatch for DreamGrid 7.2115 while retaining the 7.2114 API path, v1.0.3 security protections and installer hardening. See [release notes](RELEASE-NOTES.md) for current qualification and limits.
 
 Approved plan: 34 entries. Published images: 34 — 32 verified live captures and two owner-supplied, approved 3D Map images. ADMIN-3D-Map.png and USER-3D-Map.png were supplied and explicitly approved for publication by the grid owner on 8 October 2026. Publishing these images does not certify that the previously documented live-grid texture failures have been resolved.
 
@@ -96,8 +96,10 @@ Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain de
 
 Existing third-party components and artwork retain their respective notices and licenses. This release does not relicense third-party material. Retained legacy filenames and format/CSS identifiers are compatibility identifiers; runtime grid identity comes from the destination configuration.
 
-## v1.0.3 compatibility and fresh installations
+## v1.0.4 compatibility and fresh installations
 
 Install and configure DreamGrid first. The website installer discovers the DreamGrid installation; select and confirm the destination or use Browse. Use an ASCII Windows installation path, turn DIVA off, and retain Folder = Other. Existing websites require OTHER selected. Fresh installations do not need OTHER enabled beforehand: choose the fresh-install option so the installer deploys and verifies website content before selecting CMS=Other / OtherCMS=Other and committing the approved startup hook. Stop DreamGrid, regions and Apache before installation or rollback.
 
-NativeBridge requires .NET 9 and is qualified on DreamGrid 7.2114 with .NET 9.0.20. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.
+NativeBridge requires .NET 9. v1.0.4 was fully exercised on DreamGrid 7.2115 / .NET 9.0.20. DreamGrid 7.2114 compatibility was retained through native API inspection and focused bridge regression tests; a complete new 7.2114 installation/destructive-operation cycle was not repeated for v1.0.4. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.
+
+Some bundled documentation and installer labels retain candidate wording from qualification. They remain unchanged to preserve the exact approved artifact bytes; the v1.0.4 release notes describe the completed qualification.

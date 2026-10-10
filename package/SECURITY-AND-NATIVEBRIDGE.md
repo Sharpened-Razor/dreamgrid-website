@@ -1,6 +1,6 @@
-# v1.0.3 compatibility and security
+# v1.0.3 local qualification candidate
 
-This candidate is unsigned. SHA-256 checks identify the supplied files; they do not provide Authenticode publisher verification. See the release notes for qualification and compatibility scope.
+This candidate is unsigned. SHA-256 checks identify the supplied files; they do not provide Authenticode publisher verification. No release publication is authorized.
 
 ## Authentication
 
@@ -26,8 +26,4 @@ Only the hook value or its containing missing property is inserted. Unrelated JS
 
 Fresh installation stages and verifies the website before selecting CMS=Other / OtherCMS=Other. Existing website content uses the preservation/backup path. Runtimeconfig, website, generated metadata and changed settings are covered by the same transaction. Rollback restores original runtimeconfig and Settings bytes, restores overwritten website files and removes newly installed files into a preservation archive. Existing secrets, keys, logs and private state are excluded from payload replacement.
 
-Missing, invalid or incompatible hook DLLs can fail before Initialize executes, so its internal catch cannot guarantee DreamGrid startup. The previous startup failure came from socket acceptance before DreamGrid registered its embedded dependency resolver. The corrected bridge passed isolated native startup and authenticated loopback health on the qualified .NET 9.0.20 installation. Only a clean DreamGrid A/B run can qualify actual startup, OTHER persistence, readiness, DEREGISTER and DELETE. Synthetic tests are not a substitute.
-
-Install and configure DreamGrid first. The website installer discovers the DreamGrid installation; select and confirm the destination or use Browse. Use an ASCII Windows installation path, turn DIVA off, and retain Folder = Other. Existing websites require OTHER selected. Fresh installations do not need OTHER enabled beforehand: choose the fresh-install option so the installer deploys and verifies website content before selecting CMS=Other / OtherCMS=Other and committing the approved startup hook. Stop DreamGrid, regions and Apache before installation or rollback.
-
-NativeBridge requires .NET 9 and is qualified on DreamGrid 7.2114 with .NET 9.0.20. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.
+Missing, invalid or incompatible hook DLLs can fail before Initialize executes, so its internal catch cannot guarantee DreamGrid startup. The previous startup failure came from socket acceptance before DreamGrid registered its embedded dependency resolver. The corrected bridge passed isolated native startup and authenticated loopback health on the clean .NET 9.0.20 test grid. Only a clean DreamGrid A/B run can qualify actual startup, OTHER persistence, readiness, DEREGISTER and DELETE. Synthetic tests are not a substitute.

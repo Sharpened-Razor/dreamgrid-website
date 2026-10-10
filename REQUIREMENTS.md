@@ -35,8 +35,8 @@ These are not copied from the development installation into the website package.
 
 The installer changes the discovered website bridge registration in native Start.runtimeconfig.json while retaining other properties and hooks. It does not replace that entire file with a source-machine copy. Rerun the installer at a new root before starting a relocated installation.
 
-## v1.0.3 compatibility
+## v1.0.4 compatibility
 
 Install and configure DreamGrid first. The website installer discovers the DreamGrid installation; select and confirm the destination or use Browse. Use an ASCII Windows installation path, turn DIVA off, and retain Folder = Other. Existing websites require OTHER selected. Fresh installations do not need OTHER enabled beforehand: choose the fresh-install option so the installer deploys and verifies website content before selecting CMS=Other / OtherCMS=Other and committing the approved startup hook. Stop DreamGrid, regions and Apache before installation or rollback.
 
-NativeBridge requires .NET 9 and is qualified on DreamGrid 7.2114 with .NET 9.0.20. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.
+NativeBridge requires .NET 9. v1.0.4 was fully exercised on DreamGrid 7.2115 / .NET 9.0.20. DreamGrid 7.2114 compatibility was retained through native API inspection and focused bridge regression tests; a complete new 7.2114 installation/destructive-operation cycle was not repeated for v1.0.4. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.

@@ -1,3 +1,7 @@
+# v1.0.4 — 10 October 2026
+
+Safe NativeBridge compatibility for both native DeregisterRegionUuid locations; retained security and installer protections. Fully exercised on 7.2115 / .NET 9.0.20. See RELEASE-NOTES.md for qualification scope.
+
 # v1.0.3 — 10 October 2026
 
 NativeBridge .NET 9 startup ordering and sanitized build metadata; strict hook transactions; staged fresh CMS=Other installation; shared login throttling and session hardening. See RELEASE-NOTES.md.

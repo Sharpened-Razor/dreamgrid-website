@@ -552,6 +552,10 @@ internal static class DreamGridNativeBridge
         Guid uuid
     )
     {
+        // Resolve before starting MySQL or stopping the region: unsupported APIs
+        // must fail without beginning a native deregistration operation.
+        MethodInfo deregister = ResolveDeregisterMethod(FindStartAssembly());
+
         CallStatic(
             "Outworldz.MysqlInterface",
             "StartMysql",
@@ -614,21 +618,52 @@ internal static class DreamGridNativeBridge
             );
         }
 
-        CallStatic(
-            "Outworldz.MysqlInterface",
-            "DeregisterRegionUuid",
-            new Type[]
-            {
-                typeof(Guid)
-            },
-            new object[]
-            {
-                uuid
-            }
-        );
+        try
+        {
+            deregister.Invoke(null, new object[] { uuid });
+        }
+        catch (Exception ex)
+        {
+            throw Unwrap(ex);
+        }
 
         return
             "DreamGrid native deregistration completed.";
+    }
+
+    private static MethodInfo ResolveDeregisterMethod(Assembly start)
+    {
+        if (start == null)
+            throw new InvalidOperationException("DreamGrid Start assembly is not loaded.");
+
+        MethodInfo selected = null;
+        foreach (string typeName in new string[] {
+            "Outworldz.MysqlInterface", "Outworldz.Database"
+        })
+        {
+            Type type = start.GetType(typeName, false);
+            if (type == null) continue;
+            foreach (MethodInfo method in type.GetMethods(
+                BindingFlags.Public | BindingFlags.NonPublic |
+                BindingFlags.Static | BindingFlags.DeclaredOnly))
+            {
+                if (method.Name != "DeregisterRegionUuid" ||
+                    method.IsGenericMethod || method.ContainsGenericParameters ||
+                    method.ReturnType != typeof(void)) continue;
+                ParameterInfo[] parameters = method.GetParameters();
+                if (parameters.Length != 1 ||
+                    parameters[0].ParameterType != typeof(Guid)) continue;
+                if (selected != null)
+                    throw new AmbiguousMatchException(
+                        "More than one supported DreamGrid deregistration API exists.");
+                selected = method;
+            }
+        }
+        if (selected == null)
+            throw new MissingMethodException(
+                "DreamGrid requires exactly one supported static void " +
+                "DeregisterRegionUuid(Guid) in MysqlInterface or Database.");
+        return selected;
     }
 
     private static string NativeDelete(
