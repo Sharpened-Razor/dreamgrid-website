@@ -55,7 +55,7 @@ body.australia-home-page.ag-frontpage {
         fixed !important;
 
     background-color:
-        #000 !important;
+        var(--site-background, #000) !important;
 
     min-height:
         100vh !important;

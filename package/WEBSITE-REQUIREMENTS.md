@@ -34,3 +34,5 @@ These are not copied from the development installation into the website package.
 - All simulator/database/region/user data and all installation rollback archives.
 
 The installer changes the discovered website bridge registration in native Start.runtimeconfig.json while retaining other properties and hooks. It does not replace that entire file with a source-machine copy. Rerun the installer at a new root before starting a relocated installation.
+
+See SECURITY-AND-NATIVEBRIDGE.md for the strict runtimeconfig transaction, .NET compatibility limits, login throttle, HTTPS recommendation and clean A/B qualification requirements.

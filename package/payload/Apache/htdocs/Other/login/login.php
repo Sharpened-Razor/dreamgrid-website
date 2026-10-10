@@ -8,13 +8,36 @@ require_once __DIR__.'/../core/website-runtime.php';
 // DB connection source of truth.
 require_once __DIR__ . '/../core/request-security.php';
 ag_require_same_origin_post();
+require_once __DIR__ . '/secret.php';
+require_once __DIR__ . '/throttle.php';
+header('Content-Type: text/plain');
+header('Cache-Control: no-store');
+
+$avatar = is_string($_POST['avatar'] ?? null) ? trim($_POST['avatar']) : '';
+$password = is_string($_POST['password'] ?? null) ? $_POST['password'] : '';
+if (strlen($avatar) > 512 || strlen($password) > 4096) {
+    echo 'NAK You do not have permission to Log In';
+    exit;
+}
+
+try {
+    $secret = dreamGridSessionSecret();
+    $throttleFile = __DIR__ . '/../private/login-throttle/state.json';
+    $throttleKeys = dreamGridThrottleKeys($avatar, (string)($_SERVER['REMOTE_ADDR'] ?? ''), $secret);
+    $retry = dreamGridThrottleBegin($throttleFile, $throttleKeys, time());
+    if ($retry > 0) {
+        http_response_code(429);
+        header('Retry-After: ' . $retry);
+        echo 'NAK You do not have permission to Log In';
+        exit;
+    }
+} catch (Throwable $error) {
+    http_response_code(503);
+    echo 'NAK You do not have permission to Log In';
+    exit;
+}
 
 require_once __DIR__ . '/../../MetroMap/includes/config.php';
-
-header('Content-Type: text/plain');
-
-$avatar = trim($_POST['avatar'] ?? '');
-$password = (string) ($_POST['password'] ?? '');
 
 $parts = preg_split('/\s+/', $avatar, 2);
 $firstName = $parts[0] ?? '';
@@ -25,23 +48,28 @@ if ($firstName === '' || $lastName === '') {
     exit;
 }
 
-$con = mysqli_connect($CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database, (int) $CONF_db_port);
-if (!$con) {
-    echo 'NAK You do not have permission to Log In';
-    exit;
-}
-
-$stmt = mysqli_prepare($con, 'SELECT ua.UserLevel, ua.PrincipalID, a.passwordHash, a.passwordSalt
+$con = null;
+$stmt = null;
+try {
+    $con = @mysqli_connect($CONF_db_server, $CONF_db_user, $CONF_db_pass, $CONF_db_database, (int) $CONF_db_port);
+    if (!$con) throw new RuntimeException('Authentication unavailable');
+    $stmt = mysqli_prepare($con, 'SELECT ua.UserLevel, ua.PrincipalID, a.passwordHash, a.passwordSalt
 FROM UserAccounts ua
 INNER JOIN auth a ON ua.PrincipalID = a.UUID
 WHERE ua.FirstName = ? AND ua.LastName = ?');
-mysqli_stmt_bind_param($stmt, 'ss', $firstName, $lastName);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $userLevel, $principalId, $passwordHash, $passwordSalt);
-
-$found = mysqli_stmt_fetch($stmt);
-mysqli_stmt_close($stmt);
-mysqli_close($con);
+    if (!$stmt) throw new RuntimeException('Authentication unavailable');
+    mysqli_stmt_bind_param($stmt, 'ss', $firstName, $lastName);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $userLevel, $principalId, $passwordHash, $passwordSalt);
+    $found = mysqli_stmt_fetch($stmt);
+} catch (Throwable $error) {
+    http_response_code(503);
+    echo 'NAK You do not have permission to Log In';
+    exit;
+} finally {
+    if ($stmt) mysqli_stmt_close($stmt);
+    if ($con) mysqli_close($con);
+}
 
 if (!$found) {
     echo 'NAK You do not have permission to Log In';
@@ -51,7 +79,7 @@ if (!$found) {
 // Same two-stage MD5 as GetMD5 in Modules/Mysql.vb: md5(password) then md5("{that}:{salt}")
 $hashed = md5(md5($password) . ':' . $passwordSalt);
 
-if ($hashed !== $passwordHash || $userLevel < 0) {
+if (!hash_equals((string)$passwordHash, $hashed) || $userLevel < 0) {
     echo 'NAK You do not have permission to Log In';
     exit;
 }
@@ -67,7 +95,13 @@ $session = [
 
 // Cookie is the session's own trust boundary: signed with a server-side secret so a
 // client can't forge a higher UserLevel by editing the cookie value directly.
-$secret = dreamGridSessionSecret();
+try {
+    dreamGridThrottleSuccess($throttleFile, $throttleKeys);
+} catch (Throwable $error) {
+    http_response_code(503);
+    echo 'NAK You do not have permission to Log In';
+    exit;
+}
 $payload = base64_encode(json_encode($session));
 $signature = hash_hmac('sha256', $payload, $secret);
 setcookie('dg_session', "$payload.$signature", [
@@ -80,11 +114,3 @@ setcookie('dg_session', "$payload.$signature", [
 
 echo 'Success';
 
-function dreamGridSessionSecret() {
-    $keyFile = __DIR__ . '/session_secret.php';
-    if (!file_exists($keyFile)) {
-        $key = bin2hex(random_bytes(32));
-        file_put_contents($keyFile, "<?php\nreturn " . var_export($key, true) . ";\n");
-    }
-    return include $keyFile;
-}

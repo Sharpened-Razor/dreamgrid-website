@@ -14,12 +14,12 @@
     },
     {
       "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.cs",
-      "sha256": "0383E2844B9A12EABF00EAA008E787716548C67785EF9A6F2F74A70F07C33BAE",
+      "sha256": "78F6508B65F6F07A49C7C329DB77E7DDC45114EF5FDC79D47FB2566997EB67E2",
       "preserveExisting": false
     },
     {
       "path": "_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll",
-      "sha256": "39FF0A7027FB219250B83CE1233F0637A168CCC6231FD0FAB509839EC86A25D3",
+      "sha256": "35D3BE3BED664B1108C88321EF8B8F4713414F98FA32768B3BE7F0111ACB02AA",
       "preserveExisting": false
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "path": "_WEB_CONTROL/Test-DreamGridWebsitePrerequisites.ps1",
-      "sha256": "0932374B69209DC4907E21965D530A691B9A951C7B2EC08C49A8CE0B7A01BB1E",
+      "sha256": "471E5BF3D93E9252F72776C005A4A0CE2769496F96A8F78D4B8B569A8DA02771",
       "preserveExisting": false
     },
     {
@@ -234,12 +234,12 @@
     },
     {
       "path": "Apache/htdocs/API/login/login.php",
-      "sha256": "FFAD7200E94D1F9F59742E8D8150908F4B936E704832AE59569D192C62A41D24",
+      "sha256": "C046054DC145262F290AEAE255F3BA90F7F662F1FE7D5D3538CA6AA6C0292350",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/API/login/session.php",
-      "sha256": "1EC5B0BFC9A15D8CEB28AB083E5B784D26ADD6232B52416BF8C8659A08A93DE4",
+      "sha256": "F9D109C65EF9B7C71880D03EECF31DADD2C3E8A1D1C26384DB6496460E6D2F28",
       "preserveExisting": false
     },
     {
@@ -1414,7 +1414,7 @@
     },
     {
       "path": "Apache/htdocs/Other/admin-home.php",
-      "sha256": "19DC4AF4181CCE62C201870368216DD2A36FC40031549DDCB7F91D82EF908C45",
+      "sha256": "3957C3BC82135A6C9DE5720C3BDF7D9A2EE0D8460C23D2DCE994C051FFAC9D1E",
       "preserveExisting": false
     },
     {
@@ -1584,7 +1584,7 @@
     },
     {
       "path": "Apache/htdocs/Other/admin-site-design.php",
-      "sha256": "E08985BAB67DDF933A275CE28EE0F73A983F04D4C4B05E1A17858A4F2C55CAE0",
+      "sha256": "42DD6CFECEA7F1D26AF40621FA9D42E31A7654CBAACC69A2AD8F17953B3570F9",
       "preserveExisting": false
     },
     {
@@ -1679,7 +1679,7 @@
     },
     {
       "path": "Apache/htdocs/Other/assets/css/ag-design-system-v1.css",
-      "sha256": "487D997786CDA81EF6A372DDBFF36122DFCE42FA4C48BDD1708E7DC0B37E22DA",
+      "sha256": "E23D4F9BB458E00B427EFDBBDB67F2A2F41A8B7A18E8F6EC3F4AD6AE5F769B14",
       "preserveExisting": false
     },
     {
@@ -1759,7 +1759,7 @@
     },
     {
       "path": "Apache/htdocs/Other/assets/css/control-center-embedded-v1.css",
-      "sha256": "E42F0AFFB0A7E0C31C2B485CF9427F1E8CD4D21866E067EB86E7FBA0E696E63C",
+      "sha256": "0030D7B29C671C5145447371D6798701FD6F2F1D791C6AEC30A9FBB88666480A",
       "preserveExisting": false
     },
     {
@@ -1784,7 +1784,7 @@
     },
     {
       "path": "Apache/htdocs/Other/assets/css/control-center-shell-v1.css",
-      "sha256": "D6E48945802E6525026DCA692B2C94442AA10DB897AAFB0FBD4F19D4D907CA20",
+      "sha256": "12A833BC50C3CC025EDFBEAEA11668572073C9CF193F430ED7B59C0FBED02441",
       "preserveExisting": false
     },
     {
@@ -1794,12 +1794,12 @@
     },
     {
       "path": "Apache/htdocs/Other/assets/css/fluid.css",
-      "sha256": "D13DC24DFF93CBF73389465A68F77813FF7F13EAC1B1AECCE28FF69C435ED1B3",
+      "sha256": "FA81383372C750789B54E36B7CDB1DF5DE7F9335492472BC267B7EE899FCE0FF",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/Other/assets/css/front-control-panel-v1.css",
-      "sha256": "D46C75189959B28C13C42A0108684592EBD5FCEDA932AECE49C572FE8416FFED",
+      "sha256": "3A23962F8A79DF6D23AC9B49093837DB26A41A0BC8602E3EDAC130F72E1426DF",
       "preserveExisting": false
     },
     {
@@ -1839,7 +1839,7 @@
     },
     {
       "path": "Apache/htdocs/Other/assets/css/style.css",
-      "sha256": "A393CAA88E599AD36DC1FA34BFE3EB9DDBD6C26379CB5F235EF903B3399444A6",
+      "sha256": "4F8B25458DC07140BF98127111F939A9CD2F4FB67A185A97D9C01D2772FF5B0F",
       "preserveExisting": false
     },
     {
@@ -3594,7 +3594,7 @@
     },
     {
       "path": "Apache/htdocs/Other/auth-status.php",
-      "sha256": "0C1880C585BF43B14C826AF57DE34902EC1859581BF5D617963FE05EFEAE971D",
+      "sha256": "8DA68598EEE818FEE21BFC5544046E21A49FC16EF66FF7E05EF06B0E49D4FCCC",
       "preserveExisting": false
     },
     {
@@ -3704,7 +3704,7 @@
     },
     {
       "path": "Apache/htdocs/Other/core/auth.php",
-      "sha256": "E2E0363F3774AFBD1986CB87690B01FF1195B757BC0ACB70E64F973C5211DA09",
+      "sha256": "52AE971BE49AA439FA1353C8DC308918B2DAE295376B5DDD4655EB244D4DA90F",
       "preserveExisting": false
     },
     {
@@ -3724,7 +3724,7 @@
     },
     {
       "path": "Apache/htdocs/Other/core/frontpage-screen-fit.css",
-      "sha256": "DE9236C5CB86D89C7F944AC6892CB19BEEF6D0182E3D6835815ABC733C52DEB2",
+      "sha256": "8A262F905C72F52C60651B188DE20415DAC0E62A2DE3FC4E491B3382BEF8A330",
       "preserveExisting": false
     },
     {
@@ -3784,7 +3784,7 @@
     },
     {
       "path": "Apache/htdocs/Other/core/page-designer/builder-model.php",
-      "sha256": "805384779C77EB0C3370414BB4D24D5B1E2F976DFF18F1F5F7420B220D0711F1",
+      "sha256": "B7156E8FA1FEC284FF45F3DAD68D7B96EC3D90ED913DB178A655F0455FBCA2A0",
       "preserveExisting": false
     },
     {
@@ -3809,7 +3809,7 @@
     },
     {
       "path": "Apache/htdocs/Other/core/page-designer/legacy-render.php",
-      "sha256": "96F0F67F70C0070D6371B471695284E2647FA67690B2304F742BC08F4FD83547",
+      "sha256": "A370C0CA7B64BD116F7FF052793C6689FFC788F7CF31BAAEAD350ABA54A0F03D",
       "preserveExisting": false
     },
     {
@@ -3834,7 +3834,7 @@
     },
     {
       "path": "Apache/htdocs/Other/core/page-designer/render.php",
-      "sha256": "207523CD995B45D292DFD6432858F29C3E548502444A884DBCE2B3B39F535723",
+      "sha256": "88FE1D23D2C26B854C7360AD8CA86261576878EE9C82742A4632B6233FF14281",
       "preserveExisting": false
     },
     {
@@ -3869,7 +3869,7 @@
     },
     {
       "path": "Apache/htdocs/Other/core/page-designer.php",
-      "sha256": "4C675CA7B36D03F553B0C7DF4CFD7D0C47D84112BC01FA9D38905827ABBF6610",
+      "sha256": "17BC5C0891F63488E3F15CF699238245A157A5650A32D0960B910D577E0D7AF0",
       "preserveExisting": false
     },
     {
@@ -4154,12 +4154,12 @@
     },
     {
       "path": "Apache/htdocs/Other/FreshUserDashboardExact/user-dashboard.js",
-      "sha256": "8FDF7F853202629C8B2245C49B4B7042A8CDB46269F9A9987168D43235BEA53A",
+      "sha256": "295A54693E8DB9CB4BAA49A6623500432E316E62541D2E0E2587D38BA05DA12E",
       "preserveExisting": false
     },
     {
       "path": "Apache/htdocs/Other/FreshUserDashboardExact/user-dashboard.php",
-      "sha256": "FF3690CAA04979CECD3D8D8A5DEC6A65A2360CB64E4F2BB5E3453E5D186CD2E6",
+      "sha256": "6252B4D31FC657DC507A349BE92B1815EED8A09C0C5C4A8D80B4A9A0FB915983",
       "preserveExisting": false
     },
     {
@@ -4584,7 +4584,7 @@
     },
     {
       "path": "Apache/htdocs/Other/index.php",
-      "sha256": "B5C5F431AD4C46AF543FA800CED28FEAC987812D970745116943E1908D4035D5",
+      "sha256": "6250559FBF9AE12F27251C7D36C549F7ECE02B460C5CAFEEA2E79F8AC27462F5",
       "preserveExisting": false
     },
     {
@@ -4609,7 +4609,7 @@
     },
     {
       "path": "Apache/htdocs/Other/login/login.php",
-      "sha256": "EBB392699C54681F8FE983E2C7E3789246B8D16D13E5F17D7B0683B459AF8B31",
+      "sha256": "8CBE55F2374FF318329B3D4D2924C08CDEFF55D2914741000D0A5DE4DEBF2C05",
       "preserveExisting": false
     },
     {
@@ -4724,7 +4724,7 @@
     },
     {
       "path": "Apache/htdocs/Other/page-designer/builder-presets.js",
-      "sha256": "DF44050BDC2432A110B8755D9A559E40C7CD044A1561D95D78B3EE8B99045197",
+      "sha256": "5BB726E1F0D271C49FD17DE14FE08C2D4D90683F607807B598626E04664D8024",
       "preserveExisting": false
     },
     {
@@ -4774,7 +4774,7 @@
     },
     {
       "path": "Apache/htdocs/Other/page-designer/builder.js",
-      "sha256": "7F572EE313540580EE5755A37B199858ADD24EDEC790B65EDF5F263FE2051262",
+      "sha256": "5E18FCF209D5108D00D718454B16039D8AA70636A0F25EDC38A625B448D4E858",
       "preserveExisting": false
     },
     {
@@ -6380,6 +6380,21 @@
     {
       "path": "Apache/htdocs/WordPress/default.htm",
       "sha256": "04C8F09400A8DD30A80D6B368D7741428F2175C51C7E5A406CD893D7CD35B30C",
+      "preserveExisting": false
+    },
+    {
+      "path": "_WEB_CONTROL/DreamGrid.OtherConfiguration.ps1",
+      "sha256": "15DED19FBB3BAD7A2BF7AE97060EACA0CD6047FE0419749A6B73BF9743E8D05E",
+      "preserveExisting": false
+    },
+    {
+      "path": "Apache/htdocs/Other/login/secret.php",
+      "sha256": "249D6CAE87D4674C20B96F226CAB29D78F18F046C5237A029EF5EC081CA86ACE",
+      "preserveExisting": false
+    },
+    {
+      "path": "Apache/htdocs/Other/login/throttle.php",
+      "sha256": "A2171CE69C77B0FC2D69F8BDEA39CC2A4D318092EF856F6F3C892A93253BD568",
       "preserveExisting": false
     }
   ],

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "classic",
+    "file": "classic.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 1707897,
+    "sha256": "e88a0813befbe34f0c9a7f8dc7a022854338e93b6d7aa3474ed6b4ae12f1ccc0",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "Classic Gold: original cinematic charcoal architecture and metallic gold lighting.",
+    "encoding": "RGB PNG"
+  },
+  {
+    "id": "ocean",
+    "file": "ocean.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 742755,
+    "sha256": "1f680b24b323a1d938044d1e45db8ed11ece26ed810250a2ffe7dcc2dbf1b42a",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "OCEAN BLUE: an immersive blue coastal grotto looking across layered turquoise water toward distant sea cliffs, translucent aquamarine waves in the foreground, refracted caustic light, sea mist and volumetric cool sunlight, deep ocean blues and glassy water. No beach umbrellas or architecture.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "forest",
+    "file": "forest.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 849052,
+    "sha256": "ef43cd2324ac8de2c114ef930ee539e9c2e9cac8a1616562b38ea41a60e16c57",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "FOREST: mature emerald woodland with tall trunks receding through layered green mist, mossy foreground, luminous fern foliage around the lower edges, soft shafts of natural light and rich earthy bark materials. Elegant realistic forest, quiet cinematic depth.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "christmas",
+    "file": "christmas.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 860728,
+    "sha256": "b6aa70ee9aa89cd2b82514a7bd9dc5beba7d702e92eeb3fa5ee0d154df842963",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "CHRISTMAS: a classy photoreal 3D festive conservatory at winter dusk, snow outside tall arched windows, richly textured evergreen branches along the edges, tasteful deep red glass baubles and brushed gold ornaments, warm tiny fairy lights, reflected glow on dark green polished stone; elegant seasonal still life and spatial depth, no Santa or cartoon characters.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "halloween",
+    "file": "halloween.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 833970,
+    "sha256": "1e117bc4003689b4fa7c0102eb2faab167d4320fb11a909fb22f1484e3bf5bc1",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "HALLOWEEN: a sophisticated cinematic moonlit garden with an atmospheric old stone arch on the right, realistic subtle carved pumpkins glowing amber near the lower edges, drifting ground fog, bare branches fading into layered violet night and moonlight, restrained orange and purple illumination, spooky but elegant, no horror violence or characters.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "spring",
+    "file": "spring.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 757278,
+    "sha256": "877e1cec904b03445f91669a182ccbfa92c15c26605117e6dd799b951726ea0e",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "SPRING: elegant fresh garden landscape at sunrise, soft rolling hills and orchard layers, realistic cherry blossom branches framing the upper-right edge, dimensional pastel flowers and a few subtly decorated ceramic Easter eggs in the bottom-right foreground, dew, soft pink and sage palette, bright fresh diffuse light. Refined botanical editorial image, no cartoons.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "summer",
+    "file": "summer.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 651262,
+    "sha256": "eeb641c90d9d5f635d710573a0baaca0cb85bb6e8cb4c3a1200c407a51dae8ad",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "SUMMER BEACH: luxurious quiet tropical coastline, warm cream sand and crystal shallow ocean stretching to a hazy horizon, palm fronds framing the far right, gentle surf, natural sunlight and atmospheric layers, subtle warm peach sky and turquoise water, high-quality resort campaign visual, no logos, furniture or umbrellas.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "autumn",
+    "file": "autumn.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 738038,
+    "sha256": "7b12f7929db68538dce3ab715639469828e704a36de3b7b39e8bd165491f8013",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "AUTUMN: immersive copper-red and gold forest overlooking a calm lake, layered deciduous foliage and trees receding into morning mist, realistic fallen leaves along the bottom edges, golden low sunlight shafts and rich warm brown/red reflections, elegant seasonal atmosphere with physical depth.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "community",
+    "file": "community.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 768209,
+    "sha256": "58e3b9eeb8455a9a70a8a3c84362eadb0724ad35e80b756dc4022adf46c189f7",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "COMMUNITY: a beautifully designed welcoming small-town pedestrian square in early evening, warm windows, inviting cafe terraces, timber and cream stone buildings, planted gardens and strings of subtle warm lights, a gentle fountain near the lower edge, layered streets leading into the distance. Contemporary architectural visualization of a community gathering place. No visible people, signs or lettering. Cheerful friendly atmosphere, sky blue and warm honey light.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "marketplace",
+    "file": "marketplace.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 791550,
+    "sha256": "7e300dac41b5231f23664cfce67ab6d45b6023a7b74ecbb2bc30d61c94a214bd",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "MARKETPLACE / SHOP: sophisticated contemporary indoor boutique marketplace with cream stone and warm wood, sculptural product-display pedestals, carefully arranged generic ceramics, neutral fabric accessories and plants along edges, recessed lighting and soft glossy reflections, depth through elegant retail aisles. Classy commercial design with terracotta, cream and bronze. No labels, logos, signs or identifiable branded products.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "fantasy",
+    "file": "fantasy.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 846281,
+    "sha256": "1a6ca953a9eb217e8a59fbc0a741f66e163d378697e1444de925c2e2ed539872",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "FANTASY / ROLEPLAY: original cinematic fantasy valley at blue hour, distant graceful stone castle towers on cliffs to the right, layered forest and mountains, softly glowing river and subtle magical starlight, pale luminous mist and twilight sky, realistic stone and foliage, dramatic but refined cool indigo and silver light. Not based on any existing franchise. No characters.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "festival",
+    "file": "festival.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 702907,
+    "sha256": "e65f7729e4db2cbdfbc17293998a326bf49de0ae908f75cf38d93545a0287336",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "EVENTS / FESTIVAL: a spectacular contemporary outdoor stage at dusk viewed from a spacious festival promenade, dimensional illuminated stage structures on the right, elegant magenta/blue/amber volumetric beams, soft haze, hanging festoon lights and reflective pavement, layered open venue depth, energetic premium event campaign atmosphere. No people, performers, signs, text or logos.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  },
+  {
+    "id": "abstract",
+    "file": "abstract.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 1218080,
+    "sha256": "727e5e3f13b413429ee006b3d87a647c2f4a8e5a96be4da9c69bfec42948973a",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "MODERN DARK: a sleek original premium 3D product-design environment, sculptural folded graphite-metal ribbons and smoked glass planes around the lower/right perimeter, cool sapphire rim-light, carefully graded navy-to-charcoal atmosphere, restrained glossy reflections and soft shadow depth, sophisticated contemporary digital product campaign. Keep broad quiet matte dark negative space in the upper-left and centre. No repeated geometric wallpaper.",
+    "encoding": "RGB PNG"
+  },
+  {
+    "id": "minimal",
+    "file": "minimal.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 1511150,
+    "sha256": "7603b641d336696e70fa25ba4f14728248879a7dc81a4502576270d7625056b3",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "MODERN LIGHT: a clean bright sophisticated original 3D design environment, large soft ivory plaster architectural folds and frosted glass sculptures arranged along the right and lower edges, pale silver/cream gradients, soft daylight, tactile materials, elegant broad shadows and subtle reflections, warm minimal contemporary product-design editorial art. Broad open quiet light space in the upper-left and centre. No repeated geometric wallpaper.",
+    "encoding": "RGB PNG"
+  },
+  {
+    "id": "easter",
+    "file": "easter.png",
+    "width": 1440,
+    "height": 900,
+    "bytes": 800541,
+    "sha256": "864b159fb4e209ce5429af5dd040f21c0d2cf01376f081ff4df64f0c46cbd818",
+    "source": "Original OpenAI imagegen output created for this project; no reference images or third-party downloads",
+    "artDirection": "Dimensional pastel Easter eggs, woven nest, porcelain hare, daffodils and a luminous conservatory; no text or logos.",
+    "encoding": "Adaptive indexed PNG with dithering"
+  }
+]

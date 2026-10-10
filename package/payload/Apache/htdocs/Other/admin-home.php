@@ -3,6 +3,7 @@
 require_once __DIR__ . '/core/bootstrap.php';
 require_once __DIR__ . '/core/icons.php';
 require_once __DIR__ . '/core/grid-branding.php';
+require_once __DIR__.'/core/site-appearance.php';
 
 $session = ag_require_admin();
 
@@ -25,17 +26,18 @@ ag_no_cache();
     content="width=device-width,initial-scale=1">
 
 <title>
-    <?=ag_grid_name_html()?> Control Center
+    <?=ag_sd_title_html()?> Control Center
 </title>
 
 <link
     rel="stylesheet"
-    href="/Other/assets/css/control-center-shell-v1.css?v=1">
+    href="/Other/assets/css/control-center-shell-v1.css?v=site-design-3">
 
 
 <link
     rel="stylesheet"
     href="/Other/site-design-display.php?slot=admin-control-center-background">
+<?=ag_sa_link('admin').ag_sd_brand_head()?>
 </head>
 
 
@@ -56,11 +58,11 @@ ag_no_cache();
 
         <div class="cc-brand-icon">
 
-            <?=ag_icon(
+            <?=ag_sd_shell_logo(ag_icon(
                 'dashboard',
                 null,
                 'cc-brand-svg'
-            )?>
+            ))?>
 
         </div>
 
@@ -69,7 +71,7 @@ ag_no_cache();
 
             <div class="cc-grid-name">
 
-                <?=ag_grid_name_html()?>
+                <?=ag_sd_title_html()?>
 
             </div>
 
@@ -744,7 +746,7 @@ catch (Throwable $ccPdError) {
 
             <div class="cc-header-kicker">
 
-                <?=ag_grid_name_html()?>
+                <?=ag_sd_title_html()?>
 
             </div>
 
@@ -795,7 +797,7 @@ catch (Throwable $ccPdError) {
 
 
                 <h1>
-                    <?=ag_grid_name_html()?>
+                    <?=ag_sd_title_html()?>
                 </h1>
 
 
@@ -842,7 +844,7 @@ catch (Throwable $ccPdError) {
                     </div>
 
                     <div class="cc-stat-value">
-                        <?=ag_grid_name_html()?>
+                        <?=ag_sd_title_html()?>
                     </div>
 
                 </div>
@@ -1007,7 +1009,7 @@ catch (Throwable $ccPdError) {
                         </div>
 
                         <div class="cc-info-value">
-                            <?=ag_grid_name_html()?>
+                            <?=ag_sd_title_html()?>
                         </div>
 
                     </div>
@@ -1875,7 +1877,7 @@ catch (Throwable $ccPdError) {
 
 
                     link.href =
-                        "/Other/assets/css/control-center-embedded-v1.css?v=1";
+                        "/Other/assets/css/control-center-embedded-v1.css?v=site-design-2";
 
 
                     doc.head.appendChild(
@@ -1884,6 +1886,10 @@ catch (Throwable $ccPdError) {
                 }
 
 
+
+                if(!doc.getElementById('website-appearance-theme')){
+                    const themeLink=doc.createElement('link');themeLink.id='website-appearance-theme';themeLink.rel='stylesheet';themeLink.href='/Other/site-theme.php?scope=admin';doc.head.appendChild(themeLink);
+                }
                 /*
                  * Remove old Back / Home controls
                  * from pages displayed inside

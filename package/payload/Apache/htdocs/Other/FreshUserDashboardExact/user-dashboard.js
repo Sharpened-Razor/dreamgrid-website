@@ -205,11 +205,15 @@
                         "stylesheet";
 
                     link.href =
-                        "/Other/assets/css/control-center-embedded-v1.css";
+                        "/Other/assets/css/control-center-embedded-v1.css?v=site-appearance-1";
 
                     doc.head.appendChild(
                         link
                     );
+                if(!doc.getElementById('website-appearance-theme')){
+                    const themeLink=doc.createElement('link');themeLink.id='website-appearance-theme';themeLink.rel='stylesheet';themeLink.href='/Other/site-theme.php?scope=user';doc.head.appendChild(themeLink);
+                }
+
                 }
 
             }catch(error){

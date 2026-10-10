@@ -13,13 +13,13 @@
 :root{
 
     --cp-black:
-        #080908;
+        var(--site-background, #080908);
 
     --cp-card:
-        #0b0c0a;
+        var(--site-surface, #0b0c0a);
 
     --cp-input:
-        #050605;
+        var(--site-background, #050605);
 
     --cp-metal-top:
         #4a493f;
@@ -31,19 +31,19 @@
         #171814;
 
     --cp-gold:
-        #987020;
+        var(--site-accent, #987020);
 
     --cp-gold-hi:
-        #d5a43b;
+        var(--site-accent, #d5a43b);
 
     --cp-gold-text:
-        #f2cc68;
+        var(--site-accent, #f2cc68);
 
     --cp-text:
-        #ddd5c2;
+        var(--site-text, #ddd5c2);
 
     --cp-muted:
-        #948b78;
+        var(--site-muted, #948b78);
 }
 
 
@@ -148,10 +148,10 @@
 
 
     background:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     background-color:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     background-image:
         none !important;
@@ -169,7 +169,7 @@
 
     border:
         1px solid
-        #987020 !important;
+        var(--site-border, #987020) !important;
 
     border-radius:
         5px !important;
@@ -212,9 +212,9 @@
     background:
         linear-gradient(
             180deg,
-            #555248 0%,
-            #37362f 45%,
-            #24251f 100%
+            var(--site-surface, #555248) 0%,
+            var(--site-surface, #37362f) 45%,
+            var(--site-surface, #24251f) 100%
         ) !important;
 
     border:
@@ -334,12 +334,12 @@
         0 !important;
 
     color:
-        #c2b590 !important;
+        var(--site-text, #c2b590) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         9px !important;
@@ -364,12 +364,12 @@
         0 !important;
 
     color:
-        #f2cc68 !important;
+        var(--site-accent, #f2cc68) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         17px !important;
@@ -391,12 +391,12 @@
         0 !important;
 
     color:
-        #8e8674 !important;
+        var(--site-muted, #8e8674) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         8px !important;
@@ -449,17 +449,17 @@
 
 
     background:
-        #141510 !important;
+        var(--site-surface, #141510) !important;
 
     background-color:
-        #141510 !important;
+        var(--site-surface, #141510) !important;
 
     background-image:
         linear-gradient(
             180deg,
-            #302f29 0%,
-            #22231e 15%,
-            #141510 100%
+            var(--site-surface, #302f29) 0%,
+            var(--site-surface, #22231e) 15%,
+            var(--site-surface, #141510) 100%
         ) !important;
 
 
@@ -468,7 +468,7 @@
 
 
     border:
-        1px solid #5b5039 !important;
+        var(--site-border-width,1px) solid var(--site-border, #5b5039) !important;
 
     border-left:
         2px solid #987020 !important;
@@ -483,7 +483,7 @@
 
 
     color:
-        #dfd8c8 !important;
+        var(--site-text, #dfd8c8) !important;
 
     text-decoration:
         none !important;
@@ -555,12 +555,12 @@
 
 
     color:
-        #e2dbcb !important;
+        var(--site-text, #e2dbcb) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         10px !important;
@@ -605,10 +605,10 @@
 
 
     background:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     background-color:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     background-image:
         none !important;
@@ -625,7 +625,7 @@
 
 
     border:
-        1px solid #987020 !important;
+        var(--site-border-width,1px) solid var(--site-border, #987020) !important;
 
     border-radius:
         5px !important;
@@ -660,7 +660,7 @@
         none !important;
 
     border:
-        1px solid #31260f !important;
+        var(--site-border-width,1px) solid var(--site-border, #31260f) !important;
 
     border-radius:
         3px !important;
@@ -709,15 +709,15 @@
     background:
         linear-gradient(
             180deg,
-            #4d4b41 0%,
-            #3a3931 12%,
-            #25251f 17%,
-            #161713 100%
+            var(--site-surface, #4d4b41) 0%,
+            var(--site-surface, #3a3931) 12%,
+            var(--site-surface, #25251f) 17%,
+            var(--site-surface, #161713) 100%
         ) !important;
 
 
     border:
-        1px solid #946b1a !important;
+        var(--site-border-width,1px) solid var(--site-border, #946b1a) !important;
 
     border-radius:
         4px !important;
@@ -729,12 +729,12 @@
 
 
     color:
-        #f0cc6a !important;
+        var(--site-accent, #f0cc6a) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         14px !important;
@@ -771,10 +771,10 @@
 
 
     background:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     background-color:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     opacity:
         1 !important;
@@ -791,10 +791,10 @@
         0 !important;
 
     background:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     background-color:
-        #0b0c0a !important;
+        var(--site-surface, #0b0c0a) !important;
 
     border:
         0 !important;
@@ -822,12 +822,12 @@
 
 
     color:
-        #beb18e !important;
+        var(--site-text, #beb18e) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         9px !important;
@@ -870,10 +870,10 @@
 
 
     background:
-        #050605 !important;
+        var(--site-surface, #050605) !important;
 
     background-color:
-        #050605 !important;
+        var(--site-surface, #050605) !important;
 
     background-image:
         none !important;
@@ -884,7 +884,7 @@
 
 
     border:
-        1px solid #5d4b1b !important;
+        var(--site-border-width,1px) solid var(--site-border, #5d4b1b) !important;
 
     border-radius:
         4px !important;
@@ -895,16 +895,16 @@
 
 
     color:
-        #e8e1d0 !important;
+        var(--site-text, #e8e1d0) !important;
 
     outline:
         0 !important;
 
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         10px !important;
@@ -917,7 +917,7 @@
 .cp-login-input:focus{
 
     border-color:
-        #ad8024 !important;
+        var(--site-border, #ad8024) !important;
 
     box-shadow:
         inset 0 2px 3px #000,
@@ -952,12 +952,12 @@
 
 
     color:
-        #938a77 !important;
+        var(--site-muted, #938a77) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         8px !important;
@@ -1032,9 +1032,9 @@
 
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         9px !important;
@@ -1061,14 +1061,14 @@
     background:
         linear-gradient(
             180deg,
-            #946b22 0%,
-            #724d0b 47%,
-            #342202 100%
+            var(--site-accent, #946b22) 0%,
+            var(--site-accent, #724d0b) 47%,
+            var(--site-surface, #342202) 100%
         ) !important;
 
 
     border:
-        1px solid #a87a21 !important;
+        var(--site-border-width,1px) solid var(--site-border, #a87a21) !important;
 
 
     box-shadow:
@@ -1077,7 +1077,7 @@
 
 
     color:
-        #eee5d3 !important;
+        var(--site-accent-text, #eee5d3) !important;
 }
 
 
@@ -1089,14 +1089,14 @@
     background:
         linear-gradient(
             180deg,
-            #36352f 0%,
-            #24251f 17%,
-            #151612 100%
+            var(--site-surface, #36352f) 0%,
+            var(--site-surface, #24251f) 17%,
+            var(--site-surface, #151612) 100%
         ) !important;
 
 
     border:
-        1px solid #5d513b !important;
+        var(--site-border-width,1px) solid var(--site-border, #5d513b) !important;
 
 
     box-shadow:
@@ -1105,7 +1105,7 @@
 
 
     color:
-        #ddd6c6 !important;
+        var(--site-text, #ddd6c6) !important;
 }
 
 

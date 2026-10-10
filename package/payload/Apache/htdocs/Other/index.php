@@ -130,6 +130,9 @@ if (
     require __DIR__ . '/forgot-password.php';
 }
 
+require_once __DIR__.'/core/site-appearance.php';
+if($australiaPublicPanel==='' && ag_sa_render_front()) exit;
+
 // AUSTRALIA GRID - PUBLIC PHP FRONT PAGE
 ?>
 <!DOCTYPE html>
@@ -144,7 +147,7 @@ if (
     name="viewport"
     content="width=device-width, initial-scale=1.0">
 
-<title>Grid Home</title>
+<title><?=ag_sd_title_html()?></title>
 
 <link
     rel="shortcut icon"
@@ -391,7 +394,7 @@ translateY(-3px);
 
 
 <!-- FRONT_CONTROL_PANEL_V1_CSS -->
-<link rel="stylesheet" href="/Other/assets/css/front-control-panel-v1.css?v=20260910-223501">
+<link rel="stylesheet" href="/Other/assets/css/front-control-panel-v1.css?v=site-appearance-1">
 <link
     rel="stylesheet"
     href="/Other/assets/css/front-public-panels-v1.css?v=20260915-233430-forgot-v1">
@@ -399,6 +402,7 @@ translateY(-3px);
 <link
     rel="stylesheet"
     href="/Other/site-design-display.php?slot=frontpage-background">
+<?=ag_sa_link('public').ag_sd_brand_head()?>
 </head>
 
 

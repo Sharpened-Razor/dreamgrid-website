@@ -275,7 +275,7 @@ body.australia-home-page,
 body.ag-frontpage{
 
     background-image:
-        url("/Other/site-design-image.php?slot=frontpage-background")
+        var(--site-background-image, url("/Other/site-design-image.php?slot=frontpage-background"))
         !important;
 
     background-repeat:

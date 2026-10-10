@@ -1,19 +1,16 @@
 {
-  "version": "1.0.2",
-  "date": "2026-10-08",
+  "version": "1.0.3",
+  "date": "2026-10-10",
   "asset": "DreamGrid-Website-Setup.exe",
-  "sha256": "850728c818437e262351aea23839c80e3f61ea02dc23381c8cbbadb10f747666",
-  "bytes": 183878871,
+  "sha256": "2F95AF499818E2A6FECE9861D58EB4FCB9F5F467E13187C4EDEA8A5705A89763",
+  "bytes": 197766871,
   "unsigned": true,
-  "portableAsset": "DreamGrid-Website-Portable-v1.0.2.zip",
-  "portableSha256": "aeb331caea3ed90e005c0ce83a15fdb04cd9a711d05d16bd6796bd3c7e789403",
-  "portableBytes": 112268553,
-  "payloadFiles": 1276,
-  "manifestEntries": 1276,
-  "requirements": [
-    "ASCII Windows installation path",
-    "DIVA OFF",
-    "OTHER enabled",
-    "Folder = Other"
-  ]
+  "portableAsset": "DreamGrid-Website-Portable-v1.0.3.zip",
+  "portableSha256": "B254D3873631D9CBDB10D6973C9F967529173FC84F7AB70666375056B39BDCF8",
+  "portableBytes": 126135740,
+  "bridgeSha256": "35D3BE3BED664B1108C88321EF8B8F4713414F98FA32768B3BE7F0111ACB02AA",
+  "qualifiedDreamGrid": "7.2114",
+  "qualifiedRuntime": "9.0.20",
+  "nativeBridgeTargetFramework": "net9.0",
+  "requiresRequalificationForOtherDreamGridVersions": true
 }

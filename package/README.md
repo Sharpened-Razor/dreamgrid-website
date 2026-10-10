@@ -1,23 +1,18 @@
 # Normal installation: DreamGrid-Website-Setup.exe
 
-Run the self-contained Windows x64 setup EXE. It discovers an existing DreamGrid installation and offers Browse, Install/upgrade and Restore backup. No manual .ps1 execution is required. Review the readable Desktop log for the verified backup archive and result. Release 1.0.2. The EXE is unsigned; published SHA-256 checksums identify the exact release files.
+Run the self-contained Windows x64 setup EXE. It discovers an existing DreamGrid installation and offers Browse, Install/upgrade and Restore backup. No manual .ps1 execution is required. Review the readable Desktop log for the verified backup archive and result. DreamGrid Website v1.0.3. The EXE is unsigned; published SHA-256 checksums identify the exact release files.
 
 The advanced script instructions below are retained for diagnostics. The internal installer/restore engine runs on Windows PowerShell 5.1.
 
 # DreamGrid website add-on — installation
 
-Verified on 7 October 2026. This is a website add-on for an existing, configured DreamGrid installation. It does not install DreamGrid, create regions, replace simulator configuration or migrate saved pages.
+Qualified on DreamGrid 7.2114 / .NET 9.0.20; see SECURITY-AND-NATIVEBRIDGE.md. This is a website add-on for an existing, configured DreamGrid installation. It does not install DreamGrid, create regions, replace simulator configuration or migrate saved pages.
 
-## Required DreamGrid prerequisite: DIVA OFF, OTHER ON
+## Destination and fresh installations
 
-Install and configure DreamGrid first, including the grid and regions. In **DreamGrid > Setup > Settings > Apache Settings**:
+Stop the destination DreamGrid, simulators and Apache before installation. Existing installations must use CMS=Other / OtherCMS=Other and retain the normal backup/preservation path. For a fresh installation whose Other folder contains only native placeholders, choose the setup's fresh-install option. The installer backs up affected state, stages and verifies the complete website, selects CMS=Other / OtherCMS=Other, and only then commits the verified NativeBridge hook. OTHER does not need to be enabled before staging a fresh site. No native networking or binary changes are made.
 
-1. Turn **DIVA OFF**.
-2. Select/enable **OTHER**.
-3. Set the OTHER folder to **Other** and save.
-4. Stop DreamGrid and Apache before installing the website.
-
-The installer checks this selection before any destination writes. If it is wrong, installation stops with these exact corrective instructions. It never changes the selection for you. Native DreamGrid stores its DIVA selection as `CMS=DreamGrid`; this website requires `CMS=Other`, with `OtherCMS=Other` or its native default.
+ASCII Windows paths, including spaces, remain supported. If relocating an existing installation, stop it and rerun this installer for the new destination before starting DreamGrid, so the absolute hook path is updated. Do not copy an old runtimeconfig registration by hand.
 
 ## Supported installation paths
 
@@ -76,3 +71,7 @@ Automated PHP 7/8 tests cover native configuration regeneration, sessions/access
 The final live smoke uses short-lived signed sessions for existing accounts without changing accounts or passwords. Live password login was not attempted; password login/logout was tested against an isolated synthetic database. No live test pages, form submissions, imports or publishing writes were introduced. Rendered visual/mobile acceptance, real SMTP delivery and optional TLS remain installation-specific checks. These are not a claim of a complete penetration test or support for every DreamGrid version.
 
 
+
+Install and configure DreamGrid first. The website installer discovers the DreamGrid installation; select and confirm the destination or use Browse. Use an ASCII Windows installation path, turn DIVA off, and retain Folder = Other. Existing websites require OTHER selected. Fresh installations do not need OTHER enabled beforehand: choose the fresh-install option so the installer deploys and verifies website content before selecting CMS=Other / OtherCMS=Other and committing the approved startup hook. Stop DreamGrid, regions and Apache before installation or rollback.
+
+NativeBridge requires .NET 9 and is qualified on DreamGrid 7.2114 with .NET 9.0.20. Requalify other DreamGrid versions. The setup EXE bundles its own installer runtime; that does not replace DreamGrid's runtime requirement. The Windows installer is unsigned and may trigger SmartScreen / Unknown Publisher warnings. Verify published SHA-256 checksums. HTTPS is strongly recommended for internet-facing grids; production TLS and code signing are not claimed.

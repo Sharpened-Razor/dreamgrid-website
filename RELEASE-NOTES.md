@@ -1,34 +1,26 @@
-# DreamGrid Website v1.0.2
+# DreamGrid Website v1.0.3
 
-**Recommended download: [DreamGrid-Website-Setup.exe](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.2/DreamGrid-Website-Setup.exe)** — self-contained Windows x64 setup with automatic discovery, Browse, Install / upgrade and Restore backup. No manual PowerShell scripts or PowerShell 7 are required for normal installation.
+- Corrected NativeBridge startup compatibility: targets .NET 9 and waits for DreamGrid Start/FormSetup initialization before opening its socket listener, fixing the DiagnosticSource startup-order failure.
+- Preserves native region DEREGISTER and permanent DELETE, loopback/key authentication and health/readiness.
+- Sanitized the bridge release build: compiler/PDB filesystem paths are omitted; bridge source and all 31 method bodies are unchanged from the functionally qualified build.
+- Hardened Start.runtimeconfig.json validation, atomic hook commit and exact rollback.
+- Corrected fresh installation: deploy and verify website content before selecting CMS=Other / OtherCMS=Other.
+- Added shared login brute-force throttling; removed public session_secret_exists information; improved HTTPS/session/admin protections.
+- Retained installer payload verification, backups, content preservation and rollback protections.
 
-DreamGrid-Website-Setup.exe is currently unsigned. Windows may display an Unknown Publisher or Microsoft Defender SmartScreen warning. The SHA-256 checksum is published below so the downloaded file can be verified.
+Qualification passed: clean baseline startup; full website installation; CMS=Other persistence; DreamGrid Ready and Start; Robust; Apache; PHP/PHP DB; Welcome; NativeBridge health; disposable-region DEREGISTER and DELETE; exact rollback; restored baseline restart. The sanitized build also passed focused isolated load, Initialize, health, full startup/CMS persistence and exact rollback checks.
 
-1. DreamGrid must already be installed and configured.
-2. DIVA must be OFF.
-3. OTHER must be enabled/selected.
-4. Website folder must be **Other**.
-5. Download **DreamGrid-Website-Setup.exe**.
-6. Double-click it.
-7. Confirm the detected DreamGrid installation, or select it with **Browse**.
-8. Read the prerequisite guidance and stop the destination DreamGrid and Apache normally.
-9. Click **Install / upgrade**. The installer runs its checks before changing files.
-10. Wait for installation and hash validation to complete.
-11. Start DreamGrid normally, then open your configured website URL.
+Qualified on **DreamGrid 7.2114 / .NET 9.0.20**. NativeBridge requires .NET 9. Other DreamGrid versions require requalification.
 
-The installer finds DreamGrid automatically, verifies prerequisites and package checksums, backs up replaced files, preserves custom/user content, installs the website, validates installed files and supports **Restore backup**. A failed deployment automatically rolls back and verifies the backed-up files. It saves a readable log and a dated backup archive on the Desktop. It does not stop or start DreamGrid automatically.
-
-The corrected package contains **1,276 payload files and 1,276 manifest entries**, with **zero missing files and zero hash mismatches**. It includes the Custom Texture slot schema/upload folders and generic default artwork. It excludes personal uploaded custom textures/images. Existing custom content and destination media are preserved on upgrade.
-
-The established targeted install/preservation/rollback tests passed; the final manual GUI Browse test also passed for valid, invalid and returning-valid selections. The installer refuses an invalid destination before deployment. The EXE version and project/publisher metadata identify DreamGrid Website and Sharpened-Razor; it remains unsigned.
+The Windows installer is **unsigned**; Microsoft SmartScreen / Unknown Publisher warnings may appear. HTTPS is strongly recommended for internet-facing grids. Code signing and full production TLS qualification are not claimed. Previously completed security tests retain their documented isolated scope.
 
 ## SHA-256
 
 ```text
-850728c818437e262351aea23839c80e3f61ea02dc23381c8cbbadb10f747666  DreamGrid-Website-Setup.exe
-aeb331caea3ed90e005c0ce83a15fdb04cd9a711d05d16bd6796bd3c7e789403  DreamGrid-Website-Portable-v1.0.2.zip
+2F95AF499818E2A6FECE9861D58EB4FCB9F5F467E13187C4EDEA8A5705A89763  DreamGrid-Website-Setup.exe
+B254D3873631D9CBDB10D6973C9F967529173FC84F7AB70666375056B39BDCF8  DreamGrid-Website-Portable-v1.0.3.zip
 ```
 
-**Advanced / Manual Installation:** [DreamGrid-Website-Portable-v1.0.2.zip](https://github.com/Sharpened-Razor/dreamgrid-website/releases/download/v1.0.2/DreamGrid-Website-Portable-v1.0.2.zip); prerequisite/install/restore scripts are retained for recovery and advanced use. [Installation and runtime details](https://github.com/Sharpened-Razor/dreamgrid-website/blob/main/INSTALLATION.md).
+Bridge DLL inside the ZIP: `35D3BE3BED664B1108C88321EF8B8F4713414F98FA32768B3BE7F0111ACB02AA`.
 
-Existing gallery/screenshots are unchanged. Both 3D images remain withheld because of the documented live-grid texture-content blocker. ASCII paths are required; full Unicode paths are unsupported. Native website runtime prerequisites and destination SMTP/TLS/visual checks still apply. v1.0.1 remains available and is not overwritten.
+Use the downloadable portable ZIP for manual installation; GitHub source archives represent the source tree.

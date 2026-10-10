@@ -218,6 +218,7 @@ function ag_clear_session_cookie(): void
         'expires' => time() - 3600,
         'path' => '/Other/',
         'httponly' => true,
+        'secure' => !empty($_SERVER['HTTPS']) && strtolower((string)$_SERVER['HTTPS']) !== 'off',
         'samesite' => 'Lax',
     ]);
 

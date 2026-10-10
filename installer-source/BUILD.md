@@ -1,7 +1,3 @@
-Build DreamGrid Website Setup 1.0.2 on Windows with .NET SDK 9.0.318 (target .NET 8). Place the exact v1.0.2 portable ZIP beside this directory; its SHA-256 is checked by the launcher.
+Build DreamGrid Website Setup v1.0.3 with .NET SDK 9.0.318 (installer target .NET 8, self-contained). Obtain the exact released v1.0.3 portable ZIP and place it beside this directory; the launcher verifies its published SHA-256. The native bridge source/project is in native-bridge-source and targets .NET 9 with deterministic Release builds and debug paths omitted. Build from source only when intentionally creating and qualifying a new candidate; rebuilding does not reproduce an approved release by assumption.
 
-```powershell
-dotnet publish Setup.csproj -c Release -o build
-```
-
-Normal users download the unsigned release EXE. It bundles its own Windows x64 runtime and uses Windows PowerShell 5.1 internally.
+Published users should download the qualified unsigned EXE and verify SHA-256. It uses Windows PowerShell 5.1 internally.

@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/core/bootstrap.php';
 require_once dirname(__DIR__) . '/core/icons.php';
+require_once dirname(__DIR__).'/core/site-appearance.php';
 
 ag_no_cache();
 
@@ -109,6 +110,7 @@ User Control Center
     rel="stylesheet"
     href="/Other/FreshUserDashboardExact/user-dashboard-layout.css?v=<?= udx_e(udx_asset_version('FreshUserDashboardExact/user-dashboard-layout.css')) ?>">
 
+<?=ag_sa_link('user').ag_sd_brand_head()?>
 </head>
 
 <body>
@@ -129,11 +131,11 @@ User Control Center
 
         <div class="cc-brand-icon">
 
-            <?=ag_icon(
+            <?=ag_sd_shell_logo(ag_icon(
                 'dashboard',
                 null,
                 'cc-brand-svg'
-            )?>
+            ))?>
 
         </div>
 
@@ -144,7 +146,7 @@ User Control Center
 
                 <?php if (function_exists('ag_grid_name_html')): ?>
 
-                    <?=ag_grid_name_html()?>
+                    <?=ag_sd_title_html()?>
 
                 <?php else: ?>
 
@@ -456,7 +458,7 @@ User Control Center
 
                 <?php if (function_exists('ag_grid_name_html')): ?>
 
-                    <?=ag_grid_name_html()?>
+                    <?=ag_sd_title_html()?>
 
                 <?php else: ?>
 
@@ -580,7 +582,7 @@ User Control Center
 
                         <?php if (function_exists('ag_grid_name_html')): ?>
 
-                            <?=ag_grid_name_html()?>
+                            <?=ag_sd_title_html()?>
 
                         <?php else: ?>
 

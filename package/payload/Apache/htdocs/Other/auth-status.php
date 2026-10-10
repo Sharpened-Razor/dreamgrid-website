@@ -5,6 +5,7 @@ require_once __DIR__ . '/core/auth.php';
 header(
     'Content-Type: application/json; charset=utf-8'
 );
+header('Cache-Control: no-store');
 
 $session =
     ag_current_session();
@@ -22,13 +23,7 @@ echo json_encode(
         'level' =>
             $session !== null
                 ? (int)($session['level'] ?? 0)
-                : null,
-
-        'session_secret_exists' =>
-            is_file(
-                __DIR__ .
-                '/login/session_secret.php'
-            )
+                : null
     ],
     JSON_PRETTY_PRINT |
     JSON_UNESCAPED_SLASHES

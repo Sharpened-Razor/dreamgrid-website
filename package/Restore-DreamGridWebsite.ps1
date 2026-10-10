@@ -1,4 +1,4 @@
-﻿#requires -Version 5.1
+#requires -Version 5.1
 param([Parameter(Mandatory)][string]$ArchiveDirectory)
 $ErrorActionPreference='Stop'
 . (Join-Path $PSScriptRoot 'WebsiteProcess.ps1')
@@ -41,7 +41,7 @@ foreach($record in $records){
 }
 $preservation | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $saved 'current-files.json') -Encoding UTF8
 $restoreIndex=0
-foreach($record in $records){
+foreach($record in @($records|Sort-Object {if($_.originalPath -eq (Join-Path $root 'Settings.ini')){0}else{1}})){
     $restoreIndex++
     if($record.previouslyExisted){
         Copy-Item -LiteralPath $record.archivedPath -Destination $record.originalPath -Force

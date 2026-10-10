@@ -1,11 +1,11 @@
 html{
-    background:#070907 !important;
+    background:var(--site-background,#070907) !important;
 }
 
 
 body{
 
-    background:#070907 !important;
+    background:var(--site-background,#070907) !important;
 
     background-image:none !important;
 
@@ -13,12 +13,12 @@ body{
 
     padding:14px !important;
 
-    color:#dedbd2 !important;
+    color:var(--site-text,#dedbd2) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 }
 
 
@@ -78,9 +78,9 @@ a.button,
     border-radius:5px !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 }
 
 
@@ -88,20 +88,20 @@ input,
 select,
 textarea{
 
-    background:#080a08 !important;
+    background:var(--site-surface, #080a08) !important;
 
-    color:#dedbd2 !important;
+    color:var(--site-text,#dedbd2) !important;
 
     border:
-        1px solid #56574f !important;
+        1px solid var(--site-border, #56574f) !important;
 }
 
 
 table{
 
-    background:#080a08 !important;
+    background:var(--site-surface, #080a08) !important;
 
-    color:#dedbd2 !important;
+    color:var(--site-text,#dedbd2) !important;
 }
 
 
@@ -111,12 +111,12 @@ dialog,
 .modal-content,
 .dialog-box{
 
-    background:#10120f !important;
+    background:var(--site-surface, #10120f) !important;
 
-    color:#dedbd2 !important;
+    color:var(--site-text,#dedbd2) !important;
 
     border:
-        1px solid #8c6a26 !important;
+        1px solid var(--site-border, #8c6a26) !important;
 
     border-radius:6px !important;
 }
@@ -194,12 +194,12 @@ body.cc-account-view{
         transparent !important;
 
     color:
-        #dedbd2 !important;
+        var(--site-text,#dedbd2) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 }
 
 
@@ -264,12 +264,12 @@ body.cc-account-view
     background:
         linear-gradient(
             180deg,
-            #121612,
-            #080b09
+            var(--site-surface, #121612),
+            var(--site-surface, #080b09)
         ) !important;
 
     border:
-        1px solid #6e5723 !important;
+        1px solid var(--site-border, #6e5723) !important;
 
     border-radius:
         6px !important;
@@ -288,7 +288,7 @@ body.cc-account-view
 .cc-account-field-label{
 
     color:
-        #d9ae48 !important;
+        var(--site-accent, #d9ae48) !important;
 
     font-size:
         9px !important;
@@ -316,7 +316,7 @@ body.cc-account-view
         7px !important;
 
     color:
-        #e5e3dc !important;
+        var(--site-text, #e5e3dc) !important;
 
     font-size:
         13px !important;
@@ -353,18 +353,18 @@ body.cc-account-view
     background:
         linear-gradient(
             180deg,
-            #18170f,
-            #0d0e0b
+            var(--site-surface, #18170f),
+            var(--site-surface, #0d0e0b)
         ) !important;
 
     border:
-        1px solid #5b4820 !important;
+        1px solid var(--site-border, #5b4820) !important;
 
     border-radius:
         5px !important;
 
     color:
-        #aaa186 !important;
+        var(--site-muted, #aaa186) !important;
 
     font-size:
         9px !important;
@@ -392,7 +392,7 @@ body.cc-account-view
         center !important;
 
     border-top:
-        1px solid #252820 !important;
+        1px solid var(--site-border, #252820) !important;
 }
 
 
@@ -422,13 +422,13 @@ body.cc-account-view
     background:
         linear-gradient(
             180deg,
-            #e1b33b 0%,
-            #b17b13 52%,
-            #825306 100%
+            var(--site-accent, #e1b33b) 0%,
+            var(--site-accent, #b17b13) 52%,
+            var(--site-accent, #825306) 100%
         ) !important;
 
     border:
-        1px solid #e0b448 !important;
+        1px solid var(--site-border, #e0b448) !important;
 
     border-radius:
         5px !important;
@@ -440,12 +440,12 @@ body.cc-account-view
             rgba(0,0,0,.7) !important;
 
     color:
-        #171006 !important;
+        var(--site-accent-text, #171006) !important;
 
     font-family:
-        "Segoe UI",
+        var(--site-font, "Segoe UI",
         Arial,
-        sans-serif !important;
+        sans-serif) !important;
 
     font-size:
         9px !important;
@@ -467,13 +467,13 @@ body.cc-account-view
     background:
         linear-gradient(
             180deg,
-            #edc654,
-            #c28a1c 52%,
-            #935f09
+            var(--site-accent, #edc654),
+            var(--site-accent, #c28a1c) 52%,
+            var(--site-accent, #935f09)
         ) !important;
 
     border-color:
-        #f0ca62 !important;
+        var(--site-border, #f0ca62) !important;
 }
 
 

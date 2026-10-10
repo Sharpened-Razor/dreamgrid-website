@@ -2,7 +2,7 @@
 require_once __DIR__.'/forms-model.php';
 require_once __DIR__.'/interactions.php';
 // Portable structured webpage model. Stored alongside the unchanged V10 fields.
-function ag_pb_types() { return array('section','columns','heading','text','image','button','navigation','hero','gallery','quote','faq','stats','video','divider','spacer','footer','form','tabs','accordion','legacy'); }
+function ag_pb_types() { return array('section','columns','heading','text','image','button','navigation','hero','gallery','quote','faq','stats','video','divider','spacer','footer','form','grid-login','site-branding','tabs','accordion','legacy'); }
 function ag_pb_link($value) {
     $value=ag_pd_text($value,2048);
     return preg_match('/^#[a-zA-Z][a-zA-Z0-9_-]*$/',$value) ? $value : ag_pd_safe_link($value);
@@ -80,6 +80,7 @@ function ag_pb_normalize($input) {
                     $props['items'][]=$entry;
                 }
             }
+            if(isset($raw['designBinding'])){if(!in_array($raw['designBinding'],array('gridName','siteTitle','loginAddress','welcomeHeading','welcomeText','footer'),true))throw new RuntimeException('Invalid receiving-grid binding.');$props['designBinding']=$raw['designBinding'];}
             if($type==='form')$props=array_merge($props,ag_pf_props($raw));
             $props=array_merge($props,ag_pi_props($raw));
             $children=$node['children'] ?? array();

@@ -1,3 +1,7 @@
+# v1.0.3 — 10 October 2026
+
+NativeBridge .NET 9 startup ordering and sanitized build metadata; strict hook transactions; staged fresh CMS=Other installation; shared login throttling and session hardening. See RELEASE-NOTES.md.
+
 # Changelog
 
 ## 1.0.2 — 2026-10-08

@@ -16,3 +16,5 @@ require_once __DIR__.'/page-designer/template-import.php';
 require_once __DIR__.'/page-designer/forms-model.php';
 require_once __DIR__.'/page-designer/forms.php';
 require_once __DIR__.'/page-designer/site-tools.php';
+
+require_once __DIR__.'/site-appearance.php';

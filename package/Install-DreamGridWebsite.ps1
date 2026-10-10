@@ -1,15 +1,21 @@
-﻿#requires -Version 5.1
+#requires -Version 5.1
 param(
     [Parameter(Mandatory)][string]$Root,
     [string]$PackageDirectory=$PSScriptRoot,
     [string]$ArchiveParent=[Environment]::GetFolderPath('Desktop'),
-    [int]$SimulateFailureAfterFiles=0
+    [int]$SimulateFailureAfterFiles=0,
+    [switch]$FreshInstall,
+    [switch]$SimulateFailureAfterOther,
+    [switch]$SimulateFailureAfterHook
 )
 $ErrorActionPreference='Stop'
 $Root=(Resolve-Path -LiteralPath $Root).Path
 $PackageDirectory=(Resolve-Path -LiteralPath $PackageDirectory).Path
 # No destination writes precede this read-only compatibility check.
-& (Join-Path $PackageDirectory 'Test-DreamGridWebsitePrerequisites.ps1') -Root $Root | Out-Null
+$prerequisite=& (Join-Path $PackageDirectory 'Test-DreamGridWebsitePrerequisites.ps1') -Root $Root -AllowEmptyOther:$FreshInstall
+$stageFirst=$prerequisite.mode -eq 'STAGE-FIRST'
+. (Join-Path $PackageDirectory 'DreamGrid.OtherConfiguration.ps1')
+$otherPlan=if($stageFirst){New-OtherSettingsPlan (Join-Path $Root 'Settings.ini')}else{$null}
 . (Join-Path $PackageDirectory 'WebsiteProcess.ps1')
 $prefix=$Root.TrimEnd('\')+'\'
 function Target-Path([string]$relative){
@@ -59,14 +65,12 @@ if($manifest.files.path -match '^Apache/htdocs/Other/private/map3d-tools/.*runti
 $parent=Split-Path $Root -Parent
 $runtime=Join-Path $parent 'Start.runtimeconfig.json'
 if(-not (Test-Path -LiteralPath $runtime)){throw 'The existing native DreamGrid Start.runtimeconfig.json was not found beside its data folder.'}
-$config=Get-Content -LiteralPath $runtime -Raw|ConvertFrom-Json
-if(-not $config.runtimeOptions){throw 'Invalid native DreamGrid runtime configuration'}
-if(-not $config.runtimeOptions.configProperties){$config.runtimeOptions | Add-Member -NotePropertyName configProperties -NotePropertyValue ([pscustomobject]@{})}
 $hook=Join-Path $Root '_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll'
 if(-not ($files|Where-Object {$_.target -eq $hook}) -and -not (Test-Path -LiteralPath $hook)){throw 'Website bridge assembly is missing'}
-$hooks=@([string]$config.runtimeOptions.configProperties.STARTUP_HOOKS -split ';'|Where-Object {$_ -and [IO.Path]::GetFileName($_) -ne 'DreamGrid.NativeBridge.StartupHook.dll'})
-$config.runtimeOptions.configProperties | Add-Member -NotePropertyName STARTUP_HOOKS -NotePropertyValue ((@($hooks)+$hook) -join ';') -Force
+. (Join-Path $PackageDirectory 'DreamGrid.NativeHookConfiguration.ps1')
+$hookPlan=New-NativeHookPlan $runtime $hook
 # Refuse active destination services; isolated services in other roots are unrelated.
+function Assert-DestinationStopped {
 foreach($process in Get-CimInstance Win32_Process){
     if($process.Name -match '^(Start|httpd|OpenSim|Robust)\.exe$'){
         $processPath=Get-WebsiteProcessPath $process
@@ -75,6 +79,8 @@ foreach($process in Get-CimInstance Win32_Process){
         if($exe.StartsWith($prefix,[StringComparison]::OrdinalIgnoreCase) -or ($process.Name -eq 'Start.exe' -and (Split-Path $exe -Parent) -eq $parent)){throw 'Stop destination DreamGrid and Apache before installing.'}
     }
 }
+}
+Assert-DestinationStopped
 if(-not $ArchiveParent){throw 'A Desktop/archive location is required'}
 $archive=Join-Path $ArchiveParent ('DreamGrid-Website-Install-'+(Get-Date -Format 'yyyyMMdd-HHmmssfff'))
 New-Item -ItemType Directory -Path $archive -Force|Out-Null
@@ -95,7 +101,6 @@ function Backup-Target([string]$target,[string]$relative,[string]$reason){
     $records.Add([pscustomobject]@{originalPath=$target;archivedPath=if($exists){$archived}else{$null};filename=[IO.Path]::GetFileName($target);sha256=$sha;previouslyExisted=$exists;reason=$reason})
 }
 $generated=@(
-    @{target=$runtime;relative='native-parent/Start.runtimeconfig.json';text=($config|ConvertTo-Json -Depth 100);reason='Preserve native properties; register discovered website bridge path'},
     @{target=(Join-Path $Root '_WEB_CONTROL/website-runtime/local-host.json');relative='OutworldzFiles/_WEB_CONTROL/website-runtime/local-host.json';text=(@{loopbackHost=[Net.IPAddress]::Loopback.ToString()}|ConvertTo-Json);reason='Destination-generated local control endpoint'}
 )
 $key=Join-Path $Root '_WEB_CONTROL/DreamGrid.NativeBridge.key'
@@ -108,7 +113,7 @@ if(-not (Test-Path -LiteralPath $portFile)){
     $listener=[Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback,0);$listener.Start();$port=$listener.LocalEndpoint.Port;$listener.Stop()
     $generated+=@{target=$portFile;relative='OutworldzFiles/_WEB_CONTROL/DreamGrid.NativeBridge.port';text=[string]$port;reason='Destination-selected available bridge port'}
 }
-foreach($item in $generated){
+foreach($item in (@($generated)+@(@{target=$runtime}))){
     $probe=Get-Item -LiteralPath (Split-Path $item.target -Parent) -ErrorAction SilentlyContinue
     while($probe){
         if($probe.Attributes -band [IO.FileAttributes]::ReparsePoint){throw 'Runtime metadata must not traverse a reparse point'}
@@ -117,8 +122,11 @@ foreach($item in $generated){
     if((Test-Path -LiteralPath $item.target) -and ((Get-Item -LiteralPath $item.target).Attributes -band [IO.FileAttributes]::ReparsePoint)){throw 'Runtime metadata must not be a reparse point'}
 }
 try{
+    if($stageFirst -and -not (Test-EmptyOtherWebsite $Root)){throw 'Other content changed after fresh-install confirmation; no deployment performed'}
     foreach($file in $files){Backup-Target $file.target ('OutworldzFiles/'+$file.relative) 'Original website file before verified portability repair'}
     foreach($item in $generated){Backup-Target $item.target $item.relative $item.reason}
+    Backup-Target $runtime 'native-parent/Start.runtimeconfig.json' 'Original bytes before verified NativeBridge registration'
+    if($stageFirst){Backup-Target $otherPlan.path 'OutworldzFiles/Settings.ini' 'Only effective CMS/OtherCMS after complete fresh website validation'}
     $records|ConvertTo-Json -Depth 8|Set-Content -LiteralPath (Join-Path $archive 'manifest.json') -Encoding UTF8
     @{root=$Root;nativeParent=$parent;status='Backup completed before deployment'}|ConvertTo-Json|Set-Content -LiteralPath (Join-Path $archive 'installation.json') -Encoding UTF8
     $deployedCount=0
@@ -133,10 +141,32 @@ try{
         [IO.File]::WriteAllText($item.target,$item.text,[Text.UTF8Encoding]::new($false))
         if([IO.File]::ReadAllText($item.target) -ne $item.text){throw 'Installed metadata verification failed'}
     }
-    [pscustomobject]@{status='Installed and hash verified';root=$Root;archive=$archive;installedFiles=$files.Count;nativeSettingsChanged=$false;nativeApachePhpTemplatesChanged=$false;servicesStarted=$false}
+    if($stageFirst){
+        # Re-verify the entire intended website before ever selecting OTHER.
+        foreach($file in $manifest.files){
+            $target=Target-Path $file.path
+            if(-not (Test-Path -LiteralPath $target) -or (-not $file.preserveExisting -and (Get-FileHash -LiteralPath $target).Hash -ne $file.sha256)){throw 'Fresh website is incomplete or invalid; OTHER was not selected'}
+        }
+        foreach($entry in @('Apache/htdocs/Other/index.php','Apache/htdocs/Other/login.php')){
+            $target=Target-Path $entry
+            if(-not (Test-Path -LiteralPath $target) -or (Get-Item -LiteralPath $target).Length -eq 0){throw 'Fresh website entry page is missing or empty'}
+        }
+        Assert-DestinationStopped
+        Set-VerifiedOtherSettings $otherPlan
+        & (Join-Path $PackageDirectory 'Test-DreamGridWebsitePrerequisites.ps1') -Root $Root | Out-Null
+        if($SimulateFailureAfterOther){throw 'Requested post-OTHER failure simulation'}
+    }
+    # Payload and CMS selection are verified before committing the native hook.
+    Assert-DestinationStopped
+    $runtimeBackup=$records|Where-Object {$_.originalPath -eq $runtime}
+    if((Get-FileHash -LiteralPath $runtimeBackup.archivedPath).Hash -ne $runtimeBackup.sha256){throw 'Runtime backup changed before hook commit'}
+    if((Get-FileHash -LiteralPath $hook).Hash -ne ($manifest.files|Where-Object {$_.path -eq '_WEB_CONTROL/DreamGrid.NativeBridge.StartupHook.dll'}).sha256){throw 'NativeBridge assembly verification failed'}
+    Set-VerifiedNativeHook $hookPlan
+    if($SimulateFailureAfterHook){throw 'Requested post-hook failure simulation'}
+    [pscustomobject]@{status='Installed and hash verified';root=$Root;archive=$archive;installedFiles=$files.Count;freshWebsite=$stageFirst;nativeSettingsChanged=($stageFirst -and $otherPlan.changes.Count -gt 0);settingsChanges=if($stageFirst){$otherPlan.changes}else{@()};nativeApachePhpTemplatesChanged=$false;servicesStarted=$false}
 }catch{
     $failureIndex=0
-    foreach($record in $records){
+    foreach($record in @($records|Sort-Object {if($_.originalPath -eq (Join-Path $Root 'Settings.ini')){0}else{1}})){
         $failureIndex++
         if($record.previouslyExisted){Copy-Item -LiteralPath $record.archivedPath -Destination $record.originalPath -Force}
         elseif(Test-Path -LiteralPath $record.originalPath){
